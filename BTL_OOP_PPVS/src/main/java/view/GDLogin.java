@@ -40,7 +40,7 @@ public class GDLogin extends javax.swing.JFrame {
         jLabelDangNhap.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         jLabelDangNhap.setText("ĐĂNG NHẬP");
 
-        imageLogoUET.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\OOP_BTL\\image\\Logo_HUET.svg (1).png")); // NOI18N
+        imageLogoUET.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\Downloads\\Logo_HUET.svg (1).png")); // NOI18N
         imageLogoUET.setText("jLabel5");
 
         jButtonOK.setText("OK");

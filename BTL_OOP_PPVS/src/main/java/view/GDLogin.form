@@ -95,7 +95,7 @@
     <Component class="javax.swing.JLabel" name="imageLogoUET">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\HP\Documents\OOP_BTL\image\Logo_HUET.svg (1).png"/>
+          <Image iconType="2" name="C:\Users\ADMIN\Downloads\Logo_HUET.svg (1).png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel5"/>
       </Properties>
