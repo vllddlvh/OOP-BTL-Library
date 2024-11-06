@@ -31,12 +31,12 @@ public class GDThemBanDoc extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        txtid = new javax.swing.JTextField();
+        txtname = new javax.swing.JTextField();
+        txtaddress = new javax.swing.JTextField();
+        txtphonenumber = new javax.swing.JTextField();
         jButtonThem = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jButtonReset = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
@@ -57,23 +57,23 @@ public class GDThemBanDoc extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
         jLabel4.setText("Phone Number:");
 
-        jTextField1.setMaximumSize(new java.awt.Dimension(120, 25));
-        jTextField1.setMinimumSize(new java.awt.Dimension(120, 25));
-        jTextField1.setPreferredSize(new java.awt.Dimension(120, 25));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        txtid.setMaximumSize(new java.awt.Dimension(120, 25));
+        txtid.setMinimumSize(new java.awt.Dimension(120, 25));
+        txtid.setPreferredSize(new java.awt.Dimension(120, 25));
+        txtid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                txtidActionPerformed(evt);
             }
         });
 
-        jTextField2.setMaximumSize(new java.awt.Dimension(120, 25));
-        jTextField2.setMinimumSize(new java.awt.Dimension(120, 25));
+        txtname.setMaximumSize(new java.awt.Dimension(120, 25));
+        txtname.setMinimumSize(new java.awt.Dimension(120, 25));
 
-        jTextField3.setMaximumSize(new java.awt.Dimension(120, 25));
-        jTextField3.setMinimumSize(new java.awt.Dimension(120, 25));
+        txtaddress.setMaximumSize(new java.awt.Dimension(120, 25));
+        txtaddress.setMinimumSize(new java.awt.Dimension(120, 25));
 
-        jTextField4.setMaximumSize(new java.awt.Dimension(120, 25));
-        jTextField4.setMinimumSize(new java.awt.Dimension(120, 25));
+        txtphonenumber.setMaximumSize(new java.awt.Dimension(120, 25));
+        txtphonenumber.setMinimumSize(new java.awt.Dimension(120, 25));
 
         jButtonThem.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jButtonThem.setText("Thêm");
@@ -82,12 +82,17 @@ public class GDThemBanDoc extends javax.swing.JFrame {
         jButtonThem.setMinimumSize(new java.awt.Dimension(70, 25));
         jButtonThem.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        jButton2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
-        jButton2.setText("Reset");
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setMaximumSize(new java.awt.Dimension(70, 25));
-        jButton2.setMinimumSize(new java.awt.Dimension(70, 25));
-        jButton2.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonReset.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jButtonReset.setText("Reset");
+        jButtonReset.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonReset.setMaximumSize(new java.awt.Dimension(70, 25));
+        jButtonReset.setMinimumSize(new java.awt.Dimension(70, 25));
+        jButtonReset.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonResetActionPerformed(evt);
+            }
+        });
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -129,19 +134,19 @@ public class GDThemBanDoc extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtid, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel4)
                             .addComponent(jButtonThem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtphonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(26, 26, 26)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 428, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -156,35 +161,43 @@ public class GDThemBanDoc extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtphonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonThem, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTextField4.getAccessibleContext().setAccessibleParent(jTextField1);
+        txtphonenumber.getAccessibleContext().setAccessibleParent(txtid);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void txtidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtidActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_txtidActionPerformed
+
+    private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
+        // TODO add your handling code here:
+        txtaddress.setText("");
+        txtid.setText("");
+        txtname.setText("");
+        txtphonenumber.setText("");
+    }//GEN-LAST:event_jButtonResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,7 +235,7 @@ public class GDThemBanDoc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonReset;
     private javax.swing.JButton jButtonThem;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -231,9 +244,9 @@ public class GDThemBanDoc extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelThemBanDoc;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField txtaddress;
+    private javax.swing.JTextField txtid;
+    private javax.swing.JTextField txtname;
+    private javax.swing.JTextField txtphonenumber;
     // End of variables declaration//GEN-END:variables
 }
