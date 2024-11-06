@@ -102,6 +102,12 @@ public class GDMenu extends javax.swing.JFrame {
 
     private void jButtonBanDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBanDocActionPerformed
         // TODO add your handling code here:
+        GDBanDoc banDoc = new GDBanDoc();
+        // Hiển thị cửa sổ BanDoc
+    banDoc.setVisible(true);
+
+    // Ẩn cửa sổ hiện tại (tùy chọn)
+    this.setVisible(false);
     }//GEN-LAST:event_jButtonBanDocActionPerformed
 
     /**

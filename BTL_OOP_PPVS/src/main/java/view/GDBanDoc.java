@@ -44,6 +44,11 @@ public class GDBanDoc extends javax.swing.JFrame {
         jButton1.setText("Thêm Bạn Đọc");
         jButton1.setMaximumSize(new java.awt.Dimension(100, 40));
         jButton1.setMinimumSize(new java.awt.Dimension(100, 40));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         jButton2.setText("Chỉnh Sửa TT Bạn Đọc");
@@ -86,6 +91,13 @@ public class GDBanDoc extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        GDThemBanDoc addUser = new GDThemBanDoc();
+        addUser.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
