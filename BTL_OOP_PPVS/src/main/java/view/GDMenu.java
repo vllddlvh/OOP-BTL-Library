@@ -98,6 +98,9 @@ public class GDMenu extends javax.swing.JFrame {
 
     private void jButtonSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSachActionPerformed
         // TODO add your handling code here:
+        GDSach book = new GDSach();
+        book.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonSachActionPerformed
 
     private void jButtonBanDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBanDocActionPerformed
