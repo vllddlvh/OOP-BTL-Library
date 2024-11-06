@@ -40,7 +40,7 @@ public class GDLogin extends javax.swing.JFrame {
         jLabelDangNhap.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         jLabelDangNhap.setText("ĐĂNG NHẬP");
 
-        imageLogoUET.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\Downloads\\Logo_HUET.svg (1).png")); // NOI18N
+        imageLogoUET.setIcon(new javax.swing.ImageIcon("C:\\Users\\HP\\Documents\\OOP_BTL\\image\\Logo_HUET.svg (1).png")); // NOI18N
         imageLogoUET.setText("jLabel5");
 
         jButtonOK.setText("OK");
@@ -109,10 +109,11 @@ public class GDLogin extends javax.swing.JFrame {
                     .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButtonOK)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed

@@ -36,7 +36,6 @@ public class GDMenu extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(720, 450));
 
         jLabelThuVien.setBackground(new java.awt.Color(204, 204, 204));
         jLabelThuVien.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
@@ -131,6 +130,7 @@ public class GDMenu extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSachActionPerformed
