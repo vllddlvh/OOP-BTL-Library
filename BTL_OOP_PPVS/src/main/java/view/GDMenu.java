@@ -1,14 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 /**
  *
  * @author ADMIN
  */
-public class GDMenu extends javax.swing.JFrame {
+public class GDMenu extends GD_mainStream {
 
     /**
      * Creates new form GDMenu
@@ -106,11 +102,8 @@ public class GDMenu extends javax.swing.JFrame {
     private void jButtonBanDocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBanDocActionPerformed
         // TODO add your handling code here:
         GDBanDoc banDoc = new GDBanDoc();
-        // Hiển thị cửa sổ BanDoc
-    banDoc.setVisible(true);
-
-    // Ẩn cửa sổ hiện tại (tùy chọn)
-    this.setVisible(false);
+        banDoc.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonBanDocActionPerformed
 
     /**

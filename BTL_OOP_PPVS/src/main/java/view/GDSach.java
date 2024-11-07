@@ -8,7 +8,7 @@ package view;
  *
  * @author HP
  */
-public class GDSach extends javax.swing.JFrame {
+public class GDSach extends GD_mainStream {
 
     /**
      * Creates new form GDSach

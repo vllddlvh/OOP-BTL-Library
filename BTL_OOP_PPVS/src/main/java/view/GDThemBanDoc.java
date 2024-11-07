@@ -1,14 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
+
+import Model.Student;
 
 /**
  *
  * @author ADMIN
  */
-public class GDThemBanDoc extends javax.swing.JFrame {
+public class GDThemBanDoc extends GD_mainStream {
 
     /**
      * Creates new form GDThemBanDoc
@@ -26,11 +24,12 @@ public class GDThemBanDoc extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelThemBanDoc = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        jDialog1 = new javax.swing.JDialog();
+        Label_ThemBanDoc = new javax.swing.JLabel();
+        Label_ID = new javax.swing.JLabel();
+        Label_Name = new javax.swing.JLabel();
+        Label_Address = new javax.swing.JLabel();
+        Label_Contact = new javax.swing.JLabel();
         txtid = new javax.swing.JTextField();
         txtname = new javax.swing.JTextField();
         txtaddress = new javax.swing.JTextField();
@@ -40,22 +39,33 @@ public class GDThemBanDoc extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelThemBanDoc.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabelThemBanDoc.setText("THÊM BẠN ĐỌC");
+        Label_ThemBanDoc.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
+        Label_ThemBanDoc.setText("THÊM BẠN ĐỌC");
 
-        jLabel1.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
-        jLabel1.setText("ID:");
+        Label_ID.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        Label_ID.setText("ID:");
 
-        jLabel2.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
-        jLabel2.setText("Name:");
+        Label_Name.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        Label_Name.setText("Name:");
 
-        jLabel3.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
-        jLabel3.setText("Address:");
+        Label_Address.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        Label_Address.setText("Address:");
 
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
-        jLabel4.setText("Phone Number:");
+        Label_Contact.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        Label_Contact.setText("Phone Number:");
 
         txtid.setMaximumSize(new java.awt.Dimension(120, 25));
         txtid.setMinimumSize(new java.awt.Dimension(120, 25));
@@ -81,6 +91,11 @@ public class GDThemBanDoc extends javax.swing.JFrame {
         jButtonThem.setMaximumSize(new java.awt.Dimension(70, 25));
         jButtonThem.setMinimumSize(new java.awt.Dimension(70, 25));
         jButtonThem.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButtonThem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonThemActionPerformed(evt);
+            }
+        });
 
         jButtonReset.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jButtonReset.setText("Reset");
@@ -120,17 +135,17 @@ public class GDThemBanDoc extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(276, 276, 276)
-                .addComponent(jLabelThemBanDoc)
+                .addGap(292, 292, 292)
+                .addComponent(Label_ThemBanDoc)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Label_ID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Label_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Label_Address, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -139,7 +154,7 @@ public class GDThemBanDoc extends javax.swing.JFrame {
                             .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
+                            .addComponent(Label_Contact)
                             .addComponent(jButtonThem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,24 +170,24 @@ public class GDThemBanDoc extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
-                .addComponent(jLabelThemBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Label_ThemBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(35, 35, 35)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
+                            .addComponent(Label_ID)
                             .addComponent(txtid, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
+                            .addComponent(Label_Name)
                             .addComponent(txtname, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
+                            .addComponent(Label_Address)
                             .addComponent(txtaddress, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
+                            .addComponent(Label_Contact)
                             .addComponent(txtphonenumber, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -192,12 +207,17 @@ public class GDThemBanDoc extends javax.swing.JFrame {
     }//GEN-LAST:event_txtidActionPerformed
 
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
-        // TODO add your handling code here:
+        // TODO: when click the "RESET" button
         txtaddress.setText("");
         txtid.setText("");
         txtname.setText("");
         txtphonenumber.setText("");
     }//GEN-LAST:event_jButtonResetActionPerformed
+
+    private void jButtonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonThemActionPerformed
+        // TODO: when click the "Thêm" button
+        Student.addNewStudent(txtid.getText(), txtname.getText(), "2005-1-1", txtphonenumber.getText());
+    }//GEN-LAST:event_jButtonThemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -235,13 +255,14 @@ public class GDThemBanDoc extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Label_Address;
+    private javax.swing.JLabel Label_Contact;
+    private javax.swing.JLabel Label_ID;
+    private javax.swing.JLabel Label_Name;
+    private javax.swing.JLabel Label_ThemBanDoc;
     private javax.swing.JButton jButtonReset;
     private javax.swing.JButton jButtonThem;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabelThemBanDoc;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtaddress;

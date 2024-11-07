@@ -1,14 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
+
+import Model.Book;
 
 /**
  *
  * @author ADMIN
  */
-public class GDThemXoaSach extends javax.swing.JFrame {
+public class GDThemXoaSach extends GD_mainStream {
 
     /**
      * Creates new form GDThemXoaSach
@@ -77,6 +75,11 @@ public class GDThemXoaSach extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jButton1.setText("Thêm");
         jButton1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
         jButton2.setText("Reset");
@@ -195,13 +198,18 @@ public class GDThemXoaSach extends javax.swing.JFrame {
     }//GEN-LAST:event_txtavailablecopiesActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // TODO: when click "RESET"
         txtauthor.setText("");
         txtavailablecopies.setText("");
         txtid.setText("");
         txttitle.setText("");
         txtyearpublished.setText("");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO: When click "Thêm" sách
+        Book.addNewBook(new Book(txtid.getText(), txttitle.getText(), txtauthor.getText(), "Unknown", txtyearpublished.getText() + "-01-01", "UET", Integer.parseInt(txtavailablecopies.getText())));
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments

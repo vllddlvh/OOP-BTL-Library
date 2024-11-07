@@ -1,14 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
+
+import Model.User;
+import static Model.User.logIn.Incorrect;
 
 /**
  *
  * @author ADMIN
  */
-public class GDLogin extends javax.swing.JFrame {
+public class GDLogin extends GD_mainStream {
 
     /**
      * Creates new form GDLogin
@@ -26,71 +25,75 @@ public class GDLogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelDangNhap = new javax.swing.JLabel();
+        Label_DangNhap = new javax.swing.JLabel();
         imageLogoUET = new javax.swing.JLabel();
-        jButtonOK = new javax.swing.JButton();
-        jLabelTaiKhoan = new javax.swing.JLabel();
-        jLabelMatKhau = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        Button_DangNhap = new javax.swing.JButton();
+        Label_TaiKhoan = new javax.swing.JLabel();
+        Label_MatKhau = new javax.swing.JLabel();
+        Field_TaiKhoan = new javax.swing.JTextField();
+        Field_MatKhau = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(300, 400));
 
-        jLabelDangNhap.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
-        jLabelDangNhap.setText("ĐĂNG NHẬP");
+        Label_DangNhap.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
+        Label_DangNhap.setText("ĐĂNG NHẬP");
 
-        imageLogoUET.setIcon(new javax.swing.ImageIcon("C:\\Users\\ADMIN\\Downloads\\Logo_HUET.svg (1).png")); // NOI18N
         imageLogoUET.setText("jLabel5");
 
-        jButtonOK.setText("OK");
-        jButtonOK.addActionListener(new java.awt.event.ActionListener() {
+        Button_DangNhap.setText("Đăng nhập");
+        Button_DangNhap.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonOKActionPerformed(evt);
+                Button_DangNhapActionPerformed(evt);
             }
         });
 
-        jLabelTaiKhoan.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
-        jLabelTaiKhoan.setText("Tài Khoản:");
+        Label_TaiKhoan.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        Label_TaiKhoan.setText("Tài Khoản:");
 
-        jLabelMatKhau.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
-        jLabelMatKhau.setText("Mật Khẩu:");
+        Label_MatKhau.setFont(new java.awt.Font("Calibri", 1, 13)); // NOI18N
+        Label_MatKhau.setText("Mật Khẩu:");
 
-        jTextField1.setMinimumSize(new java.awt.Dimension(70, 25));
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Field_TaiKhoan.setMinimumSize(new java.awt.Dimension(70, 25));
+        Field_TaiKhoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Field_TaiKhoanActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setMinimumSize(new java.awt.Dimension(70, 25));
+        Field_MatKhau.setMinimumSize(new java.awt.Dimension(70, 25));
+        Field_MatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Field_MatKhauActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addGap(50, 50, 50)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(imageLogoUET, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(41, 41, 41)
-                                .addComponent(jLabelDangNhap))
+                                .addComponent(Label_DangNhap))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelTaiKhoan)
+                                .addComponent(Label_TaiKhoan)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(Field_TaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabelMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Label_MatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonOK, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                .addComponent(Field_MatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Button_DangNhap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(imageLogoUET, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,37 +101,59 @@ public class GDLogin extends javax.swing.JFrame {
                 .addGap(21, 21, 21)
                 .addComponent(imageLogoUET)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabelDangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Label_DangNhap, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelTaiKhoan)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Label_TaiKhoan)
+                    .addComponent(Field_TaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelMatKhau)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Label_MatKhau)
+                    .addComponent(Field_MatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButtonOK)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addComponent(Button_DangNhap)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    private void Field_TaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Field_TaiKhoanActionPerformed
+        // TODO: when type in Username 
+    }//GEN-LAST:event_Field_TaiKhoanActionPerformed
 
-    private void jButtonOKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOKActionPerformed
-        // Khởi tạo cửa sổ Menu
-    GDMenu menu = new GDMenu();
+    private void Button_DangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DangNhapActionPerformed
+        // TODO: when click the Log_in_Button
+        switch (currentUser.logIn(Field_TaiKhoan.getText(), String.valueOf(Field_MatKhau.getPassword()))) {
+            
+            case Correct: // Forward to Menu
+            {
+                // Khởi tạo cửa sổ Menu
+                GDMenu menu = new GDMenu();
     
-    // Hiển thị cửa sổ Menu
-    menu.setVisible(true);
+                // Hiển thị cửa sổ Menu
+                menu.setVisible(true);
 
-    // Ẩn cửa sổ hiện tại (tùy chọn)
-    this.setVisible(false);
-    }//GEN-LAST:event_jButtonOKActionPerformed
+                // Ẩn cửa sổ hiện tại (tùy chọn)
+                this.setVisible(false);
+                
+                currentUser.setID(Field_TaiKhoan.getText());
+                break;
+            }
+            
+            case First_Login:
+                
+            case Incorrect: // point to somewhere to create a new password.
+            
+            default: 
+                Field_TaiKhoan.setText("Sai tai khoan hoac mat khau");
+            
+        }
+    }//GEN-LAST:event_Button_DangNhapActionPerformed
+
+    private void Field_MatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Field_MatKhauActionPerformed
+        // TODO: when type in Password
+    }//GEN-LAST:event_Field_MatKhauActionPerformed
 
     /**
      * @param args the command line arguments
@@ -166,12 +191,12 @@ public class GDLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Button_DangNhap;
+    private javax.swing.JPasswordField Field_MatKhau;
+    private javax.swing.JTextField Field_TaiKhoan;
+    private javax.swing.JLabel Label_DangNhap;
+    private javax.swing.JLabel Label_MatKhau;
+    private javax.swing.JLabel Label_TaiKhoan;
     private javax.swing.JLabel imageLogoUET;
-    private javax.swing.JButton jButtonOK;
-    private javax.swing.JLabel jLabelDangNhap;
-    private javax.swing.JLabel jLabelMatKhau;
-    private javax.swing.JLabel jLabelTaiKhoan;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
