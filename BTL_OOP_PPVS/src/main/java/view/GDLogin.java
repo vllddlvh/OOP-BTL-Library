@@ -1,7 +1,7 @@
 package view;
 
-import Model.User;
-import static Model.User.logIn.Incorrect;
+import model.User;
+import static model.User.logIn.Incorrect;
 
 /**
  *
@@ -113,12 +113,9 @@ public class GDLogin extends GD_mainStream {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Button_DangNhap)
                 .addContainerGap(25, Short.MAX_VALUE))
-                .addComponent(jButtonOK)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Field_TaiKhoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Field_TaiKhoanActionPerformed
