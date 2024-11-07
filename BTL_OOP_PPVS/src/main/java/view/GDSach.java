@@ -31,9 +31,10 @@ public class GDSach extends GD_mainStream {
         AddDeleteBookButton = new javax.swing.JButton();
         EditBookButton = new javax.swing.JButton();
         SearchBookButton = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        BackToMenuButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(720, 450));
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -93,6 +94,25 @@ public class GDSach extends GD_mainStream {
                 .addComponent(SearchBookButton, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
+        jButton3.setBackground(new java.awt.Color(204, 204, 204));
+        jButton3.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jButton3.setText("Trở về");
+        jButton3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        BackToMenuButton.setBackground(new java.awt.Color(204, 204, 204));
+        BackToMenuButton.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        BackToMenuButton.setText("Menu");
+        BackToMenuButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackToMenuButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -103,6 +123,11 @@ public class GDSach extends GD_mainStream {
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(202, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BackToMenuButton)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,10 +136,14 @@ public class GDSach extends GD_mainStream {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(98, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BackToMenuButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void AddDeleteBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddDeleteBookButtonActionPerformed
@@ -131,6 +160,20 @@ public class GDSach extends GD_mainStream {
     private void SearchBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchBookButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_SearchBookButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        GDMenu menu = new GDMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void BackToMenuButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackToMenuButtonActionPerformed
+        // TODO add your handling code here:
+        GDMenu menu = new GDMenu();
+        menu.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_BackToMenuButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -169,8 +212,10 @@ public class GDSach extends GD_mainStream {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddDeleteBookButton;
+    private javax.swing.JButton BackToMenuButton;
     private javax.swing.JButton EditBookButton;
     private javax.swing.JButton SearchBookButton;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

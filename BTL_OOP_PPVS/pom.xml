@@ -11,6 +11,7 @@
         <maven.compiler.release>17</maven.compiler.release>
         <exec.mainClass>com.mycompany.btl_oop_ppvs.BTL_OOP_PPVS</exec.mainClass>
     </properties>
+
     
     <!-- Dependencies section -->
     <dependencies>
@@ -18,6 +19,15 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.33</version>
+        </dependency>
+    </dependencies>
+</project>
+    <dependencies>
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>9.1.0</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
