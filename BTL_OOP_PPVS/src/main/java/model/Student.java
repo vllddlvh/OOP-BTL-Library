@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-import Controller.DBUser;
+import controller.DBUser;
 import java.sql.SQLException;
 
 

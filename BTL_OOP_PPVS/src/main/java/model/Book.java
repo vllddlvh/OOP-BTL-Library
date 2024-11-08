@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-import Controller.DBBook;
+import controller.DBBook;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
