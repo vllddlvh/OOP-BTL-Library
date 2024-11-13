@@ -1,138 +1,113 @@
 package controller;
 
-
-import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.CallableStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 
 
 import model.Request;
-import java.io.File;
 
-import java.util.ArrayList;
 
-import java.sql.SQLException;
-import java.io.IOException;
-
+/**
+ *
+ * @author Littl
+ */
 public class DBRequest extends DatabaseConnector {
-    
-    
-    /**
-     * Execute borrow Book.
-     * 
-     * @param userID = user who borrow
-     * @param bookID = the book want to borrow
-     * @param quantity = quantityBorrow
-     * 
-     * @return true if the work done.
-     * 
-     * @throws SQLException 
-     */
-    public static boolean borrowBook(String userID, String bookID, int quantity) throws SQLException, IOException {
+    public static boolean borrowDocument(String userID, String documentID, int borrowQuantity) throws SQLException {
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call borrowDocument(?, ?, ?) }");
+        
+        finder.setString(1, userID);
+        finder.setString(2, documentID);
+        finder.setInt(3, borrowQuantity);
+        
         ResultSet rs;
-        
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call borrowBook(?, ?, ?) }");
-        
-        finder.setString(1, bookID);
-        finder.setString(2, userID);
-        finder.setString(3, String.valueOf(quantity));
-        
         rs = finder.executeQuery();
         
         while (rs.next()) {
-            if (rs.getBoolean("Result")) {
-                
-                UpdateFile.saveBookFile(bookID);
-                
-                return true;
-            }
-            return false;
-        }
-        return false;
-    } 
-    
-    
-    /**
-     * Execute Return Book request. 
-     * 
-     * @param requestID = request when you borrow.
-     * 
-     * @return true if right user return the Book (like admin or user who borrow)
-     * 
-     * @throws SQLException 
-     */
-    public static boolean returnBook (Request req) throws SQLException {
-        ResultSet rs;
-        
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call returnBook(?, ?) }");
-        
-        finder.setString(1, req.getRequestID());
-        finder.setString(2, req.getUserID());
-        
-        rs = finder.executeQuery();
-        
-        while(rs.next()) {
-            if (rs.getBoolean("Result") == true) {
-                File thisBook = new File("src/OuterData/" + req.getBook().getId() + ".pdf");
-                
-                thisBook.delete();
-                return true;
-            }
-            return false;
+            return rs.getBoolean("Result");
         }
         return false;
     }
     
-    
-    /**
-     * Execute find every un-return request user have.
-     * 
-     * @param userID = ID of the user want to find.
-     * 
-     * @return An ArrayList of these request.
-     * 
-     * @throws SQLException 
-     */
-    public static ArrayList<Request> UnreturnBookList(String userID) throws SQLException {
+    public static boolean returnDocument(String userID, String requestID) throws SQLException {
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call returnDocument(?, ?) }");
+        
+        finder.setString(1, requestID);
+        finder.setString(2, userID);
+        
         ResultSet rs;
-        ArrayList<Request> ret = new ArrayList<>();
+        rs = finder.executeQuery();
+        
+        while (rs.next()) {
+            return rs.getBoolean("Result");
+        }
+        return false;
+    }
+    
+    public static ArrayList<Request> checkForUnreturn_DocumentList(String userID) throws SQLException {
         
         CallableStatement finder = (CallableStatement) connection.prepareCall("{ call checkForUnreturn_BookList(?) }");
         
         finder.setString(1, userID);
         
+        ResultSet rs;
         rs = finder.executeQuery();
         
+        ArrayList<Request> req = new ArrayList<>();
         while(rs.next()) {
-            ret.add(new Request(rs.getString("requestID"), userID, rs.getString("bookID"), rs.getInt("quantityBorrow"), rs.getString("borrowDate"), null));
+            req.add(new Request(rs.getString(1), 
+                                        userID, 
+                               rs.getString(2),
+                            rs.getInt(3), 
+                               rs.getString(4), 
+                               null));
         }
         
-        return ret;
+        return req;
     }
     
-    
-    /**
-     * Execute find every un-return request user have.
-     * 
-     * @param userID = ID of the user want to find.
-     * 
-     * @return An ArrayList of these request.
-     * 
-     * @throws SQLException 
-     */
-    public static ArrayList<Request> everBorrowBookList(String userID) throws SQLException {
-        ResultSet rs;
-        ArrayList<Request> ret = new ArrayList<>();
+    public static ArrayList<Request> checkForUnreturn_MemberList(String documentID) throws SQLException {
         
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call checkForHistory_BookList(?) }");
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call checkForUnreturn_StudentList(?) }");
+        
+        finder.setString(1, documentID);
+        
+        ResultSet rs;
+        rs = finder.executeQuery();
+        
+        ArrayList<Request> req = new ArrayList<>();
+        while(rs.next()) {
+            req.add(new Request(rs.getString(1), 
+                                  rs.getString(2), 
+                                        documentID,
+                            rs.getInt(3), 
+                               rs.getString(4), 
+                               null));
+        }
+        
+        return req;
+    }
+    
+    public static ArrayList<Request> getAllBorrowHistory_DocumentList(String userID) throws SQLException {
+        
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call checkForHistory_DocumentList(?) }");
         
         finder.setString(1, userID);
         
+        ResultSet rs;
         rs = finder.executeQuery();
         
+        ArrayList<Request> req = new ArrayList<>();
         while(rs.next()) {
-            ret.add(new Request(rs.getString("requestID"), userID, rs.getString("bookID"), rs.getInt("quantityBorrow"), rs.getString("borrowDate"), rs.getString("returnDate")));
+            req.add(new Request(rs.getString(1), 
+                                        userID, 
+                               rs.getString(2),
+                            rs.getInt(3), 
+                               rs.getString(4), 
+                               rs.getString(5)));
         }
         
-        return ret;
+        return req;
     }
 }

@@ -4,132 +4,102 @@ package controller;
 import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.CallableStatement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import model.User.loginAlert;
 
 
 public class DBLogin extends DatabaseConnector {
-    public final static int FIRST_LOG_IN = 2;
-    public final static int TRUE_LOG_IN = 1;
-    public final static int FAIL_LOG_IN = 0;
     
     
     /**
-     * Check if the password is right/
+     * Check if the password is right.
      * 
      * @param ID = user ID.
      * @param password = account password.
      * 
-     * @return FIRST_LOG_IN if this your first time.
-     *  TRUE_LOG_IN if the password right.
-     *  FAIL_LOG_IN if the password wrong.
+     * @return as loginAlert type FROM model.User
      * 
      * @throws SQLException 
      */
-    public static int logIn(String ID, String password) throws SQLException {
-        ResultSet rs;
+    public static loginAlert login(String userID, String password) throws SQLException {
         
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call checkPassword(?, ?) }");
-        /**
-         * Procedure checkPassword:
-         *      'notYet' for the first time LogIn user
-         *      'noSuchID' for wrong userID
-         *      '1' mean true password
-         *      '0' mean wrong password.
-         */
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call login(?, ?) }");
         
-        finder.setString(1, ID);
+        finder.setString(1, userID);
         finder.setString(2, password);
         
+        ResultSet rs;
         rs = finder.executeQuery();
         
+        /**
+         * There are some case may happen.
+         * if (role == null) thì người dùng không tồn tại hoặc sai mật khẩu.
+         * else if (firstTry == true) thì là lần đăng nhập đầu tiên.
+         * else không phải lần đầu thôi chứ vấn đúng.
+         */
+        
         while(rs.next()) {
-            switch (rs.getString("Result")) {
-                case "NotYet" -> {
-                    // firstLogIn
-                    return FIRST_LOG_IN;
-                }
-                case "1" -> {
-                    // True
-                    return TRUE_LOG_IN;
-                }
-                default -> {
-                    // WRONG PASSWORD OR USER_ID
-                    return FAIL_LOG_IN;
-                }
+            String role = rs.getString(1);
+            if (role == null) {
+                return loginAlert.WRONG_PASSWORD;
+            } else if (rs.getBoolean(2) == true) {
+                return loginAlert.FIRST_TIMES_LOGIN;
+            } else {
+                
+                // must apply info to view.GD_mainStream.currentUser;
+                
+                return loginAlert.CORRECT_PASSWORD;
             }
         }
-        return FAIL_LOG_IN;
+        return loginAlert.WRONG_PASSWORD;
     }
     
-    
     /**
-     * Create new Password for the account if this is its first time.
+     * Provide way to change Password of an account as if the account exists in the database,
      * 
-     * @param ID = user ID.
-     * @param newPassword = new Password.
+     * @param userID = ID of one who want to change password.
+     * @param oldPassword = old password to confirm.
+     * @param newPassword = new password.
      * 
-     * @return FAIL_LOG_IN if this not it first time.
+     * @return false if wrong old-password or account not exists.
      * 
      * @throws SQLException 
      */
-    public static int firstLogIn(String ID, String newPassword) throws SQLException {
-        ResultSet rs;
-        
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call firstLogIn(?, ?) }");
-        /**
-         * Procedure firstLogIn:
-         *      '1' mean it's done.
-         *      '0' mean this not your first time.
-         */
-        
-        finder.setString(1, ID);
-        finder.setString(2, newPassword);
-        
-        rs = finder.executeQuery();
-        
-        while(rs.next()) {
-            if (rs.getBoolean("Result") == true) {
-                return TRUE_LOG_IN;
-            } 
-            else return FAIL_LOG_IN;
-        }
-        return FAIL_LOG_IN;
-    }
-    
-    
-    /**
-     * Change Password for the account.
-     * 
-     * @param ID = user ID.
-     * @param oldPassword = previous Password.
-     * @param newPassword = new one.
-     * 
-     * @return FAIL_LOG_IN if the old password is WRONG.
-     * 
-     * @throws SQLException 
-     */
-    public static int changePassword(String ID, String oldPassword, String newPassword) throws SQLException {
-        ResultSet rs;
+    public static boolean changePassword(String userID, String oldPassword, String newPassword) throws SQLException {
         
         CallableStatement finder = (CallableStatement) connection.prepareCall("{ call changePassword(?, ?, ?) }");
-        /**
-         * Procedure firstLogIn:
-         *      '1' mean it's done.
-         *      '0' mean your oldPassword WRONG
-         */
         
-        finder.setString(1, ID);
+        finder.setString(1, userID);
         finder.setString(2, oldPassword);
         finder.setString(3, newPassword);
         
+        ResultSet rs;
         rs = finder.executeQuery();
         
         while(rs.next()) {
-            if (rs.getBoolean("Result") == true) {
-                return TRUE_LOG_IN;
-            }
-            return FAIL_LOG_IN;
+            if (rs.getInt(1) == 1) return true;
+            else return false;
         }
-        return FAIL_LOG_IN;
+        
+        return false;
+    }
+    
+    
+    /**
+     * simple test for method above.
+     * 
+     * @param args = sth. 
+     */
+    public static void main(String[] args) {
+        try {
+            DatabaseConnector.firstTODO();
+            System.out.println(changePassword ("U001", null, "2k5"));
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(DBLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
      
 }

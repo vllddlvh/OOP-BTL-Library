@@ -12,11 +12,13 @@ import java.sql.SQLException;
 public class DatabaseConnector {
     
     protected static Connection connection;
+    final static String url = "jdbc:mysql://127.0.0.1:3306/Library_2nd_Edition";
+    final static String username = "root";
+    final static String password = "";
+    
+    
     
     protected static Connection getJDBCConnection() throws SQLException {
-        final String url = "jdbc:mysql://127.0.0.1:3306/library_demo_contents";
-        final String username = "root";
-        final String password = "";
         
         try {
             // Class.forName("com.mysql.jdbc.Driver");
@@ -38,7 +40,9 @@ public class DatabaseConnector {
     public static void firstTODO() throws SQLException{
         connection = DatabaseConnector.getJDBCConnection();
         if (connection != null ) {
+            String[] lib = DatabaseConnector.url.split("/");
             System.out.print("\n\n\n\n\n\n\n\nConnecting Database Success\n");
+            System.out.println(lib[3] + "\n\n");
         } else {
             System.out.print("\n\n\n\n\n\n\n\nConnecting Database FAILED\n");
         }

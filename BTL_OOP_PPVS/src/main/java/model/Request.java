@@ -1,32 +1,19 @@
-package Model;
+package model;
 
-import Controller.DBBook;
-import java.sql.SQLException;
 
 
 public class Request {
     private String requestID;
     private String userID;
-    private Book book;
+    private String documentID;
     private int quantityBorrow;
     private String borrowDate;
     private String returnDate;
     
-    public Request() {}
-
-    public Request(String requestID, String userID, String bookID, int quantityBorrow, String borrowDate, String returnDate) throws SQLException {
+    public Request(String requestID, String userID, String documentID, int quantityBorrow, String borrowDate, String returnDate) { 
         this.requestID = requestID;
         this.userID = userID;
-        this.book = DBBook.findBook(bookID);
-        this.quantityBorrow = quantityBorrow;
-        this.borrowDate = borrowDate;
-        this.returnDate = returnDate;
-    }
-    
-    public Request(String requestID, String userID, Book book, int quantityBorrow, String borrowDate, String returnDate) { 
-        this.requestID = requestID;
-        this.userID = userID;
-        this.book = book;
+        this.documentID = documentID;
         this.quantityBorrow = quantityBorrow;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
@@ -50,17 +37,15 @@ public class Request {
         this.userID = userID;
     }
 
-    public Book getBook() {
-        return book;
+    public String getDocumentID() {
+        return documentID;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setDocumentID(String bookID) {
+        this.documentID = bookID;
     }
     
-    public void setBook(String bookID) throws SQLException {
-        this.book = DBBook.findBook(bookID);
-    }
+    
 
     public int getQuantityBorrow() {
         return quantityBorrow;
@@ -88,7 +73,7 @@ public class Request {
 
     @Override
     public String toString() {
-        String res = "Request " + requestID + "\nBook " + book + "quantityBorrow = " + quantityBorrow + "\nborrowDate = " + borrowDate;
+        String res = "Request " + requestID + "\nBook " + documentID + "quantityBorrow = " + quantityBorrow + "\nborrowDate = " + borrowDate;
         if (returnDate == null) {
             res = res + "\nNot Return yet";
         } else {
@@ -97,6 +82,4 @@ public class Request {
         
         return res;
     }
-    
-    
 }

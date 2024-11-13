@@ -1,7 +1,7 @@
 package view;
 
 import model.User;
-import controller.DatabaseConnector;
+import controller.old.DatabaseConnector;
 import java.sql.SQLException;
 
 /**

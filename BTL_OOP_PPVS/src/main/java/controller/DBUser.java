@@ -2,7 +2,8 @@ package controller;
 
 
 import model.User;
-import model.Student;
+import model.Staff;
+import model.Member;
 
 
 import java.sql.SQLException;
@@ -11,63 +12,134 @@ import java.sql.ResultSet;
 
 public class DBUser extends DatabaseConnector {
     
-    public static User getUserInfo(User in)throws SQLException {
-        if (in.getRight() == User.SET_STUDENT) {
-            ResultSet rs;
-            Student found;
+    /**
+     * take full information for a reading member.
+     * 
+     * @param ID = that member ID.
+     * 
+     * @return an model.Member object contain information.
+     * return null if there's no such userID
+     * 
+     * @throws SQLException 
+     */
+    public static Member getMemberInfo(String ID)throws SQLException {
         
-            CallableStatement finder = (CallableStatement) connection.prepareCall("{ call findStudent(?) }");
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call getMemberInfo(?) }");
         
-            finder.setString(1, in.getID());
+        finder.setString(1, ID);
         
-            rs = finder.executeQuery();
+        ResultSet rs;
+        rs = finder.executeQuery();
         
-            while (rs.next()) {
-                found = new Student(in.getID(), rs.getString("userName"), rs.getString("dateOfBirth"), rs.getString("contact"), rs.getString("classID"), rs.getInt("age"));
-                return found;
-            }
-        
-            return null;
+        while (rs.next()) {
+            return new Member(rs.getString(1),
+                    rs.getString(2),
+                     rs.getString(3),
+                      rs.getString(4),
+                   rs.getString(5));
         }
-        
         return null;
     }
     
-    public static void changeUserName(String userID, String newUserName) throws SQLException {
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call changeUserName(?, ?) }");
+    /**
+     * take full information for a library Staff.
+     * 
+     * @param ID = that staff ID.
+     * 
+     * @return an model.Staff object contain information.
+     * return null if there's no such userID
+     * 
+     * @throws SQLException 
+     */
+    public static Staff getStaffInfo(String ID)throws SQLException {
         
-        finder.setString(1, userID);
-        finder.setString(2, newUserName);
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call getStaffInfo(?) }");
         
-        finder.executeQuery();
+        finder.setString(1, ID);
+        
+        ResultSet rs;
+        rs = finder.executeQuery();
+        
+        while (rs.next()) {
+            return new Staff(rs.getString(1),
+                    rs.getString(2),
+                     rs.getString(3),
+                      rs.getString(4),
+                     rs.getString(5),
+                  rs.getString(6));
+        }
+        return null;
     }
     
-    public static void changeContact(String userID, String newContact) throws SQLException {
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call changeContact(?, ?) }");
+    /**
+     * Add a new Staff to database.
+     * 
+     * @param newStaff = that new comer.
+     * @param whoManageNewbie = one who introduce/manage/senior for the new.
+     * 
+     * @return false if duplicate userID.
+     * 
+     * @throws SQLException 
+     */
+    public static boolean addNewStaff(Staff newStaff, Staff whoManageNewbie) throws SQLException {
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call addStaff(?, ?, ?, ?, ?, ?) }");
         
-        finder.setString(1, userID);
-        finder.setString(2, newContact);
+        finder.setString(1, newStaff.getID());
+        finder.setString(2, newStaff.getFirstName());
+        finder.setString(3, newStaff.getLastName());
+        finder.setString(4, newStaff.getContact());
+        finder.setString(5, newStaff.getJobTitle());
+        finder.setString(6, whoManageNewbie.getID());
+                
+        ResultSet rs;
+        rs = finder.executeQuery();
         
-        finder.executeQuery();
+        while (rs.next()) {
+            return rs.getBoolean(1);
+        }
+        return false;
     }
     
-    public static void addNewStudent(Student newStudent) throws SQLException {
+    /**
+     * Add a new Member to database.
+     * 
+     * @param newMember = that new Member.
+     * 
+     * @return false if duplicate userID.
+     * 
+     * @throws SQLException 
+     */
+    public static boolean addNewMember(Member newMember) throws SQLException {
         CallableStatement finder = (CallableStatement) connection.prepareCall("{ call addStudent(?, ?, ?, ?, ?, ?) }");
         
-        finder.setString(1, newStudent.getID());
-        finder.setString(2, newStudent.getUserName());
-        finder.setString(3, newStudent.getDateOfBirth());
-        finder.setString(4, newStudent.getContact());
-        finder.setString(5, newStudent.getClassID());
-        finder.setInt(6, newStudent.getAge());
+        finder.setString(1, newMember.getID());
+        finder.setString(2, newMember.getFirstName());
+        finder.setString(3, newMember.getLastName());
+        finder.setString(4, newMember.getContact());
+        finder.setString(5, newMember.getDateOfBirth());
                 
-        finder.executeQuery();
+        ResultSet rs;
+        rs = finder.executeQuery();
+        
+        while (rs.next()) {
+            return rs.getBoolean(1);
+        }
+        return false;
     }
     
-    public static void deleteUser(String userID) throws SQLException {
-        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call deleteUser(?) }");
+    /**
+     * Delete an user from database.
+     * 
+     * @param whoBeDeleted = the user being deleted.
+     * @param whoDoThis = the Staff who do the deleting job.
+     * 
+     * @throws SQLException 
+     */
+    public static void deleteUser(User whoBeDeleted, Staff whoDoThis) throws SQLException {
+        CallableStatement finder = (CallableStatement) connection.prepareCall("{ call deleteUser(?, ?) }");
         
-        finder.setString(1, userID);
+        finder.setString(1, whoBeDeleted.getID());
+        finder.setString(2, whoDoThis.getID());
                 
         finder.executeQuery();
     }
