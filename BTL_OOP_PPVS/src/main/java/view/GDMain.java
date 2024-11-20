@@ -35,9 +35,9 @@ public class GDMain extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpnRoot.setBackground(new java.awt.Color(102, 102, 102));
+        jpnRoot.setBackground(new java.awt.Color(214, 239, 216));
 
-        jpnMenu.setBackground(new java.awt.Color(204, 51, 0));
+        jpnMenu.setBackground(new java.awt.Color(80, 141, 78));
 
         jlbThuVien.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jlbThuVien.setForeground(new java.awt.Color(255, 255, 255));
@@ -62,12 +62,13 @@ public class GDMain extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jpnMHC.setBackground(new java.awt.Color(0, 153, 0));
+        jpnMHC.setBackground(new java.awt.Color(80, 141, 78));
         jpnMHC.setAlignmentX(1.0F);
         jpnMHC.setAlignmentY(1.0F);
 
         jlbMHC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbMHC.setForeground(new java.awt.Color(255, 255, 255));
+        jlbMHC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoMHC.png"))); // NOI18N
         jlbMHC.setText("Màn hình chính");
         jlbMHC.setIconTextGap(6);
 
@@ -76,7 +77,7 @@ public class GDMain extends javax.swing.JFrame {
         jpnMHCLayout.setHorizontalGroup(
             jpnMHCLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnMHCLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(jlbMHC, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(24, 24, 24))
         );
@@ -85,16 +86,17 @@ public class GDMain extends javax.swing.JFrame {
             .addGroup(jpnMHCLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jlbMHC)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jpnBanDoc.setBackground(new java.awt.Color(0, 153, 0));
+        jpnBanDoc.setBackground(new java.awt.Color(80, 141, 78));
         jpnBanDoc.setAlignmentX(1.0F);
         jpnBanDoc.setAlignmentY(1.0F);
 
         jlbBanDoc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbBanDoc.setForeground(new java.awt.Color(255, 255, 255));
         jlbBanDoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlbBanDoc.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoPeople.png"))); // NOI18N
         jlbBanDoc.setText("Bạn đọc");
         jlbBanDoc.setIconTextGap(5);
 
@@ -103,7 +105,7 @@ public class GDMain extends javax.swing.JFrame {
         jpnBanDocLayout.setHorizontalGroup(
             jpnBanDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnBanDocLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
+                .addGap(13, 13, 13)
                 .addComponent(jlbBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -112,16 +114,17 @@ public class GDMain extends javax.swing.JFrame {
             .addGroup(jpnBanDocLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(jlbBanDoc)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jpnSach.setBackground(new java.awt.Color(0, 153, 0));
+        jpnSach.setBackground(new java.awt.Color(80, 141, 78));
         jpnSach.setAlignmentX(1.0F);
         jpnSach.setAlignmentY(1.0F);
 
         jlbSach.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbSach.setForeground(new java.awt.Color(255, 255, 255));
         jlbSach.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlbSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoBook2.png"))); // NOI18N
         jlbSach.setText("Sách");
         jlbSach.setIconTextGap(6);
 
@@ -130,14 +133,14 @@ public class GDMain extends javax.swing.JFrame {
         jpnSachLayout.setHorizontalGroup(
             jpnSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnSachLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(15, 15, 15)
                 .addComponent(jlbSach, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(86, Short.MAX_VALUE))
         );
         jpnSachLayout.setVerticalGroup(
             jpnSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnSachLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jlbSach)
                 .addGap(15, 15, 15))
         );
@@ -146,26 +149,26 @@ public class GDMain extends javax.swing.JFrame {
         jpnRoot.setLayout(jpnRootLayout);
         jpnRootLayout.setHorizontalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnMenu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jpnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jpnRootLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+                .addGap(15, 15, 15)
                 .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jpnSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpnBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpnMHC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jpnRootLayout.setVerticalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnRootLayout.createSequentialGroup()
                 .addComponent(jpnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(15, 15, 15)
                 .addComponent(jpnMHC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(jpnBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(20, 20, 20)
                 .addComponent(jpnSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(407, Short.MAX_VALUE))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -174,7 +177,7 @@ public class GDMain extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpnRoot, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 836, Short.MAX_VALUE))
+                .addGap(0, 617, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

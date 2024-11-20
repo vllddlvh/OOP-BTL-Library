@@ -25,7 +25,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jpnRoot" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="836" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="617" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -39,22 +39,22 @@
     <Container class="javax.swing.JPanel" name="jpnRoot">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="66" green="66" red="66" type="rgb"/>
+          <Color blue="d8" green="ef" red="d6" type="rgb"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="jpnMenu" alignment="0" max="32767" attributes="0"/>
+              <Component id="jpnMenu" alignment="0" pref="0" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jpnSach" min="-2" max="-2" attributes="0"/>
                       <Component id="jpnBanDoc" min="-2" max="-2" attributes="0"/>
                       <Component id="jpnMHC" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="15" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -62,13 +62,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jpnMenu" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="jpnMHC" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jpnBanDoc" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jpnSach" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="407" max="32767" attributes="0"/>
+                  <EmptySpace pref="110" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -77,7 +77,7 @@
         <Container class="javax.swing.JPanel" name="jpnMenu">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="33" red="cc" type="rgb"/>
+              <Color blue="4e" green="8d" red="50" type="rgb"/>
             </Property>
           </Properties>
 
@@ -122,7 +122,7 @@
         <Container class="javax.swing.JPanel" name="jpnMHC">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="99" red="0" type="rgb"/>
+              <Color blue="4e" green="8d" red="50" type="rgb"/>
             </Property>
             <Property name="alignmentX" type="float" value="1.0"/>
             <Property name="alignmentY" type="float" value="1.0"/>
@@ -132,7 +132,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <EmptySpace pref="18" max="32767" attributes="0"/>
                       <Component id="jlbMHC" min="-2" pref="178" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                   </Group>
@@ -143,7 +143,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jlbMHC" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -157,6 +157,9 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/LogoMHC.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="M&#xe0;n h&#xec;nh ch&#xed;nh"/>
                 <Property name="iconTextGap" type="int" value="6"/>
               </Properties>
@@ -166,7 +169,7 @@
         <Container class="javax.swing.JPanel" name="jpnBanDoc">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="99" red="0" type="rgb"/>
+              <Color blue="4e" green="8d" red="50" type="rgb"/>
             </Property>
             <Property name="alignmentX" type="float" value="1.0"/>
             <Property name="alignmentY" type="float" value="1.0"/>
@@ -176,7 +179,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                       <Component id="jlbBanDoc" min="-2" pref="145" max="-2" attributes="0"/>
                       <EmptySpace pref="64" max="32767" attributes="0"/>
                   </Group>
@@ -187,7 +190,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jlbBanDoc" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -202,6 +205,9 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/LogoPeople.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="B&#x1ea1;n &#x111;&#x1ecd;c"/>
                 <Property name="iconTextGap" type="int" value="5"/>
               </Properties>
@@ -211,7 +217,7 @@
         <Container class="javax.swing.JPanel" name="jpnSach">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="99" red="0" type="rgb"/>
+              <Color blue="4e" green="8d" red="50" type="rgb"/>
             </Property>
             <Property name="alignmentX" type="float" value="1.0"/>
             <Property name="alignmentY" type="float" value="1.0"/>
@@ -221,7 +227,7 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Component id="jlbSach" min="-2" pref="122" max="-2" attributes="0"/>
                       <EmptySpace pref="86" max="32767" attributes="0"/>
                   </Group>
@@ -230,7 +236,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="15" max="32767" attributes="0"/>
                       <Component id="jlbSach" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
@@ -247,6 +253,9 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/LogoBook2.png"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="S&#xe1;ch"/>
                 <Property name="iconTextGap" type="int" value="6"/>
               </Properties>
