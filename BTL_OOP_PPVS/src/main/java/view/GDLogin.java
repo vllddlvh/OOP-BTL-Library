@@ -39,6 +39,7 @@ public class GDLogin extends GD_mainStream {
         Label_DangNhap.setFont(new java.awt.Font("Calibri", 1, 20)); // NOI18N
         Label_DangNhap.setText("ĐĂNG NHẬP");
 
+        imageLogoUET.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoUET Login.svg.png"))); // NOI18N
         imageLogoUET.setText("jLabel5");
 
         Button_DangNhap.setText("Đăng nhập");
@@ -112,7 +113,7 @@ public class GDLogin extends GD_mainStream {
                     .addComponent(Field_MatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Button_DangNhap)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
