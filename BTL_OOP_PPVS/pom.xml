@@ -12,6 +12,18 @@
         <exec.mainClass>com.mycompany.btl_oop_ppvs.BTL_OOP_PPVS</exec.mainClass>
     </properties>
     
+    <build>
+    <resources>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/image/**</include>
+            </includes>
+        </resource>
+    </resources>
+    </build>
+
+    
     <!-- Dependencies section -->
     <dependencies>
         <dependency>

@@ -42,7 +42,7 @@ public class GDMain extends javax.swing.JFrame {
         jlbThuVien.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jlbThuVien.setForeground(new java.awt.Color(255, 255, 255));
         jlbThuVien.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbThuVien.setIcon(new javax.swing.ImageIcon("C:\\GithubBTL\\OOP-BTL-Library\\OOP-BTL-Library\\BTL_OOP_PPVS\\image\\LogoBook.png")); // NOI18N
+        jlbThuVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoBook.png"))); // NOI18N
         jlbThuVien.setText("THƯ VIỆN");
 
         javax.swing.GroupLayout jpnMenuLayout = new javax.swing.GroupLayout(jpnMenu);
@@ -68,7 +68,6 @@ public class GDMain extends javax.swing.JFrame {
 
         jlbMHC.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbMHC.setForeground(new java.awt.Color(255, 255, 255));
-        jlbMHC.setIcon(new javax.swing.ImageIcon("C:\\GithubBTL\\OOP-BTL-Library\\OOP-BTL-Library\\BTL_OOP_PPVS\\image\\LogoMHC.png")); // NOI18N
         jlbMHC.setText("Màn hình chính");
         jlbMHC.setIconTextGap(6);
 
@@ -96,7 +95,6 @@ public class GDMain extends javax.swing.JFrame {
         jlbBanDoc.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbBanDoc.setForeground(new java.awt.Color(255, 255, 255));
         jlbBanDoc.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbBanDoc.setIcon(new javax.swing.ImageIcon("C:\\GithubBTL\\OOP-BTL-Library\\OOP-BTL-Library\\BTL_OOP_PPVS\\image\\LogoPeople.png")); // NOI18N
         jlbBanDoc.setText("Bạn đọc");
         jlbBanDoc.setIconTextGap(5);
 
@@ -124,7 +122,6 @@ public class GDMain extends javax.swing.JFrame {
         jlbSach.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbSach.setForeground(new java.awt.Color(255, 255, 255));
         jlbSach.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbSach.setIcon(new javax.swing.ImageIcon("C:\\GithubBTL\\OOP-BTL-Library\\OOP-BTL-Library\\BTL_OOP_PPVS\\image\\LogoBook.png")); // NOI18N
         jlbSach.setText("Sách");
         jlbSach.setIconTextGap(6);
 
