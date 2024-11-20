@@ -1,6 +1,6 @@
 package view;
 
-import model.Book;
+//import model.Book;
 
 /**
  *
@@ -208,7 +208,7 @@ public class GDThemXoaSach extends GD_mainStream {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO: When click "Thêm" sách
-        Book.addNewBook(new Book(txtid.getText(), txttitle.getText(), txtauthor.getText(), "Unknown", txtyearpublished.getText() + "-01-01", "UET", Integer.parseInt(txtavailablecopies.getText())));
+//        Book.addNewBook(new Book(txtid.getText(), txttitle.getText(), txtauthor.getText(), "Unknown", txtyearpublished.getText() + "-01-01", "UET", Integer.parseInt(txtavailablecopies.getText())));
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -239,11 +239,11 @@ public class GDThemXoaSach extends GD_mainStream {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GDThemXoaSach().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new GDThemXoaSach().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

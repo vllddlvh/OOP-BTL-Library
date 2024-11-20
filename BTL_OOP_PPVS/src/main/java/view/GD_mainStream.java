@@ -1,8 +1,8 @@
 package view;
 
-import model.User;
-import controller.old.DatabaseConnector;
-import java.sql.SQLException;
+//import model.User;
+//import controller.old.DatabaseConnector;
+//import java.sql.SQLException;
 
 /**
  * @author Little
@@ -12,14 +12,14 @@ import java.sql.SQLException;
  */
 public abstract class GD_mainStream extends javax.swing.JFrame {
     
-    protected static User currentUser = new User();
+//    protected static User currentUser = new User();
     
     public GD_mainStream() {
-        try {
-            DatabaseConnector.firstTODO();
-        } catch (SQLException sqlex) {
-            sqlex.printStackTrace();
-        }
+//        try {
+//            DatabaseConnector.firstTODO();
+//        } catch (SQLException sqlex) {
+//            sqlex.printStackTrace();
+//        }
     }
     
 //    public void openFrame() {

@@ -1,7 +1,7 @@
 package view;
 
-import model.User;
-import static model.User.logIn.Incorrect;
+//import model.User;
+//import static model.User.logIn.Incorrect;
 
 /**
  *
@@ -125,31 +125,31 @@ public class GDLogin extends GD_mainStream {
 
     private void Button_DangNhapActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_DangNhapActionPerformed
         // TODO: when click the Log_in_Button
-        switch (currentUser.logIn(Field_TaiKhoan.getText(), String.valueOf(Field_MatKhau.getPassword()))) {
-            
-            case Correct: // Forward to Menu
-            {
-                // Khởi tạo cửa sổ Menu
-                GDMenu menu = new GDMenu();
-    
-                // Hiển thị cửa sổ Menu
-                menu.setVisible(true);
-
-                // Ẩn cửa sổ hiện tại (tùy chọn)
-                this.setVisible(false);
-                
-                currentUser.setID(Field_TaiKhoan.getText());
-                break;
-            }
-            
-            case First_Login:
-                
-            case Incorrect: // point to somewhere to create a new password.
-            
-            default: 
-                Field_TaiKhoan.setText("Sai tai khoan hoac mat khau");
-            
-        }
+//        switch (currentUser.logIn(Field_TaiKhoan.getText(), String.valueOf(Field_MatKhau.getPassword()))) {
+//            
+//            case Correct: // Forward to Menu
+//            {
+//                // Khởi tạo cửa sổ Menu
+//                GDMenu menu = new GDMenu();
+//    
+//                // Hiển thị cửa sổ Menu
+//                menu.setVisible(true);
+//
+//                // Ẩn cửa sổ hiện tại (tùy chọn)
+//                this.setVisible(false);
+//                
+//                currentUser.setID(Field_TaiKhoan.getText());
+//                break;
+//            }
+//            
+//            case First_Login:
+//                
+//            case Incorrect: // point to somewhere to create a new password.
+//            
+//            default: 
+//                Field_TaiKhoan.setText("Sai tai khoan hoac mat khau");
+//            
+//        }
     }//GEN-LAST:event_Button_DangNhapActionPerformed
 
     private void Field_MatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Field_MatKhauActionPerformed

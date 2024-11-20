@@ -1,6 +1,6 @@
 package view;
 
-import model.Student;
+//import model.Student;
 
 /**
  *
@@ -216,7 +216,7 @@ public class GDThemBanDoc extends GD_mainStream {
 
     private void jButtonThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonThemActionPerformed
         // TODO: when click the "Thêm" button
-        Student.addNewStudent(txtid.getText(), txtname.getText(), "2005-1-1", txtphonenumber.getText());
+//        Student.addNewStudent(txtid.getText(), txtname.getText(), "2005-1-1", txtphonenumber.getText());
     }//GEN-LAST:event_jButtonThemActionPerformed
 
     /**
@@ -247,11 +247,11 @@ public class GDThemBanDoc extends GD_mainStream {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GDThemBanDoc().setVisible(true);
-            }
-        });
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new GDThemBanDoc().setVisible(true);
+//            }
+//        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
