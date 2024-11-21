@@ -8,12 +8,12 @@ package view;
  *
  * @author ADMIN
  */
-public class SachJPanel extends javax.swing.JPanel {
+public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form SachJPanel
+     * Creates new form ThongTinThanhVienJPanel
      */
-    public SachJPanel() {
+    public ThongTinThanhVienJPanel() {
         initComponents();
     }
 
@@ -30,11 +30,11 @@ public class SachJPanel extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 811, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 484, Short.MAX_VALUE)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
