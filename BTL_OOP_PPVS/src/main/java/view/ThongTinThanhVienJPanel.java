@@ -39,7 +39,7 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
 
         jpnViewThongTinThanhVien.setBackground(new java.awt.Color(128, 175, 129));
 
-        JButtonThemThanhVien.setBackground(new java.awt.Color(26, 83, 25));
+        JButtonThemThanhVien.setBackground(new java.awt.Color(80, 141, 78));
         JButtonThemThanhVien.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         JButtonThemThanhVien.setForeground(new java.awt.Color(255, 255, 255));
         JButtonThemThanhVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoAddMember (1).png"))); // NOI18N
@@ -79,8 +79,8 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addComponent(JTextFieldTimKiemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(22, 22, 22))
+                .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addComponent(jpnTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpnViewThongTinThanhVienLayout.setVerticalGroup(

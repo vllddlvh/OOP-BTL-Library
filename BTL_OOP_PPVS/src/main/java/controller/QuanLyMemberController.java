@@ -90,13 +90,6 @@ public class QuanLyMemberController {
             }
         }); 
         
-        table.getColumnModel().getColumn(0).setMaxWidth(0);
-        table.getColumnModel().getColumn(0).setMinWidth(0);
-        table.getColumnModel().getColumn(0).setPreferredWidth(0);
-        
-        table.getColumnModel().getColumn(1).setMaxWidth(80);
-        table.getColumnModel().getColumn(1).setMinWidth(80);
-        table.getColumnModel().getColumn(1).setPreferredWidth(80);
         
         table.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
         table.getTableHeader().setPreferredSize(new Dimension(100,50));
