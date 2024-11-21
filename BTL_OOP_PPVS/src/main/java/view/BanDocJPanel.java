@@ -5,7 +5,7 @@
 package view;
 
 import bean.DanhMucBean;
-import controller.ChuyenManHinh;
+import controller.ChuyenManHinhController;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +20,7 @@ public class BanDocJPanel extends javax.swing.JPanel {
      */
     public BanDocJPanel() {
         initComponents();
-        ChuyenManHinh controller = new ChuyenManHinh(jpnViewBanDoc);
+        ChuyenManHinhController controller = new ChuyenManHinhController(jpnViewBanDoc);
         List<DanhMucBean> listItem = new ArrayList<>();
         listItem.add(new DanhMucBean("MuonTraTaiLieu",jpnMuonTraTaiLieu,jlbMuonTraTaiLieu));
         listItem.add(new DanhMucBean("ThongTinThanhVien",jpnThongTinThanhVien,jlbThongTinThanhVien));

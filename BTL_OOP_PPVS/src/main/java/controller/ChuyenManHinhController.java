@@ -14,12 +14,12 @@ import view.MuonTraTaiLieuJPanel;
 import view.SachJPanel;
 import view.ThongTinThanhVienJPanel;
 
-public class ChuyenManHinh {
+public class ChuyenManHinhController {
     private JPanel root;
     private String kindSelected = "";
     private List<DanhMucBean> listItem = null;
     
-    public ChuyenManHinh(JPanel jpnRoot) {
+    public ChuyenManHinhController(JPanel jpnRoot) {
         this.root= jpnRoot;
     }
     

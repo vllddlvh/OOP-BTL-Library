@@ -14,7 +14,7 @@ public class DatabaseConnector {
     protected static Connection connection;
     final static String url = "jdbc:mysql://127.0.0.1:3306/Library_2nd_Edition";
     final static String username = "root";
-    final static String password = "";
+    final static String password = "Daolelongvu2005@";
     
     
     
@@ -60,11 +60,11 @@ public class DatabaseConnector {
     
     
     /** Test if the connection can be make */
-    public static void main(String[] args) {
-        try {
-            firstTODO();
-        } catch (SQLException sqlex) {
-            sqlex.printStackTrace();
-        }
-    }
+//    public static void main(String[] args) {
+//        try {
+//            firstTODO();
+//        } catch (SQLException sqlex) {
+//            sqlex.printStackTrace();
+//        }
+//    }
 }

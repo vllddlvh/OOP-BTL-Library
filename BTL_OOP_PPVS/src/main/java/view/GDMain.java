@@ -5,7 +5,7 @@
 package view;
 
 import bean.DanhMucBean;
-import controller.ChuyenManHinh;
+import controller.ChuyenManHinhController;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public class GDMain extends javax.swing.JFrame {
         
         setTitle("THƯ VIỆN");
         
-        ChuyenManHinh controller = new ChuyenManHinh(jpnView);
+        ChuyenManHinhController controller = new ChuyenManHinhController(jpnView);
         controller.setView(jpnMHC, jlbMHC);
         List<DanhMucBean> listItem = new ArrayList<>();
         listItem.add(new DanhMucBean("TrangChu",jpnMHC,jlbMHC));

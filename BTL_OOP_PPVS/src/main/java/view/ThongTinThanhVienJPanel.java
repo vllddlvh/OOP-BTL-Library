@@ -4,6 +4,9 @@
  */
 package view;
 
+import controller.QuanLyMemberController;
+import java.awt.Color;
+
 /**
  *
  * @author ADMIN
@@ -15,6 +18,9 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
      */
     public ThongTinThanhVienJPanel() {
         initComponents();
+        
+        QuanLyMemberController controller = new QuanLyMemberController(jpnTable, JButtonThemThanhVien, JTextFieldTimKiemThanhVien);
+        controller.setDateToTable();
     }
 
     /**
@@ -26,19 +32,95 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jpnViewThongTinThanhVien = new javax.swing.JPanel();
+        JButtonThemThanhVien = new javax.swing.JButton();
+        JTextFieldTimKiemThanhVien = new javax.swing.JTextField();
+        jpnTable = new javax.swing.JPanel();
+
+        jpnViewThongTinThanhVien.setBackground(new java.awt.Color(128, 175, 129));
+
+        JButtonThemThanhVien.setBackground(new java.awt.Color(26, 83, 25));
+        JButtonThemThanhVien.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        JButtonThemThanhVien.setForeground(new java.awt.Color(255, 255, 255));
+        JButtonThemThanhVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoAddMember (1).png"))); // NOI18N
+        JButtonThemThanhVien.setText("Thêm thành viên");
+        JButtonThemThanhVien.setPreferredSize(new java.awt.Dimension(184, 47));
+        JButtonThemThanhVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JButtonThemThanhVienActionPerformed(evt);
+            }
+        });
+
+        JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JTextFieldTimKiemThanhVien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextFieldTimKiemThanhVienActionPerformed(evt);
+            }
+        });
+
+        jpnTable.setBackground(new java.awt.Color(128, 175, 129));
+
+        javax.swing.GroupLayout jpnTableLayout = new javax.swing.GroupLayout(jpnTable);
+        jpnTable.setLayout(jpnTableLayout);
+        jpnTableLayout.setHorizontalGroup(
+            jpnTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jpnTableLayout.setVerticalGroup(
+            jpnTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 412, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jpnViewThongTinThanhVienLayout = new javax.swing.GroupLayout(jpnViewThongTinThanhVien);
+        jpnViewThongTinThanhVien.setLayout(jpnViewThongTinThanhVienLayout);
+        jpnViewThongTinThanhVienLayout.setHorizontalGroup(
+            jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnViewThongTinThanhVienLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(JTextFieldTimKiemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22))
+            .addComponent(jpnTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jpnViewThongTinThanhVienLayout.setVerticalGroup(
+            jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnViewThongTinThanhVienLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTextFieldTimKiemThanhVien))
+                .addGap(15, 15, 15)
+                .addComponent(jpnTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jpnViewThongTinThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jpnViewThongTinThanhVien, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JButtonThemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonThemThanhVienActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JButtonThemThanhVienActionPerformed
+
+    private void JTextFieldTimKiemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienActionPerformed
+        // TODO add your handling code here:                                                                                                                  
+    }//GEN-LAST:event_JTextFieldTimKiemThanhVienActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JButtonThemThanhVien;
+    private javax.swing.JTextField JTextFieldTimKiemThanhVien;
+    private javax.swing.JPanel jpnTable;
+    private javax.swing.JPanel jpnViewThongTinThanhVien;
     // End of variables declaration//GEN-END:variables
 }

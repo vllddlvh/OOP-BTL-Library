@@ -8,6 +8,7 @@ public class Member extends User {
     protected String contact = "example@member.ppvs";
     protected String dateOfBirth = "2005-01-01";
 
+    public Member() {};
     public Member(String ID, String firstName, String lastName) {
         this.ID = ID;
         this.firstName = firstName;
@@ -31,6 +32,30 @@ public class Member extends User {
         this.dateOfBirth = dateOfBirth;
         
     }
+
+    public void setID(String ID) {
+        this.ID = ID;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
     
     public String getContact() {
         return contact;
@@ -48,5 +73,14 @@ public class Member extends User {
         this.dateOfBirth = dateOfBirth;
     }
     
-    
+    @Override
+    public String toString() {
+        return "Member{" +
+                "ID='" + ID + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", contact='" + contact + '\'' +
+                ", dateOfBirth=" + dateOfBirth +
+                '}';
+    }
 }
