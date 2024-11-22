@@ -14,4 +14,6 @@ import model.Member;
 public interface MemberDAO {
     
     public List<Member> getList();
+    
+    public boolean addMember(Member s);
 }

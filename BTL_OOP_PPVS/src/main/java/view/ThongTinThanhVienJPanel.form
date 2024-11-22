@@ -79,9 +79,6 @@
               <Image iconType="3" name="/image/LogoAddMember (1).png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Th&#xea;m th&#xe0;nh vi&#xea;n"/>
-            <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[184, 47]"/>
-            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JButtonThemThanhVienActionPerformed"/>

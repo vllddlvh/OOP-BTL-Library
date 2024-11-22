@@ -110,6 +110,8 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
 
     private void JButtonThemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonThemThanhVienActionPerformed
         // TODO add your handling code here:
+        ThemThanhVienJFrame themThanhVienJFrame = new ThemThanhVienJFrame();
+        themThanhVienJFrame.setVisible(true);
     }//GEN-LAST:event_JButtonThemThanhVienActionPerformed
 
     private void JTextFieldTimKiemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienActionPerformed

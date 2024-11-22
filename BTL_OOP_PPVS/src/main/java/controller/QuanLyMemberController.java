@@ -92,6 +92,7 @@ public class QuanLyMemberController {
         
         
         table.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
+        table.getTableHeader().setForeground(Color.white);
         table.getTableHeader().setPreferredSize(new Dimension(100,50));
         table.getTableHeader().setBackground(new Color(80,141,78));
         table.setRowHeight(40);

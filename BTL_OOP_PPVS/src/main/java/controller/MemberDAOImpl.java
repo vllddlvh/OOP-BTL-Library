@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import model.Member;
 
 
@@ -37,6 +39,28 @@ public class MemberDAOImpl implements MemberDAO {
         ex.printStackTrace();
     }
         return null;
+    }
+    
+    @Override 
+    public boolean addMember(Member s) {
+        Connection cons;
+        String sql = "INSERT INTO member(ID, firstName, lastName, contact, DateOfBirth) VALUES( ?, ?, ?, ?, ?)";
+        try {
+            cons = (Connection) DatabaseConnector.getJDBCConnection();
+            PreparedStatement ps = cons.prepareStatement(sql);
+            ps.setString(1, s.getID());
+            ps.setString(2, s.getFirstName());
+            ps.setString(3, s.getLastName());
+            ps.setString(4, s.getContact());
+            ps.setString(5, s.getDateOfBirth());
+            
+            
+            return ps.executeUpdate() > 0;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+       
+        return false;
     }
     
     public static void main(String[] args) {
