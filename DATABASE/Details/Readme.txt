@@ -19,19 +19,19 @@
 ##About add-delete User
 + addMember (
 	newMemberID  	VARCHAR(10),
-    	firstName  	VARCHAR(10),
-    	lastName  	VARCHAR(20),
+    	firstName  	VARCHAR(50),
+    	lastName  	VARCHAR(50),
     	contact  	VARCHAR(50),
     	dateOfBirth  	DATE)
  -> return <Result = false> if duplicate userID 
 
 + addStaff (
 	newStaffID  	VARCHAR(10),
-	firstName  	VARCHAR(10),
-    	lastName  	VARCHAR(20),
+	firstName  	VARCHAR(50),
+    	lastName  	VARCHAR(50),
     	contact  	VARCHAR(50),
     	jobTitle  	VARCHAR(20),
-    	introducerID  	VARCHAR(10))
+    	reportToID  	VARCHAR(10))
  -> return <Result = false> if duplicate userID 
 
 + deleteUser (
@@ -45,7 +45,8 @@
     	title  		VARCHAR(50),
     	author  	VARCHAR(50),
 	storedQuantity  INT(5),
-    	category  	ENUM('Fiction', 'Non-fiction'),
+    	category  	INT,
+	descrip[tion	TEXT,
     	publisher  	VARCHAR(50),
     	releaseYear  	YEAR
  -> return <Result = false> if duplicate ISBN 
@@ -58,6 +59,7 @@
     	fieldOfStudy 	VARCHAR(50),
     	Desciption 	VARCHAR(100),
 	storedQuantity 	INT(5)
+	category	INT
  -> return <Result = false> if duplicate ThesisID
 
 + loadMoreDocumentCopies (
@@ -93,7 +95,8 @@
 	   4. author
 	   5. publisher
 	   6. releaseYear
-	   7. category
+	   7. description
+	   8. category
 
 + searchThesis ( title '', fieldOfStudy '', writerID <null>, advisor '' )
 	-> 1. ID
@@ -103,10 +106,11 @@
 	   5. advisor
 	   6. fieldOfStudy
 	   7. Description
+	   8. category
 
 + searchDocument ( documentID )
-	-> 1-7 usual
-	   8. genre
+	-> 1-8 usual
+	   9. genre (Book / Thesis)
 
 ##About Login and Password
 + login ( ID, password)

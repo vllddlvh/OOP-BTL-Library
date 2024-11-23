@@ -3,17 +3,17 @@ DROP PROCEDURE IF EXISTS addMember;
 DELIMITER //
 CREATE PROCEDURE addMember (IN 
 	newID VARCHAR(10),
-    1stName VARCHAR(10),
-    nastName VARCHAR(20),
-    contact VARCHAR(50),
-    BirthDate DATE
+    newFirstName VARCHAR(50),
+    newLastName VARCHAR(50),
+    newContact VARCHAR(50),
+    newBirthDate DATE
 )
 BEGIN
 	IF (SELECT COUNT(*) From User WHERE ID = newID) = 0
     
 	THEN 
 		INSERT INTO Member (ID, firstName, lastName, contact, dateOfBirth) 
-			VALUES (newID, 1stName, nastName, contact, BirthDate);
+			VALUES (newID, newFirstName, newLastName, newContact, newBirthDate);
 		SELECT true as Result;
         
 	ELSE 
@@ -27,18 +27,19 @@ DROP PROCEDURE IF EXISTS addStaff;
 DELIMITER //
 CREATE PROCEDURE addStaff (IN 
 	newID VARCHAR(10),
-    1stName VARCHAR(10),
-    nastName VARCHAR(20),
-    contax VARCHAR(50),
-    job VARCHAR(20),
-    introducer VARCHAR(10)
+    newFirstName VARCHAR(50),
+    newLastName VARCHAR(50),
+    newContact VARCHAR(50),
+    newJobTitle VARCHAR(20),
+    newReportToID VARCHAR(10)
 )
 BEGIN
-	IF (SELECT COUNT(*) From User WHERE ID = newID) = 0 AND (SELECT COUNT(*) FROM Staff WHERE ID = introducer) = 1
+	IF (SELECT COUNT(*) From User WHERE ID = newID) = 0 
+    AND (newReportToID is null OR (SELECT COUNT(*) FROM Staff WHERE ID = newReportToID) = 1)
     
 	THEN 
-		INSERT INTO Staff (ID, firstName, lastName, contact, jobTitle, IntroducerID) 
-			VALUES (newID, 1stName, nastName, contax, job, introducer);
+		INSERT INTO Staff (ID, firstName, lastName, contact, jobTitle, reportToID) 
+			VALUES (newID, newFirstName, newLastName, newContact, newJobTitle, newReportToID);
 		SELECT true as Result;
         
 	ELSE 
@@ -50,7 +51,7 @@ END;
 
 DROP PROCEDURE IF EXISTS deleteUser;
 DELIMITER //
-CREATE PROCEDURE deleteUser (IN delID NVARCHAR(10), whoDelete NVARCHAR(10))
+CREATE PROCEDURE deleteUser (IN delID VARCHAR(10), whoDelete VARCHAR(10))
 BEGIN
 	IF (SELECT COUNT(*) FROM Staff WHERE ID = whoDelete)
 	THEN DELETE FROM User WHERE ID = delID;

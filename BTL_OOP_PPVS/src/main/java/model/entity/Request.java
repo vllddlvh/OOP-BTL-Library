@@ -1,4 +1,4 @@
-package model;
+package model.entity;
 
 
 
@@ -9,6 +9,7 @@ public class Request {
     private int quantityBorrow;
     private String borrowDate;
     private String returnDate;
+    
     
     public Request(String requestID, String userID, String documentID, int quantityBorrow, String borrowDate, String returnDate) { 
         this.requestID = requestID;

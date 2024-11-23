@@ -27,7 +27,7 @@ DROP PROCEDURE IF EXISTS changePassword;
 DELIMITER //
 CREATE PROCEDURE changePassword (IN userID VARCHAR(10), oldPassword VARCHAR(30), newPassword VARCHAR(30))
 BEGIN
-	IF (newPassword <> userID)
+	IF (newPassword <> userID AND oldPassword <> newPassword)
     THEN
 		UPDATE login
 		SET password = newPassword

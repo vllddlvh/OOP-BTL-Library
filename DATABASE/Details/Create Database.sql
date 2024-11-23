@@ -20,8 +20,8 @@ CREATE TABLE Login (
 
 CREATE TABLE Member (
 	ID VARCHAR(10),
-    firstName VARCHAR(10) NOT NULL,
-    lastName VARCHAR(20) NOT NULL,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
     contact VARCHAR(50) NOT NULL,
     dateOfBirth DATE NOT NULL,
     
@@ -35,19 +35,22 @@ CREATE TABLE Staff (
     lastName VARCHAR(20) NOT NULL,
     contact VARCHAR(50) NOT NULL,
     jobTitle VARCHAR(20),
-    IntroducerID VARCHAR(10),
+    reportToID VARCHAR(10),
     
     primary key (ID),
     foreign key (ID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE,
-    foreign key (IntroducerID) references Staff(ID) ON UPDATE CASCADE ON DELETE SET NULL
+    foreign key (reportToID) references Staff(ID) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
 CREATE TABLE Documents (
 	ID VARCHAR(15),
     Title VARCHAR(50) not null,
     genre ENUM('Thesis', 'Book') not null,
-    totalQuantity INT(5) not null,
-    quantityLeft INT(5) not null,
+    totalQuantity INT unsigned not null,
+    quantityLeft INT unsigned not null,
+	Description TEXT,
+	category INT unsigned,
+    
     primary key (ID)
 );
 
@@ -56,7 +59,6 @@ CREATE TABLE Books (
     author VARCHAR(50) NOT NULL,
     publisher VARCHAR(50),
     releaseYear YEAR,
-    category ENUM('Fiction', 'Non-fiction'),
     
     primary key (ISBN),
     foreign key (ISBN) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
@@ -67,28 +69,27 @@ CREATE TABLE Thesis (
 	writerID VARCHAR(10),
     advisor VARCHAR(50),
     fieldOfStudy VARCHAR(50),
-    Description VARCHAR(100),
     
     primary key (ID),
     foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE,
     foreign key (writerID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
--- CREATE TABLE storedDocument (
--- 	ID VARCHAR(15),
---     Cover BLOB,
---     PDF MEDIUMBLOB,
---     
---     primary key (ID),
---     foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
--- );
+CREATE TABLE storedDocument (
+	ID VARCHAR(15),
+	Cover BLOB,
+	PDF MEDIUMBLOB,
+     
+	primary key (ID),
+	foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
 
 CREATE TABLE Request (
-	requestID VARCHAR(15),
+	requestID VARCHAR(20),
     userID VARCHAR(10),
     documentID VARCHAR(15),
-    quantityBorrow INT(5),
+    quantityBorrow INT unsigned,
     borrowDate DATE not null,
     returnDate DATE,
     

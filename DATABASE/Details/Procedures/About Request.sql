@@ -1,16 +1,16 @@
 
 DROP PROCEDURE IF EXISTS borrowDocument;
 DELIMITER //
-CREATE PROCEDURE borrowDocument (IN s_ID VARCHAR(10), b_ID VARCHAR(10), borrowQuantity INT)
+CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(10), borrowQuantity INT)
 BEGIN
 	DECLARE quantityAvailable INT;
 	SELECT quantityLeft INTO quantityAvailable
-    FROM Documents WHERE ID = b_ID;
+    FROM Documents WHERE ID = docuID;
     
 	IF (borrowQuantity <= quantityAvailable)
     THEN 
 		INSERT INTO Request (userID, documentID, quantityBorrow, borrowDate)
-		VALUES (s_ID, b_ID, borrowQuantity, CURRENT_DATE());
+		VALUES (uID, docuID, borrowQuantity, CURRENT_DATE());
         SELECT true AS Result;
 	ELSE 
 		SELECT false AS Result;
@@ -21,13 +21,13 @@ END;
 
 DROP PROCEDURE IF EXISTS returnDocument;
 DELIMITER //
-CREATE PROCEDURE returnDocument (IN r_ID VARCHAR(15), s_ID VARCHAR(10))
+CREATE PROCEDURE returnDocument (IN rqID VARCHAR(15), uID VARCHAR(10))
 BEGIN
-	IF s_ID = (SELECT userID FROM Request WHERE requestID = r_ID)
+	IF uID = (SELECT userID FROM Request WHERE requestID = rqID)
     THEN 
 		UPDATE Request
 		SET returnDate = CURRENT_DATE()
-		WHERE requestID = r_ID;
+		WHERE requestID = rqID AND returnDate IS NULL;
         
         SELECT true AS Result;
 	ELSE 
@@ -39,7 +39,7 @@ END;
 
 DROP PROCEDURE IF EXISTS checkForUnreturn_DocumentList;
 DELIMITER //
-CREATE PROCEDURE checkForUnreturn_DocumentList(IN s_ID VARCHAR(10))
+CREATE PROCEDURE checkForUnreturn_DocumentList(IN uID VARCHAR(10))
 BEGIN
     SELECT
 		requestID,
@@ -47,14 +47,14 @@ BEGIN
         quantityBorrow,
         borrowDate
 	FROM Request
-	WHERE userID = s_ID AND returnDate IS NULL;
+	WHERE userID = uID AND returnDate IS NULL;
 END;
 // DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS checkForUnreturn_StudentList;
 DELIMITER //
-CREATE PROCEDURE checkForUnreturn_StudentList(IN b_ID VARCHAR(10))
+CREATE PROCEDURE checkForUnreturn_StudentList(IN docuID VARCHAR(10))
 BEGIN
    
 	 SELECT requestID,
@@ -62,14 +62,14 @@ BEGIN
 			quantityBorrow,
 			borrowDate
 	FROM Request
-	WHERE documentID = b_ID AND returnDate IS NULL;
+	WHERE documentID = docuID AND returnDate IS NULL;
 END;
 // DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS checkForHistory_DocumentList;
 DELIMITER //
-CREATE PROCEDURE checkForHistory_DocumentList(IN s_ID VARCHAR(10))
+CREATE PROCEDURE checkForHistory_DocumentList(IN uID VARCHAR(10))
 BEGIN
     SELECT requestID,
 			documentID,
@@ -77,7 +77,7 @@ BEGIN
 			borrowDate,
 			returnDate
 	FROM Request
-	WHERE userID = s_ID
-    ORDER BY '2024-10-30' - returnDate ASC, borrowDate DESC;
+	WHERE userID = uID
+    ORDER BY DATEDIFF(CURRENT_DATE(), returnDate), borrowDate DESC;
 END;
 // DELIMITER ;

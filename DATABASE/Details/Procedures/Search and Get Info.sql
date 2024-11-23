@@ -12,12 +12,22 @@ DROP PROCEDURE IF EXISTS getStaffInfo;
 DELIMITER //
 CREATE PROCEDURE getStaffInfo (IN findID VARCHAR(10))
 BEGIN
-	SELECT ID, firstName, lastName, contact, jobTitle, introducerID
+	SELECT ID, firstName, lastName, contact, jobTitle, reportToID
     FROM Staff
     WHERE ID = findID;
 END;
 // DELIMITER ;
 
+-- DROP PROCEDURE IF EXISTS searchMember;
+-- DELIMITER //
+-- CREATE PROCEDURE searchMember (IN findID VARCHAR(10), findName VARCHAR(50), findContact VARCHAR(50), findDateOfBirht DATE)
+-- BEGIN
+-- 	SELECT ID, firstName, lastName, contact, dateOfBirth 
+--     FROM Member 
+--     WHERE ID = CONCAT(findID, '%')
+--     AND ;
+-- END;
+-- // DELIMITER ;
 
 DROP PROCEDURE IF EXISTS searchThesis;
 DELIMITER //
@@ -35,12 +45,14 @@ BEGIN
 		thesis.writerID AS writerID,
 		thesis.advisor AS advisor,
 		thesis.fieldOfStudy AS fieldOfStudy,
-		thesis.Description AS Description
+		documents.Description AS Description,
+		documents.category AS category
 	FROM thesis left join documents using(ID)
-    WHERE if (byWriterID is null, true, thesis.writerID = byWriterID)
-    AND thesis.advisor LIKE CONCAT('%', byAdvisor, '%')
-    AND documents.title LIKE CONCAT('%', titleKey, '%')
-    AND thesis.fieldOfStudy LIKE CONCAT('%', fieldOfStudyKey, '%');
+    WHERE (byWriterID IS NULL OR thesis.writerID = byWriterID)
+	AND (byAdvisor IS NULL OR thesis.advisor LIKE CONCAT('%', byAdvisor, '%'))
+	AND (titleKey IS NULL OR documents.title LIKE CONCAT('%', titleKey, '%'))
+	AND (fieldOfStudyKey IS NULL OR thesis.fieldOfStudy LIKE CONCAT('%', fieldOfStudyKey, '%'));
+
 END;
 // DELIMITER ;
 
@@ -51,7 +63,7 @@ CREATE PROCEDURE searchBook (IN
 	titleKey VARCHAR(50),
     authorKey VARCHAR(50),
     releaseYearKey YEAR,
-    categoryKey ENUM('Fiction', 'Non-fiction')
+    categoryKey INT unsigned
 )
 BEGIN
 	SELECT 
@@ -61,12 +73,13 @@ BEGIN
 		books.author AS author,
 		books.publisher AS publisher,
 		books.releaseYear AS releaseYear,
-		books.category AS category
+		documents.Description AS Description,
+		documents.category AS category
 	FROM books left join documents ON (books.isbn = documents.ID)
-	WHERE documents.title LIKE CONCAT('%', titleKey, '%')
-    AND books.author LIKE CONCAT('%', authorKey, '%')
-    AND if(releaseYearKey is null, true, books.releaseYear = releaseYearKey)
-    AND if(categoryKey is null, true, books.category = categoryKey);
+	WHERE ((titleKey is null) OR (documents.title LIKE CONCAT('%', titleKey, '%')))
+    AND ((authorKey is null) OR (books.author LIKE CONCAT('%', authorKey, '%')))
+    AND ((releaseYearKey is null) OR (books.releaseYear = releaseYearKey))
+    AND ((categoryKey is null) OR (documents.category = categoryKey));
 END;
 // DELIMITER ;
 
@@ -75,31 +88,36 @@ DROP PROCEDURE IF EXISTS searchDocument;
 DELIMITER //
 CREATE PROCEDURE searchDocument (IN documentID VARCHAR(15))
 BEGIN
-	IF (SELECT genre FROM Documents WHERE ID = documentID) = 'Book'
-    THEN
-		SELECT 
-			books.ISBN AS ISBN,
-			documents.title AS title,
-			documents.quantityLeft AS quantityAvailable,
-			books.author AS author,
-			books.publisher AS publisher,
-			books.releaseYear AS releaseYear,
-			books.category AS category,
-            documents.genre
-		FROM books left join documents ON (books.isbn = documents.ID)
-        WHERE books.isbn = documentID;
-	ELSE
-		SELECT 
-			thesis.ID,
-			documents.title,
-			documents.quantityLeft,
-			thesis.writerID,
-			thesis.advisor,
-			thesis.fieldOfStudy,
-			thesis.Description,
-            documents.genre
-		FROM thesis left join documents using(ID)
-        WHERE thesis.ID = documentID;
-    END IF;
+	IF (SELECT COUNT(*) FROM Documents WHERE ID = documentID) > 0
+	THEN
+		IF (SELECT genre FROM Documents WHERE ID = documentID) = 'Book'
+		THEN
+			SELECT 
+				books.ISBN AS ISBN,
+				documents.title AS title,
+				documents.quantityLeft AS quantityAvailable,
+				books.author AS author,
+				books.publisher AS publisher,
+				books.releaseYear AS releaseYear,
+				documents.Description AS Description,
+				books.category AS category,
+                documents.genre AS genre
+			FROM books left join documents ON (books.isbn = documents.ID)
+			WHERE books.isbn = documentID;
+		ELSE
+			SELECT 
+				thesis.ID AS ID,
+				documents.title AS title,
+				documents.quantityLeft AS quantityAvailable,
+				thesis.writerID AS writerID,
+				thesis.advisor AS advisor,
+				thesis.fieldOfStudy AS fieldOfStudy,
+				documents.Description AS Description,
+				documents.category AS category,
+                documents.genre AS genre
+			FROM thesis left join documents using(ID)
+			WHERE thesis.ID = documentID;
+		END IF;
+	END IF;
 END;
 // DELIMITER ;

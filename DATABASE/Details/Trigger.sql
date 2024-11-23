@@ -62,6 +62,7 @@ END;
 */
 
 DROP TRIGGER IF EXISTS makeQuantityLeft;
+DROP TRIGGER IF EXISTS makeFileSlot;
 DROP TRIGGER IF EXISTS minusQuantityLeft;
 DROP TRIGGER IF EXISTS plusQuantityLeft;
 
@@ -71,6 +72,15 @@ BEFORE INSERT ON Documents
 FOR EACH ROW
 BEGIN
     SET NEW.quantityLeft = NEW.totalQuantity;
+END;
+// DELIMITER ;
+
+DELIMITER //
+CREATE TRIGGER makeFileSlot
+AFTER INSERT ON Documents
+FOR EACH ROW
+BEGIN
+    INSERT INTO storedDocument (ID) VALUES (NEW.ID);
 END;
 // DELIMITER ;
 
@@ -94,7 +104,7 @@ BEFORE UPDATE ON Request
 FOR EACH ROW
 BEGIN
     UPDATE Documents
-    SET quantityLeft = quantityLeft + NEW.quantityBorrow
+    SET quantityLeft = quantityLeft + NEW.quantityBorrow - OLD.quantityBorrow
     WHERE ID = NEW.documentID;
 END;
 // DELIMITER ;
