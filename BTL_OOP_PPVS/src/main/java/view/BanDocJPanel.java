@@ -66,7 +66,7 @@ public class BanDocJPanel extends javax.swing.JPanel {
         jpnMuonTraTaiLieuLayout.setVerticalGroup(
             jpnMuonTraTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnMuonTraTaiLieuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addComponent(jlbMuonTraTaiLieu)
                 .addGap(50, 50, 50))
         );
@@ -91,10 +91,10 @@ public class BanDocJPanel extends javax.swing.JPanel {
         );
         jpnThongTinThanhVienLayout.setVerticalGroup(
             jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnThongTinThanhVienLayout.createSequentialGroup()
+            .addGroup(jpnThongTinThanhVienLayout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jlbThongTinThanhVien)
-                .addGap(50, 50, 50))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jpnViewBanDocLayout = new javax.swing.GroupLayout(jpnViewBanDoc);
@@ -104,9 +104,9 @@ public class BanDocJPanel extends javax.swing.JPanel {
             .addGroup(jpnViewBanDocLayout.createSequentialGroup()
                 .addGap(174, 174, 174)
                 .addComponent(jpnMuonTraTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
+                .addGap(90, 90, 90)
                 .addComponent(jpnThongTinThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(214, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
         jpnViewBanDocLayout.setVerticalGroup(
             jpnViewBanDocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

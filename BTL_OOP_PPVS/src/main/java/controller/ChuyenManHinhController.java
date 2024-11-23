@@ -12,6 +12,7 @@ import java.util.List;
 import view.BanDocJPanel;
 import view.MuonTraTaiLieuJPanel;
 import view.SachJPanel;
+import view.TaiLieuPanel;
 import view.ThongTinThanhVienJPanel;
 
 public class ChuyenManHinhController {
@@ -64,8 +65,8 @@ public class ChuyenManHinhController {
                 case "BanDoc":
                     node = new BanDocJPanel();
                     break;
-                case "Sach":
-                    node = new SachJPanel();
+                case "TaiLieu":
+                    node = new TaiLieuPanel();
                     break;
                 case "MuonTraTaiLieu":
                     node = new MuonTraTaiLieuJPanel();

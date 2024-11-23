@@ -54,7 +54,7 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jpnBanDoc" max="32767" attributes="0"/>
                       <Component id="jpnMHC" min="-2" max="-2" attributes="0"/>
-                      <Component id="jpnSach" alignment="0" max="32767" attributes="0"/>
+                      <Component id="jpnTaiLieu" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="22" max="32767" attributes="0"/>
               </Group>
@@ -69,7 +69,7 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Component id="jpnBanDoc" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                  <Component id="jpnSach" min="-2" max="-2" attributes="0"/>
+                  <Component id="jpnTaiLieu" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="164" max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -216,7 +216,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="jpnSach">
+        <Container class="javax.swing.JPanel" name="jpnTaiLieu">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="4e" green="8d" red="50" type="rgb"/>
@@ -230,7 +230,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Component id="jlbSach" min="-2" pref="122" max="-2" attributes="0"/>
+                      <Component id="jlbTaiLieu" min="-2" pref="122" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -239,14 +239,14 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="15" max="32767" attributes="0"/>
-                      <Component id="jlbSach" min="-2" max="-2" attributes="0"/>
+                      <Component id="jlbTaiLieu" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jlbSach">
+            <Component class="javax.swing.JLabel" name="jlbTaiLieu">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="1"/>

@@ -25,7 +25,7 @@ public class GDMain extends javax.swing.JFrame {
         List<DanhMucBean> listItem = new ArrayList<>();
         listItem.add(new DanhMucBean("TrangChu",jpnMHC,jlbMHC));
         listItem.add(new DanhMucBean("BanDoc",jpnBanDoc,jlbBanDoc));
-        listItem.add(new DanhMucBean("Sach",jpnSach,jlbSach));
+        listItem.add(new DanhMucBean("TaiLieu",jpnTaiLieu,jlbTaiLieu));
   
         controller.setEvent(listItem);
     }
@@ -46,8 +46,8 @@ public class GDMain extends javax.swing.JFrame {
         jlbMHC = new javax.swing.JLabel();
         jpnBanDoc = new javax.swing.JPanel();
         jlbBanDoc = new javax.swing.JLabel();
-        jpnSach = new javax.swing.JPanel();
-        jlbSach = new javax.swing.JLabel();
+        jpnTaiLieu = new javax.swing.JPanel();
+        jlbTaiLieu = new javax.swing.JLabel();
         jpnView = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -134,31 +134,31 @@ public class GDMain extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        jpnSach.setBackground(new java.awt.Color(80, 141, 78));
-        jpnSach.setAlignmentX(1.0F);
-        jpnSach.setAlignmentY(1.0F);
+        jpnTaiLieu.setBackground(new java.awt.Color(80, 141, 78));
+        jpnTaiLieu.setAlignmentX(1.0F);
+        jpnTaiLieu.setAlignmentY(1.0F);
 
-        jlbSach.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jlbSach.setForeground(new java.awt.Color(255, 255, 255));
-        jlbSach.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jlbSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoBook2.png"))); // NOI18N
-        jlbSach.setText("Tài liệu");
-        jlbSach.setIconTextGap(6);
+        jlbTaiLieu.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbTaiLieu.setForeground(new java.awt.Color(255, 255, 255));
+        jlbTaiLieu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jlbTaiLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoBook2.png"))); // NOI18N
+        jlbTaiLieu.setText("Tài liệu");
+        jlbTaiLieu.setIconTextGap(6);
 
-        javax.swing.GroupLayout jpnSachLayout = new javax.swing.GroupLayout(jpnSach);
-        jpnSach.setLayout(jpnSachLayout);
-        jpnSachLayout.setHorizontalGroup(
-            jpnSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnSachLayout.createSequentialGroup()
+        javax.swing.GroupLayout jpnTaiLieuLayout = new javax.swing.GroupLayout(jpnTaiLieu);
+        jpnTaiLieu.setLayout(jpnTaiLieuLayout);
+        jpnTaiLieuLayout.setHorizontalGroup(
+            jpnTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnTaiLieuLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jlbSach, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jlbTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jpnSachLayout.setVerticalGroup(
-            jpnSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnSachLayout.createSequentialGroup()
+        jpnTaiLieuLayout.setVerticalGroup(
+            jpnTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnTaiLieuLayout.createSequentialGroup()
                 .addContainerGap(15, Short.MAX_VALUE)
-                .addComponent(jlbSach)
+                .addComponent(jlbTaiLieu)
                 .addGap(15, 15, 15))
         );
 
@@ -172,7 +172,7 @@ public class GDMain extends javax.swing.JFrame {
                 .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpnBanDoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jpnMHC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jpnSach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jpnTaiLieu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
         jpnRootLayout.setVerticalGroup(
@@ -184,7 +184,7 @@ public class GDMain extends javax.swing.JFrame {
                 .addGap(20, 20, 20)
                 .addComponent(jpnBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addComponent(jpnSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpnTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(164, Short.MAX_VALUE))
         );
 
@@ -255,13 +255,13 @@ public class GDMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jlbBanDoc;
     private javax.swing.JLabel jlbMHC;
-    private javax.swing.JLabel jlbSach;
+    private javax.swing.JLabel jlbTaiLieu;
     private javax.swing.JLabel jlbThuVien;
     private javax.swing.JPanel jpnBanDoc;
     private javax.swing.JPanel jpnMHC;
     private javax.swing.JPanel jpnMenu;
     private javax.swing.JPanel jpnRoot;
-    private javax.swing.JPanel jpnSach;
+    private javax.swing.JPanel jpnTaiLieu;
     private javax.swing.JPanel jpnView;
     // End of variables declaration//GEN-END:variables
 }
