@@ -23,5 +23,11 @@ public abstract class UpdateTable <T> {
     
     public abstract boolean addElement(T newElement) throws SQLException;
     
+    public abstract boolean updateElement(T updatedMember) throws SQLException;
+    
+    public abstract boolean deleteElement(T deleteMember) throws SQLException;
+    
+    public abstract void updateRow(T updatedMember);
+    
     protected abstract void addRow(T newElement);
 }

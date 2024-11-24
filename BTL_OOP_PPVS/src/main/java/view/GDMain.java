@@ -19,7 +19,7 @@ public class GDMain extends javax.swing.JFrame {
         initComponents();
         
         setTitle("THƯ VIỆN");
-        
+        this.setSize(1200, 600);
         ChuyenManHinhController controller = new ChuyenManHinhController(jpnView);
         controller.setView(jpnMHC, jlbMHC);
         List<DanhMucBean> listItem = new ArrayList<>();
@@ -53,6 +53,8 @@ public class GDMain extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jpnRoot.setBackground(new java.awt.Color(214, 239, 216));
+        jpnRoot.setMaximumSize(new java.awt.Dimension(1000, 500));
+        jpnRoot.setMinimumSize(new java.awt.Dimension(720, 400));
 
         jpnMenu.setBackground(new java.awt.Color(80, 141, 78));
 
@@ -166,14 +168,14 @@ public class GDMain extends javax.swing.JFrame {
         jpnRoot.setLayout(jpnRootLayout);
         jpnRootLayout.setHorizontalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 258, Short.MAX_VALUE)
+            .addComponent(jpnMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jpnRootLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addGroup(jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jpnBanDoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jpnMHC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jpnTaiLieu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(22, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnRootLayout.setVerticalGroup(
             jpnRootLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,14 +187,17 @@ public class GDMain extends javax.swing.JFrame {
                 .addComponent(jpnBanDoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
                 .addComponent(jpnTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
+                .addContainerGap(106, Short.MAX_VALUE))
         );
+
+        jpnView.setMaximumSize(new java.awt.Dimension(1000, 500));
+        jpnView.setMinimumSize(new java.awt.Dimension(720, 400));
 
         javax.swing.GroupLayout jpnViewLayout = new javax.swing.GroupLayout(jpnView);
         jpnView.setLayout(jpnViewLayout);
         jpnViewLayout.setHorizontalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 765, Short.MAX_VALUE)
+            .addGap(0, 1465, Short.MAX_VALUE)
         );
         jpnViewLayout.setVerticalGroup(
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

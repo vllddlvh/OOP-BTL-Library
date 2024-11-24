@@ -14,7 +14,7 @@ public class DatabaseConnector {
     private static Connection connection = null;
     private final static String url = "jdbc:mysql://127.0.0.1:3306/Library_2nd_Edition";
     private final static String username = "root";
-    private final static String password = "";
+    private final static String password = "Daolelongvu2005@";
     
     public static void getInstance() throws SQLException {
         new DatabaseConnector();

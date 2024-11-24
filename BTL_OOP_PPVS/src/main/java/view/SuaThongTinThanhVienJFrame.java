@@ -8,13 +8,25 @@ import javax.swing.JOptionPane;
 import model.entity.Member;
 import controller.UpdateMemberTable;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 
-public class ThemThanhVienJFrame extends javax.swing.JFrame {
+public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
     /**
      * Creates new form ThemThanhVienJFrame
      */
-    public ThemThanhVienJFrame() {
+    public SuaThongTinThanhVienJFrame() {
         initComponents();
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+    
+    public SuaThongTinThanhVienJFrame(String id, String firstName, String lastName, String contact, String dateOfBirth) {
+        initComponents();
+        JTextFieldID.setText(id);
+        jTextFieldFirstName.setText(firstName);
+        jTextFieldLastName.setText(lastName);
+        jTextFieldContact.setText(contact);
+        jTextFieldDateOfBirth.setText(dateOfBirth);
+        JTextFieldID.setEditable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
 
@@ -40,6 +52,7 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
         jTextFieldContact = new javax.swing.JTextField();
         jTextFieldDateOfBirth = new javax.swing.JTextField();
         jButtonReset = new javax.swing.JButton();
+        jButtonXoa = new javax.swing.JButton();
         jButtonLuuDuLieu = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -84,33 +97,42 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButtonXoa.setBackground(new java.awt.Color(80, 141, 78));
+        jButtonXoa.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jButtonXoa.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonXoa.setText("Xóa thành viên");
+        jButtonXoa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonXoaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnThongTinThanhVienLayout = new javax.swing.GroupLayout(jpnThongTinThanhVien);
         jpnThongTinThanhVien.setLayout(jpnThongTinThanhVienLayout);
         jpnThongTinThanhVienLayout.setHorizontalGroup(
             jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnThongTinThanhVienLayout.createSequentialGroup()
-                .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(20, 20, 20)
+                .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jpnThongTinThanhVienLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
+                        .addComponent(jButtonReset)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButtonXoa))
+                    .addGroup(jpnThongTinThanhVienLayout.createSequentialGroup()
                         .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpnThongTinThanhVienLayout.createSequentialGroup()
-                                .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jlbID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbDateOfBirth))
-                                .addGap(15, 15, 15)
-                                .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextFieldContact, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(JTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jlbContact)
-                            .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jlbLastName)
-                                .addComponent(jlbFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                    .addGroup(jpnThongTinThanhVienLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jButtonReset)))
+                            .addComponent(jlbID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbDateOfBirth))
+                        .addGap(15, 15, 15)
+                        .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldContact, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(JTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jlbContact)
+                    .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jlbLastName)
+                        .addComponent(jlbFirstName, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(321, Short.MAX_VALUE))
         );
         jpnThongTinThanhVienLayout.setVerticalGroup(
@@ -136,9 +158,11 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
                 .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbDateOfBirth)
                     .addComponent(jTextFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addComponent(jButtonReset)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jpnThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonReset)
+                    .addComponent(jButtonXoa))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jButtonLuuDuLieu.setBackground(new java.awt.Color(80, 141, 78));
@@ -208,18 +232,45 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
    
         try {
             UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
-            if (ctrl.addElement(s)) {
-                JOptionPane.showMessageDialog(rootPane, "Add success");
+            if (ctrl.updateElement(s)) {
+                JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
             } else {
-                JOptionPane.showMessageDialog(rootPane, "Member's ID cannot be duplicated!");
+                JOptionPane.showMessageDialog(rootPane, "Sửa không thành công");
             }
             
         } catch (SQLException ex) {
-            Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
         }
         
     }//GEN-LAST:event_jButtonLuuDuLieuActionPerformed
+
+    private void jButtonXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonXoaActionPerformed
+        // TODO add your handling code here:
+        Member s = new Member(JTextFieldID.getText(),
+                         jTextFieldFirstName.getText(),
+                          jTextFieldLastName.getText(),
+                           jTextFieldContact.getText(),
+                        jTextFieldDateOfBirth.getText());
+   
+        try {
+            UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+            if (ctrl.deleteElement(s)) {
+                JTextFieldID.setText("");
+                jTextFieldFirstName.setText("");
+                jTextFieldLastName.setText("");
+                jTextFieldContact.setText("");
+                jTextFieldDateOfBirth.setText("");
+                JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Xóa không thành công");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
+        }
+    }//GEN-LAST:event_jButtonXoaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,20 +289,21 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ThemThanhVienJFrame().setVisible(true);
+                new SuaThongTinThanhVienJFrame().setVisible(true);
             }
         });
     }
@@ -260,6 +312,7 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
     private javax.swing.JTextField JTextFieldID;
     private javax.swing.JButton jButtonLuuDuLieu;
     private javax.swing.JButton jButtonReset;
+    private javax.swing.JButton jButtonXoa;
     private javax.swing.JTextField jTextFieldContact;
     private javax.swing.JTextField jTextFieldDateOfBirth;
     private javax.swing.JTextField jTextFieldFirstName;

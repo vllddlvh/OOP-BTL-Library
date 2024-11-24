@@ -1,5 +1,7 @@
 package controller;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import javax.swing.table.TableRowSorter;
 
 import model.entity.Member;
 import model.dao.MemberDAO;
+import view.SuaThongTinThanhVienJFrame;
 
 /**
  *
@@ -51,6 +54,62 @@ public class UpdateMemberTable extends UpdateTable<Member> {
         }
         
         return false;
+    }
+    
+    @Override
+    public boolean updateElement(Member updatedMember) throws SQLException {
+        // Cập nhật thông tin vào cơ sở dữ liệu
+        if (MemberDAO.updateMember(updatedMember)) {
+            // Cập nhật lại `allElement` (list lưu toàn bộ các phần tử trong bảng)
+            for (int i = 0; i < allElement.size(); i++) {
+                if (allElement.get(i).getID().equals(updatedMember.getID())) {
+                    allElement.set(i, updatedMember); // Cập nhật thông tin trong danh sách
+                    break;
+                }
+            }
+
+            // Đồng bộ lại `JTable`
+            updateRow(updatedMember);
+            return true;
+        }
+        return false;
+    }
+    
+    @Override
+    public boolean deleteElement(Member deleteMember) throws SQLException {
+    // Xóa thành viên trong cơ sở dữ liệu
+    if (MemberDAO.deleteMember(deleteMember)) {
+        // Xóa thành viên khỏi danh sách `allElement`
+        for (int i = 0; i < allElement.size(); i++) {
+            if (allElement.get(i).getID().equals(deleteMember.getID())) {
+                allElement.remove(i); // Xóa thành viên khỏi danh sách
+                break;
+            }
+        }
+
+        // Xóa dòng khỏi bảng `JTable`
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            if (tableModel.getValueAt(i, 0).toString().equals(deleteMember.getID())) {
+                tableModel.removeRow(i); // Xóa dòng trong `JTable`
+                break;
+            }
+        }
+        return true; // Trả về thành công sau khi đã xóa
+    }
+    return false; // Trả về thất bại nếu không xóa được
+    }
+
+    @Override
+    public void updateRow(Member updatedMember) {
+        for (int row = 0; row < tableModel.getRowCount(); row++) {
+            if (tableModel.getValueAt(row, 0).equals(updatedMember.getID())) {
+                tableModel.setValueAt(updatedMember.getFirstName(), row, 1);
+                tableModel.setValueAt(updatedMember.getLastName(), row, 2);
+                tableModel.setValueAt(updatedMember.getContact(), row, 3);
+                tableModel.setValueAt(updatedMember.getDateOfBirth(), row, 4);
+                break;
+            }
+        }
     }
     
     @Override
@@ -112,5 +171,22 @@ public class UpdateMemberTable extends UpdateTable<Member> {
                 System.out.println("Track changed Update");
             }
         }); 
+        table.addMouseListener(new MouseAdapter(){
+            @Override 
+            public void mouseClicked(MouseEvent e) {
+                if (e.getClickCount() == 2 && table.getSelectedRow() != -1) {
+                    int row = table.getSelectedRow();
+                     // Lấy giá trị của từng cột từ dòng được chọn
+                    String id = table.getValueAt(row, 0).toString();       
+                    String firstName = table.getValueAt(row, 1).toString(); 
+                    String lastName = table.getValueAt(row, 2).toString();  
+                    String contact = table.getValueAt(row, 3).toString();   
+                    String dob = table.getValueAt(row, 4).toString();       
+                    SuaThongTinThanhVienJFrame suaThongTin = new SuaThongTinThanhVienJFrame(id,firstName,lastName,contact,dob);
+                    suaThongTin.setVisible(true);
+                }
+            }
+        });
     }
+    
 }

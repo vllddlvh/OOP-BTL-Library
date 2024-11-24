@@ -95,4 +95,36 @@ public class MemberDAO {
         }
         return false;
     }
+    
+    public static boolean updateMember(Member member) throws SQLException {
+    // Câu lệnh SQL UPDATE để cập nhật thông tin
+    String sql = "UPDATE library_2nd_edition.member SET firstName = ?, lastName = ?, contact = ?, dateOfBirth = ? WHERE ID = ?";
+    PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+    
+    // Gán giá trị cho từng tham số
+    ps.setString(1, member.getFirstName());
+    ps.setString(2, member.getLastName());
+    ps.setString(3, member.getContact());
+    ps.setString(4, member.getDateOfBirth());
+    ps.setString(5, member.getID()); // ID để xác định thành viên cần cập nhật
+
+    // Thực thi câu lệnh và kiểm tra xem có bao nhiêu dòng bị ảnh hưởng
+    int rowsUpdated = ps.executeUpdate();
+    ps.close();
+    
+    return rowsUpdated > 0; // Trả về true nếu cập nhật thành công
+}
+
+    public static boolean deleteMember(Member member) throws SQLException {
+        String sql = "DELETE FROM library_2nd_edition.member WHERE ID = ?";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        
+        ps.setString(1, member.getID());
+        
+        // Thực thi câu lệnh và kiểm tra xem có bao nhiêu dòng bị ảnh hưởng
+        int rowsUpdated = ps.executeUpdate();
+        ps.close();
+    
+        return rowsUpdated > 0; // Trả về true nếu cập nhật thành công
+    }
 }
