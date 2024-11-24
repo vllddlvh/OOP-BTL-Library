@@ -18,13 +18,7 @@ public class Book extends Document {
     protected int releaseYear;
     
     /**
-     * <p>
      * Constructor for model.DAO using only.
-     * <p>
-     * Lấy đầu vào là category MÃ HÓA. 
-     * Nên bình thường không dùng contructor này.
-     * Thay vào đó thay category thành ArrayList<String>
-     * </p>
      * 
      * @param ISBN = new Book ID/ ISBN code.
      * @param title = its title.
@@ -49,16 +43,16 @@ public class Book extends Document {
     }
     
     /**
-     * Constructor chuẩn cho tạo Book mới.
+     * Constructor 
      * 
-     * @param ISBN = new Book ID/ ISBN code.
-     * @param title = its title.
-     * @param availableCopies = load copies amount.
-     * @param author = author name.
-     * @param publisher = publisher name.
-     * @param releaseYear = release in what year (after 1900)
-     * @param description = the book introduction.
-     * @param category = category readable form.
+     * @param ISBN
+     * @param title
+     * @param availableCopies
+     * @param author
+     * @param publisher
+     * @param releaseYear
+     * @param description
+     * @param category 
      */
     public Book(String ISBN, String title, int availableCopies, String author, String publisher, int releaseYear, String description, ArrayList<String> category) {
         this.ID = ISBN;

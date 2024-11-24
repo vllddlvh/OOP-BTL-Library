@@ -4,8 +4,16 @@
  */
 package view;
 
-import controller.QuanLyMemberController;
+
 import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+
+import controller.UpdateMemberTable;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,9 +26,16 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
      */
     public ThongTinThanhVienJPanel() {
         initComponents();
-        
-        QuanLyMemberController controller = new QuanLyMemberController(jpnTable, JButtonThemThanhVien, JTextFieldTimKiemThanhVien);
-        controller.setDateToTable();
+        initTableThanhVien();
+       
+        UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+        try {
+            ctrl.setTableUpToDate(tableThanhVien, JButtonThemThanhVien, JTextFieldTimKiemThanhVien);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Unknown Error");
+        }
     }
 
     /**
@@ -35,7 +50,8 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         jpnViewThongTinThanhVien = new javax.swing.JPanel();
         JButtonThemThanhVien = new javax.swing.JButton();
         JTextFieldTimKiemThanhVien = new javax.swing.JTextField();
-        jpnTable = new javax.swing.JPanel();
+        tableScrollPanel = new javax.swing.JScrollPane();
+        tableThanhVien = new javax.swing.JTable();
 
         jpnViewThongTinThanhVien.setBackground(new java.awt.Color(128, 175, 129));
 
@@ -44,7 +60,6 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         JButtonThemThanhVien.setForeground(new java.awt.Color(255, 255, 255));
         JButtonThemThanhVien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoAddMember (1).png"))); // NOI18N
         JButtonThemThanhVien.setText("Thêm thành viên");
-        JButtonThemThanhVien.setPreferredSize(new java.awt.Dimension(184, 47));
         JButtonThemThanhVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JButtonThemThanhVienActionPerformed(evt);
@@ -58,30 +73,56 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
             }
         });
 
-        jpnTable.setBackground(new java.awt.Color(128, 175, 129));
+        tableThanhVien.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
 
-        javax.swing.GroupLayout jpnTableLayout = new javax.swing.GroupLayout(jpnTable);
-        jpnTable.setLayout(jpnTableLayout);
-        jpnTableLayout.setHorizontalGroup(
-            jpnTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jpnTableLayout.setVerticalGroup(
-            jpnTableLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 412, Short.MAX_VALUE)
-        );
+            },
+            new String [] {
+                "ID", "First Name", "Last Name", "Contact", "Date Of Birth"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, true
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tableThanhVien.setToolTipText("");
+        tableThanhVien.setColumnSelectionAllowed(true);
+        tableScrollPanel.setViewportView(tableThanhVien);
+        tableThanhVien.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        if (tableThanhVien.getColumnModel().getColumnCount() > 0) {
+            tableThanhVien.getColumnModel().getColumn(0).setResizable(false);
+            tableThanhVien.getColumnModel().getColumn(1).setResizable(false);
+            tableThanhVien.getColumnModel().getColumn(2).setResizable(false);
+            tableThanhVien.getColumnModel().getColumn(3).setResizable(false);
+            tableThanhVien.getColumnModel().getColumn(4).setResizable(false);
+        }
 
         javax.swing.GroupLayout jpnViewThongTinThanhVienLayout = new javax.swing.GroupLayout(jpnViewThongTinThanhVien);
         jpnViewThongTinThanhVien.setLayout(jpnViewThongTinThanhVienLayout);
         jpnViewThongTinThanhVienLayout.setHorizontalGroup(
             jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnViewThongTinThanhVienLayout.createSequentialGroup()
+            .addGroup(jpnViewThongTinThanhVienLayout.createSequentialGroup()
                 .addGap(51, 51, 51)
-                .addComponent(JTextFieldTimKiemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
-                .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnViewThongTinThanhVienLayout.createSequentialGroup()
+                        .addComponent(tableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jpnViewThongTinThanhVienLayout.createSequentialGroup()
+                        .addComponent(JTextFieldTimKiemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
-            .addComponent(jpnTable, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jpnViewThongTinThanhVienLayout.setVerticalGroup(
             jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,8 +131,9 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
                 .addGroup(jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(JButtonThemThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTextFieldTimKiemThanhVien))
-                .addGap(15, 15, 15)
-                .addComponent(jpnTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(tableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -100,7 +142,7 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jpnViewThongTinThanhVien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 472, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -108,21 +150,31 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JTextFieldTimKiemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JTextFieldTimKiemThanhVienActionPerformed
+
     private void JButtonThemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonThemThanhVienActionPerformed
         // TODO add your handling code here:
         ThemThanhVienJFrame themThanhVienJFrame = new ThemThanhVienJFrame();
         themThanhVienJFrame.setVisible(true);
     }//GEN-LAST:event_JButtonThemThanhVienActionPerformed
 
-    private void JTextFieldTimKiemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienActionPerformed
-        // TODO add your handling code here:                                                                                                                  
-    }//GEN-LAST:event_JTextFieldTimKiemThanhVienActionPerformed
-
+    private void initTableThanhVien() {
+        tableThanhVien.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
+        tableThanhVien.getTableHeader().setForeground(Color.white);
+        tableThanhVien.getTableHeader().setPreferredSize(new Dimension(100,50));
+        tableThanhVien.getTableHeader().setBackground(new Color(80,141,78));
+        tableThanhVien.setRowHeight(40);
+        tableThanhVien.validate();
+        tableThanhVien.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButtonThemThanhVien;
     private javax.swing.JTextField JTextFieldTimKiemThanhVien;
-    private javax.swing.JPanel jpnTable;
     private javax.swing.JPanel jpnViewThongTinThanhVien;
+    private javax.swing.JScrollPane tableScrollPanel;
+    private javax.swing.JTable tableThanhVien;
     // End of variables declaration//GEN-END:variables
 }

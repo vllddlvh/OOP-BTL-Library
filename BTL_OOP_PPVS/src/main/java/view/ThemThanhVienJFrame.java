@@ -1,9 +1,12 @@
 package view;
 
-import controller.MemberDAO;
-import controller.MemberDAOImpl;
+import java.sql.SQLException;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import model.Member;
+import model.entity.Member;
+import controller.UpdateMemberTable;
 
 public class ThemThanhVienJFrame extends javax.swing.JFrame {
 
@@ -196,18 +199,23 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
 
     private void jButtonLuuDuLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLuuDuLieuActionPerformed
         // TODO add your handling code here:
-        Member s = new Member();
-        s.setID(JTextFieldID.getText());
-        s.setFirstName(jTextFieldFirstName.getText());
-        s.setLastName(jTextFieldLastName.getText());
-        s.setContact(jTextFieldContact.getText());
-        s.setDateOfBirth(jTextFieldDateOfBirth.getText());
+        Member s = new Member(JTextFieldID.getText(),
+                         jTextFieldFirstName.getText(),
+                          jTextFieldLastName.getText(),
+                           jTextFieldContact.getText(),
+                        jTextFieldDateOfBirth.getText());
    
-        MemberDAO mbd = new MemberDAOImpl();
-        if(mbd.addMember(s)) {
-        JOptionPane.showMessageDialog(rootPane, "Add success");
-        } else {
-        JOptionPane.showMessageDialog(rootPane, "Member's ID cannot be duplicated!");
+        try {
+            UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+            if (ctrl.addElement(s)) {
+                JOptionPane.showMessageDialog(rootPane, "Add success");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Member's ID cannot be duplicated!");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
         }
         
     }//GEN-LAST:event_jButtonLuuDuLieuActionPerformed

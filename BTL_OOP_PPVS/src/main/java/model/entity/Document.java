@@ -113,7 +113,7 @@ public abstract class Document {
     }
     
     
-    protected static class CategoryType {
+    public static class CategoryType {
         static private HashMap<Integer, String> decoder;
         static private HashMap<String, Integer> encrypter;
         static private String path = "src\\image\\Document Category.txt";
@@ -170,40 +170,18 @@ public abstract class Document {
                 power *= 2;
             }
             
-            writer.close(); 
-        } 
-        
-        static void addNewCategory (String newCategory) throws IOException {
-            FileWriter output = new FileWriter(path, true);
-            BufferedWriter writer = new BufferedWriter(output);
+            writer.close();
             
-            int power = (int) Math.pow(2, decoder.size());
-                writer.newLine();
-                writer.write(newCategory);
-                
-                decoder.put(power, newCategory);
-                encrypter.put(newCategory, power);
             
-            writer.close(); 
         } 
         
         static int encrypt(List<String> category) throws IOException {
             if (encrypter == null) {
                 loadDecoder();
             }
-            ArrayList<String> unListedCategory = new ArrayList<>();
             
             int result = 0;
             for (String x : category) {
-                if (encrypter.get(x) == null) {
-                    unListedCategory.add(x);
-                }
-                
-                result += encrypter.getOrDefault(x, 0);
-            }
-            
-            addNewCategory(unListedCategory);
-            for (String x : unListedCategory) {
                 result += encrypter.getOrDefault(x, 0);
             }
             
