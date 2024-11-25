@@ -15,6 +15,7 @@ public class MuonSachJFrame extends javax.swing.JFrame {
      */
     public MuonSachJFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

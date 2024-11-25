@@ -19,6 +19,7 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
     public ThemThanhVienJFrame() {
         initComponents();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
 
     /**

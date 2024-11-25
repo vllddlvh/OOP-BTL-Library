@@ -19,6 +19,7 @@ public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
     public SuaThongTinThanhVienJFrame() {
         initComponents();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
     
     public SuaThongTinThanhVienJFrame(String id, String firstName, String lastName, String contact, String dateOfBirth) {

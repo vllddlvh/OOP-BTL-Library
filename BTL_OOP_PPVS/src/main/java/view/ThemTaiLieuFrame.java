@@ -15,6 +15,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
      */
     public ThemTaiLieuFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

@@ -60,14 +60,15 @@ public class TrangChuJPanel extends javax.swing.JPanel {
         } else {
         imageLabel.setIcon(new ImageIcon(imageURL));
         // Căn giữa hình ảnh trong JLabel
-imageLabel.setHorizontalAlignment(JLabel.CENTER);  // Căn giữa theo chiều ngang
-imageLabel.setVerticalAlignment(JLabel.CENTER);    // Căn giữa theo chiều dọc
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);  // Căn giữa theo chiều ngang
+        imageLabel.setVerticalAlignment(JLabel.CENTER);    // Căn giữa theo chiều dọc
         imageLabel.setBackground(Color.WHITE);
         }
 
 
         // Thông tin sách
         JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getPublicationYear());
+        infoArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 10));
         infoArea.setEditable(false);
         infoArea.setLineWrap(true);
         infoArea.setWrapStyleWord(true);
