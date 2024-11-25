@@ -3,6 +3,7 @@ package model.entity;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.text.ParseException;
 
 import java.util.ArrayList;
 
@@ -80,7 +81,7 @@ public class Staff extends User {
      * 
      * @throws SQLException 
      */
-    public Member getMemberInfo(String ID) throws SQLException {
+    public Member getMemberInfo(String ID) throws SQLException, ParseException {
         return MemberDAO.getMemberInfo(ID);
     }
     
@@ -110,7 +111,7 @@ public class Staff extends User {
      * 
      * @throws SQLException 
      */
-    public User getUserInfo(String ID) throws SQLException {
+    public User getUserInfo(String ID) throws SQLException, ParseException {
         User target = getMemberInfo(ID);
         if (target == null) {
             target = getStaffInfo(ID);
@@ -131,7 +132,7 @@ public class Staff extends User {
      * 
      * @throws SQLException 
      */
-    public boolean addNewMember (String ID, String firstName, String lastName, String contact, String dateOfBirth) throws SQLException  {
+    public boolean addNewMember (String ID, String firstName, String lastName, String contact, String dateOfBirth) throws SQLException, ParseException  {
         Member newOne = new Member(ID, firstName, lastName, contact, dateOfBirth);
         return addNewMember(newOne);
     }

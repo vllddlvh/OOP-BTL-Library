@@ -4,6 +4,9 @@
  */
 package view;
 
+import java.awt.Color;
+import java.awt.Font;
+
 /**
  *
  * @author ADMIN
@@ -15,6 +18,9 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
      */
     public MuonTraTaiLieuJPanel() {
         initComponents();
+        jTableMuonTraSach.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        jTableMuonTraSach.getTableHeader().setForeground(Color.WHITE); 
+        jTableMuonTraSach.getTableHeader().setBackground(new Color(80,141,78));
     }
 
     /**
@@ -26,19 +32,120 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        JTextFieldTimKiemThongTinSachMuonTra = new javax.swing.JTextField();
+        jButtonMuonSach = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableMuonTraSach = new javax.swing.JTable();
+
+        jPanel1.setBackground(new java.awt.Color(128, 175, 129));
+
+        JTextFieldTimKiemThongTinSachMuonTra.setForeground(new java.awt.Color(204, 204, 204));
+        JTextFieldTimKiemThongTinSachMuonTra.setText("Tìm kiếm thông tin mượn trả");
+        JTextFieldTimKiemThongTinSachMuonTra.setPreferredSize(new java.awt.Dimension(170, 25));
+        JTextFieldTimKiemThongTinSachMuonTra.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTextFieldTimKiemThongTinSachMuonTraFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTextFieldTimKiemThongTinSachMuonTraFocusLost(evt);
+            }
+        });
+        JTextFieldTimKiemThongTinSachMuonTra.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextFieldTimKiemThongTinSachMuonTraActionPerformed(evt);
+            }
+        });
+
+        jButtonMuonSach.setBackground(new java.awt.Color(80, 141, 78));
+        jButtonMuonSach.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonMuonSach.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonMuonSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoMuonSach.png"))); // NOI18N
+        jButtonMuonSach.setText("Mượn sách");
+
+        jTableMuonTraSach.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "borrowDate", "documentID", "quantityBorrow", "requestID", "returnDate", "userID"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(jTableMuonTraSach);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(JTextFieldTimKiemThongTinSachMuonTra, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(45, 45, 45)
+                        .addComponent(jButtonMuonSach)))
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButtonMuonSach, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                    .addComponent(JTextFieldTimKiemThongTinSachMuonTra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JTextFieldTimKiemThongTinSachMuonTraFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraFocusGained
+        // TODO add your handling code here:
+        JTextFieldTimKiemThongTinSachMuonTra.setText("");
+        JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12)); // Đặt phông là Segoe UI, kích thước 14
+        JTextFieldTimKiemThongTinSachMuonTra.setForeground(java.awt.Color.BLACK); // Đặt màu chữ là đen
+    }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraFocusGained
+
+    private void JTextFieldTimKiemThongTinSachMuonTraFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraFocusLost
+        // TODO add your handling code here:
+        if(JTextFieldTimKiemThongTinSachMuonTra.getText().equals("")) {
+            JTextFieldTimKiemThongTinSachMuonTra.setText("Tìm kiếm thông tin thành viên");
+            JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12)); // Đặt phông là Segoe UI, kích thước 14
+            JTextFieldTimKiemThongTinSachMuonTra.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraFocusLost
+
+    private void JTextFieldTimKiemThongTinSachMuonTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JTextFieldTimKiemThongTinSachMuonTra;
+    private javax.swing.JButton jButtonMuonSach;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableMuonTraSach;
     // End of variables declaration//GEN-END:variables
 }

@@ -67,6 +67,18 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         });
 
         JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        JTextFieldTimKiemThanhVien.setForeground(new java.awt.Color(204, 204, 204));
+        JTextFieldTimKiemThanhVien.setText("Tìm kiếm thông tin thành viên ");
+        JTextFieldTimKiemThanhVien.setMinimumSize(new java.awt.Dimension(64, 22));
+        JTextFieldTimKiemThanhVien.setPreferredSize(new java.awt.Dimension(178, 22));
+        JTextFieldTimKiemThanhVien.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTextFieldTimKiemThanhVienFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTextFieldTimKiemThanhVienFocusLost(evt);
+            }
+        });
         JTextFieldTimKiemThanhVien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextFieldTimKiemThanhVienActionPerformed(evt);
@@ -113,7 +125,7 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         jpnViewThongTinThanhVienLayout.setHorizontalGroup(
             jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnViewThongTinThanhVienLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(50, 50, 50)
                 .addGroup(jpnViewThongTinThanhVienLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tableScrollPanel, javax.swing.GroupLayout.PREFERRED_SIZE, 717, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jpnViewThongTinThanhVienLayout.createSequentialGroup()
@@ -150,6 +162,7 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
 
     private void JTextFieldTimKiemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_JTextFieldTimKiemThanhVienActionPerformed
 
     private void JButtonThemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonThemThanhVienActionPerformed
@@ -157,6 +170,22 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         ThemThanhVienJFrame themThanhVienJFrame = new ThemThanhVienJFrame();
         themThanhVienJFrame.setVisible(true);
     }//GEN-LAST:event_JButtonThemThanhVienActionPerformed
+
+    private void JTextFieldTimKiemThanhVienFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienFocusGained
+        // TODO add your handling code here:
+        JTextFieldTimKiemThanhVien.setText("");
+        JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
+        JTextFieldTimKiemThanhVien.setForeground(java.awt.Color.BLACK); // Đặt màu chữ là đen
+    }//GEN-LAST:event_JTextFieldTimKiemThanhVienFocusGained
+
+    private void JTextFieldTimKiemThanhVienFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienFocusLost
+        // TODO add your handling code here:
+        if(JTextFieldTimKiemThanhVien.getText().equals("")) {
+            JTextFieldTimKiemThanhVien.setText("Tìm kiếm thông tin thành viên");
+            JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
+            JTextFieldTimKiemThanhVien.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_JTextFieldTimKiemThanhVienFocusLost
 
     private void initTableThanhVien() {
         tableThanhVien.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));

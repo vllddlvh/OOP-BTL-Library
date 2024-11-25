@@ -149,7 +149,7 @@ public class UpdateMemberTable extends UpdateTable<Member> {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = jtfSearch.getText();
-                if(text.trim().length() == 0) {
+                if(text.trim().equalsIgnoreCase("Tìm kiếm thông tin thành viên") || text.trim().length() == 0) {
                     rowSorter.setRowFilter(null);
                 } else {
                     rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
@@ -159,7 +159,7 @@ public class UpdateMemberTable extends UpdateTable<Member> {
             @Override
             public void removeUpdate(DocumentEvent e) {
                 String text = jtfSearch.getText();
-                if(text.trim().length() == 0) {
+                if(text.trim().equalsIgnoreCase("Tìm kiếm thông tin thành viên") || text.trim().length() == 0) {
                     rowSorter.setRowFilter(null);
                 } else {
                     rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));

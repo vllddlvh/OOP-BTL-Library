@@ -1,13 +1,16 @@
 package view;
 
 import java.sql.SQLException;
-import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.entity.Member;
 import controller.UpdateMemberTable;
 import javax.swing.JFrame;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class ThemThanhVienJFrame extends javax.swing.JFrame {
     /**
@@ -200,11 +203,27 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
 
     private void jButtonLuuDuLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLuuDuLieuActionPerformed
         // TODO add your handling code here:
+        String rawDateOfBirth = jTextFieldDateOfBirth.getText(); // Lấy giá trị ngày sinh
+        String formattedDateOfBirth = null;
+
+        try {
+        // Định dạng người dùng nhập: "2-9-2005"
+        SimpleDateFormat inputFormat = new SimpleDateFormat("d/M/yyyy");
+        // Định dạng chuẩn bạn muốn lưu: "2005-09-02"
+        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+        
+        // Chuyển đổi định dạng
+        Date date = inputFormat.parse(rawDateOfBirth);
+        formattedDateOfBirth = outputFormat.format(date);
+        } catch (ParseException e) {
+        JOptionPane.showMessageDialog(rootPane, "Ngày sinh không đúng định dạng. Hãy nhập: dd-MM-yyyy");
+        return; // Dừng xử lý nếu có lỗi định dạng
+        }
         Member s = new Member(JTextFieldID.getText(),
                          jTextFieldFirstName.getText(),
-                          jTextFieldLastName.getText(),
-                           jTextFieldContact.getText(),
-                        jTextFieldDateOfBirth.getText());
+                         jTextFieldLastName.getText(),
+                         jTextFieldContact.getText(),
+                         formattedDateOfBirth);
    
         try {
             UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
