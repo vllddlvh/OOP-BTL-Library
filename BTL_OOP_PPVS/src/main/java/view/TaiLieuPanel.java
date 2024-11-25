@@ -4,6 +4,15 @@
  */
 package view;
 
+import controller.UpdateMemberTable;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author HP
@@ -15,6 +24,15 @@ public class TaiLieuPanel extends javax.swing.JPanel {
      */
     public TaiLieuPanel() {
         initComponents();
+        initTableTaiLieu();
+        UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+        try {
+            ctrl.setTableUpToDate(jTableThongTinTaiLieu, ButtonThemTaiLieu, JTextFieldTimKiemTaiLieu);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Unknown Error");
+        }
     }
 
     /**
@@ -63,9 +81,17 @@ public class TaiLieuPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Tiêu đề", "Tác giả", "Năm xuất bản", "Thể loại", "Số lượng"
+                "ID", "Tiêu đề", "Tác giả", "Năm xuất bản", "Thể loại", "Ngôn ngữ"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jTableThongTinTaiLieu.setColumnSelectionAllowed(true);
         jScrollPaneTaiLieu.setViewportView(jTableThongTinTaiLieu);
 
@@ -120,6 +146,15 @@ public class TaiLieuPanel extends javax.swing.JPanel {
         themTaiLieuFrame.setVisible(true);
     }//GEN-LAST:event_ButtonThemTaiLieuActionPerformed
 
+    private void initTableTaiLieu() {
+        jTableThongTinTaiLieu.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
+        jTableThongTinTaiLieu.getTableHeader().setForeground(Color.white);
+        jTableThongTinTaiLieu.getTableHeader().setPreferredSize(new Dimension(100,50));
+        jTableThongTinTaiLieu.getTableHeader().setBackground(new Color(80,141,78));
+        jTableThongTinTaiLieu.setRowHeight(40);
+        jTableThongTinTaiLieu.validate();
+        jTableThongTinTaiLieu.repaint();
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ButtonThemTaiLieu;
