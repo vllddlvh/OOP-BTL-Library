@@ -1,99 +1,127 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package model.dao;
 
-import java.io.IOException;
-import java.sql.CallableStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
+import java.sql.*;
+import java.util.ArrayList;
 import model.DatabaseConnector;
-import model.entity.Book;
 import model.entity.Document;
-import model.entity.Thesis;
 
-/**
- *
- * @author Littl
- */
 public class DocumentDAO {
     
-    /**
-     * Get Document only if you know exactly its Thesis ID / Book ISBN.
-     * 
-     * @param documentID = Thesis ID / Book ISBN.
-     * 
-     * @return Document object.
-     * 
-     * @throws SQLException 
-     * @throws IOException
-     */
-    public static Document getDocumentInfo(String documentID) throws SQLException, IOException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call searchDocument(?) }");
+    // 1. Lấy tất cả các tài liệu
+    public static ArrayList<Document> getAllDocuments() throws SQLException {
+        String sql = "SELECT * FROM library_2nd_edition.documents";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
         
-        finder.setString(1, documentID);
-        
-        ResultSet rs;
-        rs = finder.executeQuery();
-        
+        ArrayList<Document> list = new ArrayList<>();
         while (rs.next()) {
-            switch(rs.getString("genre")) {
-                case "Book" -> {
-                    return new Book(rs.getString(1),
-                                    rs.getString(2),
-                            rs.getInt(3),
-                                  rs.getString(4),
-                                rs.getString(5),
-                               rs.getInt(6),
-                               rs.getString(7),
-                                 rs.getInt(8));
-                } 
-                case "Thesis" -> {
-                    while (rs.next()) {
-                    return new Thesis(rs.getString(1), 
-                                    rs.getString(2), 
-                             rs.getInt(3),
-                                  rs.getString(4), 
-                                   rs.getString(5), 
-                               rs.getString(6), 
-                                rs.getString(7),
-                                  rs.getInt(8));
-        }
-                }
-                default -> {
-                    return null;
-                }
-            }
+            Document document = new Document(
+                rs.getString(1),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getString(4),
+                rs.getString(5),
+                rs.getString(6),
+                rs.getString(7),
+                rs.getString(8),
+                rs.getString(9)
+            );
+            list.add(document);
         }
         
+        ps.close();
+        rs.close();
+        return list;
+    }
+
+    // 2. Lấy thông tin tài liệu chi tiết dựa trên ID
+    public static Document getDocumentInfo(String ID) throws SQLException {
+        String sql = "SELECT * FROM library_2nd_edition.documents WHERE ID = ?";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        ps.setString(1, ID);
+        ResultSet rs = ps.executeQuery();
+        
+        if (rs.next()) {
+            Document document = new Document(
+                rs.getString(1),
+                rs.getString(2),
+                rs.getString(3),
+                rs.getString(4),
+                rs.getString(5),
+                rs.getString(6),
+                rs.getString(7),
+                rs.getString(8),
+                rs.getString(9)
+            );
+            ps.close();
+            rs.close();
+            return document;
+        }
+        
+        ps.close();
+        rs.close();
         return null;
     }
-    
-    /**
-     * Load more or less copies of a document already store in library.
-     * 
-     * @param documentID
-     * @param quantityChange
-     * @throws SQLException 
-     */
-    public static void loadMoreCopies(String documentID, int quantityChange) throws SQLException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteDocument(?) }");
+
+    // 3. Thêm mới tài liệu
+    public static boolean addNewDocument(Document document) throws SQLException {
+        String sql = "INSERT INTO library_2nd_edition.documents (ID, Title, Author, Publisher, Publication_year, Category, Language, Summary, File_image) "
+                   + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         
-        finder.setString(1, documentID);
+        ps.setString(1, document.getID());
+        ps.setString(2, document.getTitle());
+        ps.setString(3, document.getAuthor());
+        ps.setString(4, document.getPublisher());
+        ps.setString(5, document.getPublicationYear());
+        ps.setString(6, document.getCategory());
+        ps.setString(7, document.getLanguage());
+        ps.setString(8, document.getSummary());
+        ps.setString(9, document.getFileImage());
         
-        finder.executeQuery();
+        int rowsInserted = ps.executeUpdate();
+        ps.close();
+        
+        return rowsInserted > 0;
     }
-    
-    /**
-     * Delete a document determine by its ID.
-     * 
-     * @param documentID = ID of the document want to be deleted.
-     * 
-     * @throws SQLException 
-     */
-    public static void deleteDocument(String documentID) throws SQLException  {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteDocument(?) }");
+
+    // 4. Cập nhật thông tin tài liệu
+    public static boolean updateDocument(Document document) throws SQLException {
+        String sql = "UPDATE library_2nd_edition.documents "
+                   + "SET Title = ?, Author = ?, Publisher = ?, Publication_year = ?, Category = ?, Language = ?, Summary = ?, File_image = ? "
+                   + "WHERE ID = ?";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         
-        finder.setString(1, documentID);
+        ps.setString(1, document.getTitle());
+        ps.setString(2, document.getAuthor());
+        ps.setString(3, document.getPublisher());
+        ps.setString(4, document.getPublicationYear());
+        ps.setString(5, document.getCategory());
+        ps.setString(6, document.getLanguage());
+        ps.setString(7, document.getSummary());
+        ps.setString(8, document.getFileImage());
+        ps.setString(9, document.getID());
         
-        finder.executeQuery();
+        int rowsUpdated = ps.executeUpdate();
+        ps.close();
+        
+        return rowsUpdated > 0;
+    }
+
+    // 5. Xóa tài liệu
+    public static boolean deleteDocument(Document document) throws SQLException {
+        String sql = "DELETE FROM library_2nd_edition.documents WHERE ID = ?";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        ps.setString(1, document.getID());
+        
+        int rowsDeleted = ps.executeUpdate();
+        ps.close();
+        
+        return rowsDeleted > 0;
     }
 }
+
