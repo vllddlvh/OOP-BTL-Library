@@ -44,10 +44,14 @@ public class UpdateDocumentTable extends UpdateTable<Document> {
      * Lấy danh sách Document từ cơ sở dữ liệu.
      */
     @Override
-    protected void getListElement() throws SQLException {
+    public void getListElement() throws SQLException {
         allElement = DocumentDAO.getAllDocuments();
     }
-
+    
+    public List<Document> getAlldcms() throws SQLException {
+        return allElement = DocumentDAO.getAllDocuments();
+    }
+    
     /**
      * Thêm một Document vào cơ sở dữ liệu và cập nhật bảng.
      * @param newDocument.

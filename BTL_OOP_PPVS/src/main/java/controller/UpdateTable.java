@@ -17,7 +17,7 @@ public abstract class UpdateTable <T> {
     protected JTextField jtfSearch;
     protected DefaultTableModel tableModel;
     
-    protected abstract void getListElement() throws SQLException;
+    public abstract void getListElement() throws SQLException;
     
     public abstract void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException;
     

@@ -41,7 +41,7 @@ public class UpdateMemberTable extends UpdateTable<Member> {
     }
     
     @Override
-    protected void getListElement() throws SQLException {
+    public void getListElement() throws SQLException {
         allElement = MemberDAO.getAllMember();
     }
     

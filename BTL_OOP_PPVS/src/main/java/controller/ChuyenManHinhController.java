@@ -4,11 +4,14 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.GDMain;
 import view.TrangChuJPanel;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import view.BanDocJPanel;
 import view.MuonTraTaiLieuJPanel;
 import view.SachJPanel;
@@ -25,7 +28,7 @@ public class ChuyenManHinhController {
     }
     
     //Doi mau
-    public void setView(JPanel jpnItem, JLabel jlbItem) {
+    public void setView(JPanel jpnItem, JLabel jlbItem) throws SQLException {
         kindSelected = "TrangChu";
         jpnItem.setBackground(new Color(26, 83, 25));
         jlbItem.setBackground(new Color(26, 83, 25));
@@ -60,8 +63,15 @@ public class ChuyenManHinhController {
         public void mouseClicked(MouseEvent e) {
             switch(kind) {
                 case "TrangChu":
-                    node = new TrangChuJPanel();
+                {
+                    try {
+                        node = new TrangChuJPanel();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ChuyenManHinhController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
                 case "BanDoc":
                     node = new BanDocJPanel();
                     break;
@@ -75,8 +85,15 @@ public class ChuyenManHinhController {
                     node = new ThongTinThanhVienJPanel();
                     break;
                 default:
-                    node = new TrangChuJPanel();
+                {
+                    try {
+                        node = new TrangChuJPanel();
+                    } catch (SQLException ex) {
+                        Logger.getLogger(ChuyenManHinhController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
                     break;
+
             }
             root.removeAll();
             root.setLayout(new BorderLayout());

@@ -6,8 +6,11 @@ package view;
 
 import bean.DanhMucBean;
 import controller.ChuyenManHinhController;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -15,7 +18,7 @@ import java.util.ArrayList;
  */
 public class GDMain extends javax.swing.JFrame {
 
-    public GDMain() {
+    public GDMain() throws SQLException {
         initComponents();
         
         setTitle("THƯ VIỆN");
@@ -252,7 +255,11 @@ public class GDMain extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GDMain().setVisible(true);
+                try {
+                    new GDMain().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(GDMain.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

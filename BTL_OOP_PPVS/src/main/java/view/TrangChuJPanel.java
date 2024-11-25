@@ -1,22 +1,61 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
-/**
- *
- * @author ADMIN
- */
+import controller.UpdateDocumentTable;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.io.File;
+import java.sql.SQLException;
+import java.util.List;
+import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import model.entity.Document;
+
 public class TrangChuJPanel extends javax.swing.JPanel {
 
-    /**
-     * Creates new form TrangChuJPanel
-     */
-    public TrangChuJPanel() {
+    public TrangChuJPanel() throws SQLException {
         initComponents();
+        jPanelBook.setLayout(new GridLayout(0, 3, 10, 10));
+        UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+        List<Document> documents = ctrl.getAlldcms();
+        displayDocuments(documents);
     }
 
+    private void displayDocuments(List<Document> documents) {
+        jPanelBook.removeAll(); // Xóa nội dung cũ
+        for (Document document:documents) {
+            jPanelBook.add(createDocumentCard(document));
+        }
+        jPanelBook.revalidate();
+        jPanelBook.repaint();
+    }
+    
+    private JPanel createDocumentCard(Document document) {
+        JPanel card = new JPanel();
+        card.setLayout(new BorderLayout());
+        card.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
+        
+        //Image document
+        JLabel imageLabel = new JLabel();
+        String pathImage = "/image/" + document.getFileImage();
+        ImageIcon icon = new ImageIcon(pathImage);
+
+
+        // Thông tin sách
+        JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getPublicationYear());
+        infoArea.setEditable(false);
+        infoArea.setLineWrap(true);
+        infoArea.setWrapStyleWord(true);
+
+        // Thêm các thành phần vào thẻ
+        card.add(imageLabel, BorderLayout.CENTER);
+        card.add(infoArea, BorderLayout.SOUTH);
+
+        return card;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,19 +65,58 @@ public class TrangChuJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelTT = new javax.swing.JPanel();
+        jScrollPaneBook = new javax.swing.JScrollPane();
+        jPanelBook = new javax.swing.JPanel();
+
+        jPanelTT.setBackground(new java.awt.Color(128, 175, 129));
+
+        jScrollPaneBook.setBackground(new java.awt.Color(255, 255, 255));
+
+        jPanelBook.setBackground(new java.awt.Color(128, 175, 129));
+
+        javax.swing.GroupLayout jPanelBookLayout = new javax.swing.GroupLayout(jPanelBook);
+        jPanelBook.setLayout(jPanelBookLayout);
+        jPanelBookLayout.setHorizontalGroup(
+            jPanelBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 812, Short.MAX_VALUE)
+        );
+        jPanelBookLayout.setVerticalGroup(
+            jPanelBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 423, Short.MAX_VALUE)
+        );
+
+        jScrollPaneBook.setViewportView(jPanelBook);
+
+        javax.swing.GroupLayout jPanelTTLayout = new javax.swing.GroupLayout(jPanelTT);
+        jPanelTT.setLayout(jPanelTTLayout);
+        jPanelTTLayout.setHorizontalGroup(
+            jPanelTTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPaneBook)
+        );
+        jPanelTTLayout.setVerticalGroup(
+            jPanelTTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTTLayout.createSequentialGroup()
+                .addGap(0, 104, Short.MAX_VALUE)
+                .addComponent(jScrollPaneBook, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 443, Short.MAX_VALUE)
+            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 426, Short.MAX_VALUE)
+            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanelBook;
+    private javax.swing.JPanel jPanelTT;
+    private javax.swing.JScrollPane jScrollPaneBook;
     // End of variables declaration//GEN-END:variables
 }
