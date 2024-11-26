@@ -14,7 +14,7 @@ public class GDMain extends javax.swing.JFrame {
         initComponents();
         
         setTitle("THƯ VIỆN");
-        this.setSize(1000, 700);
+        this.setSize(1200, 800);
         this.setLocationRelativeTo(null);
         ChuyenManHinhController controller = new ChuyenManHinhController(jpnView);
         controller.setView(jpnMHC, jlbMHC);

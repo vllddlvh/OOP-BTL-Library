@@ -38,64 +38,63 @@ public class TrangChuJPanel extends javax.swing.JPanel {
     }
 
     private void displayDocuments(List<Document> documents) {
-        jPanelBook.removeAll(); // Xóa nội dung cũ
-        for (Document document:documents) {
-            JPanel documentCard = createDocumentCard(document);
-        
-        // Đặt kích thước cố định cho mỗi thẻ (200x250)
-        documentCard.setPreferredSize(new java.awt.Dimension(150, 200));
-        
+    jPanelBook.removeAll(); // Xóa nội dung cũ
+    for (Document document : documents) {
+        JPanel documentCard = createDocumentCard(document);
+
+        // Đặt kích thước cố định cho mỗi thẻ (200x300)
+        documentCard.setPreferredSize(new Dimension(200, 300));
+
         // Thêm thẻ vào jPanelBook
         jPanelBook.add(documentCard);
-            
-        }
-        jPanelBook.revalidate();
-        jPanelBook.repaint();
     }
-    
-    private JPanel createDocumentCard(Document document) {
-        JPanel card = new JPanel();
-        card.setLayout(new BorderLayout());
-        card.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
-        //Image document
-        JPanel image = new JPanel();
-        image.setBackground(new Color(128,175,129));
-        JLabel imageLabel = new JLabel();
-        String pathImage = "/image/" + document.getFileImage();
-        URL imageURL = getClass().getResource(pathImage);
-        if (imageURL == null) {
+    jPanelBook.revalidate();
+    jPanelBook.repaint();
+}
+
+private JPanel createDocumentCard(Document document) {
+    JPanel card = new JPanel();
+    card.setLayout(new BorderLayout(5, 5)); // Khoảng cách giữa các thành phần
+    card.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
+
+    // Image document
+    JPanel image = new JPanel();
+    image.setBackground(new Color(128, 175, 129));
+    JLabel imageLabel = new JLabel();
+    String pathImage = "/image/" + document.getFileImage();
+    URL imageURL = getClass().getResource(pathImage);
+    if (imageURL == null) {
         System.out.println("Ảnh không tìm thấy tại: " + pathImage);
-        } else {
-        imageLabel.setIcon(new ImageIcon(imageURL));
-        // Căn giữa hình ảnh trong JLabel
-        imageLabel.setHorizontalAlignment(JLabel.CENTER);  // Căn giữa theo chiều ngang
-        imageLabel.setVerticalAlignment(JLabel.CENTER);    // Căn giữa theo chiều dọc
-        imageLabel.setBackground(Color.WHITE);
-        }
-
-        image.add(imageLabel);
-        // Thông tin sách
-        JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getPublicationYear());
-        infoArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 10));
-//        infoArea.setBackground(new Color(214,239,216));
-        infoArea.setForeground(Color.BLACK);
-        infoArea.setEditable(false);
-        infoArea.setLineWrap(true);
-        infoArea.setWrapStyleWord(true);
-
-        // Thêm các thành phần vào thẻ
-        card.add(image, BorderLayout.CENTER);
-        card.add(infoArea, BorderLayout.SOUTH);
-        
-        card.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                gioiThieuDocument(document);
-            }
-        });
-
-        return card;
+    } else {
+        ImageIcon originalIcon = new ImageIcon(imageURL);
+        Image scaledImage = originalIcon.getImage().getScaledInstance(200, 250, Image.SCALE_SMOOTH);
+        imageLabel.setIcon(new ImageIcon(scaledImage));
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);
     }
+    image.add(imageLabel);
+
+    // Thông tin sách
+    JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getPublicationYear());
+    infoArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 10));
+    infoArea.setForeground(Color.BLACK);
+    infoArea.setEditable(false);
+    infoArea.setLineWrap(true);
+    infoArea.setWrapStyleWord(true);
+
+    // Thêm các thành phần vào thẻ
+    card.add(image, BorderLayout.CENTER);
+    card.add(infoArea, BorderLayout.SOUTH);
+
+    card.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            gioiThieuDocument(document);
+        }
+    });
+
+    return card;
+}
+
     
     // Hiển thị thông tin chi tiết sách trong cửa sổ mới (JFrame)
     private void gioiThieuDocument(Document document) {
@@ -223,7 +222,7 @@ public class TrangChuJPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, 612, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
