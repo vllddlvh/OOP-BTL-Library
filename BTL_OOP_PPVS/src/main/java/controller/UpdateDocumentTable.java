@@ -77,29 +77,34 @@ public class UpdateDocumentTable extends UpdateTable<Document> {
     @Override
     public boolean deleteElement(Document deleteDocument) throws SQLException {
         if (DocumentDAO.deleteDocument(deleteDocument)) { // Phương thức này phải trả về true khi xóa thành công
-            // Xóa khỏi danh sách `allElement` và cập nhật bảng
+            // Xóa khỏi danh sách `allElement`
             for (int i = 0; i < allElement.size(); i++) {
                 if (allElement.get(i).getID().equals(deleteDocument.getID())) {
-                    allElement.remove(i);
+                    allElement.remove(i); // Xóa khỏi danh sách
                     break;
                 }
             }
+
+            // Xóa dòng khỏi bảng `JTable`
             for (int i = 0; i < tableModel.getRowCount(); i++) {
-                if (tableModel.getValueAt(i, 0).toString().equals(deleteDocument.getID())) {
-                    tableModel.removeRow(i);
+                Object cellValue = tableModel.getValueAt(i, 0); // Lấy giá trị từ cột ID
+                if (cellValue != null && cellValue.toString().equals(deleteDocument.getID())) {
+                    tableModel.removeRow(i); // Xóa dòng trong `JTable`
                     break;
                 }
             }
             return true; // Trả về true khi xóa thành công
         }
-        return false;
+        return false; // Trả về false nếu không xóa được
     }
+
 
 
     @Override
     public void updateRow(Document updatedDocument) {
         for (int row = 0; row < tableModel.getRowCount(); row++) {
-            if (tableModel.getValueAt(row, 0).equals(updatedDocument.getID())) {
+            Object value = tableModel.getValueAt(row, 0); // Lấy giá trị từ cột ID
+            if (value != null && value.equals(updatedDocument.getID())) { // Kiểm tra null trước
                 tableModel.setValueAt(updatedDocument.getTitle(), row, 1);
                 tableModel.setValueAt(updatedDocument.getAuthor(), row, 2);
                 tableModel.setValueAt(updatedDocument.getPublisher(), row, 3);
@@ -108,11 +113,12 @@ public class UpdateDocumentTable extends UpdateTable<Document> {
                 tableModel.setValueAt(updatedDocument.getLanguage(), row, 6);
                 tableModel.setValueAt(updatedDocument.getSummary(), row, 7);
                 tableModel.setValueAt(updatedDocument.getFileImage(), row, 8);
-                
+
                 break;
             }
         }
     }
+
 
     @Override
     protected void addRow(Document document) {
