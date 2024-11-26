@@ -66,7 +66,7 @@ public class DocumentDAO {
     
     // Thêm một tài liệu mới
     public static boolean addNewDocument(Document document) throws SQLException {
-         CallableStatement finder = DatabaseConnector.getConnection().prepareCall("{ call addDocument(?, ?, ?, ?, ?, ?, ?, ?, ?) }");
+        CallableStatement finder = DatabaseConnector.getConnection().prepareCall("{ call addDocument(?, ?, ?, ?, ?, ?, ?, ?, ?) }");
 
         finder.setString(1, document.getID());
         finder.setString(2, document.getTitle());

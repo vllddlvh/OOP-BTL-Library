@@ -4,6 +4,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import view.GDMain;
+import view.LoginJFrame;
 
 
 public class Main {
@@ -11,7 +12,7 @@ public class Main {
         try {
             model.DatabaseConnector.getInstance();
             
-            new GDMain().setVisible(true);
+            new LoginJFrame().setVisible(true);
             
             // model.DatabaseConnector.closeConnection();
             
