@@ -99,7 +99,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="jlbSummary" alignment="0" min="-2" pref="97" max="-2" attributes="0"/>
+                          <Component id="jlbSummary" min="-2" pref="97" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="jlbImage" max="32767" attributes="0"/>
                               <Component id="jlbLanguage" alignment="0" max="32767" attributes="0"/>
@@ -113,7 +113,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jTextFieldBookPublisher" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldBookPublisher" alignment="0" pref="350" max="32767" attributes="0"/>
                           <Component id="jTextFieldPublicationYear" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldCategory" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldBookID" max="32767" attributes="0"/>
@@ -121,7 +121,7 @@
                           <Component id="jTextFieldBookAuthor" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldLanguage" alignment="0" max="32767" attributes="0"/>
                           <Component id="jTextFieldFileImage" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jScrollPane1" pref="340" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="350" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="246" max="-2" attributes="0"/>
                   </Group>
@@ -165,19 +165,25 @@
                           <Component id="jlbLanguage" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jTextFieldLanguage" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jlbSummary" min="-2" pref="32" max="-2" attributes="0"/>
-                          <Component id="jScrollPane1" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="jTextFieldFileImage" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbImage" min="-2" pref="34" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="16" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbImage" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="jTextFieldFileImage" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jlbSummary" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="13" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" min="-2" pref="30" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="ButtonReset" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>

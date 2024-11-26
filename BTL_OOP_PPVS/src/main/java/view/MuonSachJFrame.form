@@ -61,7 +61,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="15" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
                   <Component id="jButtonLuuThongTin" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                   <Component id="jpnMuonSach" min="-2" max="-2" attributes="0"/>
@@ -99,23 +99,15 @@
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="JTextFieldDocumentID" min="-2" pref="110" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="jlbUserID" alignment="0" min="-2" max="-2" attributes="0"/>
-                                              <Component id="jlbRequestID" alignment="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="jTextFieldUserID" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                              <Component id="jTextFieldRequestID" alignment="1" min="-2" pref="110" max="-2" attributes="0"/>
-                                          </Group>
-                                      </Group>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jlbquantityBorrow" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="jTextQuantityBorrow" min="-2" pref="110" max="-2" attributes="0"/>
-                                      </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlbUserID" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
+                                      <Component id="jTextFieldUserID" min="-2" pref="110" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlbquantityBorrow" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="jTextQuantityBorrow" min="-2" pref="110" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -136,22 +128,17 @@
                           <Component id="jlbDocumentID" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="JTextFieldDocumentID" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbRequestID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldRequestID" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlbUserID" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTextFieldUserID" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbUserID" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextFieldUserID" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jlbquantityBorrow" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jTextQuantityBorrow" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
                       <Component id="jButtonReset" min="-2" max="-2" attributes="0"/>
                       <EmptySpace pref="85" max="32767" attributes="0"/>
                   </Group>
@@ -171,20 +158,6 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="documentID:"/>
-              </Properties>
-            </Component>
-            <Component class="javax.swing.JLabel" name="jlbRequestID">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="12" style="1"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="requestID:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jlbUserID">
@@ -217,11 +190,12 @@
             </Component>
             <Component class="javax.swing.JTextField" name="JTextFieldDocumentID">
             </Component>
-            <Component class="javax.swing.JTextField" name="jTextFieldRequestID">
-            </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldUserID">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextQuantityBorrow">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="1"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JButton" name="jButtonReset">
               <Properties>
