@@ -76,6 +76,8 @@
       <SubComponents>
         <Component class="javax.swing.JTextField" name="JTextFieldTimKiemTaiLieu">
           <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JTextFieldTimKiemTaiLieuFocusGained"/>
+            <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="JTextFieldTimKiemTaiLieuFocusLost"/>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="JTextFieldTimKiemTaiLieuActionPerformed"/>
           </Events>
         </Component>
@@ -116,13 +118,16 @@
             <Component class="javax.swing.JTable" name="jTableThongTinTaiLieu">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="6" rowCount="4">
+                  <Table columnCount="9" rowCount="3">
                     <Column editable="true" title="ID" type="java.lang.String"/>
                     <Column editable="true" title="Ti&#xea;u &#x111;&#x1ec1;" type="java.lang.Object"/>
                     <Column editable="true" title="T&#xe1;c gi&#x1ea3;" type="java.lang.Object"/>
+                    <Column editable="true" title="Nh&#xe0; xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
                     <Column editable="true" title="N&#x103;m xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
                     <Column editable="true" title="Th&#x1ec3; lo&#x1ea1;i" type="java.lang.Object"/>
                     <Column editable="true" title="Ng&#xf4;n ng&#x1eef;" type="java.lang.Object"/>
+                    <Column editable="true" title="T&#xf3;m t&#x1eaf;t" type="java.lang.Object"/>
+                    <Column editable="true" title="H&#xec;nh &#x1ea3;nh" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnSelectionAllowed" type="boolean" value="true"/>

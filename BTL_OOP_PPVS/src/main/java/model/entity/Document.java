@@ -55,6 +55,8 @@ public class Document {
         this.publicationYear = rs.getString(5); // Gán năm xuất bản
         this.category = rs.getString(6);      // Gán danh mục
         this.language = rs.getString(7);      // Gán ngôn ngữ
+        this.summary = rs.getString(8);
+        this.fileImage = rs.getString(9);
     }
 }
 

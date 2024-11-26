@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.UpdateDocumentTable;
 import controller.UpdateMemberTable;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -25,12 +26,12 @@ public class TaiLieuPanel extends javax.swing.JPanel {
     public TaiLieuPanel() {
         initComponents();
         initTableTaiLieu();
-        UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+        UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
         try {
             ctrl.setTableUpToDate(jTableThongTinTaiLieu, ButtonThemTaiLieu, JTextFieldTimKiemTaiLieu);
             
         } catch (SQLException ex) {
-            Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TaiLieuPanel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, "Unknown Error");
         }
     }
@@ -54,6 +55,14 @@ public class TaiLieuPanel extends javax.swing.JPanel {
         jpnViewTaiLieu.setBackground(new java.awt.Color(128, 175, 129));
         jpnViewTaiLieu.setPreferredSize(new java.awt.Dimension(945, 501));
 
+        JTextFieldTimKiemTaiLieu.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                JTextFieldTimKiemTaiLieuFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                JTextFieldTimKiemTaiLieuFocusLost(evt);
+            }
+        });
         JTextFieldTimKiemTaiLieu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTextFieldTimKiemTaiLieuActionPerformed(evt);
@@ -75,17 +84,16 @@ public class TaiLieuPanel extends javax.swing.JPanel {
 
         jTableThongTinTaiLieu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Tiêu đề", "Tác giả", "Năm xuất bản", "Thể loại", "Ngôn ngữ"
+                "ID", "Tiêu đề", "Tác giả", "Nhà xuất bản", "Năm xuất bản", "Thể loại", "Ngôn ngữ", "Tóm tắt", "Hình ảnh"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -145,6 +153,22 @@ public class TaiLieuPanel extends javax.swing.JPanel {
         ThemTaiLieuFrame themTaiLieuFrame = new ThemTaiLieuFrame();
         themTaiLieuFrame.setVisible(true);
     }//GEN-LAST:event_ButtonThemTaiLieuActionPerformed
+
+    private void JTextFieldTimKiemTaiLieuFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemTaiLieuFocusGained
+        // TODO add your handling code here:
+        JTextFieldTimKiemTaiLieu.setText("");
+        JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
+        JTextFieldTimKiemTaiLieu.setForeground(java.awt.Color.BLACK); // Đặt màu chữ là đen
+    }//GEN-LAST:event_JTextFieldTimKiemTaiLieuFocusGained
+
+    private void JTextFieldTimKiemTaiLieuFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemTaiLieuFocusLost
+        // TODO add your handling code here:
+        if(JTextFieldTimKiemTaiLieu.getText().equals("")) {
+            JTextFieldTimKiemTaiLieu.setText("Tìm kiếm thông tin thành viên");
+            JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
+            JTextFieldTimKiemTaiLieu.setForeground(new Color(204,204,204));
+        }
+    }//GEN-LAST:event_JTextFieldTimKiemTaiLieuFocusLost
 
     private void initTableTaiLieu() {
         jTableThongTinTaiLieu.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
