@@ -119,15 +119,15 @@
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="9" rowCount="3">
-                    <Column editable="true" title="ID" type="java.lang.String"/>
-                    <Column editable="true" title="Ti&#xea;u &#x111;&#x1ec1;" type="java.lang.Object"/>
-                    <Column editable="true" title="T&#xe1;c gi&#x1ea3;" type="java.lang.Object"/>
-                    <Column editable="true" title="Nh&#xe0; xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
-                    <Column editable="true" title="N&#x103;m xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
-                    <Column editable="true" title="Th&#x1ec3; lo&#x1ea1;i" type="java.lang.Object"/>
-                    <Column editable="true" title="Ng&#xf4;n ng&#x1eef;" type="java.lang.Object"/>
-                    <Column editable="true" title="T&#xf3;m t&#x1eaf;t" type="java.lang.Object"/>
-                    <Column editable="true" title="H&#xec;nh &#x1ea3;nh" type="java.lang.Object"/>
+                    <Column editable="false" title="ID" type="java.lang.String"/>
+                    <Column editable="false" title="Ti&#xea;u &#x111;&#x1ec1;" type="java.lang.Object"/>
+                    <Column editable="false" title="T&#xe1;c gi&#x1ea3;" type="java.lang.Object"/>
+                    <Column editable="false" title="Nh&#xe0; xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
+                    <Column editable="false" title="N&#x103;m xu&#x1ea5;t b&#x1ea3;n" type="java.lang.Object"/>
+                    <Column editable="false" title="Th&#x1ec3; lo&#x1ea1;i" type="java.lang.Object"/>
+                    <Column editable="false" title="Ng&#xf4;n ng&#x1eef;" type="java.lang.Object"/>
+                    <Column editable="false" title="T&#xf3;m t&#x1eaf;t" type="java.lang.Object"/>
+                    <Column editable="false" title="H&#xec;nh &#x1ea3;nh" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnSelectionAllowed" type="boolean" value="true"/>

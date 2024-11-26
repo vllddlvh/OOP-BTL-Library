@@ -111,12 +111,11 @@ public class DocumentDAO {
     // Xóa tài liệu
     public static boolean deleteDocument(Document document) throws SQLException {
         String sql = "DELETE FROM library_2nd_edition.documents WHERE ID = ?";
-        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
-        ps.setString(1, document.getID());
+        try (PreparedStatement stmt = DatabaseConnector.getConnection().prepareStatement(sql)) {
+            stmt.setString(1, document.getID());
+            int rowsAffected = stmt.executeUpdate();
+            return rowsAffected > 0; // Trả về true nếu có ít nhất một dòng bị xóa
+        }
+}
 
-        int rowsDeleted = ps.executeUpdate();
-        ps.close();
-
-        return rowsDeleted > 0;
-    }
 }

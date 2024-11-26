@@ -4,7 +4,13 @@
  */
 package view;
 
+import controller.UpdateDocumentTable;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import model.entity.Document;
 
 /**
  *
@@ -295,6 +301,32 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
 
     private void ButtonXoaTaiLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonXoaTaiLieuActionPerformed
         // TODO add your handling code here:
+         // Tạo một Document với thông tin từ các JTextField
+        Document doc = new Document(
+            jTextFieldBookID.getText(),
+            jTextFieldBookTitle.getText(),
+            jTextFieldBookAuthor.getText(),
+            jTextFieldBookPublisher.getText(),
+            jTextFieldPublicationYear.getText(),
+            jTextFieldCategory.getText(),
+            jTextFieldLanguage.getText(),
+            jTextAreaSummary.getText(),
+            jTextFieldFileImage.getText()
+        );
+
+        try {
+        UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+            if (ctrl.deleteElement(doc)) {
+                JOptionPane.showMessageDialog(rootPane, "Xóa tài liệu thành công");
+                this.dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Xóa tài liệu không thành công");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(SuaThongTinTaiLieuSachFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
+        }
     }//GEN-LAST:event_ButtonXoaTaiLieuActionPerformed
 
     /**
