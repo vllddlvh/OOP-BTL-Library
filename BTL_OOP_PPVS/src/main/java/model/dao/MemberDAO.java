@@ -22,7 +22,6 @@ public class MemberDAO {
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         
-        String[] date;
         ArrayList<Member> list = new ArrayList<>();
         while(rs.next()) {
             

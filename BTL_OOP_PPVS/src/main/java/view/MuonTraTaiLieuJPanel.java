@@ -68,11 +68,11 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "borrowDate", "documentID", "quantityBorrow", "requestID", "returnDate", "userID"
+                "requestID", "userID", "documentID", "quantityBorrow", "borrowDate", "returnDate"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {

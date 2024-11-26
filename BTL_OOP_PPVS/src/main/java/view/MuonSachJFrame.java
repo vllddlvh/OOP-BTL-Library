@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 /**
@@ -30,11 +26,9 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         jPanelBigMuonSach = new javax.swing.JPanel();
         jpnMuonSach = new javax.swing.JPanel();
         jlbDocumentID = new javax.swing.JLabel();
-        jlbRequestID = new javax.swing.JLabel();
         jlbUserID = new javax.swing.JLabel();
         jlbquantityBorrow = new javax.swing.JLabel();
         JTextFieldDocumentID = new javax.swing.JTextField();
-        jTextFieldRequestID = new javax.swing.JTextField();
         jTextFieldUserID = new javax.swing.JTextField();
         jTextQuantityBorrow = new javax.swing.JTextField();
         jButtonReset = new javax.swing.JButton();
@@ -52,11 +46,6 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         jlbDocumentID.setForeground(new java.awt.Color(255, 255, 255));
         jlbDocumentID.setText("documentID:");
 
-        jlbRequestID.setBackground(new java.awt.Color(255, 255, 255));
-        jlbRequestID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jlbRequestID.setForeground(new java.awt.Color(255, 255, 255));
-        jlbRequestID.setText("requestID:");
-
         jlbUserID.setBackground(new java.awt.Color(255, 255, 255));
         jlbUserID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jlbUserID.setForeground(new java.awt.Color(255, 255, 255));
@@ -66,6 +55,8 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         jlbquantityBorrow.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jlbquantityBorrow.setForeground(new java.awt.Color(255, 255, 255));
         jlbquantityBorrow.setText("quantityBorrow:");
+
+        jTextQuantityBorrow.setText("1");
 
         jButtonReset.setBackground(new java.awt.Color(80, 141, 78));
         jButtonReset.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
@@ -90,19 +81,14 @@ public class MuonSachJFrame extends javax.swing.JFrame {
                                 .addComponent(jlbDocumentID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(JTextFieldDocumentID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpnMuonSachLayout.createSequentialGroup()
-                                    .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jlbUserID)
-                                        .addComponent(jlbRequestID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextFieldUserID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextFieldRequestID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jpnMuonSachLayout.createSequentialGroup()
-                                    .addComponent(jlbquantityBorrow)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(jTextQuantityBorrow, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addGroup(jpnMuonSachLayout.createSequentialGroup()
+                                .addComponent(jlbUserID)
+                                .addGap(58, 58, 58)
+                                .addComponent(jTextFieldUserID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpnMuonSachLayout.createSequentialGroup()
+                                .addComponent(jlbquantityBorrow)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTextQuantityBorrow, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jpnMuonSachLayout.createSequentialGroup()
                         .addGap(80, 80, 80)
                         .addComponent(jButtonReset)))
@@ -115,19 +101,15 @@ public class MuonSachJFrame extends javax.swing.JFrame {
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbDocumentID)
                     .addComponent(JTextFieldDocumentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbRequestID)
-                    .addComponent(jTextFieldRequestID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
-                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(30, 30, 30)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jlbUserID)
                     .addComponent(jTextFieldUserID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addGap(30, 30, 30)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbquantityBorrow)
                     .addComponent(jTextQuantityBorrow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(28, 28, 28)
                 .addComponent(jButtonReset)
                 .addContainerGap(85, Short.MAX_VALUE))
         );
@@ -155,14 +137,12 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         jPanelBigMuonSachLayout.setVerticalGroup(
             jPanelBigMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBigMuonSachLayout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(jButtonLuuThongTin)
                 .addGap(15, 15, 15)
                 .addComponent(jpnMuonSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
         );
-
-        jpnMuonSach.getAccessibleContext().setAccessibleName("Mượn sách");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -182,7 +162,6 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTextFieldDocumentID.setText("");
         jTextQuantityBorrow.setText("");
-        jTextFieldRequestID.setText("");
         jTextFieldUserID.setText("");
     }//GEN-LAST:event_jButtonResetActionPerformed
 
@@ -226,11 +205,9 @@ public class MuonSachJFrame extends javax.swing.JFrame {
     private javax.swing.JButton jButtonLuuThongTin;
     private javax.swing.JButton jButtonReset;
     private javax.swing.JPanel jPanelBigMuonSach;
-    private javax.swing.JTextField jTextFieldRequestID;
     private javax.swing.JTextField jTextFieldUserID;
     private javax.swing.JTextField jTextQuantityBorrow;
     private javax.swing.JLabel jlbDocumentID;
-    private javax.swing.JLabel jlbRequestID;
     private javax.swing.JLabel jlbUserID;
     private javax.swing.JLabel jlbquantityBorrow;
     private javax.swing.JPanel jpnMuonSach;
