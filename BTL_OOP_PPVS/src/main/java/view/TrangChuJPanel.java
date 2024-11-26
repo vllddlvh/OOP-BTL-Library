@@ -32,6 +32,8 @@ public class TrangChuJPanel extends javax.swing.JPanel {
     // Để chúng tự động điều chỉnh theo không gian có sẵn.
 
     // Cập nhật dữ liệu và hiển thị tài liệu
+    jScrollPaneBook.getVerticalScrollBar().setUnitIncrement(15);
+    jScrollPaneBook.getHorizontalScrollBar().setUnitIncrement(15);
     UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
     List<Document> documents = ctrl.getAlldcms();
     displayDocuments(documents);
