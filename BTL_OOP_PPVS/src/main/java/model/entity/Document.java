@@ -24,6 +24,8 @@ public class Document {
     private String summary;
     private String fileImage;
 
+    
+    public Document() {}
     // Constructor
     public Document(String ID, String title, String author, String publisher, String publicationYear, String category, String language, String summary, String fileImage) {
         this.ID = ID;

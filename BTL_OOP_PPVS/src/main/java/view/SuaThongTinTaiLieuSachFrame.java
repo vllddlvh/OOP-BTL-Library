@@ -5,12 +5,14 @@
 package view;
 
 import controller.UpdateDocumentTable;
+import controller.UpdateMemberTable;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.entity.Document;
+import model.entity.Member;
 
 /**
  *
@@ -245,6 +247,11 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
         ButtonSaveBook.setForeground(new java.awt.Color(255, 255, 255));
         ButtonSaveBook.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoSaveAS.png"))); // NOI18N
         ButtonSaveBook.setText("Lưu dữ liệu");
+        ButtonSaveBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ButtonSaveBookActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jpnViewThemTaiLieuLayout = new javax.swing.GroupLayout(jpnViewThemTaiLieu);
         jpnViewThemTaiLieu.setLayout(jpnViewThemTaiLieuLayout);
@@ -328,6 +335,34 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
         }
     }//GEN-LAST:event_ButtonXoaTaiLieuActionPerformed
+
+    private void ButtonSaveBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveBookActionPerformed
+        // TODO add your handling code here:
+        Document doc = new Document(
+            jTextFieldBookID.getText(),
+            jTextFieldBookTitle.getText(),
+            jTextFieldBookAuthor.getText(),
+            jTextFieldBookPublisher.getText(),
+            jTextFieldPublicationYear.getText(),
+            jTextFieldCategory.getText(),
+            jTextFieldLanguage.getText(),
+            jTextAreaSummary.getText(),
+            jTextFieldFileImage.getText()
+        );
+   
+        try {
+            UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+            if (ctrl.updateElement(doc)) {
+                JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Sửa không thành công");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
+        }
+    }//GEN-LAST:event_ButtonSaveBookActionPerformed
 
     /**
      * @param args the command line arguments
