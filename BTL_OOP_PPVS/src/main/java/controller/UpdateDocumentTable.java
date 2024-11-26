@@ -76,7 +76,8 @@ public class UpdateDocumentTable extends UpdateTable<Document> {
 
     @Override
     public boolean deleteElement(Document deleteDocument) throws SQLException {
-        if (DocumentDAO.deleteDocument(deleteDocument)) {
+        if (DocumentDAO.deleteDocument(deleteDocument)) { // Phương thức này phải trả về true khi xóa thành công
+            // Xóa khỏi danh sách `allElement` và cập nhật bảng
             for (int i = 0; i < allElement.size(); i++) {
                 if (allElement.get(i).getID().equals(deleteDocument.getID())) {
                     allElement.remove(i);
@@ -89,10 +90,11 @@ public class UpdateDocumentTable extends UpdateTable<Document> {
                     break;
                 }
             }
-            return true;
+            return true; // Trả về true khi xóa thành công
         }
         return false;
     }
+
 
     @Override
     public void updateRow(Document updatedDocument) {
@@ -146,7 +148,7 @@ public class UpdateDocumentTable extends UpdateTable<Document> {
             @Override
             public void insertUpdate(DocumentEvent e) {
                 String text = jtfSearch.getText();
-                if (text.trim().equalsIgnoreCase("Tìm kiếm thông tin tài liệu") || text.trim().isEmpty()) {
+                if (text.trim().equalsIgnoreCase("Tìm kiếm thông tin tài liệu") || text.trim().length() == 0) {
                     rowSorter.setRowFilter(null);
                 } else {
                     rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
