@@ -11,7 +11,9 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -20,10 +22,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import model.entity.Document;
 
 public class TrangChuJPanel extends javax.swing.JPanel {
-
+    private final UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+    private final List<Document> documents = ctrl.getAlldcms();
     public TrangChuJPanel() throws SQLException {
         initComponents();
         // Sử dụng GridLayout cho jPanelBook
@@ -34,11 +38,45 @@ public class TrangChuJPanel extends javax.swing.JPanel {
     // Cập nhật dữ liệu và hiển thị tài liệu
     jScrollPaneBook.getVerticalScrollBar().setUnitIncrement(15);
     jScrollPaneBook.getHorizontalScrollBar().setUnitIncrement(15);
-    UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
-    List<Document> documents = ctrl.getAlldcms();
+    
     displayDocuments(documents);
+    
+    JTextFieldTimKiem.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+    @Override
+    public void insertUpdate(javax.swing.event.DocumentEvent e) {
+        filterDocuments(); // Tìm kiếm mỗi khi người dùng nhập
     }
 
+    @Override
+    public void removeUpdate(javax.swing.event.DocumentEvent e) {
+        filterDocuments(); // Tìm kiếm khi người dùng xóa ký tự
+    }
+
+    @Override
+    public void changedUpdate(javax.swing.event.DocumentEvent e) {
+        filterDocuments(); // Tìm kiếm khi văn bản thay đổi (dù lý do gì)
+    }
+});
+    }
+
+    private void filterDocuments() {
+    String keyword = JTextFieldTimKiem.getText().toLowerCase().trim(); // Lấy từ khóa tìm kiếm và loại bỏ khoảng trắng đầu/cuối
+    List<Document> filteredDocuments = new ArrayList<>(); // Danh sách lưu tài liệu lọc được
+
+    for (Document document : documents) {
+        // Kiểm tra nếu từ khóa xuất hiện trong bất kỳ trường nào của tài liệu
+        if (document.getTitle().toLowerCase().contains(keyword) || // Tên tài liệu
+            document.getAuthor().toLowerCase().contains(keyword)) { // Tác giả
+            filteredDocuments.add(document); // Thêm tài liệu vào danh sách lọc
+        }
+    }
+
+    // Hiển thị lại danh sách tài liệu đã lọc
+    displayDocuments(filteredDocuments);
+}
+
+
+    
     private void displayDocuments(List<Document> documents) {
     jPanelBook.removeAll(); // Xóa nội dung cũ
     for (Document document : documents) {
@@ -177,7 +215,8 @@ private JPanel createDocumentCard(Document document) {
         jPanelTT = new javax.swing.JPanel();
         jScrollPaneBook = new javax.swing.JScrollPane();
         jPanelBook = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        jPanelTimKiem = new javax.swing.JPanel();
+        JTextFieldTimKiem = new javax.swing.JTextField();
 
         jPanelTT.setBackground(new java.awt.Color(128, 175, 129));
         jPanelTT.setLayout(new java.awt.BorderLayout());
@@ -201,20 +240,32 @@ private JPanel createDocumentCard(Document document) {
 
         jPanelTT.add(jScrollPaneBook, java.awt.BorderLayout.CENTER);
 
-        jPanel1.setBackground(new java.awt.Color(128, 175, 129));
+        jPanelTimKiem.setBackground(new java.awt.Color(128, 175, 129));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 831, Short.MAX_VALUE)
+        JTextFieldTimKiem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JTextFieldTimKiemActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanelTimKiemLayout = new javax.swing.GroupLayout(jPanelTimKiem);
+        jPanelTimKiem.setLayout(jPanelTimKiemLayout);
+        jPanelTimKiemLayout.setHorizontalGroup(
+            jPanelTimKiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTimKiemLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(293, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 88, Short.MAX_VALUE)
+        jPanelTimKiemLayout.setVerticalGroup(
+            jPanelTimKiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTimKiemLayout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
-        jPanelTT.add(jPanel1, java.awt.BorderLayout.PAGE_START);
+        jPanelTT.add(jPanelTimKiem, java.awt.BorderLayout.PAGE_START);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -228,11 +279,16 @@ private JPanel createDocumentCard(Document document) {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JTextFieldTimKiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemActionPerformed
+    
+    }//GEN-LAST:event_JTextFieldTimKiemActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField JTextFieldTimKiem;
     private javax.swing.JPanel jPanelBook;
     private javax.swing.JPanel jPanelTT;
+    private javax.swing.JPanel jPanelTimKiem;
     private javax.swing.JScrollPane jScrollPaneBook;
     // End of variables declaration//GEN-END:variables
 }
