@@ -21,6 +21,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
      */
     public ThemTaiLieuFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public ThemTaiLieuFrame(String id, String title, String author, String publisher, String publicationYear, String category, String language, String summary, String fileImage) {

@@ -5,6 +5,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
 import java.io.File;
+import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.BorderFactory;
@@ -18,16 +19,29 @@ public class TrangChuJPanel extends javax.swing.JPanel {
 
     public TrangChuJPanel() throws SQLException {
         initComponents();
-        jPanelBook.setLayout(new GridLayout(0, 3, 10, 10));
-        UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
-        List<Document> documents = ctrl.getAlldcms();
-        displayDocuments(documents);
+        // Sử dụng GridLayout cho jPanelBook
+    jPanelBook.setLayout(new GridLayout(0, 4, 10, 10)); // 4 cột, khoảng cách 10px giữa các phần tử
+
+    // Không cố định kích thước của jPanelBook và jScrollPaneBook
+    // Để chúng tự động điều chỉnh theo không gian có sẵn.
+
+    // Cập nhật dữ liệu và hiển thị tài liệu
+    UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+    List<Document> documents = ctrl.getAlldcms();
+    displayDocuments(documents);
     }
 
     private void displayDocuments(List<Document> documents) {
         jPanelBook.removeAll(); // Xóa nội dung cũ
         for (Document document:documents) {
-            jPanelBook.add(createDocumentCard(document));
+            JPanel documentCard = createDocumentCard(document);
+        
+        // Đặt kích thước cố định cho mỗi thẻ (200x250)
+        documentCard.setPreferredSize(new java.awt.Dimension(150, 200));
+        
+        // Thêm thẻ vào jPanelBook
+        jPanelBook.add(documentCard);
+            
         }
         jPanelBook.revalidate();
         jPanelBook.repaint();
@@ -36,16 +50,25 @@ public class TrangChuJPanel extends javax.swing.JPanel {
     private JPanel createDocumentCard(Document document) {
         JPanel card = new JPanel();
         card.setLayout(new BorderLayout());
-        card.setBorder(BorderFactory.createLineBorder(Color.GRAY, 1));
-        
+        card.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
         //Image document
         JLabel imageLabel = new JLabel();
         String pathImage = "/image/" + document.getFileImage();
-        ImageIcon icon = new ImageIcon(pathImage);
+        URL imageURL = getClass().getResource(pathImage);
+        if (imageURL == null) {
+        System.out.println("Ảnh không tìm thấy tại: " + pathImage);
+        } else {
+        imageLabel.setIcon(new ImageIcon(imageURL));
+        // Căn giữa hình ảnh trong JLabel
+        imageLabel.setHorizontalAlignment(JLabel.CENTER);  // Căn giữa theo chiều ngang
+        imageLabel.setVerticalAlignment(JLabel.CENTER);    // Căn giữa theo chiều dọc
+        imageLabel.setBackground(Color.WHITE);
+        }
 
 
         // Thông tin sách
         JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getPublicationYear());
+        infoArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 10));
         infoArea.setEditable(false);
         infoArea.setLineWrap(true);
         infoArea.setWrapStyleWord(true);
@@ -68,8 +91,10 @@ public class TrangChuJPanel extends javax.swing.JPanel {
         jPanelTT = new javax.swing.JPanel();
         jScrollPaneBook = new javax.swing.JScrollPane();
         jPanelBook = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
 
         jPanelTT.setBackground(new java.awt.Color(128, 175, 129));
+        jPanelTT.setLayout(new java.awt.BorderLayout());
 
         jScrollPaneBook.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -83,38 +108,43 @@ public class TrangChuJPanel extends javax.swing.JPanel {
         );
         jPanelBookLayout.setVerticalGroup(
             jPanelBookLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 423, Short.MAX_VALUE)
+            .addGap(0, 850, Short.MAX_VALUE)
         );
 
         jScrollPaneBook.setViewportView(jPanelBook);
 
-        javax.swing.GroupLayout jPanelTTLayout = new javax.swing.GroupLayout(jPanelTT);
-        jPanelTT.setLayout(jPanelTTLayout);
-        jPanelTTLayout.setHorizontalGroup(
-            jPanelTTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPaneBook)
+        jPanelTT.add(jScrollPaneBook, java.awt.BorderLayout.CENTER);
+
+        jPanel1.setBackground(new java.awt.Color(128, 175, 129));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 778, Short.MAX_VALUE)
         );
-        jPanelTTLayout.setVerticalGroup(
-            jPanelTTLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTTLayout.createSequentialGroup()
-                .addGap(0, 104, Short.MAX_VALUE)
-                .addComponent(jScrollPaneBook, javax.swing.GroupLayout.PREFERRED_SIZE, 425, javax.swing.GroupLayout.PREFERRED_SIZE))
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 55, Short.MAX_VALUE)
         );
+
+        jPanelTT.add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, 778, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanelTT, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanelBook;
     private javax.swing.JPanel jPanelTT;
     private javax.swing.JScrollPane jScrollPaneBook;

@@ -17,6 +17,7 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
      */
     public SuaThongTinTaiLieuSachFrame() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
     
     public SuaThongTinTaiLieuSachFrame(String id, String title, String author, String publisher, String publicationYear, String category, String language, String summary, String fileImage) {
