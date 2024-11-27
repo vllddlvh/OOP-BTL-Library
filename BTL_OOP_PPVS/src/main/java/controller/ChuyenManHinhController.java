@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import view.BanDocJPanel;
+import view.HoSoCuaToiPanel;
 import view.MuonTraTaiLieuJPanel;
 import view.SachJPanel;
 import view.TaiLieuPanel;
@@ -83,6 +84,9 @@ public class ChuyenManHinhController {
                     break;
                 case "ThongTinThanhVien":
                     node = new ThongTinThanhVienJPanel();
+                    break;
+                case "HoSoCuaToi":
+                    node = new HoSoCuaToiPanel();
                     break;
                 default:
                 {

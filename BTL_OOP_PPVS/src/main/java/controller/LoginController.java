@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -15,6 +16,7 @@ import javax.swing.JTextField;
 import model.dao.AccountDAO;
 import model.entity.Account;
 import view.GDMain;
+import view.GDMainNguoiDung;
 
 /**
  *
@@ -26,7 +28,7 @@ public class LoginController {
     private JTextField jtfUsername;
     private JPasswordField jpfPassword;
     private JLabel jlbMsg;
-    
+    private static Account acc;
     
     public LoginController(JFrame FrameLogin, JButton ButtonSubmit, JTextField jtfUsername, JPasswordField jpfPassword, JLabel jlbMsg) {
         this.FrameLogin = FrameLogin;
@@ -35,6 +37,15 @@ public class LoginController {
         this.jpfPassword = jpfPassword;
         this.jlbMsg = jlbMsg;
     }
+
+    public static Account getAcc() {
+        return acc;
+    }
+
+    public static void setAcc(Account acc) {
+        LoginController.acc = acc;
+    }
+    
     
     public void setEvent() {
         ButtonSubmit.addMouseListener(new MouseAdapter() {
@@ -50,10 +61,12 @@ public class LoginController {
                             jlbMsg.setText("Tên đăng nhập và mật khẩu không đúng!");
                         } else {
                             FrameLogin.dispose();
+                            LoginController.setAcc(account);
                             if (account.getRole().equals("Staff")) {
                                 new GDMain().setVisible(true);
                             } else {
                                 // new giao dien user
+                                new GDMainNguoiDung().setVisible(true);
                             }
                         }
                     }

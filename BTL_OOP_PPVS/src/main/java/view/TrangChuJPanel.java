@@ -1,11 +1,14 @@
 package view;
 
+import controller.LoginController;
 import controller.UpdateDocumentTable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -14,20 +17,24 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import javax.swing.Action;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import model.entity.Account;
 import model.entity.Document;
 
 public class TrangChuJPanel extends javax.swing.JPanel {
     private final UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
     private final List<Document> documents = ctrl.getAlldcms();
+    private final Account acc = LoginController.getAcc();
     public TrangChuJPanel() throws SQLException {
         initComponents();
         // Sử dụng GridLayout cho jPanelBook
@@ -147,9 +154,12 @@ private JPanel createDocumentCard(Document document) {
     mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
     mainPanel.setBackground(new Color(214, 239, 216));
 
+    
     // Panel hiển thị ảnh
-    JPanel imagePanel = new JPanel();
+    JPanel imagePanel = new JPanel(new BorderLayout()); // Sử dụng BorderLayout
     imagePanel.setBackground(Color.WHITE);
+
+    // Tạo JLabel cho ảnh
     JLabel imageLabel = new JLabel();
     imageLabel.setHorizontalAlignment(JLabel.CENTER);
     imageLabel.setVerticalAlignment(JLabel.TOP);
@@ -157,15 +167,34 @@ private JPanel createDocumentCard(Document document) {
     URL imageURL = getClass().getResource(pathImage);
 
     if (imageURL != null) {
-        ImageIcon originalIcon = new ImageIcon(imageURL);
-        Image scaledImage = originalIcon.getImage().getScaledInstance(300, 400, Image.SCALE_SMOOTH);
-        imageLabel.setIcon(new ImageIcon(scaledImage));
+    ImageIcon originalIcon = new ImageIcon(imageURL);
+    Image scaledImage = originalIcon.getImage().getScaledInstance(300, 400, Image.SCALE_SMOOTH);
+    imageLabel.setIcon(new ImageIcon(scaledImage));
     } else {
-        System.out.println("Ảnh không tìm thấy tại: " + pathImage);
-        imageLabel.setText("Không tìm thấy ảnh");
+    System.out.println("Ảnh không tìm thấy tại: " + pathImage);
+    imageLabel.setText("Không tìm thấy ảnh");
     }
 
-    imagePanel.add(imageLabel);
+    // Tạo nút "Mượn sách"
+    JButton jbuttonMuon = new JButton("Mượn sách");
+    jbuttonMuon.setBackground(new Color(80, 141, 78));
+    jbuttonMuon.setForeground(Color.WHITE);
+    jbuttonMuon.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
+    jbuttonMuon.setFocusPainted(false);
+    jbuttonMuon.setPreferredSize(new Dimension(100, 40)); // Đặt kích thước cho nút
+    // Gán sự kiện cho nút
+    jbuttonMuon.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // Xử lý khi nhấn nút
+        TuMuonSachJFrame tuMuonSach = new TuMuonSachJFrame(document,acc);
+        tuMuonSach.setVisible(true);
+    }
+    });
+
+    // Thêm ảnh và nút vào imagePanel
+    imagePanel.add(imageLabel, BorderLayout.CENTER); // Ảnh nằm ở trung tâm
+    imagePanel.add(jbuttonMuon, BorderLayout.SOUTH); // Nút nằm dưới
     mainPanel.add(imagePanel, BorderLayout.WEST);
 
     // Panel hiển thị thông tin

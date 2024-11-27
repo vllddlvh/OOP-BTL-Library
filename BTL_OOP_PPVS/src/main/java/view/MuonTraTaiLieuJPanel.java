@@ -62,6 +62,11 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
         jButtonMuonSach.setForeground(new java.awt.Color(255, 255, 255));
         jButtonMuonSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoMuonSach.png"))); // NOI18N
         jButtonMuonSach.setText("Mượn sách");
+        jButtonMuonSach.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMuonSachActionPerformed(evt);
+            }
+        });
 
         jTableMuonTraSach.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -139,6 +144,12 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
 
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
+
+    private void jButtonMuonSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMuonSachActionPerformed
+        // TODO add your handling code here:
+        MuonSachJFrame ms = new MuonSachJFrame();
+        ms.setVisible(true);
+    }//GEN-LAST:event_jButtonMuonSachActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
