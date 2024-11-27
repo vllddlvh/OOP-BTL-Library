@@ -1,105 +1,142 @@
 package view;
 
-import controller.LoginController;
 import controller.UpdateDocumentTable;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Image;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.File;
-import java.net.URL;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import javax.swing.Action;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
-import javax.swing.JTextField;
-import model.entity.Account;
-import model.entity.Document;
+
+import model.dao.FileFormatException;
+import model.entity.Book;
+
 
 public class TrangChuJPanel extends javax.swing.JPanel {
-    private final UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
-    private final List<Document> documents = ctrl.getAlldcms();
-    private final Account acc = LoginController.getAcc();
-    public TrangChuJPanel() throws SQLException {
+    private UpdateDocumentTable ctrl;
+    private List<Book> documents;
+    
+    public TrangChuJPanel() {
         initComponents();
         // Sử dụng GridLayout cho jPanelBook
-    jPanelBook.setLayout(new GridLayout(0, 4, 10, 10)); // 4 cột, khoảng cách 10px giữa các phần tử
-    // Không cố định kích thước của jPanelBook và jScrollPaneBook
-    // Để chúng tự động điều chỉnh theo không gian có sẵn.
+        jPanelBook.setLayout(new GridLayout(0, 4, 10, 10)); // 4 cột, khoảng cách 10px giữa các phần tử
+        // Không cố định kích thước của jPanelBook và jScrollPaneBook
+        // Để chúng tự động điều chỉnh theo không gian có sẵn.
 
-    // Cập nhật dữ liệu và hiển thị tài liệu
-    jScrollPaneBook.getVerticalScrollBar().setUnitIncrement(15);
-    jScrollPaneBook.getHorizontalScrollBar().setUnitIncrement(15);
+        
+        try {
+            ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+            documents = ctrl.getListElement();
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+        
+        // Cập nhật dữ liệu và hiển thị tài liệu
+        jScrollPaneBook.getVerticalScrollBar().setUnitIncrement(15);
+        jScrollPaneBook.getHorizontalScrollBar().setUnitIncrement(15);
     
-    displayDocuments(documents);
+        try {
+            // Hiển thị danh sách toàn bộ tài liệu lưu trữ
+            displayDocuments(documents);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (FileFormatException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     
-    JTextFieldTimKiem.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
-    @Override
-    public void insertUpdate(javax.swing.event.DocumentEvent e) {
-        filterDocuments(); // Tìm kiếm mỗi khi người dùng nhập
-    }
+        JTextFieldTimKiem.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            @Override
+            public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                filterDocuments(); // Tìm kiếm mỗi khi người dùng nhập
+            }
 
-    @Override
-    public void removeUpdate(javax.swing.event.DocumentEvent e) {
-        filterDocuments(); // Tìm kiếm khi người dùng xóa ký tự
-    }
+            @Override
+            public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                filterDocuments(); // Tìm kiếm khi người dùng xóa ký tự
+            }
 
-    @Override
-    public void changedUpdate(javax.swing.event.DocumentEvent e) {
-        filterDocuments(); // Tìm kiếm khi văn bản thay đổi (dù lý do gì)
-    }
-});
+            @Override
+            public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                filterDocuments(); // Tìm kiếm khi văn bản thay đổi (dù lý do gì)
+            }
+        });
     }
 
     private void filterDocuments() {
-    String keyword = JTextFieldTimKiem.getText().toLowerCase().trim(); // Lấy từ khóa tìm kiếm và loại bỏ khoảng trắng đầu/cuối
-    List<Document> filteredDocuments = new ArrayList<>(); // Danh sách lưu tài liệu lọc được
+        String keyword = JTextFieldTimKiem.getText().toLowerCase().trim(); // Lấy từ khóa tìm kiếm và loại bỏ khoảng trắng đầu/cuối
+        List<Book> filteredDocuments = new ArrayList<>(); // Danh sách lưu tài liệu lọc được
 
-    for (Document document : documents) {
-        // Kiểm tra nếu từ khóa xuất hiện trong bất kỳ trường nào của tài liệu
-        if (document.getTitle().toLowerCase().contains(keyword) || // Tên tài liệu
-            document.getAuthor().toLowerCase().contains(keyword)) { // Tác giả
-            filteredDocuments.add(document); // Thêm tài liệu vào danh sách lọc
+        for (Book document : documents) {
+            // Kiểm tra nếu từ khóa xuất hiện trong bất kỳ trường nào của tài liệu
+            if (document.getTitle().toLowerCase().contains(keyword) || // Tên tài liệu
+                document.getAuthor().toLowerCase().contains(keyword)) { // Tác giả
+                filteredDocuments.add(document); // Thêm tài liệu vào danh sách lọc
+            }
         }
-    }
 
-    // Hiển thị lại danh sách tài liệu đã lọc
-    displayDocuments(filteredDocuments);
+        try {
+            // Hiển thị lại danh sách tài liệu đã lọc
+            displayDocuments(filteredDocuments);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (SQLException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        } catch (FileFormatException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
 }
 
 
     
-    private void displayDocuments(List<Document> documents) {
-    jPanelBook.removeAll(); // Xóa nội dung cũ
-    for (Document document : documents) {
-        JPanel documentCard = createDocumentCard(document);
+    private void displayDocuments(List<Book> documents) throws IOException, SQLException, FileFormatException {
+        jPanelBook.removeAll(); // Xóa nội dung cũ
+        for (Book document : documents) {
+            JPanel documentCard = createDocumentCard(document);
 
-        // Đặt kích thước cố định cho mỗi thẻ (200x300)
-        documentCard.setPreferredSize(new Dimension(200, 300));
+            // Đặt kích thước cố định cho mỗi thẻ (200x300)
+            documentCard.setPreferredSize(new Dimension(200, 300));
 
-        // Thêm thẻ vào jPanelBook
-        jPanelBook.add(documentCard);
+            // Thêm thẻ vào jPanelBook
+            jPanelBook.add(documentCard);
+        }
+        jPanelBook.revalidate();
+        jPanelBook.repaint();
     }
-    jPanelBook.revalidate();
-    jPanelBook.repaint();
-}
 
-private JPanel createDocumentCard(Document document) {
+private JPanel createDocumentCard(Book document) throws IOException, SQLException, FileFormatException {
     JPanel card = new JPanel();
     card.setLayout(new BorderLayout(5, 5)); // Khoảng cách giữa các thành phần
     card.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
@@ -108,20 +145,21 @@ private JPanel createDocumentCard(Document document) {
     JPanel image = new JPanel();
     image.setBackground(new Color(128, 175, 129));
     JLabel imageLabel = new JLabel();
-    String pathImage = "/image/" + document.getFileImage();
-    URL imageURL = getClass().getResource(pathImage);
-    if (imageURL == null) {
-        System.out.println("Ảnh không tìm thấy tại: " + pathImage);
-    } else {
-        ImageIcon originalIcon = new ImageIcon(imageURL);
-        Image scaledImage = originalIcon.getImage().getScaledInstance(200, 250, Image.SCALE_SMOOTH);
-        imageLabel.setIcon(new ImageIcon(scaledImage));
-        imageLabel.setHorizontalAlignment(JLabel.CENTER);
+    
+    // Lấy file ảnh, nạp vào label
+    ImageIcon originalIcon = document.getCover();
+    if (originalIcon == null) {
+        originalIcon = new ImageIcon("src\\main\\java\\image\\default-null-book-cover.png");
     }
+    
+    Image scaledImage = originalIcon.getImage().getScaledInstance(200, 250, Image.SCALE_SMOOTH);
+    imageLabel.setIcon(new ImageIcon(scaledImage));
+    imageLabel.setHorizontalAlignment(JLabel.CENTER);
+        
     image.add(imageLabel);
 
     // Thông tin sách
-    JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getPublicationYear());
+    JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getReleaseYear());
     infoArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 10));
     infoArea.setForeground(Color.BLACK);
     infoArea.setEditable(false);
@@ -135,7 +173,7 @@ private JPanel createDocumentCard(Document document) {
     card.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            gioiThieuDocument(document);
+            new ChiTietTaiLieu(document).setVisible(true);
         }
     });
 
@@ -143,99 +181,7 @@ private JPanel createDocumentCard(Document document) {
 }
 
     
-    // Hiển thị thông tin chi tiết sách trong cửa sổ mới (JFrame)
-    private void gioiThieuDocument(Document document) {
-    JFrame gioiThieuDocumentJFrame = new JFrame("Chi Tiết Sách");
-    gioiThieuDocumentJFrame.setSize(720, 500);
-    gioiThieuDocumentJFrame.setLayout(new BorderLayout());
-
-    // Panel chính
-    JPanel mainPanel = new JPanel(new BorderLayout());
-    mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-    mainPanel.setBackground(new Color(214, 239, 216));
-
     
-    // Panel hiển thị ảnh
-    JPanel imagePanel = new JPanel();
-    imagePanel.setBackground(Color.WHITE);
-
-    // Tạo JLabel cho ảnh
-    JLabel imageLabel = new JLabel();
-    imageLabel.setHorizontalAlignment(JLabel.CENTER);
-    imageLabel.setVerticalAlignment(JLabel.TOP);
-    String pathImage = "/image/" + document.getFileImage();
-    URL imageURL = getClass().getResource(pathImage);
-
-    if (imageURL != null) {
-    ImageIcon originalIcon = new ImageIcon(imageURL);
-    Image scaledImage = originalIcon.getImage().getScaledInstance(300, 400, Image.SCALE_SMOOTH);
-    imageLabel.setIcon(new ImageIcon(scaledImage));
-    } else {
-    System.out.println("Ảnh không tìm thấy tại: " + pathImage);
-    imageLabel.setText("Không tìm thấy ảnh");
-    }
-    if (acc.getRole().equals("Member")) {
-    // Tạo nút "Mượn sách"
-    JButton jbuttonMuon = new JButton("Mượn sách");
-    jbuttonMuon.setBackground(new Color(80, 141, 78));
-    jbuttonMuon.setForeground(Color.WHITE);
-    jbuttonMuon.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
-    jbuttonMuon.setFocusPainted(false);
-    jbuttonMuon.setPreferredSize(new Dimension(100, 40)); // Đặt kích thước cho nút
-    // Gán sự kiện cho nút
-    jbuttonMuon.addActionListener(new ActionListener() {
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // Xử lý khi nhấn nút
-        TuMuonSachJFrame tuMuonSach = new TuMuonSachJFrame(document,acc);
-        tuMuonSach.setVisible(true);
-    }
-    });
-    imagePanel.setLayout(new BorderLayout());
-    // Thêm ảnh và nút vào imagePanel
-    imagePanel.add(imageLabel, BorderLayout.CENTER); // Ảnh nằm ở trung tâm
-    imagePanel.add(jbuttonMuon, BorderLayout.SOUTH); // Nút nằm dưới
-    } else {
-        imagePanel.add(imageLabel);
-    }
-
-    
-    mainPanel.add(imagePanel, BorderLayout.WEST);
-
-    // Panel hiển thị thông tin
-    JPanel infoPanel = new JPanel();
-    infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
-    infoPanel.setBackground(new Color(240, 240, 240));
-    infoPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-
-    JTextArea documentJTextArea = new JTextArea(
-        "ID: " + document.getID() + "\n" +
-        "Tên sách: " + document.getTitle() + "\n" +
-        "Tác giả: " + document.getAuthor() + "\n" +
-        "Ngôn ngữ: " + document.getLanguage() + "\n" +
-        "Nhà suất bản: " + document.getPublisher() + "\n" +
-        "Thể loại: " + document.getCategory() + "\n" +
-        "Năm xuất bản: " + document.getPublicationYear() + "\n" +
-        "Giới thiệu: " + document.getSummary()
-    );
-    documentJTextArea.setEditable(false);
-    documentJTextArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
-    documentJTextArea.setLineWrap(true);
-    documentJTextArea.setWrapStyleWord(true);
-    documentJTextArea.setBackground(Color.WHITE);
-
-    JScrollPane scrollPane = new JScrollPane(documentJTextArea);
-    scrollPane.setBorder(null);
-
-    infoPanel.add(scrollPane);
-    mainPanel.add(infoPanel, BorderLayout.CENTER);
-
-    // Thêm panel chính vào JFrame
-    gioiThieuDocumentJFrame.add(mainPanel, BorderLayout.CENTER);
-
-    gioiThieuDocumentJFrame.setLocationRelativeTo(null);
-    gioiThieuDocumentJFrame.setVisible(true);
-}
 
     /**
      * This method is called from within the constructor to initialize the form.

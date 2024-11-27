@@ -4,8 +4,14 @@
  */
 package view;
 
+import controller.UpdateRequestTable;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -21,6 +27,28 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
         jTableMuonTraSach.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
         jTableMuonTraSach.getTableHeader().setForeground(Color.WHITE); 
         jTableMuonTraSach.getTableHeader().setBackground(new Color(80,141,78));
+        
+        initTableMuonTraSach();
+        UpdateRequestTable ctrl = UpdateRequestTable.getUpdateRequestTable();
+        
+        try {
+            ctrl.getListElement();
+            ctrl.setTableUpToDate(jTableMuonTraSach, jButtonMuonSach, JTextFieldTimKiemThongTinSachMuonTra);
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }
+    
+    private void initTableMuonTraSach() {
+        jTableMuonTraSach.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
+        jTableMuonTraSach.getTableHeader().setForeground(Color.white);
+        jTableMuonTraSach.getTableHeader().setPreferredSize(new Dimension(100,50));
+        jTableMuonTraSach.getTableHeader().setBackground(new Color(80,141,78));
+        jTableMuonTraSach.setRowHeight(40);
+        jTableMuonTraSach.validate();
+        jTableMuonTraSach.repaint();
     }
 
     /**
@@ -134,7 +162,7 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
     private void JTextFieldTimKiemThongTinSachMuonTraFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraFocusLost
         // TODO add your handling code here:
         if(JTextFieldTimKiemThongTinSachMuonTra.getText().equals("")) {
-            JTextFieldTimKiemThongTinSachMuonTra.setText("Tìm kiếm thông tin thành viên");
+            JTextFieldTimKiemThongTinSachMuonTra.setText("Tìm kiếm thông tin Yêu cầu Mượn/Trả tài liệu");
             JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12)); // Đặt phông là Segoe UI, kích thước 14
             JTextFieldTimKiemThongTinSachMuonTra.setForeground(new Color(204,204,204));
         }

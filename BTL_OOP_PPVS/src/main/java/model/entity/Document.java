@@ -1,92 +1,247 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package model.entity;
 
-import java.sql.CallableStatement;
-import java.sql.ResultSet;
+
+
 import java.sql.SQLException;
-import model.DatabaseConnector;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import java.io.File;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import javax.swing.ImageIcon;
+import model.dao.DocumentDAO;
+import model.dao.FileFormatException;
 
 /**
  *
- * @author HP
+ * @author Littl
  */
-public class Document {
-    private String ID;
-    private String title;
-    private String author;
-    private String publisher;
-    private String publicationYear;
-    private String category;
-    private String language;
-    private String summary;
-    private String fileImage;
-
+public abstract class Document {
+    protected String ID;
+    protected String title;
+    protected int availableCopies;
+    protected ArrayList<String> category = new ArrayList<>();
+    protected String description;
+    protected String language = "Không rõ";
     
-    public Document() {}
-    // Constructor
-    public Document(String ID, String title, String author, String publisher, String publicationYear, String category, String language, String summary, String fileImage) {
+    protected ImageIcon cover = null;
+    protected File PDF = null;
+    
+    // Chỉ sử dụng nội trong model. 
+    // Tránh down lại file nhiều lần, và xác định định dạng ảnh. 
+    protected boolean haveCover = true;
+    protected boolean havePDF = true;
+    protected String coverFormat = null;
+    
+    public void destroy() {
+        if (PDF != null) {
+            PDF.delete();
+        }
+    }
+    
+    /**
+     * Get document search by title. 
+     * Book title, or Thesis title and Field of Study.
+     * 
+     * @param titleKeyword = search keyword
+     * 
+     * @return list of Document (both Thesis and Book)
+     * 
+     * @throws SQLException 
+     * @throws IOException
+     */
+    public static ArrayList<Document> searchDocument(String titleKeyword) throws SQLException, IOException {
+        ArrayList<Document> result = new ArrayList<>();
+        
+        result.addAll(Book.searchBook(titleKeyword, "", 0, null, null));
+        
+        return result;
+    }
+    
+    /**
+     * Get Document only if you know exactly its Thesis ID / Book ISBN.
+     * 
+     * @param documentID = Thesis ID / Book ISBN.
+     * 
+     * @return Document object.
+     * 
+     * @throws SQLException 
+     * @throws IOException
+     */
+    public static Document getDocumentInfo(String documentID) throws SQLException, IOException {
+        return DocumentDAO.getDocumentInfo(documentID);
+    }
+
+    public String getID() {
+        return ID;
+    }
+
+    public void setID(String ID) {
         this.ID = ID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
         this.title = title;
-        this.author = author;
-        this.publisher = publisher;
-        this.publicationYear = publicationYear;
+    }
+
+    public int getAvailableCopies() {
+        return availableCopies;
+    }
+    
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public ArrayList<String> getCategory() {
+        return category;
+    }
+
+    public void setCategory(ArrayList<String> category) {
         this.category = category;
+    }
+    
+    public int getCategoryEncrypt() throws IOException {
+        return CategoryType.encrypt(this.category);
+    }
+
+    public String getLanguage() {
+        return language;
+    }
+
+    public void setLanguage(String language) {
         this.language = language;
-        this.summary = summary;
-        this.fileImage = fileImage;
+    }
+    
+    public String getCoverFormat() {
+        return coverFormat;
+    }
+    
+    @Override
+    public String toString() {
+        return "Document{" + "ID=" + ID + ", title=" + title + ", availableCopies=" + availableCopies + ", category=" + category + ", description=" + description;
     }
 
-    public Document(String documentID) throws SQLException {
-    // Chuẩn bị câu lệnh CallableStatement để gọi stored procedure
-    CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call getDocumentInfo(?) }");
-
-    // Gán giá trị tham số ID vào stored procedure
-    finder.setString(1, documentID);
-
-    ResultSet rs = finder.executeQuery();
-
-    // Lấy dữ liệu từ ResultSet và gán vào các thuộc tính của Document
-    while (rs.next()) {
-        this.ID = rs.getString(1);             // Gán ID của Document
-        this.title = rs.getString(2);         // Gán tiêu đề
-        this.author = rs.getString(3);        // Gán tác giả
-        this.publisher = rs.getString(4);     // Gán nhà xuất bản
-        this.publicationYear = rs.getString(5); // Gán năm xuất bản
-        this.category = rs.getString(6);      // Gán danh mục
-        this.language = rs.getString(7);      // Gán ngôn ngữ
-        this.summary = rs.getString(8);
-        this.fileImage = rs.getString(9);
+    public ImageIcon getCover() throws IOException, SQLException, FileFormatException  {
+        if (cover == null && haveCover) {
+            cover = DocumentDAO.getDocumentCover(ID);
+            haveCover = false;
+        }
+        return cover;
     }
-}
 
-    // Getters and Setters
-    public String getID() { return ID; }
-    public void setID(String ID) { this.ID = ID; }
+    public void setCover(File cover) throws FileFormatException, IOException {
+        coverFormat = DocumentDAO.checkFileCover(cover);
+        
+        this.cover = new ImageIcon(cover.getAbsolutePath());
+        haveCover = true;
+    }
 
-    public String getTitle() { return title; }
-    public void setTitle(String title) { this.title = title; }
+    public File getPDF() throws IOException, SQLException, FileFormatException {
+        if (PDF == null && havePDF) {
+            PDF = DocumentDAO.getDocumentPDF(ID);
+            havePDF = false;
+        }
+        return PDF;
+    }
 
-    public String getAuthor() { return author; }
-    public void setAuthor(String author) { this.author = author; }
-
-    public String getPublisher() { return publisher; }
-    public void setPublisher(String publisher) { this.publisher = publisher; }
-
-    public String getPublicationYear() { return publicationYear; }
-    public void setPublicationYear(String publicationYear) { this.publicationYear = publicationYear; }
-
-    public String getCategory() { return category; }
-    public void setCategory(String category) { this.category = category; }
-
-    public String getLanguage() { return language; }
-    public void setLanguage(String language) { this.language = language; }
-
-    public String getSummary() { return summary; }
-    public void setSummary(String summary) { this.summary = summary; }
-
-    public String getFileImage() { return fileImage; }
-    public void setFileImage(String fileImage) { this.fileImage = fileImage; }
+    public void setPDF(File PDF) throws FileFormatException, IOException {
+        DocumentDAO.checkFilePDF(PDF);
+        
+        this.PDF = PDF;
+        havePDF = true;
+    }
+    
+    
+    
+    
+    public static class CategoryType {
+        static private HashMap<Integer, String> decoder;
+        static private HashMap<String, Integer> encrypter;
+        static private String path = "src\\main\\java\\image\\Document Category.txt";
+        
+        private static void loadDecoder() throws IOException {
+            decoder = new HashMap<>();
+            encrypter = new HashMap<>();
+            decoder.entrySet();
+            
+            FileReader input = new FileReader(path);
+            BufferedReader reader = new BufferedReader(input);
+            
+            int index = 0;
+            int power = 1;
+            String line = reader.readLine();
+            while (line != null) {
+                decoder.put(index++, line);
+                encrypter.put(line, power);
+                power *= 2;
+                
+                line = reader.readLine();
+            }
+            
+            reader.close();
+        }
+        
+        static ArrayList<String> decode(int k) throws IOException {
+            if (decoder == null) {
+                loadDecoder();
+            }
+            
+            ArrayList<String> result = new ArrayList<>();
+            int i = 0;
+            while (k != 0) {
+                if (k % 2 == 1) {
+                    result.add(decoder.get(i++));
+                }
+                k /= 2;
+            }
+            return result;
+        }
+        
+        static void addNewCategory (List<String> newCategory) throws IOException {
+            FileWriter output = new FileWriter(path, true);
+            BufferedWriter writer = new BufferedWriter(output);
+            
+            int power = (int) Math.pow(2, decoder.size());
+            for (String x : newCategory) {
+                writer.newLine();
+                writer.write(x);
+                
+                decoder.put(power, x);
+                encrypter.put(x, power);
+                power *= 2;
+            }
+            
+            writer.close();
+            
+            
+        } 
+        
+        static int encrypt(List<String> category) throws IOException {
+            if (encrypter == null) {
+                loadDecoder();
+            }
+            
+            int result = 0;
+            for (String x : category) {
+                result += encrypter.getOrDefault(x, 0);
+            }
+            
+            return result;
+        }
+    }
+    
 }

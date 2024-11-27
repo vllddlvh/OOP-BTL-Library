@@ -10,7 +10,6 @@ import controller.UpdateMemberTable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
-import javax.swing.JTextField;
 
 public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
     /**
@@ -22,13 +21,13 @@ public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
     
-    public SuaThongTinThanhVienJFrame(String id, String firstName, String lastName, String contact, String dateOfBirth) {
+    public SuaThongTinThanhVienJFrame(Member member) {
         initComponents();
-        JTextFieldID.setText(id);
-        jTextFieldFirstName.setText(firstName);
-        jTextFieldLastName.setText(lastName);
-        jTextFieldContact.setText(contact);
-        jTextFieldDateOfBirth.setText(dateOfBirth);
+        JTextFieldID.setText(member.getID());
+        jTextFieldFirstName.setText(member.getFirstName());
+        jTextFieldLastName.setText(member.getLastName());
+        jTextFieldContact.setText(member.getContact());
+        jTextFieldDateOfBirth.setText(member.getDateOfBirth());
         JTextFieldID.setEditable(false);
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }

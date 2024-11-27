@@ -1,0 +1,1 @@
+##Folder này lưu trữ pdf của sách tải về. Xóa folder đi có thể gây lỗi.

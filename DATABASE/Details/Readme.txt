@@ -48,19 +48,9 @@
     	category  	INT,
 	descrip[tion	TEXT,
     	publisher  	VARCHAR(50),
-    	releaseYear  	YEAR
+    	releaseYear  	INT(4),
+	language	VARCHAR(20)
  -> return <Result = false> if duplicate ISBN 
-
-+ addThesis ( 
-	newThesisID 	VARCHAR(15),
-    	Title 		VARCHAR(50),
-    	writerID 	VARCHAR(10),
-    	advisor 	VARCHAR(50),
-    	fieldOfStudy 	VARCHAR(50),
-    	Desciption 	VARCHAR(100),
-	storedQuantity 	INT(5)
-	category	INT
- -> return <Result = false> if duplicate ThesisID
 
 + loadMoreDocumentCopies (
 	documentID 	VARCHAR(15), 
@@ -97,6 +87,7 @@
 	   6. releaseYear
 	   7. description
 	   8. category
+	   9. language
 
 + searchThesis ( title '', fieldOfStudy '', writerID <null>, advisor '' )
 	-> 1. ID
@@ -107,10 +98,11 @@
 	   6. fieldOfStudy
 	   7. Description
 	   8. category
+	   9. language
 
 + searchDocument ( documentID )
-	-> 1-8 usual
-	   9. genre (Book / Thesis)
+	-> 1-9 usual
+	   10. genre (Book / Thesis)
 
 ##About Login and Password
 + login ( ID, password)

@@ -12,9 +12,10 @@ import model.dao.RequestDAO;
  * @author Littl
  */
 public abstract class User {
-    public enum loginAlert {
+    public enum LoginAlert {
         FIRST_TIMES_LOGIN,
-        CORRECT_PASSWORD,
+        CORRECT_PASSWORD_AS_STAFF,
+        CORRECT_PASSWORD_AS_MEMBER,
         WRONG_PASSWORD
     }
     
@@ -39,7 +40,7 @@ public abstract class User {
      * 
      * @throws SQLException 
      */
-    public static loginAlert login(String userID, String password) throws SQLException {
+    public static LoginAlert login(String userID, String password) throws SQLException {
         return UserDAO.login(userID, password);
     }
     

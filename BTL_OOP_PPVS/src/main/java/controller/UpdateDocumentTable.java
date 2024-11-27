@@ -1,7 +1,10 @@
 package controller;
 
+
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JButton;
@@ -14,189 +17,231 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
-import model.entity.Document;
-import model.dao.DocumentDAO;
 import view.SuaThongTinTaiLieuSachFrame;
+import model.entity.Book;
+import model.dao.DocumentDAO;
+import model.dao.FileFormatException;
 
-public class UpdateDocumentTable extends UpdateTable<Document> {
+/**
+ * Quản lý cập nhật bảng Book (JTable) đồng bộ với dữ liệu trong Database.
+ */
+public class UpdateDocumentTable extends UpdateTable<Book> {
 
-    private static final UpdateDocumentTable singleT = new UpdateDocumentTable();
+    private static UpdateDocumentTable singleton = new UpdateDocumentTable();
 
     private UpdateDocumentTable() {}
 
+    /**
+     * Singleton: Lấy instance duy nhất của UpdateBookTable.
+     * 
+     * @return instance của UpdateBookTable
+     */
     public static UpdateDocumentTable getUpdateDocumentTable() {
-        return singleT;
-    }
-
-    @Override
-    public void getListElement() throws SQLException {
-        allElement = DocumentDAO.getAllDocuments();
+        return singleton;
     }
 
     
     /**
-     *
-     * @return
-     * @throws SQLException
+     * Lấy toàn bộ tài liệu từ cơ sở dữ liệu.
+     * 
+     * @throws SQLException 
      */
-    public List<Document> getAlldcms() throws SQLException {
-        return allElement = DocumentDAO.getAllDocuments();
+    @Override
+    public List<Book> getListElement() throws SQLException, IOException {
+        allElement = DocumentDAO.getAllBook();
+        return allElement;
     }
     
     /**
-     * Thêm một Document vào cơ sở dữ liệu và cập nhật bảng.
-     * @param newDocument.
+     * Thêm một Book vào cơ sở dữ liệu và cập nhật bảng.
+     * 
+     * @param newBook.
+     * @return 
+     * 
      * @throws java.sql.SQLException
+     * @throws java.io.IOException
+     * @throws model.dao.FileFormatException
      */
-
     @Override
-    public boolean addElement(Document newDocument) throws SQLException {
-        if (DocumentDAO.addNewDocument(newDocument)) {
-            allElement.add(newDocument);
-            addRow(newDocument);
+    public boolean addElement(Book newBook) throws SQLException, IOException, FileFormatException {
+        if (DocumentDAO.addBook(newBook)) {
+            allElement.add(newBook);
+            addRow(newBook);
             return true;
         }
         return false;
     }
 
+    /**
+     * Chỉnh sửa tài liệu trên bảng danh sách và database.
+     * 
+     * @param alter = bản sau chỉnh sửa.
+     * 
+     * @return true nếu chỉnh sửa thành công.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     * @throws model.dao.FileFormatException 
+     */
     @Override
-    public boolean updateElement(Document updatedDocument) throws SQLException {
-        if (DocumentDAO.updateDocument(updatedDocument)) {
-            for (int i = 0; i < allElement.size(); i++) {
-                if (allElement.get(i).getID().equals(updatedDocument.getID())) {
-                    allElement.set(i, updatedDocument);
+    public boolean updateElement(Book alter) throws SQLException, IOException, FileFormatException {
+        if (DocumentDAO.updateBook(alter)) {
+            int i = 0;
+            while (i < allElement.size()) {
+                if (allElement.get(i).getID().equals(alter.getID())) {
+                    allElement.set(i, new Book(alter));
+                    
                     break;
                 }
             }
-            updateRow(updatedDocument);
+            updateRow(alter); // Cập nhật hiển thị trên bảng
             return true;
         }
         return false;
     }
 
+    /**
+     * Xóa một Book khỏi cơ sở dữ liệu và bảng.
+     * 
+     * @param deleteBook = xóa sách.
+     * 
+     * @return true nếu xóa xong.
+     * 
+     * @throws SQLException 
+     */
     @Override
-    public boolean deleteElement(Document deleteDocument) throws SQLException {
-        if (DocumentDAO.deleteDocument(deleteDocument)) { // Phương thức này phải trả về true khi xóa thành công
-            // Xóa khỏi danh sách `allElement`
-            for (int i = 0; i < allElement.size(); i++) {
-                if (allElement.get(i).getID().equals(deleteDocument.getID())) {
-                    allElement.remove(i); // Xóa khỏi danh sách
-                    break;
-                }
-            }
+    public boolean deleteElement(Book deleteBook) throws SQLException {
+        
+        DocumentDAO.deleteDocument(deleteBook.getID());
 
-            // Xóa dòng khỏi bảng `JTable`
-            for (int i = 0; i < tableModel.getRowCount(); i++) {
-                Object cellValue = tableModel.getValueAt(i, 0); // Lấy giá trị từ cột ID
-                if (cellValue != null && cellValue.toString().equals(deleteDocument.getID())) {
-                    tableModel.removeRow(i); // Xóa dòng trong `JTable`
-                    break;
-                }
+        // Xóa khỏi bảng hiển thị
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
+            if (tableModel.getValueAt(i, 0).toString().equals(deleteBook.getID())) {
+                tableModel.removeRow(i);
+                break;
             }
-            return true; // Trả về true khi xóa thành công
         }
-        return false; // Trả về false nếu không xóa được
+        return true;
     }
 
-
-
+    /**
+     * Thêm một hàng (row) mới vào bảng hiển thị (JTable).
+     * 
+     * @param newBook = sách mới được thêm vào bảng.
+     */
     @Override
-    public void updateRow(Document updatedDocument) {
+    protected void addRow(Book newBook) {
+        String[] newRow = new String[6];
+        newRow[0] = newBook.getID();
+        newRow[1] = newBook.getTitle();
+        newRow[2] = newBook.getAuthor();
+        newRow[3] = String.valueOf(newBook.getReleaseYear());
+        newRow[4] = newBook.getCategory().toString();
+        newRow[5] = newBook.getLanguage();
+        
+
+        tableModel.addRow(newRow);
+    }
+    
+    /**
+     * Cập nhật một hàng (row) trong bảng hiển thị (JTable).
+     * 
+     * @param alter = Tài liệu đã chỉnh sửa thông tin được cập nhật vào bảng.
+     */
+    @Override
+    protected void updateRow(Book alter) {
         for (int row = 0; row < tableModel.getRowCount(); row++) {
-            Object value = tableModel.getValueAt(row, 0); // Lấy giá trị từ cột ID
-            if (value != null && value.equals(updatedDocument.getID())) { // Kiểm tra null trước
-                tableModel.setValueAt(updatedDocument.getTitle(), row, 1);
-                tableModel.setValueAt(updatedDocument.getAuthor(), row, 2);
-                tableModel.setValueAt(updatedDocument.getPublisher(), row, 3);
-                tableModel.setValueAt(updatedDocument.getPublicationYear(), row, 4);
-                tableModel.setValueAt(updatedDocument.getCategory(), row, 5);
-                tableModel.setValueAt(updatedDocument.getLanguage(), row, 6);
-                tableModel.setValueAt(updatedDocument.getSummary(), row, 7);
-                tableModel.setValueAt(updatedDocument.getFileImage(), row, 8);
+            if (tableModel.getValueAt(row, 0).equals(alter.getID())) {
+                
+                tableModel.setValueAt(alter.getTitle(), row, 1);
+                tableModel.setValueAt(alter.getAuthor(), row, 2);
+                tableModel.setValueAt(alter.getReleaseYear(), row, 3);
+                tableModel.setValueAt(alter.getCategory().toString(), row, 4);
+                tableModel.setValueAt(alter.getLanguage(), row, 5);
 
+                // Còn availableCopies, description, publíher
+                
                 break;
             }
         }
     }
 
-
     @Override
-    protected void addRow(Document document) {
-        String[] newLine = new String[9];
-        newLine[0] = document.getID();
-        newLine[1] = document.getTitle();
-        newLine[2] = document.getAuthor();
-        newLine[3] = document.getPublisher();
-        newLine[4] = document.getPublicationYear();
-        newLine[5] = document.getCategory();
-        newLine[6] = document.getLanguage();
-        newLine[7] = document.getSummary();
-        newLine[8] = document.getFileImage();
-
-        tableModel.addRow(newLine);
+    protected void deleteRow(Book deletedOne) {
+        int n = tableModel.getRowCount();
+        for (int i = 0; i < n; i++) {
+            if (tableModel.getValueAt(i, 0).equals(deletedOne.getID())) {
+                tableModel.removeRow(i);
+                
+                break;
+            }
+        }
     }
+    
 
     @Override
-    public void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException {
-        singleT.tableModel = (DefaultTableModel) table.getModel();
-        singleT.jbtAdd = jbtAdd;
-        singleT.jtfSearch = jtfSearch;
+    public void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException, IOException {
+        singleton.tableModel = (DefaultTableModel) table.getModel();
+        singleton.jbtAdd = jbtAdd;
+        singleton.jtfSearch = jtfSearch;
 
+        // Lấy dữ liệu từ cơ sở dữ liệu và thêm vào bảng
         getListElement();
-        for (Document document : allElement) {
+        for (Book document : allElement) {
             addRow(document);
         }
 
+        // Thiết lập bộ lọc tìm kiếm
         TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(table.getModel());
         table.setRowSorter(rowSorter);
 
         jtfSearch.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
-                String text = jtfSearch.getText();
-                if (text.trim().equalsIgnoreCase("Tìm kiếm thông tin tài liệu") || text.trim().length() == 0) {
-                    rowSorter.setRowFilter(null);
-                } else {
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
-                }
+                updateFilter(jtfSearch, rowSorter);
             }
 
             @Override
             public void removeUpdate(DocumentEvent e) {
-                String text = jtfSearch.getText();
-                if (text.trim().equalsIgnoreCase("Tìm kiếm thông tin tài liệu") || text.trim().isEmpty()) {
-                    rowSorter.setRowFilter(null);
-                } else {
-                    rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
-                }
+                updateFilter(jtfSearch, rowSorter);
             }
 
             @Override
-            public void changedUpdate(DocumentEvent e) {
-                System.out.println("Track changed Update");
-            }
+            public void changedUpdate(DocumentEvent e) {}
         });
 
+        // Xử lý sự kiện nhấp chuột
         table.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     int row = table.getSelectedRow();
+                    // Lấy thông tin từ hàng được chọn
+                    Book book = null;
+                    String targetID = table.getValueAt(row, 0).toString();
+                    for (Book x : allElement) {
+                        if (x.getID().equals(targetID)) {
+                            book = x;
+                            break;
+                        }
+                    }
                     
-                    String id = table.getValueAt(row, 0).toString();
-                    String title = table.getValueAt(row, 1).toString();
-                    String author = table.getValueAt(row, 2).toString();
-                    String publisher = table.getValueAt(row,3).toString();
-                    String publicationYear = table.getValueAt(row, 4).toString();
-                    String category = table.getValueAt(row, 5).toString();
-                    String languague = table.getValueAt(row, 6).toString();
-                    String summary = table.getValueAt(row, 7).toString();
-                    String fileImage = table.getValueAt(row, 8).toString();
-                    SuaThongTinTaiLieuSachFrame suaThongTinTaiLieu = new SuaThongTinTaiLieuSachFrame(id, title, author, publisher, publicationYear, category, languague, summary, fileImage);
-                   
-                    suaThongTinTaiLieu.setVisible(true);
+                    // Mở form chỉnh sửa tại đây (nếu có)
+                    if (book != null) {
+                        new SuaThongTinTaiLieuSachFrame(book).setVisible(true);
+                    }
                 }
             }
         });
+    }
+
+    
+    private void updateFilter(JTextField jtfSearch, TableRowSorter<TableModel> rowSorter) {
+        String text = jtfSearch.getText();
+        if (text.trim().isEmpty()) {
+            rowSorter.setRowFilter(null);
+        } else {
+            rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
+        }
     }
 }

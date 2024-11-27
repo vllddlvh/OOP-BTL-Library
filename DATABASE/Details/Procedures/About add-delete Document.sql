@@ -1,4 +1,3 @@
-
 DROP PROCEDURE IF EXISTS addBook;
 DELIMITER //
 CREATE PROCEDURE addBook (IN 
@@ -9,14 +8,15 @@ CREATE PROCEDURE addBook (IN
     newCategory INT unsigned,
     newDescription TEXT,
     thePublisher VARCHAR(50),
-    theReleaseYear YEAR
+    theReleaseYear INT(4),
+    theLanguage VARCHAR(20)
 )
 BEGIN
 	IF (SELECT COUNT(*) From Documents WHERE ID = newISBN) = 0
     
 	THEN 
-		INSERT INTO Documents (ID, Title, genre, totalQuantity, Description, category) 
-			VALUES (newISBN, newTitle, 'Book', storedQuantity, newDescription, newCategory);
+		INSERT INTO Documents (ID, Title, genre, totalQuantity, Description, category, language) 
+			VALUES (newISBN, newTitle, 'Book', storedQuantity, newDescription, theLanguage);
 		INSERT INTO Books (ISBN, author, publisher, releaseYear) 
 			VALUES (newISBN, theAuthor, thePublisher, theReleaseYear);
 		SELECT true as Result;
@@ -27,34 +27,6 @@ BEGIN
 END;
 // DELIMITER ;
 
-
-DROP PROCEDURE IF EXISTS addThesis;
-DELIMITER //
-CREATE PROCEDURE addThesis (IN 
-	newID VARCHAR(15),
-    newTitle VARCHAR(50),
-    theWriterID VARCHAR(10),
-    theAdvisor VARCHAR(50),
-    newFieldOfStudy VARCHAR(50),
-    newDescription TEXT,
-	storedQuantity INT unsigned,
-    newCategory INT unsigned
-)
-BEGIN
-	IF (SELECT COUNT(*) From Documents WHERE ID = newID) = 0
-    
-	THEN 
-		INSERT INTO Documents (ID, Title, genre, totalQuantity, Description, category) 
-			VALUES (newID, newTitle, 'Thesis', storedQuantity, newDescription, newCategory);
-		INSERT INTO Thesis (ID, writerID, advisor, fieldOfStudy)
-			VALUES (newID, theWriterID, theAdvisor, newFieldOfStudy);
-		SELECT true as Result;
-        
-	ELSE 
-		SELECT false as Result; -- if the ID already exists
-    END IF;
-END;
-// DELIMITER ;
 
 
 DROP PROCEDURE IF EXISTS loadMoreDocumentCopies;

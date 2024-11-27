@@ -34,8 +34,18 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
             
         } catch (SQLException ex) {
             Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, "Unknown Error");
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
+    }
+    
+    private void initTableThanhVien() {
+        tableThanhVien.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
+        tableThanhVien.getTableHeader().setForeground(Color.white);
+        tableThanhVien.getTableHeader().setPreferredSize(new Dimension(100,50));
+        tableThanhVien.getTableHeader().setBackground(new Color(80,141,78));
+        tableThanhVien.setRowHeight(40);
+        tableThanhVien.validate();
+        tableThanhVien.repaint();
     }
 
     /**
@@ -185,15 +195,6 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_JTextFieldTimKiemThanhVienFocusLost
 
-    private void initTableThanhVien() {
-        tableThanhVien.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
-        tableThanhVien.getTableHeader().setForeground(Color.white);
-        tableThanhVien.getTableHeader().setPreferredSize(new Dimension(100,50));
-        tableThanhVien.getTableHeader().setBackground(new Color(80,141,78));
-        tableThanhVien.setRowHeight(40);
-        tableThanhVien.validate();
-        tableThanhVien.repaint();
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JButtonThemThanhVien;
