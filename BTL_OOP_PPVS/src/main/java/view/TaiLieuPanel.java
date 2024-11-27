@@ -83,9 +83,7 @@ public class TaiLieuPanel extends javax.swing.JPanel {
 
         jTableThongTinTaiLieu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Tiêu đề", "Tác giả", "Nhà xuất bản", "Năm xuất bản", "Thể loại", "Ngôn ngữ", "Tóm tắt", "Hình ảnh"
@@ -108,6 +106,7 @@ public class TaiLieuPanel extends javax.swing.JPanel {
         });
         jTableThongTinTaiLieu.setColumnSelectionAllowed(true);
         jScrollPaneTaiLieu.setViewportView(jTableThongTinTaiLieu);
+        jTableThongTinTaiLieu.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jpnViewTaiLieuLayout = new javax.swing.GroupLayout(jpnViewTaiLieu);
         jpnViewTaiLieu.setLayout(jpnViewTaiLieuLayout);
