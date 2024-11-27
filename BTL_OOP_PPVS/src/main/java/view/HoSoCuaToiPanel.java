@@ -4,6 +4,11 @@
  */
 package view;
 
+import bean.DanhMucBean;
+import controller.ChuyenManHinhController;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author ADMIN
@@ -15,6 +20,12 @@ public class HoSoCuaToiPanel extends javax.swing.JPanel {
      */
     public HoSoCuaToiPanel() {
         initComponents();
+        ChuyenManHinhController controller = new ChuyenManHinhController(jPanelView);
+        List<DanhMucBean> listItem = new ArrayList<>();
+        listItem.add(new DanhMucBean("ThongTinCuaToi",jpnThongTinCuaToi,jlbThongTinCuaToi));
+        listItem.add(new DanhMucBean("SachDaMuon",jpnSachDaMuon,jlbSachDaMuon));
+        
+        controller.setEvent(listItem);
     }
 
     /**
@@ -26,19 +37,107 @@ public class HoSoCuaToiPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanelView = new javax.swing.JPanel();
+        jpnThongTinCuaToi = new javax.swing.JPanel();
+        jlbThongTinCuaToi = new javax.swing.JLabel();
+        jpnSachDaMuon = new javax.swing.JPanel();
+        jlbSachDaMuon = new javax.swing.JLabel();
+
+        jPanelView.setBackground(new java.awt.Color(128, 175, 129));
+
+        jpnThongTinCuaToi.setBackground(new java.awt.Color(80, 141, 78));
+
+        jlbThongTinCuaToi.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbThongTinCuaToi.setForeground(new java.awt.Color(255, 255, 255));
+        jlbThongTinCuaToi.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jlbThongTinCuaToi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoThongTinThanhVien.png"))); // NOI18N
+        jlbThongTinCuaToi.setText("Thông tin của tôi");
+        jlbThongTinCuaToi.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jlbThongTinCuaToi.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout jpnThongTinCuaToiLayout = new javax.swing.GroupLayout(jpnThongTinCuaToi);
+        jpnThongTinCuaToi.setLayout(jpnThongTinCuaToiLayout);
+        jpnThongTinCuaToiLayout.setHorizontalGroup(
+            jpnThongTinCuaToiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnThongTinCuaToiLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jlbThongTinCuaToi)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        jpnThongTinCuaToiLayout.setVerticalGroup(
+            jpnThongTinCuaToiLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnThongTinCuaToiLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jlbThongTinCuaToi)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        jpnSachDaMuon.setBackground(new java.awt.Color(80, 141, 78));
+
+        jlbSachDaMuon.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbSachDaMuon.setForeground(new java.awt.Color(255, 255, 255));
+        jlbSachDaMuon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoBook2.png"))); // NOI18N
+        jlbSachDaMuon.setText("Sách đã mượn");
+        jlbSachDaMuon.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jlbSachDaMuon.setVerifyInputWhenFocusTarget(false);
+        jlbSachDaMuon.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+
+        javax.swing.GroupLayout jpnSachDaMuonLayout = new javax.swing.GroupLayout(jpnSachDaMuon);
+        jpnSachDaMuon.setLayout(jpnSachDaMuonLayout);
+        jpnSachDaMuonLayout.setHorizontalGroup(
+            jpnSachDaMuonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnSachDaMuonLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jlbSachDaMuon)
+                .addContainerGap(60, Short.MAX_VALUE))
+        );
+        jpnSachDaMuonLayout.setVerticalGroup(
+            jpnSachDaMuonLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jpnSachDaMuonLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addComponent(jlbSachDaMuon)
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout jPanelViewLayout = new javax.swing.GroupLayout(jPanelView);
+        jPanelView.setLayout(jPanelViewLayout);
+        jPanelViewLayout.setHorizontalGroup(
+            jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelViewLayout.createSequentialGroup()
+                .addGap(115, 115, 115)
+                .addComponent(jpnThongTinCuaToi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(91, 91, 91)
+                .addComponent(jpnSachDaMuon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(115, Short.MAX_VALUE))
+        );
+        jPanelViewLayout.setVerticalGroup(
+            jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelViewLayout.createSequentialGroup()
+                .addGap(135, 135, 135)
+                .addGroup(jPanelViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jpnThongTinCuaToi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jpnSachDaMuon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(165, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanelView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanelView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanelView;
+    private javax.swing.JLabel jlbSachDaMuon;
+    private javax.swing.JLabel jlbThongTinCuaToi;
+    private javax.swing.JPanel jpnSachDaMuon;
+    private javax.swing.JPanel jpnThongTinCuaToi;
     // End of variables declaration//GEN-END:variables
 }

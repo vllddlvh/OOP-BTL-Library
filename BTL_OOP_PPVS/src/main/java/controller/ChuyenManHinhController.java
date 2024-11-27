@@ -15,8 +15,10 @@ import java.util.logging.Logger;
 import view.BanDocJPanel;
 import view.HoSoCuaToiPanel;
 import view.MuonTraTaiLieuJPanel;
+import view.SachDaMuonJPanel;
 import view.SachJPanel;
 import view.TaiLieuPanel;
+import view.ThongTinCuaToiJPanel;
 import view.ThongTinThanhVienJPanel;
 
 public class ChuyenManHinhController {
@@ -87,6 +89,12 @@ public class ChuyenManHinhController {
                     break;
                 case "HoSoCuaToi":
                     node = new HoSoCuaToiPanel();
+                    break;
+                case "ThongTinCuaToi":
+                    node = new ThongTinCuaToiJPanel();
+                    break;
+                case "SachDaMuon":
+                    node = new SachDaMuonJPanel();
                     break;
                 default:
                 {
