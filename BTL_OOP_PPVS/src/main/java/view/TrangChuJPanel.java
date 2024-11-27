@@ -156,7 +156,7 @@ private JPanel createDocumentCard(Document document) {
 
     
     // Panel hiển thị ảnh
-    JPanel imagePanel = new JPanel(new BorderLayout()); // Sử dụng BorderLayout
+    JPanel imagePanel = new JPanel();
     imagePanel.setBackground(Color.WHITE);
 
     // Tạo JLabel cho ảnh
@@ -174,7 +174,7 @@ private JPanel createDocumentCard(Document document) {
     System.out.println("Ảnh không tìm thấy tại: " + pathImage);
     imageLabel.setText("Không tìm thấy ảnh");
     }
-
+    if (acc.getRole().equals("Member")) {
     // Tạo nút "Mượn sách"
     JButton jbuttonMuon = new JButton("Mượn sách");
     jbuttonMuon.setBackground(new Color(80, 141, 78));
@@ -191,10 +191,15 @@ private JPanel createDocumentCard(Document document) {
         tuMuonSach.setVisible(true);
     }
     });
-
+    imagePanel.setLayout(new BorderLayout());
     // Thêm ảnh và nút vào imagePanel
     imagePanel.add(imageLabel, BorderLayout.CENTER); // Ảnh nằm ở trung tâm
     imagePanel.add(jbuttonMuon, BorderLayout.SOUTH); // Nút nằm dưới
+    } else {
+        imagePanel.add(imageLabel);
+    }
+
+    
     mainPanel.add(imagePanel, BorderLayout.WEST);
 
     // Panel hiển thị thông tin
