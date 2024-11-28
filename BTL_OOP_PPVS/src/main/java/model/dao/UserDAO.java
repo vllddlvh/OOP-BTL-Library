@@ -1,5 +1,8 @@
 package model.dao;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -69,6 +72,86 @@ public class UserDAO {
         return User.LoginAlert.WRONG_PASSWORD;
     }
     
+    /**
+     * Download FULL pdf and WRITE A COPY of the file you want from DATABASE.
+     * 
+     * @param bookID = ID of the book whose the file.
+     * 
+     * @return the PATH where contain the file temporary.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    public static File getFullBookPDF(String bookID) throws SQLException, IOException {
+        ResultSet rs;
+        CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loodDocumentPDF(?) }"); 
+        
+        loader.setString(1, bookID);
+        
+        rs = loader.executeQuery();
+        
+        while(rs.next()) {
+            var fis = rs.getBinaryStream("PDF");
+            if (fis == null) {
+                return null;
+            }
+            
+            // setup a place for the file to be download in
+            FileOutputStream fos = new FileOutputStream("src/OuterData/" + bookID + ".pdf", false);
+            
+            // write the file on the place
+            fos.write(fis.readAllBytes());
+            
+            fis.close();
+            fos.close();
+            
+            // return the path contain the file.
+            return new File("src/OuterData/" + bookID + ".pdf");
+        }
+        
+        return null;
+    }
+    
+    /**
+     * Download a prototype pdf of first few page.
+     * WRITE A COPY of the file you want from DATABASE.
+     * 
+     * @param bookID = ID of the book whose the file.
+     * 
+     * @return the PATH where contain the file temporary.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
+    public static File getPrototypeBookPDF(String bookID) throws SQLException, IOException {
+        ResultSet rs;
+        CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loodDocumentPDF(?) }"); 
+        
+        loader.setString(1, bookID);
+        
+        rs = loader.executeQuery();
+        
+        while(rs.next()) {
+            var fis = rs.getBinaryStream("PDF");
+            if (fis == null) {
+                return null;
+            }
+            
+            // setup a place for the file to be download in
+            FileOutputStream fos = new FileOutputStream("src/OuterData/" + bookID + ".pdf", false);
+            
+            // write the file on the place
+            fos.write(fis.readAllBytes());
+            
+            fis.close();
+            fos.close();
+            
+            // return the path contain the file.
+            return new File("src/OuterData/" + bookID + ".pdf");
+        }
+        
+        return null;
+    }
     
     /**
      * Cho phép tự cài lại mật khẩu cho một user.

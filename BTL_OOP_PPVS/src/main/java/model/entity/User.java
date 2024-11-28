@@ -82,6 +82,10 @@ public abstract class User {
         return RequestDAO.borrowDocument(ID, documentID);
     }
     
+    public boolean readDocument(String documentID) {
+        return false;
+    }
+    
     /**
      * This user make an act of return their request.
      * 

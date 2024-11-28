@@ -1,5 +1,6 @@
 package view;
 
+import controller.LoginController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -163,28 +164,30 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
     }
     
     private void jButtonTryActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        try {
+        // try {
             // TODO add your handling code here:
-            if (new Staff("PhucTester").borrowDocument(currentShowDocument.getID())) {
+            if (LoginController.getAcc().readDocument(currentShowDocument.getID())) {
                 // Đáng nhẽ là open file PDF
                 JOptionPane.showMessageDialog(this, "Chức năng Đọc thử đang phát triển!");
+                
             } else {
                 JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể đọc tài liệu này");
             }
             
-        } catch (SQLException ex) {
-            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, ex.getMessage());
-        }
+//        } catch (SQLException ex) {
+//            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+//            JOptionPane.showMessageDialog(this, ex.getMessage());
+//        }
     }          
     
     private void jButtonBorrowActionPerformed(java.awt.event.ActionEvent evt) {                                             
         // TODO add your handling code here:
         try {
             // TODO add your handling code here:
-            if (new Staff("PhucTester").borrowDocument(currentShowDocument.getID())) {
+            if (LoginController.getAcc().borrowDocument(currentShowDocument.getID())) {
                 // Đáng nhẽ là open file PDF
                 JOptionPane.showMessageDialog(this, "Mượn thành công");
+                
             } else {
                 JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể mượn tài liệu này");
             }

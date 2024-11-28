@@ -149,6 +149,11 @@ public abstract class Document {
         this.cover = new ImageIcon(cover.getAbsolutePath());
         haveCover = true;
     }
+    
+    public void setCover(ImageIcon cover) {
+        this.cover = cover;
+        haveCover = true;
+    }
 
     public File getPDF() throws IOException, SQLException, FileFormatException {
         if (PDF == null && havePDF) {

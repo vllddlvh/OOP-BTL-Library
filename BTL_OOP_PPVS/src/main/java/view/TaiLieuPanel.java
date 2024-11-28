@@ -24,7 +24,7 @@ public class TaiLieuPanel extends javax.swing.JPanel {
      * Creates new form TaiLieuPanel
      */
     public TaiLieuPanel() {
-        // initComponents();
+        initComponents();
         initTableTaiLieu();
         UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
         try {
@@ -120,15 +120,16 @@ public class TaiLieuPanel extends javax.swing.JPanel {
             jpnViewTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnViewTaiLieuLayout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(jLabelTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                .addComponent(jLabelTimKiem, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jpnViewTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPaneTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpnViewTaiLieuLayout.createSequentialGroup()
-                        .addComponent(JTextFieldTimKiemTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(162, 162, 162)
-                        .addComponent(ButtonThemTaiLieu)))
+                .addComponent(JTextFieldTimKiemTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 534, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(162, 162, 162)
+                .addComponent(ButtonThemTaiLieu)
                 .addGap(30, 30, 30))
+            .addGroup(jpnViewTaiLieuLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(jScrollPaneTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 790, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jpnViewTaiLieuLayout.setVerticalGroup(
             jpnViewTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -138,9 +139,9 @@ public class TaiLieuPanel extends javax.swing.JPanel {
                     .addComponent(jLabelTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ButtonThemTaiLieu)
                     .addComponent(JTextFieldTimKiemTaiLieu))
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPaneTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

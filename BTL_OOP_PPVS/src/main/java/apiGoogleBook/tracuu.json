@@ -1,0 +1,666 @@
+{
+  "kind": "books#volumes",
+  "totalItems": 626,
+  "items": [
+    {
+      "kind": "books#volume",
+      "id": "Z7GfEAAAQBAJ",
+      "etag": "Zx9RMeuetvU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Z7GfEAAAQBAJ",
+      "volumeInfo": {
+        "title": "The Three-Body Problem",
+        "subtitle": "Now a major Netflix series",
+        "authors": [
+          "Cixin Liu"
+        ],
+        "publisher": "Bloomsbury Publishing",
+        "publishedDate": "2015-03-12",
+        "description": "Read the award-winning, critically acclaimed, multi-million-copy-selling science-fiction phenomenon – now a major Netflix Original Series from the creators of Game of Thrones. 1967: Ye Wenjie witnesses Red Guards beat her father to death during China's Cultural Revolution. This singular event will shape not only the rest of her life but also the future of mankind. Four decades later, Beijing police ask nanotech engineer Wang Miao to infiltrate a secretive cabal of scientists after a spate of inexplicable suicides. Wang's investigation will lead him to a mysterious online game and immerse him in a virtual world ruled by the intractable and unpredictable interaction of its three suns. This is the Three-Body Problem and it is the key to everything: the key to the scientists' deaths, the key to a conspiracy that spans light-years and the key to the extinction-level threat humanity now faces. Praise for The Three-Body Problem: 'Your next favourite sci-fi novel' Wired 'Immense' Barack Obama 'Unique' George R.R. Martin 'SF in the grand style' Guardian 'Mind-altering and immersive' Daily Mail Winner of the Hugo and Galaxy Awards for Best Novel",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781784971540"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1784971545"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 365,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.6.8.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Z7GfEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Z7GfEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=Z7GfEAAAQBAJ&printsec=frontcover&dq=Three+body+problem&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=Z7GfEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Z7GfEAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 253801,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 177657,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=Z7GfEAAAQBAJ&rdid=book-Z7GfEAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 253801000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 177657000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_Body_Problem-sample-epub.acsm?id=Z7GfEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_Body_Problem-sample-pdf.acsm?id=Z7GfEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Z7GfEAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This is the Three-Body Problem and it is the key to everything: the key to the scientists&#39; deaths, the key to a conspiracy that spans light-years and the key to the extinction-level threat humanity now faces."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "4-wgDAAAQBAJ",
+      "etag": "vnNItb8Wjv4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/4-wgDAAAQBAJ",
+      "volumeInfo": {
+        "title": "The Three-body Problem from Pythagoras to Hawking",
+        "authors": [
+          "Mauri Valtonen",
+          "Joanna Anosova",
+          "Konstantin Kholshevnikov",
+          "Aleksandr Mylläri",
+          "Victor Orlov",
+          "Kiyotaka Tanikawa"
+        ],
+        "publisher": "Springer",
+        "publishedDate": "2016-05-03",
+        "description": "This book, written for a general readership, reviews and explains the three-body problem in historical context reaching to latest developments in computational physics and gravitation theory. The three-body problem is one of the oldest problems in science and it is most relevant even in today’s physics and astronomy. The long history of the problem from Pythagoras to Hawking parallels the evolution of ideas about our physical universe, with a particular emphasis on understanding gravity and how it operates between astronomical bodies. The oldest astronomical three-body problem is the question how and when the moon and the sun line up with the earth to produce eclipses. Once the universal gravitation was discovered by Newton, it became immediately a problem to understand why these three-bodies form a stable system, in spite of the pull exerted from one to the other. In fact, it was a big question whether this system is stable at all in the long run. Leading mathematicians attacked this problem over more than two centuries without arriving at a definite answer. The introduction of computers in the last half-a-century has revolutionized the study; now many answers have been found while new questions about the three-body problem have sprung up. One of the most recent developments has been in the treatment of the problem in Einstein’s General Relativity, the new theory of gravitation which is an improvement on Newton’s theory. Now it is possible to solve the problem for three black holes and to test one of the most fundamental theorems of black hole physics, the no-hair theorem, due to Hawking and his co-workers.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9783319227269"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "3319227262"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 183,
+        "printType": "BOOK",
+        "categories": [
+          "Science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.3.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=4-wgDAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=4-wgDAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=4-wgDAAAQBAJ&printsec=frontcover&dq=Three+body+problem&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=4-wgDAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=4-wgDAAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 1151716,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 806201,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=4-wgDAAAQBAJ&rdid=book-4-wgDAAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1151716000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 806201000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_body_Problem_from_Pythagoras_t-sample-epub.acsm?id=4-wgDAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_body_Problem_from_Pythagoras_t-sample-pdf.acsm?id=4-wgDAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=4-wgDAAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book, written for a general readership, reviews and explains the three-body problem in historical context reaching to latest developments in computational physics and gravitation theory."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "_qsbS6pOyssC",
+      "etag": "TE2jwtShDdM",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/_qsbS6pOyssC",
+      "volumeInfo": {
+        "title": "The Three-Body Problem",
+        "authors": [
+          "C. Marchal"
+        ],
+        "publisher": "Elsevier",
+        "publishedDate": "2012-12-02",
+        "description": "Recent research on the theory of perturbations, the analytical approach and the quantitative analysis of the three-body problem have reached a high degree of perfection. The use of electronics has aided developments in quantitative analysis and has helped to disclose the extreme complexity of the set of solutions. This accelerated progress has given new orientation and impetus to the qualitative analysis that is so complementary to the quantitative analysis. The book begins with the various formulations of the three-body problem, the main classical results and the important questions and conjectures involved in this subject. The main part of the book describes the remarkable progress achieved in qualitative analysis which has shed new light on the three-body problem. It deals with questions such as escapes, captures, periodic orbits, stability, chaotic motions, Arnold diffusion, etc. The most recent tests of escape have yielded very impressive results and border very close on the true limits of escape, showing the domain of bounded motions to be much smaller than was expected. An entirely new picture of the three-body problem is emerging, and the book reports on this recent progress. The structure of the solutions for the three-body problem lead to a general conjecture governing the picture of solutions for all Hamiltonian problems. The periodic, quasi-periodic and almost-periodic solutions form the basis for the set of solutions and separate the chaotic solutions from the open solutions.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780444600745"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0444600744"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 593,
+        "printType": "BOOK",
+        "categories": [
+          "Science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.3.0.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=_qsbS6pOyssC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=_qsbS6pOyssC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=_qsbS6pOyssC&printsec=frontcover&dq=Three+body+problem&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=_qsbS6pOyssC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=_qsbS6pOyssC"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 1946061,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 1487994,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=_qsbS6pOyssC&rdid=book-_qsbS6pOyssC&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1946061000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 1487994000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_Body_Problem-sample-pdf.acsm?id=_qsbS6pOyssC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=_qsbS6pOyssC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The book begins with the various formulations of the three-body problem, the main classical results and the important questions and conjectures involved in this subject."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "dvIXkeS17bAC",
+      "etag": "GLKYe4GUg1c",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/dvIXkeS17bAC",
+      "volumeInfo": {
+        "title": "The Three-Body Problem",
+        "authors": [
+          "Mauri J. Valtonen",
+          "Hannu Karttunen"
+        ],
+        "publisher": "Cambridge University Press",
+        "publishedDate": "2006-03-02",
+        "description": "How do three celestial bodies move under their mutual gravitational attraction? This problem has been studied by Isaac Newton and leading mathematicians over the last two centuries. Poincaré's conclusion, that the problem represents an example of chaos in nature, opens the new possibility of using a statistical approach. For the first time this book presents these methods in a systematic way, surveying statistical as well as more traditional methods. The book begins by providing an introduction to celestial mechanics, including Lagrangian and Hamiltonian methods, and both the two and restricted three body problems. It then surveys statistical and perturbation methods for the solution of the general three body problem, providing solutions based on combining orbit calculations with semi-analytic methods for the first time. This book should be essential reading for students in this rapidly expanding field and is suitable for students of celestial mechanics at advanced undergraduate and graduate level.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0521852242"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780521852241"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 366,
+        "printType": "BOOK",
+        "categories": [
+          "Mathematics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.8.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=dvIXkeS17bAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=dvIXkeS17bAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=dvIXkeS17bAC&printsec=frontcover&dq=Three+body+problem&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=dvIXkeS17bAC&dq=Three+body+problem&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Three_Body_Problem.html?hl=&id=dvIXkeS17bAC"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_Body_Problem-sample-pdf.acsm?id=dvIXkeS17bAC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=dvIXkeS17bAC&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This book surveys statistical and perturbation methods for the solution of the general three body problem."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "95gQDgAAQBAJ",
+      "etag": "Cq9QF6HSW5A",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/95gQDgAAQBAJ",
+      "volumeInfo": {
+        "title": "The Three-Body Problem Series",
+        "subtitle": "The Three-Body Problem, The Dark Forest, Death's End",
+        "authors": [
+          "Cixin Liu"
+        ],
+        "publisher": "Tor Books",
+        "publishedDate": "2017-03-14",
+        "description": "The inspiration for the Netflix series 3 Body Problem! WINNER OF THE HUGO AWARD FOR BEST NOVEL Over 1 million copies sold in North America “A mind-bending epic.”—The New York Times • “War of the Worlds for the 21st century.”—The Wall Street Journal • “Fascinating.”—TIME • “Extraordinary.”—The New Yorker • “Wildly imaginative.”—Barack Obama • “Provocative.”—Slate • “A breakthrough book.”—George R. R. Martin • “Impossible to put down.”—GQ • “Absolutely mind-unfolding.”—NPR • “You should be reading Liu Cixin.”—The Washington Post The Three-Body Problem Series eBook bundle contains all three volumes of the groundbreaking, Hugo Award-winning series—The Three-Body Problem, The Dark Forest, and Death's End—by China's most beloved science fiction author, Cixin Liu. A secret military group sends signals into space in hopes of establishing contact with aliens—and succeeds. Picking up their signal is an alien civilization on the brink of destruction who now readies to invade Earth. News of the coming invasion divides humanity like never before. Some want to help the superior beings take over a world they see as corrupt. Others prepare to fight the invasion at all cost. The Three Body Problem trilogy is a ground-breaking saga of enormous scope and vision. The Three-Body Problem Series The Three-Body Problem The Dark Forest Death's End Other Books by Cixin Liu Ball Lightning Supernova Era To Hold Up the Sky The Wandering Earth A View from the Stars At the Publisher's request, this title is being sold without Digital Rights Management Software (DRM) applied.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780765397485"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "076539748X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 1385,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "2.15.17.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=95gQDgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=95gQDgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=95gQDgAAQBAJ&printsec=frontcover&dq=Three+body+problem&hl=&cd=5&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=95gQDgAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=95gQDgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 858706,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 601094,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=95gQDgAAQBAJ&rdid=book-95gQDgAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 858706000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 601094000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=95gQDgAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "The inspiration for the Netflix series 3 Body Problem!"
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "2jGKAgAAQBAJ",
+      "etag": "lGsCM+6Nhdc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/2jGKAgAAQBAJ",
+      "volumeInfo": {
+        "title": "The Three-Body Problem",
+        "authors": [
+          "Catherine Shaw"
+        ],
+        "publisher": "Allison & Busby",
+        "publishedDate": "2013-05-27",
+        "description": "Cambridge, 1888. When schoolmistress Vanessa Duncan learns of a murder at St John's College, little does she know that she will become deeply entangled in the mystery. Dr Geoffrey Akers, Fellow in Pure Mathematics, has been found dead, struck down by a violent blow to the head. What could provoke such a brutal act? Vanessa, finding herself in amongst Cambridge's brightest scholarly minds, discovers that the motive may lie in mathematics itself. Drawn closer to the case by a blossoming friendship with mathematician Arthur Weatherburn, Vanessa begins to investigate. When she learns of Sir Isaac Newton's elusive 'n-body problem' and the prestigious prize offered to anyone with a solution, things begin to make sense. But with further deaths occurring and the threat of an innocent man being condemned, Vanessa must hurry with her calculations . . .",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780749014445"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "074901444X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 277,
+        "printType": "BOOK",
+        "categories": [
+          "Fiction"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.12.10.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=2jGKAgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=2jGKAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=2jGKAgAAQBAJ&printsec=frontcover&dq=Three+body+problem&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=2jGKAgAAQBAJ&dq=Three+body+problem&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Three_Body_Problem.html?hl=&id=2jGKAgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_Body_Problem-sample-epub.acsm?id=2jGKAgAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/The_Three_Body_Problem-sample-pdf.acsm?id=2jGKAgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=2jGKAgAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Cambridge, 1888."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "WQ8_nQAACAAJ",
+      "etag": "oF5kzlZ51ns",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/WQ8_nQAACAAJ",
+      "volumeInfo": {
+        "title": "Three-body Problem",
+        "authors": [
+          "Cixin Liu"
+        ],
+        "publishedDate": "2015",
+        "description": "1967: University student Ye Wenjie witnesses Red Guards beat her father to death during the Cultural Revolution. His crime? Failure to recant his belief in science. This singular event will shape not only the rest of her life but also the future of mankind. Four decades later, after a spate of apparent suicides among elite scientists, Beijing police ask nanotech engineer Wang Miao to infiltrate a secretive cabal that styles itself the Frontiers of Science. During the course of his investigation, Wang is inducted into a mysterious online game that immerses him in a virtual world ruled by the intractable and unpredictable interaction of its three suns. This is the Three-Body Problem and it is the key to everything. The key to humanity's place in the cosmos and the key to the extinction-level threat it now faces.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1322978263"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781322978260"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "printType": "BOOK",
+        "categories": [
+          "Human-alien encounters"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=WQ8_nQAACAAJ&dq=Three+body+problem&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=WQ8_nQAACAAJ&dq=Three+body+problem&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Three_body_Problem.html?hl=&id=WQ8_nQAACAAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=WQ8_nQAACAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "NONE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "This is the Three-Body Problem and it is the key to everything. The key to humanity&#39;s place in the cosmos and the key to the extinction-level threat it now faces."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "ixMsjwEACAAJ",
+      "etag": "UzBla1i76Pg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/ixMsjwEACAAJ",
+      "volumeInfo": {
+        "title": "The Night Circus",
+        "authors": [
+          "Erin Morgenstern"
+        ],
+        "publisher": "Tre/Tsai Fong Books",
+        "publishedDate": "2015-06-01",
+        "description": "A romantic fantasy with a touch of history and suspense. Vietnamese translation by Nguyen Thi Cam Linh. In Vietnamese. Annotation copyright Tsai Fong Books, Inc. Distributed by Tsai Fong Books, Inc.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "6041030376"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9786041030374"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 639,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=ixMsjwEACAAJ&dq=Three+body+problem&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=ixMsjwEACAAJ&dq=Three+body+problem&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Night_Circus.html?hl=&id=ixMsjwEACAAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "NO_PAGES",
+        "embeddable": false,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvaila

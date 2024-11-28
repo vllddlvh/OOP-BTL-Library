@@ -197,6 +197,7 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
         jPanelBook = new javax.swing.JPanel();
         jPanelTimKiem = new javax.swing.JPanel();
         JTextFieldTimKiem = new javax.swing.JTextField();
+        buttonAPI = new javax.swing.JButton();
 
         jPanelTT.setBackground(new java.awt.Color(128, 175, 129));
         jPanelTT.setLayout(new java.awt.BorderLayout());
@@ -228,6 +229,13 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
             }
         });
 
+        buttonAPI.setText("Tìm kiếm với API");
+        buttonAPI.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonAPIActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelTimKiemLayout = new javax.swing.GroupLayout(jPanelTimKiem);
         jPanelTimKiem.setLayout(jPanelTimKiemLayout);
         jPanelTimKiemLayout.setHorizontalGroup(
@@ -235,14 +243,18 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
             .addGroup(jPanelTimKiemLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(buttonAPI, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanelTimKiemLayout.setVerticalGroup(
             jPanelTimKiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTimKiemLayout.createSequentialGroup()
                 .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGroup(jPanelTimKiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAPI, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         jPanelTT.add(jPanelTimKiem, java.awt.BorderLayout.PAGE_START);
@@ -263,9 +275,20 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
     
     }//GEN-LAST:event_JTextFieldTimKiemActionPerformed
 
+    private void buttonAPIActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonAPIActionPerformed
+        // TODO add your handling code here:
+        documents = apiGoogleBook.APIConnector.searchBook(JTextFieldTimKiem.getText());
+        try {
+            displayDocuments(documents);
+        } catch (IOException | SQLException | FileFormatException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_buttonAPIActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTextFieldTimKiem;
+    private javax.swing.JButton buttonAPI;
     private javax.swing.JPanel jPanelBook;
     private javax.swing.JPanel jPanelTT;
     private javax.swing.JPanel jPanelTimKiem;
