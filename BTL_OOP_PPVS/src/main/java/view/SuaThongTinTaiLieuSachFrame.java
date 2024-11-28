@@ -5,18 +5,18 @@
 package view;
 
 import controller.UpdateDocumentTable;
-import controller.UpdateMemberTable;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import model.entity.Document;
-import model.entity.Member;
+import model.dao.FileFormatException;
+import model.entity.Book;
 
 /**
  *
- * @author HP
+ * @// author HP
  */
 public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
 
@@ -28,27 +28,30 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
     
-    public SuaThongTinTaiLieuSachFrame(String id, String title, String author, String publisher, String publicationYear, String category, String language, String summary, String fileImage) {
+    public SuaThongTinTaiLieuSachFrame(Book book) {
     // Khởi tạo giao diện
         initComponents();
 
         // Gán giá trị vào các JTextField
-        jTextAreaSummary.setText(summary);
-        jTextFieldBookAuthor.setText(author);
-        jTextFieldBookID.setText(id);
-        jTextFieldBookPublisher.setText(publisher);
-        jTextFieldBookTitle.setText(title);
-        jTextFieldCategory.setText(category);
-        jTextFieldFileImage.setText(fileImage);
-        jTextFieldLanguage.setText(language);
-        jTextFieldPublicationYear.setText(publicationYear);
+        jTextAreaSummary.setText(book.getDescription());
+        jTextFieldBookAuthor.setText(book.getAuthor());
+        jTextFieldBookID.setText(book.getID());
+        jTextFieldBookPublisher.setText(book.getPublisher());
+        jTextFieldBookTitle.setText(book.getTitle());
+        jTextFieldCategory.setText(book.getCategory().toString());
+        jTextFieldLanguage.setText(book.getLanguage());
+        jTextFieldPublicationYear.setText(String.valueOf(book.getReleaseYear()));
+        jTextFieldFileImage.setText("Không biêt"); 
+        // tạm tạm vậy. Tại ảnh bìa sẽ lưu trong cache (RAM), nên không có filePath đến đó.
+        // Bù lại thì đỡ công xóa.
+        // Nhưng cũng khó khi API toàn trả về URL.
 
         // Đặt trường ID không thể chỉnh sửa
         jTextFieldBookID.setEditable(false);
 
         // Cài đặt chế độ đóng cửa sổ
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-}
+    }
 
 
     /**
@@ -309,17 +312,19 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
     private void ButtonXoaTaiLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonXoaTaiLieuActionPerformed
         // TODO add your handling code here:
          // Tạo một Document với thông tin từ các JTextField
-        Document doc = new Document(
-            jTextFieldBookID.getText(),
-            jTextFieldBookTitle.getText(),
-            jTextFieldBookAuthor.getText(),
-            jTextFieldBookPublisher.getText(),
-            jTextFieldPublicationYear.getText(),
-            jTextFieldCategory.getText(),
-            jTextFieldLanguage.getText(),
-            jTextAreaSummary.getText(),
-            jTextFieldFileImage.getText()
-        );
+         
+        Book doc = new Book(
+                            jTextFieldBookID.getText(),
+                           jTextFieldBookTitle.getText(),
+                    1000,
+                          jTextFieldBookAuthor.getText(),
+                        jTextFieldBookPublisher.getText(),
+                       Integer.parseInt(jTextFieldPublicationYear.getText()),
+                
+                       jTextAreaSummary.getText(),
+                         jTextFieldCategory.getText(),
+                         jTextFieldLanguage.getText()
+                );
 
         try {
         UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
@@ -332,23 +337,23 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
 
         } catch (SQLException ex) {
             Logger.getLogger(SuaThongTinTaiLieuSachFrame.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
     }//GEN-LAST:event_ButtonXoaTaiLieuActionPerformed
 
     private void ButtonSaveBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveBookActionPerformed
         // TODO add your handling code here:
-        Document doc = new Document(
-            jTextFieldBookID.getText(),
-            jTextFieldBookTitle.getText(),
-            jTextFieldBookAuthor.getText(),
-            jTextFieldBookPublisher.getText(),
-            jTextFieldPublicationYear.getText(),
-            jTextFieldCategory.getText(),
-            jTextFieldLanguage.getText(),
-            jTextAreaSummary.getText(),
-            jTextFieldFileImage.getText()
-        );
+        Book doc = new Book(
+                            jTextFieldBookID.getText(),
+                           jTextFieldBookTitle.getText(),
+                    1000,
+                          jTextFieldBookAuthor.getText(),
+                        jTextFieldBookPublisher.getText(),
+                       Integer.parseInt(jTextFieldPublicationYear.getText()),
+                       jTextAreaSummary.getText(),
+                         jTextFieldCategory.getText(),
+                         jTextFieldLanguage.getText()
+                );
    
         try {
             UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
@@ -360,14 +365,22 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
             
         } catch (SQLException ex) {
             Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+            
+        } catch (IOException ex) {
+            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
+        } catch (FileFormatException ex) {
+            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
     }//GEN-LAST:event_ButtonSaveBookActionPerformed
 
+    
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+    public static void main (String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.

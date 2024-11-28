@@ -5,8 +5,8 @@
 package view;
 
 import javax.swing.JFrame;
-import model.entity.Account;
 import model.entity.Document;
+import model.entity.User;
 
 /**
  *
@@ -17,11 +17,11 @@ public class TuMuonSachJFrame extends javax.swing.JFrame {
     /**
      * Creates new form TuMuonSachJFrame
      */
-    public TuMuonSachJFrame(Document document, Account account) {
+    public TuMuonSachJFrame(Document document, User currentUser) {
         initComponents();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
-        jTextFieldUserID.setText(account.getUsername());
+        jTextFieldUserID.setText(currentUser.getLastName() + currentUser.getFirstName());
         jTextFieldUserID.setEditable(false);
         JTextFieldDocumentID.setText(document.getID());
         JTextFieldDocumentID.setEditable(false);

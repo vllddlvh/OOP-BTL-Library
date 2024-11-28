@@ -50,6 +50,7 @@ CREATE TABLE Documents (
     quantityLeft INT unsigned not null,
 	Description TEXT,
 	category INT unsigned,
+    language VARCHAR(20),
     
     primary key (ID)
 );
@@ -58,21 +59,10 @@ CREATE TABLE Books (
 	ISBN VARCHAR(15),
     author VARCHAR(50) NOT NULL,
     publisher VARCHAR(50),
-    releaseYear YEAR,
+    releaseYear INT(4),
     
     primary key (ISBN),
     foreign key (ISBN) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
-CREATE TABLE Thesis (
-	ID VARCHAR(15),
-	writerID VARCHAR(10),
-    advisor VARCHAR(50),
-    fieldOfStudy VARCHAR(50),
-    
-    primary key (ID),
-    foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE,
-    foreign key (writerID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
 CREATE TABLE storedDocument (
@@ -97,4 +87,3 @@ CREATE TABLE Request (
     foreign key (userID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE,
     foreign key (documentID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
 );
-

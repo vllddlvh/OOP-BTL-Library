@@ -8,6 +8,7 @@ import controller.UpdateDocumentTable;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,7 +24,7 @@ public class TaiLieuPanel extends javax.swing.JPanel {
      * Creates new form TaiLieuPanel
      */
     public TaiLieuPanel() {
-        initComponents();
+        // initComponents();
         initTableTaiLieu();
         UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
         try {
@@ -31,7 +32,11 @@ public class TaiLieuPanel extends javax.swing.JPanel {
             
         } catch (SQLException ex) {
             Logger.getLogger(TaiLieuPanel.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, "Unknown Error");
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+            
+        } catch (IOException ex) {
+            Logger.getLogger(TaiLieuPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
 
@@ -83,7 +88,9 @@ public class TaiLieuPanel extends javax.swing.JPanel {
 
         jTableThongTinTaiLieu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
                 "ID", "Tiêu đề", "Tác giả", "Nhà xuất bản", "Năm xuất bản", "Thể loại", "Ngôn ngữ", "Tóm tắt", "Hình ảnh"
@@ -106,7 +113,6 @@ public class TaiLieuPanel extends javax.swing.JPanel {
         });
         jTableThongTinTaiLieu.setColumnSelectionAllowed(true);
         jScrollPaneTaiLieu.setViewportView(jTableThongTinTaiLieu);
-        jTableThongTinTaiLieu.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.SINGLE_INTERVAL_SELECTION);
 
         javax.swing.GroupLayout jpnViewTaiLieuLayout = new javax.swing.GroupLayout(jpnViewTaiLieu);
         jpnViewTaiLieu.setLayout(jpnViewTaiLieuLayout);

@@ -236,7 +236,7 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
             
         } catch (SQLException ex) {
             Logger.getLogger(ThemThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
+            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }
         
     }//GEN-LAST:event_jButtonLuuDuLieuActionPerformed

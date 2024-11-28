@@ -1,7 +1,5 @@
 package view;
 
-import javax.swing.JFrame;
-
 /**
  *
  * @author ADMIN
@@ -13,7 +11,7 @@ public class MuonSachJFrame extends javax.swing.JFrame {
      */
     public MuonSachJFrame() {
         initComponents();
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        this.setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
 

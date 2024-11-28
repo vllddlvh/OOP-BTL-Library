@@ -7,7 +7,6 @@ import java.awt.event.MouseListener;
 import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import view.GDMain;
 import view.TrangChuJPanel;
 import java.util.List;
 import java.util.logging.Level;
@@ -16,7 +15,6 @@ import view.BanDocJPanel;
 import view.HoSoCuaToiPanel;
 import view.MuonTraTaiLieuJPanel;
 import view.SachDaMuonJPanel;
-import view.SachJPanel;
 import view.TaiLieuPanel;
 import view.ThongTinCuaToiJPanel;
 import view.ThongTinThanhVienJPanel;
@@ -31,7 +29,7 @@ public class ChuyenManHinhController {
     }
     
     //Doi mau
-    public void setView(JPanel jpnItem, JLabel jlbItem) throws SQLException {
+    public void setView(JPanel jpnItem, JLabel jlbItem) {
         kindSelected = "TrangChu";
         jpnItem.setBackground(new Color(26, 83, 25));
         jlbItem.setBackground(new Color(26, 83, 25));
@@ -66,15 +64,8 @@ public class ChuyenManHinhController {
         public void mouseClicked(MouseEvent e) {
             switch(kind) {
                 case "TrangChu":
-                {
-                    try {
-                        node = new TrangChuJPanel();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(ChuyenManHinhController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
+                    node = new TrangChuJPanel();
                     break;
-
                 case "BanDoc":
                     node = new BanDocJPanel();
                     break;
@@ -97,14 +88,7 @@ public class ChuyenManHinhController {
                     node = new SachDaMuonJPanel();
                     break;
                 default:
-                {
-                    try {
-                        node = new TrangChuJPanel();
-                    } catch (SQLException ex) {
-                        Logger.getLogger(ChuyenManHinhController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-                    break;
+                    node = new TrangChuJPanel();
 
             }
             root.removeAll();

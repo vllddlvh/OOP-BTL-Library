@@ -5,16 +5,8 @@
  */
 package controller;
 
-import java.awt.Color;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPasswordField;
-import javax.swing.JTextField;
-import model.dao.AccountDAO;
-import model.entity.Account;
+import model.entity.Staff;
+import model.entity.User;
 import view.GDMain;
 import view.GDMainNguoiDung;
 
@@ -23,69 +15,20 @@ import view.GDMainNguoiDung;
  * @author HP
  */
 public class LoginController {
-    private JFrame FrameLogin;
-    private JButton ButtonSubmit;
-    private JTextField jtfUsername;
-    private JPasswordField jpfPassword;
-    private JLabel jlbMsg;
-    private static Account acc;
     
-    public LoginController(JFrame FrameLogin, JButton ButtonSubmit, JTextField jtfUsername, JPasswordField jpfPassword, JLabel jlbMsg) {
-        this.FrameLogin = FrameLogin;
-        this.ButtonSubmit = ButtonSubmit;
-        this.jtfUsername = jtfUsername;
-        this.jpfPassword = jpfPassword;
-        this.jlbMsg = jlbMsg;
+    private static User currentUser;
+
+    public static User getAcc() {
+        return currentUser;
     }
 
-    public static Account getAcc() {
-        return acc;
-    }
-
-    public static void setAcc(Account acc) {
-        LoginController.acc = acc;
-    }
-    
-    
-    public void setEvent() {
-        ButtonSubmit.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                try {
-                    if (jtfUsername.getText().length() == 0
-                            || jpfPassword.getText().length() == 0) {
-                        jlbMsg.setText("Vui lòng nhập dữ liệu bắt buộc!");
-                    } else {
-                        Account account = AccountDAO.Login(jtfUsername.getText(), new String(jpfPassword.getPassword()));
-                        if (account == null) {
-                            jlbMsg.setText("Tên đăng nhập và mật khẩu không đúng!");
-                        } else {
-                            FrameLogin.dispose();
-                            LoginController.setAcc(account);
-                            if (account.getRole().equals("Staff")) {
-                                new GDMain().setVisible(true);
-                            } else {
-                                // new giao dien user
-                                new GDMainNguoiDung().setVisible(true);
-                            }
-                        }
-                    }
-                } catch (Exception ex) {
-                    jlbMsg.setText(ex.toString());
-                }
-            }
-
-            @Override
-            public void mouseEntered(MouseEvent e) {
-                ButtonSubmit.setBackground(new Color(0, 200, 83));
-            }
-
-            @Override
-            public void mouseExited(MouseEvent e) {
-                ButtonSubmit.setBackground(new Color(100, 221, 23));
-            }
-        });
-
+    public static void setAcc(User acc) {
+        LoginController.currentUser = acc;
+        if (currentUser instanceof Staff) {
+            new GDMain().setVisible(true);
+        } else {
+            new GDMainNguoiDung().setVisible(true);
+        }
     }
     
 }

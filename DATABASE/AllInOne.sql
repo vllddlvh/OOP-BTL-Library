@@ -1,197 +1,582 @@
--- MySQL dump 10.13  Distrib 8.0.38, for Win64 (x86_64)
---
--- Host: 127.0.0.1    Database: library_2nd_edition
--- ------------------------------------------------------
--- Server version	8.0.39
+DROP DATABASE IF EXISTS Library_2nd_Edition;
+CREATE DATABASE Library_2nd_Edition;
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!50503 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+use Library_2nd_Edition;
 
---
--- Table structure for table `documents`
---
+CREATE TABLE User (
+	ID VARCHAR(10),
+    
+    primary key (ID)
+);
 
-DROP TABLE IF EXISTS `documents`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `documents` (
-  `ID` varchar(255) NOT NULL,
-  `Title` varchar(255) NOT NULL,
-  `Author` varchar(255) NOT NULL,
-  `Publisher` varchar(255) NOT NULL,
-  `Publication_year` int NOT NULL,
-  `Category` varchar(255) NOT NULL,
-  `language` varchar(255) NOT NULL,
-  `Summary` text NOT NULL,
-  `File_image` varchar(255) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE Login (
+	ID VARCHAR(10),
+    password VARCHAR(30),
+    Role ENUM('Staff', 'Member'),
+    
+    primary key (ID),
+    foreign key (ID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
---
--- Dumping data for table `documents`
---
+CREATE TABLE Member (
+	ID VARCHAR(10),
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
+    contact VARCHAR(50) NOT NULL,
+    dateOfBirth DATE NOT NULL,
+    
+    primary key (ID),
+    foreign key (ID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
-LOCK TABLES `documents` WRITE;
-/*!40000 ALTER TABLE `documents` DISABLE KEYS */;
-INSERT INTO `documents` VALUES ('1','Harry Potter and the Sorcerer\'s Stone','J.K. Rowling','Bloomsbury',1997,'Fantasy','English','The story of a young wizard, Harry Potter, as he begins his magical education.','hp1.jpg'),('2','To Kill a Mockingbird','Harper Lee','J.B. Lippincott',1960,'Fiction','English','A novel about racism and injustice in the deep South, told through the eyes of Scout Finch.','mockingbird.jpg'),('3','The Alchemist','Paulo Coelho','HarperOne',1988,'Adventure','Portuguese','A journey of a shepherd boy in search of his personal legend and treasures.','alchemist.jpg'),('4','Chí Phèo','Nam Cao','Tân Dân',1941,'Literature','Vietnamese','A tragic story of a poor villager who struggles against social injustices.','chipheo.jpg'),('5','Sapiens: A Brief History of Humankind','Yuval Noah Harari','Harper',2011,'History','English','A comprehensive history of human civilization from the Stone Age to the present.','sapiens.jpg');
-/*!40000 ALTER TABLE `documents` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE Staff (
+	ID VARCHAR(10),
+    firstName VARCHAR(10) NOT NULL,
+    lastName VARCHAR(20) NOT NULL,
+    contact VARCHAR(50) NOT NULL,
+    jobTitle VARCHAR(20),
+    reportToID VARCHAR(10),
+    
+    primary key (ID),
+    foreign key (ID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE,
+    foreign key (reportToID) references Staff(ID) ON UPDATE CASCADE ON DELETE SET NULL
+);
 
---
--- Table structure for table `login`
---
+CREATE TABLE Documents (
+	ID VARCHAR(15),
+    Title VARCHAR(50) not null,
+    genre ENUM('Thesis', 'Book') not null,
+    totalQuantity INT unsigned not null,
+    quantityLeft INT unsigned not null,
+	Description TEXT,
+	category INT unsigned,
+    language VARCHAR(20),
+    
+    primary key (ID)
+);
 
-DROP TABLE IF EXISTS `login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `login` (
-  `ID` varchar(10) NOT NULL,
-  `password` varchar(30) DEFAULT NULL,
-  `Role` enum('Staff','Member') DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  CONSTRAINT `login_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE Books (
+	ISBN VARCHAR(15),
+    author VARCHAR(50) NOT NULL,
+    publisher VARCHAR(50),
+    releaseYear INT(4),
+    
+    primary key (ISBN),
+    foreign key (ISBN) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
---
--- Dumping data for table `login`
---
+CREATE TABLE Thesis (
+	ID VARCHAR(15),
+	writerID VARCHAR(10),
+    advisor VARCHAR(50),
+    fieldOfStudy VARCHAR(50),
+    
+    primary key (ID),
+    foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE,
+    foreign key (writerID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
-LOCK TABLES `login` WRITE;
-/*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` VALUES ('1','1','Member'),('1000','1000','Member'),('1001','1001','Member'),('1401','1401','Staff'),('2','2','Member'),('2302','2302','Member'),('23021','23021','Member'),('23021686','23021686','Member'),('23021750','23021750','Member'),('23021752','23021752','Member'),('3','3','Member'),('U001','U001','Staff'),('U002','U002','Staff'),('U003','U003','Member'),('U004','U004','Member'),('U005','U005','Member');
-/*!40000 ALTER TABLE `login` ENABLE KEYS */;
-UNLOCK TABLES;
+CREATE TABLE storedDocument (
+	ID VARCHAR(15),
+	Cover BLOB,
+	PDF MEDIUMBLOB,
+     
+	primary key (ID),
+	foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
---
--- Table structure for table `member`
---
 
-DROP TABLE IF EXISTS `member`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `member` (
-  `ID` varchar(10) NOT NULL,
-  `firstName` varchar(10) NOT NULL,
-  `lastName` varchar(20) NOT NULL,
-  `contact` varchar(50) NOT NULL,
-  `dateOfBirth` date NOT NULL,
-  PRIMARY KEY (`ID`),
-  CONSTRAINT `member_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE Request (
+	requestID VARCHAR(20),
+    userID VARCHAR(10),
+    documentID VARCHAR(15),
+    quantityBorrow INT unsigned,
+    borrowDate DATE not null,
+    returnDate DATE,
+    
+    primary key (requestID),
+    foreign key (userID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE,
+    foreign key (documentID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
+);
 
---
--- Dumping data for table `member`
---
 
-LOCK TABLES `member` WRITE;
-/*!40000 ALTER TABLE `member` DISABLE KEYS */;
-INSERT INTO `member` VALUES ('1','Tran','Dan','Quangminh','2005-06-05'),('2','Bỏ','Mình','sadaa','2005-09-02'),('23021','long vu','long ','đa@gmail.com','2005-05-05'),('3','Bực','Mình','bm@mgiaasd','2005-09-02'),('U003','John','Doe','john.doe@example.com','1995-06-15'),('U004','Jane','Smith','jane.smith@example.com','1997-09-30'),('U005','Emily','Johnson','emily.johnson@example.com','1996-12-22');
-/*!40000 ALTER TABLE `member` ENABLE KEYS */;
-UNLOCK TABLES;
+DROP TRIGGER IF EXISTS genMemberID;
+DROP TRIGGER IF EXISTS genStaffID;
+DELIMITER //
+CREATE TRIGGER genStaffID
+BEFORE INSERT ON Staff
+FOR EACH ROW
+BEGIN
+	INSERT INTO User(ID) VALUES (new.ID);
+    INSERT INTO Login(ID, password, Role) VALUES (new.ID, new.ID, 'Staff');
+END;
+// DELIMITER ;
 
---
--- Table structure for table `request`
---
+DELIMITER //
+CREATE TRIGGER genMemberID
+BEFORE INSERT ON Member
+FOR EACH ROW
+BEGIN
+	INSERT INTO User(ID) VALUES (new.ID);
+    INSERT INTO Login(ID, password, Role) VALUES (new.ID, new.ID, 'Member');
+END;
+// DELIMITER ;
 
-DROP TABLE IF EXISTS `request`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `request` (
-  `requestID` varchar(15) NOT NULL,
-  `userID` varchar(10) DEFAULT NULL,
-  `documentID` varchar(255) DEFAULT NULL,
-  `quantityBorrow` int DEFAULT NULL,
-  `borrowDate` date NOT NULL,
-  `returnDate` date DEFAULT NULL,
-  PRIMARY KEY (`requestID`),
-  KEY `userID` (`userID`),
-  KEY `fk_request_documents` (`documentID`),
-  CONSTRAINT `fk_request_documents` FOREIGN KEY (`documentID`) REFERENCES `documents` (`ID`) ON DELETE CASCADE,
-  CONSTRAINT `request_ibfk_1` FOREIGN KEY (`userID`) REFERENCES `user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+/*
+*
+*
+*
+*/
 
---
--- Dumping data for table `request`
---
+DROP TRIGGER IF EXISTS genRequestID;
 
-LOCK TABLES `request` WRITE;
-/*!40000 ALTER TABLE `request` DISABLE KEYS */;
-/*!40000 ALTER TABLE `request` ENABLE KEYS */;
-UNLOCK TABLES;
+DELIMITER //
+CREATE TRIGGER genRequestID
+BEFORE INSERT ON Request
+FOR EACH ROW
+BEGIN
+	DECLARE newMonth INT;
+    DECLARE month_prefix CHAR(3);
+    DECLARE count INT;
+    
+    SET newMonth = MONTH(NEW.borrowDate);
+    
+    SET month_prefix = CASE newMonth
+        WHEN 1 THEN 'Jan' WHEN 2 THEN 'Feb'
+        WHEN 3 THEN 'Mar' WHEN 4 THEN 'Apr'
+        WHEN 5 THEN 'May' WHEN 6 THEN 'Jun'
+		WHEN 7 THEN 'Jul' WHEN 8 THEN 'Aug'
+        WHEN 9 THEN 'Sep' WHEN 10 THEN 'Oct'
+        WHEN 11 THEN 'Nov' WHEN 12 THEN 'Dec'
+    END;
+    
+    SET count = (SELECT COUNT(*) + 1 FROM Request WHERE MONTH(borrowDate) = newMonth);
+    
+    SET NEW.requestID = CONCAT(YEAR(NEW.borrowDate), month_prefix, count);
+END;
+// DELIMITER ;
 
---
--- Table structure for table `staff`
---
+/*
+*
+*
+*
+*/
 
-DROP TABLE IF EXISTS `staff`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `staff` (
-  `ID` varchar(10) NOT NULL,
-  `firstName` varchar(10) NOT NULL,
-  `lastName` varchar(20) NOT NULL,
-  `contact` varchar(50) NOT NULL,
-  `jobTitle` varchar(20) DEFAULT NULL,
-  `IntroducerID` varchar(10) DEFAULT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `IntroducerID` (`IntroducerID`),
-  CONSTRAINT `staff_ibfk_1` FOREIGN KEY (`ID`) REFERENCES `user` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `staff_ibfk_2` FOREIGN KEY (`IntroducerID`) REFERENCES `staff` (`ID`) ON DELETE SET NULL ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DROP TRIGGER IF EXISTS makeQuantityLeft;
+DROP TRIGGER IF EXISTS makeFileSlot;
+DROP TRIGGER IF EXISTS minusQuantityLeft;
+DROP TRIGGER IF EXISTS plusQuantityLeft;
 
---
--- Dumping data for table `staff`
---
+DELIMITER //
+CREATE TRIGGER makeQuantityLeft
+BEFORE INSERT ON Documents
+FOR EACH ROW
+BEGIN
+    SET NEW.quantityLeft = NEW.totalQuantity;
+END;
+// DELIMITER ;
 
-LOCK TABLES `staff` WRITE;
-/*!40000 ALTER TABLE `staff` DISABLE KEYS */;
-INSERT INTO `staff` VALUES ('1401','Sonw','Ngx','NgxS@ops.com','Special Agent',NULL),('U001','Robert','Brown','robert.brown@example.com','Librarian',NULL),('U002','Alice','Davis','alice.davis@example.com','Assistant Librarian','U001');
-/*!40000 ALTER TABLE `staff` ENABLE KEYS */;
-UNLOCK TABLES;
+DELIMITER //
+CREATE TRIGGER makeFileSlot
+AFTER INSERT ON Documents
+FOR EACH ROW
+BEGIN
+    INSERT INTO storedDocument (ID) VALUES (NEW.ID);
+END;
+// DELIMITER ;
 
---
--- Table structure for table `user`
---
+DELIMITER //
+CREATE TRIGGER minusQuantityLeft
+BEFORE INSERT ON Request
+FOR EACH ROW
+BEGIN
+    -- Cập nhật lại số lượng tồn kho sau khi mượn sách
+    IF new.returnDate is null THEN
+		UPDATE Documents
+		SET quantityLeft = quantityLeft - NEW.quantityBorrow
+		WHERE ID = NEW.documentID;
+    END IF;
+END;
+// DELIMITER ;
 
-DROP TABLE IF EXISTS `user`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `user` (
-  `ID` varchar(10) NOT NULL,
-  PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
+DELIMITER //
+CREATE TRIGGER plusQuantityLeft
+BEFORE UPDATE ON Request
+FOR EACH ROW
+BEGIN
+    UPDATE Documents
+    SET quantityLeft = quantityLeft + NEW.quantityBorrow - OLD.quantityBorrow
+    WHERE ID = NEW.documentID;
+END;
+// DELIMITER ;
 
---
--- Dumping data for table `user`
---
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('1'),('1000'),('1001'),('1401'),('2'),('2302'),('23021'),('23021686'),('23021750'),('23021752'),('3'),('U001'),('U002'),('U003'),('U004'),('U005');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+DROP PROCEDURE IF EXISTS addBook;
+DELIMITER //
+CREATE PROCEDURE addBook (IN 
+	newISBN VARCHAR(15),
+    newTitle VARCHAR(50),
+    theAuthor VARCHAR(50),
+	storedQuantity INT unsigned,
+    newCategory INT unsigned,
+    newDescription TEXT,
+    thePublisher VARCHAR(50),
+    theReleaseYear INT(4),
+    theLanguage VARCHAR(20)
+)
+BEGIN
+	IF (SELECT COUNT(*) From Documents WHERE ID = newISBN) = 0
+    
+	THEN 
+		INSERT INTO Documents (ID, Title, genre, totalQuantity, Description, category, language) 
+			VALUES (newISBN, newTitle, 'Book', storedQuantity, newDescription, newCategory, theLanguage);
+		INSERT INTO Books (ISBN, author, publisher, releaseYear) 
+			VALUES (newISBN, theAuthor, thePublisher, theReleaseYear);
+		SELECT true as Result;
+        
+	ELSE 
+		SELECT false as Result; -- if the ID already exists
+    END IF;
+END;
+// DELIMITER ;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-11-26  1:19:05
+
+DROP PROCEDURE IF EXISTS loadMoreDocumentCopies;
+DELIMITER //
+CREATE PROCEDURE loadMoreDocumentCopies (IN documentID VARCHAR(15), quantityChange INT ,staffWhoDid VARCHAR(10))
+BEGIN
+	IF (SELECT COUNT(*) FROM Staff WHERE ID = staffWhoDid) <> 0
+	THEN 
+		UPDATE Documents
+        SET totalQuantity = totalQuantity + quantityChange,
+			quantityLeft = quantityLeft + quantityChange
+        WHERE ID = documentID;
+    END IF;
+END;
+// DELIMITER ;
+
+DROP PROCEDURE IF EXISTS loadDocumentCover;
+DELIMITER //
+CREATE PROCEDURE loadDocumentCover (IN documentID VARCHAR(10), newCover BLOB)
+BEGIN
+	UPDATE storeddocument 
+    SET cover = newCover
+    WHERE ID = documentID;
+END;
+// DELIMITER ;
+
+DROP PROCEDURE IF EXISTS loadDocumentPDF;
+DELIMITER //
+CREATE PROCEDURE loadDocumentPDF (IN documentID VARCHAR(10), newPDF MEDIUMBLOB)
+BEGIN
+	UPDATE storeddocument 
+    SET PDF = newPDF
+    WHERE ID = documentID;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS deleteDocument;
+DELIMITER //
+CREATE PROCEDURE deleteDocument (IN delDocumentID VARCHAR(15), whoDelete VARCHAR(10))
+BEGIN
+	IF (SELECT COUNT(*) FROM Staff WHERE ID = whoDelete) <> 0
+	THEN 
+		DELETE FROM Documents WHERE ID = delDocumentID;
+    END IF;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS addMember;
+DELIMITER //
+CREATE PROCEDURE addMember (IN 
+	newID VARCHAR(10),
+    newFirstName VARCHAR(50),
+    newLastName VARCHAR(50),
+    newContact VARCHAR(50),
+    newBirthDate DATE
+)
+BEGIN
+	IF (SELECT COUNT(*) From User WHERE ID = newID) = 0
+    
+	THEN 
+		INSERT INTO Member (ID, firstName, lastName, contact, dateOfBirth) 
+			VALUES (newID, newFirstName, newLastName, newContact, newBirthDate);
+		SELECT true as Result;
+        
+	ELSE 
+		SELECT false as Result; -- if duplicate userID
+    END IF;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS addStaff;
+DELIMITER //
+CREATE PROCEDURE addStaff (IN 
+	newID VARCHAR(10),
+    newFirstName VARCHAR(50),
+    newLastName VARCHAR(50),
+    newContact VARCHAR(50),
+    newJobTitle VARCHAR(20),
+    newReportToID VARCHAR(10)
+)
+BEGIN
+	IF (SELECT COUNT(*) From User WHERE ID = newID) = 0 
+    AND (newReportToID is null OR (SELECT COUNT(*) FROM Staff WHERE ID = newReportToID) = 1)
+    
+	THEN 
+		INSERT INTO Staff (ID, firstName, lastName, contact, jobTitle, reportToID) 
+			VALUES (newID, newFirstName, newLastName, newContact, newJobTitle, newReportToID);
+		SELECT true as Result;
+        
+	ELSE 
+		SELECT false as Result; -- if duplicate userID
+    END IF;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS deleteUser;
+DELIMITER //
+CREATE PROCEDURE deleteUser (IN delID VARCHAR(10), whoDelete VARCHAR(10))
+BEGIN
+	IF (SELECT COUNT(*) FROM Staff WHERE ID = whoDelete)
+	THEN DELETE FROM User WHERE ID = delID;
+    END IF;
+END;
+// DELIMITER ;
+
+DROP PROCEDURE IF EXISTS login;
+DELIMITER //
+CREATE PROCEDURE login (IN userID VARCHAR(10), passwordTry VARCHAR(30))
+BEGIN
+	DECLARE thisRole VARCHAR(10);
+    DECLARE thisPassword VARCHAR(30);
+    
+    SELECT Role, password 
+    INTO thisRole, thisPassword
+    FROM login WHERE ID = userID;
+    
+    IF (thisPassword = passwordTry) THEN 
+		IF (thisPassword = userID) THEN 
+			SELECT thisRole AS Role, true AS firstTry;
+        ELSE
+			SELECT thisRole AS Role, false AS firstTry;
+        END IF;
+	ELSE 
+		SELECT null AS Role, false AS firstTry;
+    END IF;
+END;
+// DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS changePassword;
+DELIMITER //
+CREATE PROCEDURE changePassword (IN userID VARCHAR(10), oldPassword VARCHAR(30), newPassword VARCHAR(30))
+BEGIN
+	IF (newPassword <> userID AND oldPassword <> newPassword)
+    THEN
+		UPDATE login
+		SET password = newPassword
+		WHERE ID = userID AND password = oldPassword;
+    
+		SELECT ROW_COUNT() AS Result;
+	ELSE 
+		SELECT 0 AS Result;
+	END IF;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS borrowDocument;
+DELIMITER //
+CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(10), borrowQuantity INT)
+BEGIN
+	DECLARE quantityAvailable INT;
+	SELECT quantityLeft INTO quantityAvailable
+    FROM Documents WHERE ID = docuID;
+    
+	IF (borrowQuantity <= quantityAvailable)
+    THEN 
+		INSERT INTO Request (userID, documentID, quantityBorrow, borrowDate)
+		VALUES (uID, docuID, borrowQuantity, CURRENT_DATE());
+        SELECT true AS Result;
+	ELSE 
+		SELECT false AS Result;
+	END IF;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS returnDocument;
+DELIMITER //
+CREATE PROCEDURE returnDocument (IN rqID VARCHAR(15), uID VARCHAR(10))
+BEGIN
+	IF uID = (SELECT userID FROM Request WHERE requestID = rqID)
+    THEN 
+		UPDATE Request
+		SET returnDate = CURRENT_DATE()
+		WHERE requestID = rqID AND returnDate IS NULL;
+        
+        SELECT true AS Result;
+	ELSE 
+		SELECT false AS Result;
+	END IF;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS checkForUnreturn_DocumentList;
+DELIMITER //
+CREATE PROCEDURE checkForUnreturn_DocumentList(IN uID VARCHAR(10))
+BEGIN
+    SELECT
+		requestID,
+        documentID,
+        quantityBorrow,
+        borrowDate
+	FROM Request
+	WHERE userID = uID AND returnDate IS NULL;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS checkForUnreturn_StudentList;
+DELIMITER //
+CREATE PROCEDURE checkForUnreturn_StudentList(IN docuID VARCHAR(10))
+BEGIN
+   
+	 SELECT requestID,
+			userID,
+			quantityBorrow,
+			borrowDate
+	FROM Request
+	WHERE documentID = docuID AND returnDate IS NULL;
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS checkForHistory_DocumentList;
+DELIMITER //
+CREATE PROCEDURE checkForHistory_DocumentList(IN uID VARCHAR(10))
+BEGIN
+    SELECT requestID,
+			documentID,
+			quantityBorrow,
+			borrowDate,
+			returnDate
+	FROM Request
+	WHERE userID = uID
+    ORDER BY DATEDIFF(CURRENT_DATE(), returnDate), borrowDate DESC;
+END;
+// DELIMITER ;
+
+DROP PROCEDURE IF EXISTS getMemberInfo;
+DELIMITER //
+CREATE PROCEDURE getMemberInfo (IN findID VARCHAR(10))
+BEGIN
+	SELECT ID, firstName, lastName, contact, dateOfBirth 
+    FROM Member 
+    WHERE ID = findID;
+END;
+// DELIMITER ;
+
+DROP PROCEDURE IF EXISTS getStaffInfo;
+DELIMITER //
+CREATE PROCEDURE getStaffInfo (IN findID VARCHAR(10))
+BEGIN
+	SELECT ID, firstName, lastName, contact, jobTitle, reportToID
+    FROM Staff
+    WHERE ID = findID;
+END;
+// DELIMITER ;
+
+
+
+DROP PROCEDURE IF EXISTS searchBook;
+DELIMITER //
+CREATE PROCEDURE searchBook (IN 
+	titleKey VARCHAR(50),
+    authorKey VARCHAR(50),
+    releaseYearKey YEAR,
+    categoryKey INT unsigned,
+    theLanguage VARCHAR(20)
+)
+BEGIN
+	SELECT 
+		books.ISBN AS ISBN,
+		documents.title AS title,
+		documents.quantityLeft AS quantityAvailable,
+		books.author AS author,
+		books.publisher AS publisher,
+		books.releaseYear AS releaseYear,
+		documents.Description AS Description,
+		documents.category AS category,
+        documents.language AS language
+	FROM books left join documents ON (books.isbn = documents.ID)
+	WHERE ((titleKey is null) OR (documents.title LIKE CONCAT('%', titleKey, '%')))
+    AND ((authorKey is null) OR (books.author LIKE CONCAT('%', authorKey, '%')))
+    AND ((releaseYearKey is null) OR (books.releaseYear = releaseYearKey))
+    AND ((categoryKey is null) OR (documents.category = categoryKey))
+    AND (theLanguage IS NULL OR documents.language LIKE CONCAT('%', theLanguage, '%'));
+END;
+// DELIMITER ;
+
+
+DROP PROCEDURE IF EXISTS searchDocument;
+DELIMITER //
+CREATE PROCEDURE searchDocument (IN documentID VARCHAR(15))
+BEGIN
+			SELECT 
+				books.ISBN AS ISBN,
+				documents.title AS title,
+				documents.quantityLeft AS quantityAvailable,
+				books.author AS author,
+				books.publisher AS publisher,
+				books.releaseYear AS releaseYear,
+				documents.Description AS Description,
+				books.category AS category,
+                documents.genre AS genre,
+                documents.language AS language
+			FROM books left join documents ON (books.isbn = documents.ID)
+			WHERE books.isbn = documentID;
+END;
+// DELIMITER ;
+
+use library_2nd_edition;
+
+SET SQL_SAFE_UPDATES = 0;
+-- DELETE FROM Documents;
+DELETE FROM Documents;
+DELETE FROM User;
+SET SQL_SAFE_UPDATES = 1;
+
+
+-- Thêm 3 Member
+CALL addMember('M001', 'Nguyen', 'An', '0901234567', '2000-05-01');
+CALL addMember('M002', 'Le', 'Binh', '0912345678', '1999-09-10');
+CALL addMember('M003', 'Tran', 'Chi', '0923456789', '1998-12-20');
+
+
+-- Thêm 1 Staff
+CALL addStaff('PhucTester', 'Nguyễn Minh', 'Fucka', '0934567890', 'Ăn Tạp', NULL);
+
+
+
+CALL addBook('006', 'War and Peace', 'Leo Tolstoy', 100, 1, 'A sweeping epic of Russian society during the Napoleonic Wars.', 'The Russian Messenger', 1869, 'English');
+CALL addBook('007', 'Crime and Punishment', 'Fyodor Dostoevsky', 100, 2, 'The psychological turmoil of a man who commits a murder.', 'The Russian Messenger', 1866, 'English');
+CALL addBook('008', 'The Little Prince', 'Antoine de Saint-Exupéry', 100, 4, 'A whimsical story about a young prince exploring love and friendship.', 'Reynal & Hitchcock', 1943, 'English');
+CALL addBook('009', 'Jane Eyre', 'Charlotte Brontë', 100, 8, 'The struggles and growth of an orphaned girl in Victorian England.', 'Smith, Elder & Co.', 1847, 'English');
+CALL addBook('010', 'The Lord of the Rings: The Fellowship of the Ring', 'J.R.R. Tolkien', 100, 16, 'The first volume of the epic quest to destroy the One Ring.', 'George Allen & Unwin', 1954, 'English');
+CALL addBook('011', 'Brave New World', 'Aldous Huxley', 100, 32, 'A society engineered for maximum happiness but devoid of individuality.', 'Chatto & Windus', 1932, 'English');
+CALL addBook('012', 'The Road', 'Cormac McCarthy', 100, 64, 'A father and son journey through a desolate, post-apocalyptic world.', 'Alfred A. Knopf', 2006, 'English');
+CALL addBook('013', 'Don Quixote', 'Miguel de Cervantes', 100, 128, 'The comedic adventures of a man who believes he is a knight.', 'Francisco de Robles', 1605, 'English');
+CALL addBook('014', 'The Picture of Dorian Gray', 'Oscar Wilde', 100, 2, 'A man sells his soul to retain his youth and beauty.', 'Lippincott\'s Monthly Magazine', 1890, 'English');
+CALL addBook('015', 'Animal Farm', 'George Orwell', 100, 256, 'A satirical allegory about a group of farm animals who overthrow their owner.', 'Secker & Warburg', 1945, 'English');
+
+
+

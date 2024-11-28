@@ -5,6 +5,14 @@
 package view;
 
 import controller.LoginController;
+import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.sql.SQLException;
+import model.entity.Member;
+import model.entity.Staff;
+import model.entity.User;
+import model.entity.User.LoginAlert;
 
 /**
  *
@@ -17,8 +25,9 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
-        LoginController loginCtrl = new LoginController(this, ButtonLogin, jtfUsername, jpfPassword, jlbMessage);
-        loginCtrl.setEvent();
+        // tự động đóng sau khi đăng nhập thành công
+        setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
+        // Khi bấm nút Đăng nhập thì buttonLogin ActionListener rồi
     }
     
     
@@ -141,6 +150,48 @@ public class LoginJFrame extends javax.swing.JFrame {
 
     private void ButtonLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonLoginActionPerformed
         // TODO add your handling code here:
+        ButtonLogin.addMouseListener(new MouseAdapter() {
+            // Xử lý khi click chuột vào nút "Đăng nhập"
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                try {
+                    if (jtfUsername.getText().trim().length() == 0) {
+                        jlbMessage.setText("Vui lòng nhập tên tài khoản");
+                    } else if (jpfPassword.getText().trim().length() == 0) {
+                        jlbMessage.setText("Vui lòng nhập mật khẩu");
+                    } else {
+                        LoginAlert result = User.login(jtfUsername.getText(), jpfPassword.getText());
+                        switch (result) {
+                            case CORRECT_PASSWORD_AS_STAFF  -> {
+                                LoginController.setAcc(new Staff(jtfUsername.getText()));
+                                dispose();
+                            }
+                            case CORRECT_PASSWORD_AS_MEMBER -> {
+                                LoginController.setAcc(new Member(jtfUsername.getText()));
+                                dispose();
+                            }
+                            case WRONG_PASSWORD -> {
+                                jlbMessage.setText("Tên đăng nhập và mật khẩu không đúng!");
+                            }
+                        }
+                    }
+                } catch (SQLException ex) {
+                    jlbMessage.setText(ex.toString());
+                }
+            }
+
+            // Xử lý khi chuột di chuyển vào gần nút "Đăng nhập"
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                ButtonLogin.setBackground(new Color(0, 200, 83));
+            }
+
+            // Xử lý khi chuột di chuyển ra xa nút "Đăng nhập"
+            @Override
+            public void mouseExited(MouseEvent e) {
+                ButtonLogin.setBackground(new Color(100, 221, 23));
+            }
+        });
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
     /**

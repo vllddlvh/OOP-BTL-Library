@@ -2,15 +2,12 @@ package view;
 
 import bean.DanhMucBean;
 import controller.ChuyenManHinhController;
-import java.sql.SQLException;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class GDMainNguoiDung extends javax.swing.JFrame {
 
-    public GDMainNguoiDung() throws SQLException {
+    public GDMainNguoiDung() {
         initComponents();
         
         setTitle("THƯ VIỆN");
@@ -210,11 +207,7 @@ public class GDMainNguoiDung extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
-                    new GDMainNguoiDung().setVisible(true);
-                } catch (SQLException ex) {
-                    Logger.getLogger(GDMainNguoiDung.class.getName()).log(Level.SEVERE, null, ex);
-                }
+               new GDMainNguoiDung().setVisible(true);
             }
         });
     }

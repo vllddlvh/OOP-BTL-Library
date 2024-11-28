@@ -5,11 +5,35 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import model.DatabaseConnector;
 import model.entity.Request;
 
 
 public class RequestDAO {
+    
+    public static LinkedList<Request> getAllRequest() throws SQLException {
+        String sql = "SELECT * FROM library_2nd_edition.request";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        ResultSet rs = ps.executeQuery();
+        
+        LinkedList<Request> list = new LinkedList<>();
+        while(rs.next()) {
+            
+            Request nextRequest = new Request(rs.getString(1),
+                                                rs.getString(2),
+                                             rs.getString(3),
+                                          rs.getInt(4),
+                                             rs.getString(5),
+                                             rs.getString(6));
+            
+            list.add(nextRequest);
+        }
+        
+        ps.close();
+        rs.close();
+        return list;
+    }
     
      /**
      * This user make an act of borrow document. 
@@ -39,28 +63,6 @@ public class RequestDAO {
         return false;
     }
     
-    public static ArrayList<Request> getAllRequest() throws SQLException {
-        String sql = "SELECT * FROM library_2nd_edition.request";
-        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
-        ResultSet rs = ps.executeQuery();
-        
-        ArrayList<Request> list = new ArrayList<>();
-        while(rs.next()) {
-            
-        Request request = new Request(rs.getString(1),
-                                      rs.getString(2),
-                                      rs.getString(3),
-                                      rs.getInt(4),
-                                      rs.getString(5),
-                                      rs.getString(6));
-       
-        list.add(request);
-        }
-        
-        ps.close();
-        rs.close();
-        return list;
-    }
     /**
      * This user make an act of return their request.
      * 

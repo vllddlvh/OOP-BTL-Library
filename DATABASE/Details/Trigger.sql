@@ -1,4 +1,3 @@
-
 DROP TRIGGER IF EXISTS genMemberID;
 DROP TRIGGER IF EXISTS genStaffID;
 DELIMITER //
@@ -108,3 +107,5 @@ BEGIN
     WHERE ID = NEW.documentID;
 END;
 // DELIMITER ;
+
+
