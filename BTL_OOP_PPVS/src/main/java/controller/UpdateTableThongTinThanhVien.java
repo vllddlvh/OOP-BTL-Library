@@ -22,11 +22,11 @@ import model.dao.UserDAO;
  *
  * @author ADMIN
  */
-public class UpdateMemberTable extends UpdateTable<Member> {
+public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     
-    private static UpdateMemberTable singleTon = new UpdateMemberTable();
+    private static UpdateTableThongTinThanhVien singleTon = new UpdateTableThongTinThanhVien();
     
-    private UpdateMemberTable() {}
+    private UpdateTableThongTinThanhVien() {}
     
     /**
      * Duy trì một UpdateMemberTable duy nhất.
@@ -35,7 +35,7 @@ public class UpdateMemberTable extends UpdateTable<Member> {
      * 
      * @return singleTon duy nhất tồn tại
      */
-    public static UpdateMemberTable getUpdateMemberTable() {
+    public static UpdateTableThongTinThanhVien getInstance() {
         return singleTon;
     }
     

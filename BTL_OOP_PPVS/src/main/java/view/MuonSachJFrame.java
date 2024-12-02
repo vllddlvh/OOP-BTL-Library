@@ -1,18 +1,53 @@
 package view;
 
+import controller.UpdateTableMuonTraTaiLieu;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+import model.entity.Request;
+
 /**
  *
  * @author ADMIN
  */
 public class MuonSachJFrame extends javax.swing.JFrame {
+    
+    private Request currentRequest;
 
     /**
      * Creates new form MuonSachJFrame
      */
-    public MuonSachJFrame() {
+    public MuonSachJFrame(Request x) {
+        currentRequest = x;
+        
         initComponents();
+        documentIDTextField.setEditable(false);
+        documentTitleTextField.setEditable(false);
+        userIDTextField.setEditable(false);
+        userNameTextField.setEditable(false);
         this.setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        
+        setRequestInfo();
+    }
+    
+    private void setRequestInfo() {
+        documentIDTextField.setText(currentRequest.getDocumentID());
+        documentTitleTextField.setText(currentRequest.getDocument_title());
+        userIDTextField.setText(currentRequest.getUserID());
+        userNameTextField.setText(currentRequest.getUser_fullName());
+        borrowDateTextField.setText(currentRequest.getBorrowDate());
+        if (currentRequest.getReturnDate() == null) {
+            returnDateTextField.setText("Chưa trả");
+            
+        } else {
+            returnDateTextField.setText(currentRequest.getReturnDate());
+            // Khóa nút "Trả ngay" nếu yêu cầu đã được trả trước đó rồi
+            returnButton.setEnabled(false);
+        }
     }
 
     /**
@@ -26,13 +61,20 @@ public class MuonSachJFrame extends javax.swing.JFrame {
 
         jPanelBigMuonSach = new javax.swing.JPanel();
         jpnMuonSach = new javax.swing.JPanel();
-        jlbDocumentID = new javax.swing.JLabel();
-        jlbUserID = new javax.swing.JLabel();
-        jlbquantityBorrow = new javax.swing.JLabel();
-        JTextFieldDocumentID = new javax.swing.JTextField();
-        jTextFieldUserID = new javax.swing.JTextField();
-        jTextQuantityBorrow = new javax.swing.JTextField();
+        documentIDLabel = new javax.swing.JLabel();
+        userIDLabel = new javax.swing.JLabel();
+        documentIDTextField = new javax.swing.JTextField();
+        userIDTextField = new javax.swing.JTextField();
         jButtonReset = new javax.swing.JButton();
+        documentTitleLabel = new javax.swing.JLabel();
+        documentTitleTextField = new javax.swing.JTextField();
+        userNameLabel = new javax.swing.JLabel();
+        userNameTextField = new javax.swing.JTextField();
+        borrowDateLabel = new javax.swing.JLabel();
+        borrowDateTextField = new javax.swing.JTextField();
+        returnDateLabel = new javax.swing.JLabel();
+        returnDateTextField = new javax.swing.JTextField();
+        returnButton = new javax.swing.JButton();
         jButtonLuuThongTin = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,32 +82,61 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         jPanelBigMuonSach.setBackground(new java.awt.Color(214, 239, 216));
 
         jpnMuonSach.setBackground(new java.awt.Color(128, 175, 129));
-        jpnMuonSach.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Mượn sách", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 13), new java.awt.Color(255, 255, 255))); // NOI18N
+        jpnMuonSach.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Phiếu mượn trả", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 1, 13), new java.awt.Color(255, 255, 255))); // NOI18N
 
-        jlbDocumentID.setBackground(new java.awt.Color(255, 255, 255));
-        jlbDocumentID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jlbDocumentID.setForeground(new java.awt.Color(255, 255, 255));
-        jlbDocumentID.setText("documentID:");
+        documentIDLabel.setBackground(new java.awt.Color(255, 255, 255));
+        documentIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        documentIDLabel.setForeground(new java.awt.Color(255, 255, 255));
+        documentIDLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        documentIDLabel.setText("Mã tài liệu:");
 
-        jlbUserID.setBackground(new java.awt.Color(255, 255, 255));
-        jlbUserID.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jlbUserID.setForeground(new java.awt.Color(255, 255, 255));
-        jlbUserID.setText("userID:");
-
-        jlbquantityBorrow.setBackground(new java.awt.Color(255, 255, 255));
-        jlbquantityBorrow.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jlbquantityBorrow.setForeground(new java.awt.Color(255, 255, 255));
-        jlbquantityBorrow.setText("quantityBorrow:");
-
-        jTextQuantityBorrow.setText("1");
+        userIDLabel.setBackground(new java.awt.Color(255, 255, 255));
+        userIDLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        userIDLabel.setForeground(new java.awt.Color(255, 255, 255));
+        userIDLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        userIDLabel.setText("Mã người dùng:");
 
         jButtonReset.setBackground(new java.awt.Color(80, 141, 78));
         jButtonReset.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jButtonReset.setForeground(new java.awt.Color(255, 255, 255));
         jButtonReset.setText("Reset");
-        jButtonReset.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonResetActionPerformed(evt);
+        jButtonReset.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonResetMouseClicked(evt);
+            }
+        });
+
+        documentTitleLabel.setBackground(new java.awt.Color(255, 255, 255));
+        documentTitleLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        documentTitleLabel.setForeground(new java.awt.Color(255, 255, 255));
+        documentTitleLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        documentTitleLabel.setText("Tiêu đề sách:");
+
+        userNameLabel.setBackground(new java.awt.Color(255, 255, 255));
+        userNameLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        userNameLabel.setForeground(new java.awt.Color(255, 255, 255));
+        userNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        userNameLabel.setText("Tên người dùng:");
+
+        borrowDateLabel.setBackground(new java.awt.Color(255, 255, 255));
+        borrowDateLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        borrowDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        borrowDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        borrowDateLabel.setText("Ngày mượn:");
+
+        returnDateLabel.setBackground(new java.awt.Color(255, 255, 255));
+        returnDateLabel.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        returnDateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        returnDateLabel.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        returnDateLabel.setText("Ngày trả:");
+
+        returnButton.setBackground(new java.awt.Color(80, 141, 78));
+        returnButton.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        returnButton.setForeground(new java.awt.Color(255, 255, 255));
+        returnButton.setText("Trả ngay");
+        returnButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                returnButtonMouseClicked(evt);
             }
         });
 
@@ -73,77 +144,109 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         jpnMuonSach.setLayout(jpnMuonSachLayout);
         jpnMuonSachLayout.setHorizontalGroup(
             jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jpnMuonSachLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnMuonSachLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jpnMuonSachLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpnMuonSachLayout.createSequentialGroup()
-                                .addComponent(jlbDocumentID, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(JTextFieldDocumentID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpnMuonSachLayout.createSequentialGroup()
-                                .addComponent(jlbUserID)
-                                .addGap(58, 58, 58)
-                                .addComponent(jTextFieldUserID, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jpnMuonSachLayout.createSequentialGroup()
-                                .addComponent(jlbquantityBorrow)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextQuantityBorrow, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(jpnMuonSachLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jButtonReset)))
-                .addContainerGap(308, Short.MAX_VALUE))
+                    .addComponent(documentIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(returnDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(borrowDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(documentTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(returnDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(userIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(documentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(documentTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(borrowDateTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(52, 52, 52)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(returnButton)
+                    .addComponent(jButtonReset))
+                .addContainerGap(54, Short.MAX_VALUE))
         );
+
+        jpnMuonSachLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {borrowDateLabel, documentIDLabel, documentTitleLabel, returnDateLabel, userIDLabel, userNameLabel});
+
         jpnMuonSachLayout.setVerticalGroup(
             jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnMuonSachLayout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(19, 19, 19)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbDocumentID)
-                    .addComponent(JTextFieldDocumentID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jlbUserID)
-                    .addComponent(jTextFieldUserID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
+                    .addComponent(documentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(documentIDLabel))
+                .addGap(18, 18, 18)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jlbquantityBorrow)
-                    .addComponent(jTextQuantityBorrow, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addComponent(jButtonReset)
-                .addContainerGap(85, Short.MAX_VALUE))
+                    .addComponent(documentTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(documentTitleLabel)
+                    .addComponent(returnButton))
+                .addGap(22, 22, 22)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userIDLabel))
+                .addGap(21, 21, 21)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userNameLabel))
+                .addGap(26, 26, 26)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(borrowDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(borrowDateLabel)
+                    .addComponent(jButtonReset))
+                .addGap(18, 18, 18)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(returnDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(returnDateLabel))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
+
+        jpnMuonSachLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {borrowDateLabel, documentIDLabel, documentTitleLabel, returnDateLabel, userIDLabel, userNameLabel});
+
+        documentIDLabel.getAccessibleContext().setAccessibleName("");
+        userIDLabel.getAccessibleContext().setAccessibleName("");
+        documentTitleLabel.getAccessibleContext().setAccessibleName("");
+        userNameLabel.getAccessibleContext().setAccessibleName("");
+        borrowDateLabel.getAccessibleContext().setAccessibleName("");
+        returnDateLabel.getAccessibleContext().setAccessibleName("");
 
         jButtonLuuThongTin.setBackground(new java.awt.Color(80, 141, 78));
         jButtonLuuThongTin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButtonLuuThongTin.setForeground(new java.awt.Color(255, 255, 255));
         jButtonLuuThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoSaveAS.png"))); // NOI18N
         jButtonLuuThongTin.setText("Lưu thông tin");
+        jButtonLuuThongTin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonLuuThongTinMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelBigMuonSachLayout = new javax.swing.GroupLayout(jPanelBigMuonSach);
         jPanelBigMuonSach.setLayout(jPanelBigMuonSachLayout);
         jPanelBigMuonSachLayout.setHorizontalGroup(
             jPanelBigMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBigMuonSachLayout.createSequentialGroup()
-                .addGroup(jPanelBigMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelBigMuonSachLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButtonLuuThongTin))
-                    .addGroup(jPanelBigMuonSachLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(jpnMuonSach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonLuuThongTin)
                 .addGap(15, 15, 15))
+            .addGroup(jPanelBigMuonSachLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpnMuonSach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanelBigMuonSachLayout.setVerticalGroup(
             jPanelBigMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBigMuonSachLayout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
+                .addContainerGap(28, Short.MAX_VALUE)
                 .addComponent(jButtonLuuThongTin)
-                .addGap(15, 15, 15)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jpnMuonSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15))
+                .addGap(24, 24, 24))
         );
+
+        jpnMuonSach.getAccessibleContext().setAccessibleName("");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -159,58 +262,72 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
+    private void returnButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseClicked
         // TODO add your handling code here:
-        JTextFieldDocumentID.setText("");
-        jTextQuantityBorrow.setText("");
-        jTextFieldUserID.setText("");
-    }//GEN-LAST:event_jButtonResetActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+        if (evt.getClickCount() > 0 && returnButton.isEnabled()) {
+            String s = borrowDateTextField.getText();
+            currentRequest.setBorrowDate(s);
+            s = returnDateTextField.getText();
+            if (!s.equals("")) {
+                currentRequest.setReturnDate(s);
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MuonSachJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MuonSachJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MuonSachJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MuonSachJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            try {
+                UpdateTableMuonTraTaiLieu.getInstance().updateElement(currentRequest);
+                this.dispose();
+                
+            } catch (SQLException ex) {
+                Logger.getLogger(MuonSachJFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+            }
         }
-        //</editor-fold>
+    }//GEN-LAST:event_returnButtonMouseClicked
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MuonSachJFrame().setVisible(true);
+    private void jButtonResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonResetMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() > 0) {
+            setRequestInfo();
+        }
+    }//GEN-LAST:event_jButtonResetMouseClicked
+
+    private void jButtonLuuThongTinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonLuuThongTinMouseClicked
+        // TODO add your handling code here:
+        try {
+            String s = borrowDateTextField.getText();
+            currentRequest.setBorrowDate(s);
+            s = returnDateTextField.getText();
+            if (!s.equals("Chưa trả")) {
+                currentRequest.setReturnDate(s);
+                model.dao.RequestDAO.updateDateRequest(currentRequest);
+            } else {
+                JOptionPane.showMessageDialog(this, "Không thực hiện cập nhật yêu cầu");
             }
-        });
-    }
+
+            this.dispose();
+                
+        } catch (SQLException ex) {
+            Logger.getLogger(MuonSachJFrame.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }//GEN-LAST:event_jButtonLuuThongTinMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField JTextFieldDocumentID;
+    private javax.swing.JLabel borrowDateLabel;
+    private javax.swing.JTextField borrowDateTextField;
+    private javax.swing.JLabel documentIDLabel;
+    private javax.swing.JTextField documentIDTextField;
+    private javax.swing.JLabel documentTitleLabel;
+    private javax.swing.JTextField documentTitleTextField;
     private javax.swing.JButton jButtonLuuThongTin;
     private javax.swing.JButton jButtonReset;
     private javax.swing.JPanel jPanelBigMuonSach;
-    private javax.swing.JTextField jTextFieldUserID;
-    private javax.swing.JTextField jTextQuantityBorrow;
-    private javax.swing.JLabel jlbDocumentID;
-    private javax.swing.JLabel jlbUserID;
-    private javax.swing.JLabel jlbquantityBorrow;
     private javax.swing.JPanel jpnMuonSach;
+    private javax.swing.JButton returnButton;
+    private javax.swing.JLabel returnDateLabel;
+    private javax.swing.JTextField returnDateTextField;
+    private javax.swing.JLabel userIDLabel;
+    private javax.swing.JTextField userIDTextField;
+    private javax.swing.JLabel userNameLabel;
+    private javax.swing.JTextField userNameTextField;
     // End of variables declaration//GEN-END:variables
 }

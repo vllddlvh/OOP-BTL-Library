@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.UpdateDocumentTable;
+import controller.UpdateTableTaiLieu;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -38,7 +38,7 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
         jTextFieldBookID.setText(book.getID());
         jTextFieldBookPublisher.setText(book.getPublisher());
         jTextFieldBookTitle.setText(book.getTitle());
-        jTextFieldCategory.setText(book.getCategory().toString());
+        jTextFieldCategory.setText(book.getCategory());
         jTextFieldLanguage.setText(book.getLanguage());
         jTextFieldPublicationYear.setText(String.valueOf(book.getReleaseYear()));
         jTextFieldFileImage.setText("Không biêt"); 
@@ -327,7 +327,7 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
                 );
 
         try {
-        UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+        UpdateTableTaiLieu ctrl = UpdateTableTaiLieu.getInstance();
             if (ctrl.deleteElement(doc)) {
                 JOptionPane.showMessageDialog(rootPane, "Xóa tài liệu thành công");
                 this.dispose();
@@ -356,7 +356,7 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
                 );
    
         try {
-            UpdateDocumentTable ctrl = UpdateDocumentTable.getUpdateDocumentTable();
+            UpdateTableTaiLieu ctrl = UpdateTableTaiLieu.getInstance();
             if (ctrl.updateElement(doc)) {
                 JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
             } else {

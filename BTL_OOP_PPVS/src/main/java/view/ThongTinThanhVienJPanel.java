@@ -9,7 +9,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
 
-import controller.UpdateMemberTable;
+import controller.UpdateTableThongTinThanhVien;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -28,7 +28,7 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         initComponents();
         initTableThanhVien();
        
-        UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+        UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
         try {
             ctrl.setTableUpToDate(tableThanhVien, JButtonThemThanhVien, JTextFieldTimKiemThanhVien);
             

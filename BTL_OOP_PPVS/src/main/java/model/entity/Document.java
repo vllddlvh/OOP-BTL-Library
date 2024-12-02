@@ -14,9 +14,11 @@ import java.io.FileReader;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import javax.swing.ImageIcon;
+import java.awt.Image;
+import javax.imageio.ImageIO;
 import model.dao.DocumentDAO;
 import model.dao.FileFormatException;
+import model.dao.FileHandle;
 
 /**
  *
@@ -30,7 +32,7 @@ public abstract class Document {
     protected String description;
     protected String language = "Không rõ";
     
-    protected ImageIcon cover = null;
+    protected Image cover = null;
     protected File PDF = null;
     
     // Chỉ sử dụng nội trong model. 
@@ -105,9 +107,13 @@ public abstract class Document {
     public void setDescription(String description) {
         this.description = description;
     }
-
-    public ArrayList<String> getCategory() {
-        return category;
+    
+    public String getCategory() {
+        StringBuilder result = new StringBuilder();
+        for (String x : this.category) {
+            result.append(", ").append(x);
+        }
+        return result.substring(2).toString();
     }
 
     public void setCategory(ArrayList<String> category) {
@@ -135,36 +141,37 @@ public abstract class Document {
         return "Document{" + "ID=" + ID + ", title=" + title + ", availableCopies=" + availableCopies + ", category=" + category + ", description=" + description;
     }
 
-    public ImageIcon getCover() throws IOException, SQLException, FileFormatException  {
+    public Image getCover() throws IOException, SQLException, FileFormatException  {
         if (cover == null && haveCover) {
-            cover = DocumentDAO.getDocumentCover(ID);
+            cover = FileHandle.getDocumentCover(ID);
             haveCover = false;
         }
         return cover;
     }
 
     public void setCover(File cover) throws FileFormatException, IOException {
-        coverFormat = DocumentDAO.checkFileCover(cover);
+        coverFormat = FileHandle.checkFileCover(cover);
         
-        this.cover = new ImageIcon(cover.getAbsolutePath());
+        this.cover = ImageIO.read(cover);
         haveCover = true;
     }
     
-    public void setCover(ImageIcon cover) {
+    public void setCover(Image cover, String coverFormat) {
+        this.coverFormat = coverFormat;
         this.cover = cover;
         haveCover = true;
     }
 
     public File getPDF() throws IOException, SQLException, FileFormatException {
         if (PDF == null && havePDF) {
-            PDF = DocumentDAO.getDocumentPDF(ID);
+            PDF = FileHandle.getDocumentPDF(ID);
             havePDF = false;
         }
         return PDF;
     }
 
     public void setPDF(File PDF) throws FileFormatException, IOException {
-        DocumentDAO.checkFilePDF(PDF);
+        FileHandle.checkFilePDF(PDF);
         
         this.PDF = PDF;
         havePDF = true;
@@ -174,23 +181,21 @@ public abstract class Document {
     
     
     public static class CategoryType {
-        static private HashMap<Integer, String> decoder;
-        static private HashMap<String, Integer> encrypter;
-        static private String path = "src\\main\\java\\image\\Document Category.txt";
+        private static ArrayList<String> decoder;
+        private static HashMap<String, Integer> encrypter;
+        private final static String PATH = "src\\main\\java\\image\\Document Category.txt";
         
         private static void loadDecoder() throws IOException {
-            decoder = new HashMap<>();
+            decoder = new ArrayList<>();
             encrypter = new HashMap<>();
-            decoder.entrySet();
             
-            FileReader input = new FileReader(path);
+            FileReader input = new FileReader(PATH);
             BufferedReader reader = new BufferedReader(input);
-            
-            int index = 0;
+ 
             int power = 1;
             String line = reader.readLine();
             while (line != null) {
-                decoder.put(index++, line);
+                decoder.add(line);
                 encrypter.put(line, power);
                 power *= 2;
                 
@@ -207,17 +212,18 @@ public abstract class Document {
             
             ArrayList<String> result = new ArrayList<>();
             int i = 0;
-            while (k != 0) {
+            while (k > 0) {
                 if (k % 2 == 1) {
-                    result.add(decoder.get(i++));
+                    result.add(decoder.get(i));
                 }
                 k /= 2;
+                i++;
             }
             return result;
         }
         
         static void addNewCategory (List<String> newCategory) throws IOException {
-            FileWriter output = new FileWriter(path, true);
+            FileWriter output = new FileWriter(PATH, true);
             BufferedWriter writer = new BufferedWriter(output);
             
             int power = (int) Math.pow(2, decoder.size());
@@ -225,7 +231,7 @@ public abstract class Document {
                 writer.newLine();
                 writer.write(x);
                 
-                decoder.put(power, x);
+                decoder.add(x);
                 encrypter.put(x, power);
                 power *= 2;
             }

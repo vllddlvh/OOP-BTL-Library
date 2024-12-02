@@ -1,12 +1,9 @@
 package view;
 
 import java.io.File;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 
 public class ChonFileAnhJFrame extends javax.swing.JFrame {
     private static File fileImage;
@@ -23,9 +20,11 @@ public class ChonFileAnhJFrame extends javax.swing.JFrame {
      */
     public ChonFileAnhJFrame() {
         initComponents();
-        reDrawFileChooserView();
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("png", "jpg", "jpeg", "bmp", "gif");
+        jFileChooserFileAnh.setFileFilter(filter);
     }
 
     /**
@@ -75,16 +74,6 @@ public class ChonFileAnhJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void reDrawFileChooserView() {
-        try {
-            // Đặt Look and Feel thành Windows
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            
-        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ChonFileAnhJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-        }
-    }
     
     private void jFileChooserFileAnhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooserFileAnhActionPerformed
     String command = evt.getActionCommand();

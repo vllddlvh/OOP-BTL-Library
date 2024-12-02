@@ -6,7 +6,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.entity.Member;
-import controller.UpdateMemberTable;
+import controller.UpdateTableThongTinThanhVien;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
@@ -248,7 +248,7 @@ public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
                          formattedDateOfBirth);
    
         try {
-            UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+            UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
             if (ctrl.updateElement(s)) {
                 JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
             } else {
@@ -271,7 +271,7 @@ public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
                         jTextFieldDateOfBirth.getText());
    
         try {
-            UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+            UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
             if (ctrl.deleteElement(s)) {
                 JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
                 this.dispose();

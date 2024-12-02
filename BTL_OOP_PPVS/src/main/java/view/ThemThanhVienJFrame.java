@@ -5,7 +5,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.entity.Member;
-import controller.UpdateMemberTable;
+import controller.UpdateTableThongTinThanhVien;
 import javax.swing.JFrame;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -227,7 +227,7 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
                          formattedDateOfBirth);
    
         try {
-            UpdateMemberTable ctrl = UpdateMemberTable.getUpdateMemberTable();
+            UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
             if (ctrl.addElement(s)) {
                 JOptionPane.showMessageDialog(rootPane, "Add success");
             } else {

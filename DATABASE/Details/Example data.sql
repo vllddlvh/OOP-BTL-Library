@@ -11,10 +11,17 @@ SET SQL_SAFE_UPDATES = 1;
 CALL addMember('M001', 'Nguyen', 'An', '0901234567', '2000-05-01');
 CALL addMember('M002', 'Le', 'Binh', '0912345678', '1999-09-10');
 CALL addMember('M003', 'Tran', 'Chi', '0923456789', '1998-12-20');
+CALL addMember('1662', 'Nguyễn Minh', 'Fucka', '0934567890', '2005-09-12');
+CALL addMember('1750', 'Lê Long Vũ', 'Đào', '123456789', '2005-06-05');
+CALL addMember('1666', 'Hải Phương', 'Bùi', '987654321', '2005-09-06');
+CALL addMember('1686', 'Trường Sơn', 'Nguyễn', '123456789', '2005-07-27');
 
 
 -- Thêm 1 Staff
-CALL addStaff('PhucTester', 'Nguyễn Minh', 'Fucka', '0934567890', 'Ăn Tạp', NULL);
+CALL addStaff('23021662', 'Nguyễn Minh', 'Fucka', '0934567890', 'Ăn Tạp', NULL);
+CALL addStaff('23021750', 'Lê Long Vũ', 'Đào', '123456789', 'High', '23021662');
+CALL addStaff('23021666', 'Hải Phương', 'Bùi', '987654321', 'High', '23021662');
+CALL addStaff('23021686', 'Trường Sơn', 'Nguyễn', '123456789', 'High', '23021662');
 
 
 

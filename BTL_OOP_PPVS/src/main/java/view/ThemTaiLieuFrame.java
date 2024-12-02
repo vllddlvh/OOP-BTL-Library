@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.UpdateDocumentTable;
+import controller.UpdateTableTaiLieu;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -14,7 +14,6 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import model.dao.FileFormatException;
 import model.entity.Book;
-import model.entity.Document;
 
 /**
  *
@@ -332,10 +331,10 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         try {
             // Tạo đối tượng Document từ dữ liệu nhập
             Book newDocument = new Book(id, title, 100, author, publisher, publicationYear, summary, category, language);
-            newDocument.setCover(prototype.getCover());
+            newDocument.setCover(prototype.getCover(), prototype.getCoverFormat());
             
             // Gọi phương thức thêm Document vào cơ sở dữ liệu
-            boolean isSaved = UpdateDocumentTable.getUpdateDocumentTable().addElement(newDocument);
+            boolean isSaved = UpdateTableTaiLieu.getInstance().addElement(newDocument);
 
             if (isSaved) {
                 // Hiển thị thông báo thành công

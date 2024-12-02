@@ -1,7 +1,7 @@
 
 DROP PROCEDURE IF EXISTS borrowDocument;
 DELIMITER //
-CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(10), borrowQuantity INT)
+CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(50), borrowQuantity INT)
 BEGIN
 	DECLARE quantityAvailable INT;
 	SELECT quantityLeft INTO quantityAvailable
@@ -21,7 +21,7 @@ END;
 
 DROP PROCEDURE IF EXISTS returnDocument;
 DELIMITER //
-CREATE PROCEDURE returnDocument (IN rqID VARCHAR(15), uID VARCHAR(10))
+CREATE PROCEDURE returnDocument (IN rqID VARCHAR(20), uID VARCHAR(10))
 BEGIN
 	IF uID = (SELECT userID FROM Request WHERE requestID = rqID)
     THEN 

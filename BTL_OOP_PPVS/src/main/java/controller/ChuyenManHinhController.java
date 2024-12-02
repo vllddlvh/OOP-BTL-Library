@@ -4,13 +4,10 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.TrangChuJPanel;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import view.BanDocJPanel;
 import view.HoSoCuaToiPanel;
 import view.MuonTraTaiLieuJPanel;
@@ -18,6 +15,7 @@ import view.SachDaMuonJPanel;
 import view.TaiLieuPanel;
 import view.ThongTinCuaToiJPanel;
 import view.ThongTinThanhVienJPanel;
+import view.TimKiemCungAPI;
 
 public class ChuyenManHinhController {
     private JPanel root;
@@ -86,6 +84,9 @@ public class ChuyenManHinhController {
                     break;
                 case "SachDaMuon":
                     node = new SachDaMuonJPanel();
+                    break;
+                case "GoogleAPI":
+                    node = new TimKiemCungAPI();
                     break;
                 default:
                     node = new TrangChuJPanel();

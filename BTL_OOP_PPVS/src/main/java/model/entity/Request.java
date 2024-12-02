@@ -10,6 +10,8 @@ public class Request {
     private String borrowDate;
     private String returnDate;
     
+    private String user_fullName = null;
+    private String document_title = null;
     
     public Request(String requestID, String userID, String documentID, int quantityBorrow, String borrowDate, String returnDate) { 
         this.requestID = requestID;
@@ -18,6 +20,17 @@ public class Request {
         this.quantityBorrow = quantityBorrow;
         this.borrowDate = borrowDate;
         this.returnDate = returnDate;
+    }
+    
+    public Request(String requestID, String userID, String user_fullName, String documentID, String document_title, int quantityBorrow, String borrowDate, String returnDate) { 
+        this.requestID = requestID;
+        this.userID = userID;
+        this.documentID = documentID;
+        this.quantityBorrow = quantityBorrow;
+        this.borrowDate = borrowDate;
+        this.returnDate = returnDate;
+        this.user_fullName = user_fullName;
+        this.document_title = document_title;
     }
     
     
@@ -72,6 +85,14 @@ public class Request {
         this.returnDate = returnDate;
     }
 
+    public String getUser_fullName() {
+        return user_fullName;
+    }
+
+    public String getDocument_title() {
+        return document_title;
+    }
+    
     @Override
     public String toString() {
         String res = "Request " + requestID + "\nBook " + documentID + "quantityBorrow = " + quantityBorrow + "\nborrowDate = " + borrowDate;

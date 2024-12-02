@@ -1,9 +1,9 @@
 DROP PROCEDURE IF EXISTS login;
 DELIMITER //
-CREATE PROCEDURE login (IN userID VARCHAR(10), passwordTry VARCHAR(30))
+CREATE PROCEDURE login (IN userID VARCHAR(10), passwordTry VARCHAR(50))
 BEGIN
 	DECLARE thisRole VARCHAR(10);
-    DECLARE thisPassword VARCHAR(30);
+    DECLARE thisPassword VARCHAR(50);
     
     SELECT Role, password 
     INTO thisRole, thisPassword
@@ -25,7 +25,7 @@ END;
 
 DROP PROCEDURE IF EXISTS changePassword;
 DELIMITER //
-CREATE PROCEDURE changePassword (IN userID VARCHAR(10), oldPassword VARCHAR(30), newPassword VARCHAR(30))
+CREATE PROCEDURE changePassword (IN userID VARCHAR(10), oldPassword VARCHAR(50), newPassword VARCHAR(50))
 BEGIN
 	IF (newPassword <> userID AND oldPassword <> newPassword)
     THEN

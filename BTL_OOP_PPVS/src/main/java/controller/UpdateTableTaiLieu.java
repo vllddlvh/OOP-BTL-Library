@@ -25,18 +25,18 @@ import model.dao.FileFormatException;
 /**
  * Quản lý cập nhật bảng Book (JTable) đồng bộ với dữ liệu trong Database.
  */
-public class UpdateDocumentTable extends UpdateTable<Book> {
+public class UpdateTableTaiLieu extends UpdateTable<Book> {
 
-    private static UpdateDocumentTable singleton = new UpdateDocumentTable();
+    private static UpdateTableTaiLieu singleton = new UpdateTableTaiLieu();
 
-    private UpdateDocumentTable() {}
+    private UpdateTableTaiLieu() {}
 
     /**
      * Singleton: Lấy instance duy nhất của UpdateBookTable.
      * 
      * @return instance của UpdateBookTable
      */
-    public static UpdateDocumentTable getUpdateDocumentTable() {
+    public static UpdateTableTaiLieu getInstance() {
         return singleton;
     }
 
@@ -131,13 +131,14 @@ public class UpdateDocumentTable extends UpdateTable<Book> {
      */
     @Override
     protected void addRow(Book newBook) {
-        String[] newRow = new String[6];
+        String[] newRow = new String[7];
         newRow[0] = newBook.getID();
         newRow[1] = newBook.getTitle();
         newRow[2] = newBook.getAuthor();
-        newRow[3] = String.valueOf(newBook.getReleaseYear());
-        newRow[4] = newBook.getCategory().toString();
-        newRow[5] = newBook.getLanguage();
+        newRow[3] = newBook.getPublisher();
+        newRow[4] = String.valueOf(newBook.getReleaseYear());
+        newRow[5] = newBook.getCategory();
+        newRow[6] = newBook.getLanguage();
         
 
         tableModel.addRow(newRow);

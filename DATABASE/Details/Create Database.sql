@@ -11,7 +11,7 @@ CREATE TABLE User (
 
 CREATE TABLE Login (
 	ID VARCHAR(10),
-    password VARCHAR(30),
+    password VARCHAR(50),
     Role ENUM('Staff', 'Member'),
     
     primary key (ID),
@@ -31,10 +31,10 @@ CREATE TABLE Member (
 
 CREATE TABLE Staff (
 	ID VARCHAR(10),
-    firstName VARCHAR(10) NOT NULL,
-    lastName VARCHAR(20) NOT NULL,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
     contact VARCHAR(50) NOT NULL,
-    jobTitle VARCHAR(20),
+    jobTitle VARCHAR(30),
     reportToID VARCHAR(10),
     
     primary key (ID),
@@ -43,7 +43,7 @@ CREATE TABLE Staff (
 );
 
 CREATE TABLE Documents (
-	ID VARCHAR(15),
+	ID VARCHAR(50),
     Title VARCHAR(50) not null,
     genre ENUM('Thesis', 'Book') not null,
     totalQuantity INT unsigned not null,
@@ -56,7 +56,7 @@ CREATE TABLE Documents (
 );
 
 CREATE TABLE Books (
-	ISBN VARCHAR(15),
+	ISBN VARCHAR(50),
     author VARCHAR(50) NOT NULL,
     publisher VARCHAR(50),
     releaseYear INT(4),
@@ -66,7 +66,7 @@ CREATE TABLE Books (
 );
 
 CREATE TABLE storedDocument (
-	ID VARCHAR(15),
+	ID VARCHAR(50),
 	Cover BLOB,
 	PDF MEDIUMBLOB,
      
@@ -78,7 +78,7 @@ CREATE TABLE storedDocument (
 CREATE TABLE Request (
 	requestID VARCHAR(20),
     userID VARCHAR(10),
-    documentID VARCHAR(15),
+    documentID VARCHAR(50),
     quantityBorrow INT unsigned,
     borrowDate DATE not null,
     returnDate DATE,

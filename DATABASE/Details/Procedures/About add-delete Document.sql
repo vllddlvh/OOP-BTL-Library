@@ -1,7 +1,7 @@
 DROP PROCEDURE IF EXISTS addBook;
 DELIMITER //
 CREATE PROCEDURE addBook (IN 
-	newISBN VARCHAR(15),
+	newISBN VARCHAR(50),
     newTitle VARCHAR(50),
     theAuthor VARCHAR(50),
 	storedQuantity INT unsigned,
@@ -16,7 +16,7 @@ BEGIN
     
 	THEN 
 		INSERT INTO Documents (ID, Title, genre, totalQuantity, Description, category, language) 
-			VALUES (newISBN, newTitle, 'Book', storedQuantity, newDescription, theLanguage);
+			VALUES (newISBN, newTitle, 'Book', storedQuantity, newDescription, newCategory, theLanguage);
 		INSERT INTO Books (ISBN, author, publisher, releaseYear) 
 			VALUES (newISBN, theAuthor, thePublisher, theReleaseYear);
 		SELECT true as Result;
@@ -31,7 +31,7 @@ END;
 
 DROP PROCEDURE IF EXISTS loadMoreDocumentCopies;
 DELIMITER //
-CREATE PROCEDURE loadMoreDocumentCopies (IN documentID VARCHAR(15), quantityChange INT ,staffWhoDid VARCHAR(10))
+CREATE PROCEDURE loadMoreDocumentCopies (IN documentID VARCHAR(50), quantityChange INT ,staffWhoDid VARCHAR(10))
 BEGIN
 	IF (SELECT COUNT(*) FROM Staff WHERE ID = staffWhoDid) <> 0
 	THEN 
@@ -45,7 +45,7 @@ END;
 
 DROP PROCEDURE IF EXISTS loadDocumentCover;
 DELIMITER //
-CREATE PROCEDURE loadDocumentCover (IN documentID VARCHAR(10), newCover BLOB)
+CREATE PROCEDURE loadDocumentCover (IN documentID VARCHAR(50), newCover BLOB)
 BEGIN
 	UPDATE storeddocument 
     SET cover = newCover
@@ -55,7 +55,7 @@ END;
 
 DROP PROCEDURE IF EXISTS loadDocumentPDF;
 DELIMITER //
-CREATE PROCEDURE loadDocumentPDF (IN documentID VARCHAR(10), newPDF MEDIUMBLOB)
+CREATE PROCEDURE loadDocumentPDF (IN documentID VARCHAR(50), newPDF MEDIUMBLOB)
 BEGIN
 	UPDATE storeddocument 
     SET PDF = newPDF
@@ -66,7 +66,7 @@ END;
 
 DROP PROCEDURE IF EXISTS deleteDocument;
 DELIMITER //
-CREATE PROCEDURE deleteDocument (IN delDocumentID VARCHAR(15), whoDelete VARCHAR(10))
+CREATE PROCEDURE deleteDocument (IN delDocumentID VARCHAR(50), whoDelete VARCHAR(10))
 BEGIN
 	IF (SELECT COUNT(*) FROM Staff WHERE ID = whoDelete) <> 0
 	THEN 

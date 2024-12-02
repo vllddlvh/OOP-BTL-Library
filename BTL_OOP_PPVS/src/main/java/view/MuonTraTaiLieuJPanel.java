@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.UpdateRequestTable;
+import controller.UpdateTableMuonTraTaiLieu;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
@@ -24,24 +24,20 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
      */
     public MuonTraTaiLieuJPanel() {
         initComponents();
-        jTableMuonTraSach.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
-        jTableMuonTraSach.getTableHeader().setForeground(Color.WHITE); 
-        jTableMuonTraSach.getTableHeader().setBackground(new Color(80,141,78));
-        
         initTableMuonTraSach();
-        UpdateRequestTable ctrl = UpdateRequestTable.getUpdateRequestTable();
         
+        UpdateTableMuonTraTaiLieu ctrl = UpdateTableMuonTraTaiLieu.getInstance();
         try {
-            ctrl.getListElement();
-            ctrl.setTableUpToDate(jTableMuonTraSach, jButtonMuonSach, JTextFieldTimKiemThongTinSachMuonTra);
+            ctrl.setTableUpToDate(jTableMuonTraSach, null, JTextFieldTimKiemThongTinSachMuonTra);
             
         } catch (SQLException ex) {
-            Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(MuonTraTaiLieuJPanel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
     
     private void initTableMuonTraSach() {
+        jTableMuonTraSach.setEnabled(true);
         jTableMuonTraSach.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
         jTableMuonTraSach.getTableHeader().setForeground(Color.white);
         jTableMuonTraSach.getTableHeader().setPreferredSize(new Dimension(100,50));
@@ -62,7 +58,6 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         JTextFieldTimKiemThongTinSachMuonTra = new javax.swing.JTextField();
-        jButtonMuonSach = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableMuonTraSach = new javax.swing.JTable();
 
@@ -85,33 +80,24 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
             }
         });
 
-        jButtonMuonSach.setBackground(new java.awt.Color(80, 141, 78));
-        jButtonMuonSach.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonMuonSach.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonMuonSach.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/LogoMuonSach.png"))); // NOI18N
-        jButtonMuonSach.setText("Mượn sách");
-        jButtonMuonSach.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMuonSachActionPerformed(evt);
-            }
-        });
-
         jTableMuonTraSach.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "requestID", "userID", "documentID", "quantityBorrow", "borrowDate", "returnDate"
+                "Mã số yêu cầu", "Mã người mượn", "Tên người mượn", "Mã sách", "Tên sách", "Ngày mượn", "Ngày trả"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        jTableMuonTraSach.setToolTipText("");
+        jTableMuonTraSach.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTableMuonTraSach);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -120,24 +106,21 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(JTextFieldTimKiemThongTinSachMuonTra, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addComponent(jButtonMuonSach)))
-                .addContainerGap(104, Short.MAX_VALUE))
+                        .addGap(0, 283, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButtonMuonSach, javax.swing.GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
-                    .addComponent(JTextFieldTimKiemThongTinSachMuonTra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addComponent(JTextFieldTimKiemThongTinSachMuonTra, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 457, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -173,16 +156,9 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
 
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
 
-    private void jButtonMuonSachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMuonSachActionPerformed
-        // TODO add your handling code here:
-        MuonSachJFrame ms = new MuonSachJFrame();
-        ms.setVisible(true);
-    }//GEN-LAST:event_jButtonMuonSachActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTextFieldTimKiemThongTinSachMuonTra;
-    private javax.swing.JButton jButtonMuonSach;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableMuonTraSach;

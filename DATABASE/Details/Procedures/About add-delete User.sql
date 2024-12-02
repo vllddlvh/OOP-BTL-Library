@@ -30,7 +30,7 @@ CREATE PROCEDURE addStaff (IN
     newFirstName VARCHAR(50),
     newLastName VARCHAR(50),
     newContact VARCHAR(50),
-    newJobTitle VARCHAR(20),
+    newJobTitle VARCHAR(30),
     newReportToID VARCHAR(10)
 )
 BEGIN

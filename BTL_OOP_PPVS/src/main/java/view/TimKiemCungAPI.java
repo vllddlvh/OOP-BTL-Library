@@ -1,6 +1,5 @@
 package view;
 
-import controller.UpdateTableTaiLieu;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -12,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -27,39 +27,22 @@ import model.dao.FileFormatException;
 import model.entity.Book;
 
 
-public class TrangChuJPanel extends javax.swing.JPanel {
-    private UpdateTableTaiLieu ctrl;
+public class TimKiemCungAPI extends javax.swing.JPanel {
     private List<Book> documents;
     
-    public TrangChuJPanel() {
+    public TimKiemCungAPI() {
         initComponents();
         // Sử dụng GridLayout cho jPanelBook
         jPanelBook.setLayout(new GridLayout(0, 4, 10, 10)); // 4 cột, khoảng cách 10px giữa các phần tử
         // Không cố định kích thước của jPanelBook và jScrollPaneBook
         // Để chúng tự động điều chỉnh theo không gian có sẵn.
-
         
-        try {
-            ctrl = UpdateTableTaiLieu.getInstance();
-            documents = ctrl.getListElement();
-            
-        } catch (IOException | SQLException ex) {
-            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, ex.getMessage());
-        }
+        documents = new LinkedList<>();
         
         // Cập nhật dữ liệu và hiển thị tài liệu
         jScrollPaneBook.getVerticalScrollBar().setUnitIncrement(15);
         jScrollPaneBook.getHorizontalScrollBar().setUnitIncrement(15);
-    
-        try {
-            // Hiển thị danh sách toàn bộ tài liệu lưu trữ
-            displayDocuments(documents);
-            
-        } catch (IOException | SQLException | FileFormatException ex) {
-            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
+        
     
         JTextFieldTimKiem.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
             @Override
@@ -96,7 +79,7 @@ public class TrangChuJPanel extends javax.swing.JPanel {
             displayDocuments(filteredDocuments);
             
         } catch (IOException | SQLException | FileFormatException ex) {
-            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(TimKiemCungAPI.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }
 }
@@ -113,15 +96,15 @@ public class TrangChuJPanel extends javax.swing.JPanel {
 
             // Thêm thẻ vào jPanelBook
             jPanelBook.add(documentCard);
+            jPanelBook.revalidate();
+            jPanelBook.repaint();
         }
-        jPanelBook.revalidate();
-        jPanelBook.repaint();
     }
 
 private JPanel createDocumentCard(Book document) throws IOException, SQLException, FileFormatException {
     JPanel card = new JPanel();
     card.setLayout(new BorderLayout(5, 5)); // Khoảng cách giữa các thành phần
-    card.setBorder(BorderFactory.createLineBorder(Color.WHITE, 1));
+    card.setBorder(BorderFactory.createLineBorder(Color.WHITE, 4));
 
     // Image document
     JPanel image = new JPanel();
@@ -149,17 +132,21 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
     infoArea.setWrapStyleWord(true);
 
     // Thêm các thành phần vào thẻ
-    card.add(image, BorderLayout.CENTER);
+    card.add(image, BorderLayout.NORTH);
     card.add(infoArea, BorderLayout.SOUTH);
+    
+    JPanel wrapper = new JPanel();
+    wrapper.setBackground(new Color(128, 175, 129));
+    wrapper.add(card);
 
-    card.addMouseListener(new MouseAdapter() {
+    wrapper.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
             new ChiTietTaiLieu(document).setVisible(true);
         }
     });
 
-    return card;
+    return wrapper;
 }
 
     
@@ -179,6 +166,7 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
         jPanelBook = new javax.swing.JPanel();
         jPanelTimKiem = new javax.swing.JPanel();
         JTextFieldTimKiem = new javax.swing.JTextField();
+        buttonAPI = new javax.swing.JButton();
 
         jPanelTT.setBackground(new java.awt.Color(128, 175, 129));
         jPanelTT.setLayout(new java.awt.BorderLayout());
@@ -204,6 +192,13 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
 
         jPanelTimKiem.setBackground(new java.awt.Color(128, 175, 129));
 
+        buttonAPI.setText("Tìm kiếm với API");
+        buttonAPI.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                buttonAPIMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanelTimKiemLayout = new javax.swing.GroupLayout(jPanelTimKiem);
         jPanelTimKiem.setLayout(jPanelTimKiemLayout);
         jPanelTimKiemLayout.setHorizontalGroup(
@@ -211,14 +206,18 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
             .addGroup(jPanelTimKiemLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(293, Short.MAX_VALUE))
+                .addGap(71, 71, 71)
+                .addComponent(buttonAPI, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         jPanelTimKiemLayout.setVerticalGroup(
             jPanelTimKiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelTimKiemLayout.createSequentialGroup()
-                .addContainerGap(41, Short.MAX_VALUE)
-                .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addGroup(jPanelTimKiemLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTextFieldTimKiem, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonAPI, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         jPanelTT.add(jPanelTimKiem, java.awt.BorderLayout.PAGE_START);
@@ -235,9 +234,28 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void buttonAPIMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonAPIMouseClicked
+        // TODO add your handling code here:
+        if (evt.getClickCount() > 0) {
+            String keyword = JTextFieldTimKiem.getText().trim();
+            if (keyword.length() > 0) {
+                documents = apiGoogleBook.APIConnector.searchBook(keyword);
+                try {
+                    // Hiển thị danh sách toàn bộ tài liệu lưu trữ
+                    displayDocuments(documents);
+            
+                } catch (IOException | SQLException | FileFormatException ex) {
+                    Logger.getLogger(TimKiemCungAPI.class.getName()).log(Level.SEVERE, null, ex);
+                    JOptionPane.showMessageDialog(this, ex.getMessage());
+                }
+            }
+        }
+    }//GEN-LAST:event_buttonAPIMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JTextFieldTimKiem;
+    private javax.swing.JButton buttonAPI;
     private javax.swing.JPanel jPanelBook;
     private javax.swing.JPanel jPanelTT;
     private javax.swing.JPanel jPanelTimKiem;

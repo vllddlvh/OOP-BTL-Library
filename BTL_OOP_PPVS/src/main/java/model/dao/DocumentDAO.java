@@ -1,6 +1,6 @@
 package model.dao;
 
-import java.awt.Graphics2D;
+
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -16,12 +16,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.LinkedList;
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-
-import org.apache.tika.Tika;
-import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.rendering.PDFRenderer;
 
 import model.DatabaseConnector;
 import model.entity.Book;
@@ -34,217 +28,6 @@ import model.entity.Document;
  * @author Littl
  */
 public abstract class DocumentDAO {
-    private final static Tika checking = new Tika(); // Để check định dạng của file.
-    
-    // Test nhập xuất file
-    public static void main(String[] args) {
-        File pdf = new File("src\\OuterData\\Phát triển ứng dụng quản lý thư viện bằng Java.pdf");
-        
-        try {
-            checkFilePDF(pdf);
-            
-            //uploadDocumentCover("T001", cover);
-            uploadDocumentPDF("T001", pdf, true);
-            // Cover lấy luôn trang đầu.
-            
-            getDocumentCover("T001");
-            getDocumentPDF("T001");
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        } catch (FileFormatException ex) {
-            System.out.println(ex.getMessage());
-        }
-    }
-    
-    
-    
-    
-    /**
-     * Upload ảnh bìa cho tài liệu.
-     * Chấp nhận file <b>png</b> hoặc <b>jpeg</b>.
-     * Kích thước file không quá 64 KB
-     * 
-     * @param documentID = ID của tài liệu.
-     * @param cover = File ảnh bìa.
-     * 
-     * @return true nếu upload thành công.
-     * 
-     * @throws IOException
-     * @throws SQLException
-     * @throws FileFormatException quá kích thước, hoặc sai định dạng.
-     */
-    public static boolean uploadDocumentCover(String documentID, ImageIcon cover, String format) throws IOException, 
-                                                                                  SQLException, 
-                                                                                  FileFormatException {
-        
-        // check ok rồi thì upload thôi.
-        CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loadDocumentCover(?, ?) }");   
-        
-        // Set the book which get the file
-        loader.setString(1, documentID);
- 
-        
-        Image image = cover.getImage();
-        BufferedImage bufferedImage = new BufferedImage(image.getWidth(null), image.getHeight(null), BufferedImage.TYPE_INT_RGB);
-        bufferedImage.getGraphics().drawImage(image, 0, 0, null);
-        
-        ByteArrayOutputStream output = new ByteArrayOutputStream();
-        ImageIO.write(bufferedImage, format, output);
-        
-        loader.setBytes(2, output.toByteArray());
- 
-        // Execute the statement ả
-        int row = loader.executeUpdate();
-        if (row > 0) {
-            return true;
-        }
-        
-        return false;
-    }
-    
-    /**
-     * Tải bìa tài liệu về từ Database. 
-     * Trả về hình kiểu jpeg hoặc png. Lưu vào OuterData
-     * 
-     * @param documentID
-     * @return
-     * 
-     * @throws IOException
-     * @throws SQLException 
-     */
-    public static ImageIcon getDocumentCover(String documentID) throws IOException, SQLException {
-        String sql = "SELECT cover FROM library_2nd_edition.storedDocument WHERE ID = ?";
-        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
-        
-        ps.setString(1, documentID);
-        ResultSet rs = ps.executeQuery();
-        
-        
-        while(rs.next()) {
-            byte[] imageBytes = rs.getBytes(1);
-            
-            var fis = rs.getBinaryStream(1);
-            if (fis == null) {
-                return null;
-            }
-            
-            if (imageBytes != null) {
-                ByteArrayInputStream byteInput = new ByteArrayInputStream(imageBytes);
-                BufferedImage reader = ImageIO.read(byteInput);
-                if (reader != null) {
-                    return new ImageIcon(reader);
-                }
-            }
-            
-            return null;
-        }
-        
-        return null;
-    }
-    
-    /**
-     * Upload file pdf cho tài liệu.
-     * Đống thời sẽ lấy luôn trang đầu tiên làm Cover.
-     * 
-     * @param documentID = ID tài liệu.
-     * @param pdf = file cần upload.
-     * @param firstPageBeingCover = chọn xem có lấy trang đầu là cover không.
-     * 
-     * @return true nếu upload thành công.
-     * 
-     * @throws IOException
-     * @throws SQLException 
-     * @throws model.dao.FileFormatException 
-     */
-    public static boolean uploadDocumentPDF(String documentID, File pdf, boolean firstPageBeingCover) throws IOException, 
-                                                                                                            SQLException, 
-                                                                                                            FileFormatException {
-        
-        checkFilePDF(pdf);
-        
-        PDDocument document = PDDocument.load(pdf);
-        if (document.getNumberOfPages() > 0) {
-            if (firstPageBeingCover) {
-                File cover = new File("src\\OuterData\\temp.bin");
-                PDFRenderer renderer = new PDFRenderer(document);
-                BufferedImage image = renderer.renderImageWithDPI(0, 50); // Trang đầu tiên, DPI = 300
-                ImageIO.write(image, "PNG", cover);
-            
-                uploadDocumentCover(documentID, new ImageIcon(cover.getAbsolutePath()), "PNG");
-                cover.delete();
-            }
-            
-        } else {
-            throw new FileFormatException("File trống. Vui lòng thử lại");
-        }
-        
-        
-        
-        CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loadDocumentPDF(?, ?) }");   
-        
-        // Set the book which get the file
-        loader.setString(1, documentID);
- 
-        // Set the file as InputStream for the BLOB
-        FileInputStream is = new FileInputStream(pdf);
-        loader.setBinaryStream(2, is);
- 
-        // Execute the statement
-        int row = loader.executeUpdate();
-        if (row > 0) {
-            return true;
-        }
-        
-        return false;
-    }
-    
-    /**
-     * Lấy file PDF của tài liệu được lưu. Lưu ý là chỉ PDF thôi nhá.
-     * Nếu tài liệu chưa chưa file PDF hoặc sai documentID thì trả về null.
-     * 
-     * @param documentID = ID tài liệu.
-     * 
-     * @return File (đã được tải về máy) pdf của tài liệu.
-     * 
-     * @throws IOException
-     * @throws SQLException 
-     */
-    public static File getDocumentPDF(String documentID) throws IOException, SQLException {
-        String sql = "SELECT PDF FROM library_2nd_edition.storedDocument WHERE ID = ?";
-        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
-        
-        ps.setString(1, documentID);
-        ResultSet rs = ps.executeQuery();
-        
-        
-        while(rs.next()) {
-            
-            var fis = rs.getBinaryStream(1);
-            if (fis == null) {
-                return null;
-            }
-            
-            // setup a place for the file to be download in
-            FileOutputStream fos = new FileOutputStream("src/OuterData/" + documentID + ".pdf", false);
-            
-            // write the file on the place
-            fos.write(fis.readAllBytes());
-            
-            fis.close();
-            fos.close();
-            ps.close();
-            rs.close();
-            
-            // return the path contain the file.
-            return new File("src/OuterData/" + documentID + ".pdf");
-        }
-        
-        return null;
-    }
-    
-    
     
     /**
      * Get Document only if you know exactly its Thesis ID / Book ISBN.
@@ -431,10 +214,10 @@ public abstract class DocumentDAO {
         
         while(rs.next()) {
             if (newBook.getCover() != null) {
-                uploadDocumentCover(newBook.getID(), newBook.getCover(), newBook.getCoverFormat());
+                FileHandle.uploadDocumentCover(newBook.getID(), newBook.getCover(), newBook.getCoverFormat());
             }
             if (newBook.getPDF() != null) {
-                uploadDocumentPDF(newBook.getID(), newBook.getPDF(), newBook.getCover() == null);
+                FileHandle.uploadDocumentPDF(newBook.getID(), newBook.getPDF(), newBook.getCover() == null);
             }
             return rs.getBoolean(1);
         }
@@ -483,66 +266,6 @@ public abstract class DocumentDAO {
         }
         
         
-        return uploadDocumentCover(alter.getID(), alter.getCover(), alter.getCoverFormat());
+        return FileHandle.uploadDocumentCover(alter.getID(), alter.getCover(), alter.getCoverFormat());
     }
-    
-    /**
-     * Check xem file vào có phải đúng là ảnh không.
-     * Vì không lưu coverImage dưới dạng file đóng gói.
-     * Mà ở dạng byte[] trong cache. Nên không cần lo về định dạng khi đọc.
-     * Chỉ là cần cho khi viết lên database.
-     * <p>
-     * Nếu không thì ném lỗi FileFormatEx
-     * 
-     * @param image = file ảnh.
-     * 
-     * @return imageFormat
-     * 
-     * @throws FileFormatException
-     * @throws IOException 
-     */
-    public static String checkFileCover(File image) throws FileFormatException, IOException {
-        if (!image.exists()) {
-            throw new FileFormatException("File không tồn tại\n" + image.getAbsolutePath());
-        }
-        if (!image.canRead()) {
-            throw new FileFormatException("Hiện không thể đọc file tại đường dẫn này\n" + image.getAbsolutePath());
-        }
-
-        // Check kích thước file nếu quá lớn.
-        if (image.length() > 65535) {
-            throw new FileFormatException("File quá lớn. Hãy đảm bảo dung lượng dưới 64KB\n" + image.getAbsolutePath());
-        }
-        
-        // Check định dạng file ảnh. Chỉ nhận file png hoặc jpeg.
-        String mimeType = checking.detect(image);
-        if (!mimeType.startsWith("image/")) {
-            // Định dạng file khác.
-            throw new FileFormatException("File này không phải hình ảnh. Vui lòng thử lại\n" + image.getAbsolutePath());
-        }
-        return mimeType.split("/")[1];
-    }
-    
-    public static boolean checkFilePDF(File pdf) throws FileFormatException, IOException {
-        if (!pdf.exists()) {
-            throw new FileFormatException("File không tồn tại\n" + pdf.getAbsolutePath());
-        }
-        if (!pdf.canRead()) {
-            throw new FileFormatException("Hiện không thể đọc file tại đường dẫn này\n" + pdf.getAbsolutePath());
-        }
-        // check kích thước
-        if (pdf.length() > 16777215) {
-            throw new FileFormatException("File quá lớn. Hãy đảm bảo dung lượng dưới 16MB\n" + pdf.getAbsolutePath());
-        }
-        
-        // check định dạng. Tuy nhiên ko có prefix, nên cam chịu vậy.
-        Tika checking = new Tika();
-        String mimeType = checking.detect(pdf);
-        if (!mimeType.equals("application/pdf")) {
-            throw new FileFormatException("Yêu cầu file định dạng PDF");
-        }
-        
-        return true;
-    }
-
 }

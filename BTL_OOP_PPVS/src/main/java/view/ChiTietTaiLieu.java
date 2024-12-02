@@ -4,12 +4,13 @@ import controller.LoginController;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
 import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
 import javax.swing.ImageIcon;
@@ -21,7 +22,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import model.dao.FileFormatException;
 import model.entity.Book;
-import model.entity.Staff;
 
 /**
  *
@@ -30,12 +30,20 @@ import model.entity.Staff;
 public class ChiTietTaiLieu extends javax.swing.JFrame {
     
     private Book currentShowDocument;
+    private static Image defaultCoverImage;
     
     /**
      * Hiển thị thông tin chi tiết sách trong cửa sổ mới (JFrame)
+     * 
+     * @param document
      */
     public ChiTietTaiLieu(Book document) {
         currentShowDocument = document;
+        try {
+            defaultCoverImage = ImageIO.read(new File("src\\main\\java\\image\\default-null-book-cover.png"));
+        } catch (IOException ex) {
+            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+        }
         
         // Setup frame mới (cửa sổ)
         this.setTitle("Chi Tiết Sách");
@@ -45,52 +53,67 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         }
         
         // Panel chính
-        JPanel mainPanel = new JPanel(new BorderLayout());
+        mainPanel = new JPanel(new BorderLayout());
         {
             mainPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
             mainPanel.setBackground(new Color(214, 239, 216));
         }
 
-        // Panel hiển thị ảnh
-        JPanel imagePanel = new JPanel();
+        // Panel phía trái WEST
+        imagePanel = new JPanel(new BorderLayout()); // Sử dụng BorderLayout
+        imagePanel.setBackground(Color.WHITE);
+        
+        // Label hiển thị ảnh
+        imageLabel = new JLabel();
         {
-            imagePanel.setBackground(Color.WHITE);
-            JLabel imageLabel = new JLabel();
+            
             imageLabel.setHorizontalAlignment(JLabel.CENTER);
             imageLabel.setVerticalAlignment(JLabel.TOP);
 
             // load ảnh bìa (cover)
-            ImageIcon originalIcon = null;
+            Image coverImage = null;
             try {
-                originalIcon = document.getCover();
+                coverImage = document.getCover();
                 
-            } catch (IOException ex) {
+            } catch (IOException | SQLException | FileFormatException ex) {
                 Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(this, ex.getMessage());
-            } catch (SQLException ex) {
-                Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(this, ex.getMessage());
-            } catch (FileFormatException ex) {
-                Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(this, ex.getMessage());
+            }
+            if (coverImage == null) {
+                coverImage = defaultCoverImage;
             }
             
-            if (originalIcon == null) {
-                originalIcon = new ImageIcon("src\\main\\java\\image\\default-null-book-cover.png");
-            }
-    
             // Setup hiển thị ảnh bìa trên frame "Thông tin chi tiết"
-            Image scaledImage = originalIcon.getImage().getScaledInstance(300, 400, Image.SCALE_SMOOTH);
+            Image scaledImage = coverImage.getScaledInstance(300, 375, Image.SCALE_SMOOTH);
             imageLabel.setIcon(new ImageIcon(scaledImage));
-
-            imagePanel.add(imageLabel);
         }
         
+        // Tạo nút "Mượn sách"
+        jbuttonMuon = new JButton("Mượn sách");
+        {
+            jbuttonMuon.setBackground(new Color(80, 141, 78));
+            jbuttonMuon.setForeground(Color.WHITE);
+            jbuttonMuon.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
+            jbuttonMuon.setFocusPainted(false);
+            jbuttonMuon.setPreferredSize(new Dimension(100, 40)); // Đặt kích thước cho nút
+            // Gán sự kiện cho nút
+            jbuttonMuon.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    jButtonMuonClicked(evt);
+                }
+            });
+        }
+
+        
+        // Thêm ảnh và nút vào imagePanel
+        imagePanel.add(jbuttonMuon, BorderLayout.SOUTH); // Nút nằm dưới
+        imagePanel.add(imageLabel, BorderLayout.CENTER); // Ảnh nằm ở trung tâm
         mainPanel.add(imagePanel, BorderLayout.WEST);
         
 
         // Panel hiển thị thông tin
-        JPanel infoPanel = new JPanel();
+        infoPanel = new JPanel();
         {
             infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS));
             infoPanel.setBackground(new Color(240, 240, 240));
@@ -119,83 +142,31 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
 
         mainPanel.add(infoPanel, BorderLayout.CENTER);
 
-        
-        
-        // Tạo nút mượn sách
-        JPanel buttonPanel = new JPanel();
-        {
-            buttonPanel.setLayout(new FlowLayout(FlowLayout.CENTER, 220, 10)); // Buttons centered with spacing
-            buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-            buttonPanel.setBackground(Color.WHITE);
-
-            // Create buttons
-            tryButton = new JButton("Đọc thử");
-            borrowButton = new JButton("Mượn");
-
-            // Optional: Set preferred size for consistent button appearance
-            tryButton.setPreferredSize(new Dimension(100, 40));
-            borrowButton.setPreferredSize(new Dimension(100, 40));
-
-            // Add action listeners to buttons (if needed)
-            tryButton.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButtonTryActionPerformed(evt);
-                }
-            });
-            borrowButton.addActionListener(new java.awt.event.ActionListener() {
-                public void actionPerformed(java.awt.event.ActionEvent evt) {
-                    jButtonBorrowActionPerformed(evt);
-                }
-            });
-
-            // Add buttons to the panel
-            buttonPanel.add(tryButton);
-            buttonPanel.add(borrowButton);
-        }
-
-        
-        // thêm nút vào panel chính
-        mainPanel.add(buttonPanel, BorderLayout.SOUTH);
-
 
         // Thêm panel chính vào JFrame
         this.add(mainPanel, BorderLayout.CENTER);
         this.setLocationRelativeTo(null);
-    }
+    }   
     
-    private void jButtonTryActionPerformed(java.awt.event.ActionEvent evt) {                                             
-        // try {
-            // TODO add your handling code here:
-            if (LoginController.getAcc().readDocument(currentShowDocument.getID())) {
-                // Đáng nhẽ là open file PDF
-                JOptionPane.showMessageDialog(this, "Chức năng Đọc thử đang phát triển!");
-                
-            } else {
-                JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể đọc tài liệu này");
-            }
-            
-//        } catch (SQLException ex) {
-//            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-//            JOptionPane.showMessageDialog(this, ex.getMessage());
-//        }
-    }          
-    
-    private void jButtonBorrowActionPerformed(java.awt.event.ActionEvent evt) {                                             
+    private void jButtonMuonClicked(java.awt.event.MouseEvent evt) {                                             
         // TODO add your handling code here:
-        try {
-            // TODO add your handling code here:
-            if (LoginController.getAcc().borrowDocument(currentShowDocument.getID())) {
-                // Đáng nhẽ là open file PDF
-                JOptionPane.showMessageDialog(this, "Mượn thành công");
+        int n = evt.getClickCount();
+        if (n >= 1) {
+            try {
+                if (LoginController.getAcc().borrowDocument(currentShowDocument.getID())) {
+                    // Đáng nhẽ là open file PDF
+                    JOptionPane.showMessageDialog(this, "Mượn thành công");
                 
-            } else {
-                JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể mượn tài liệu này");
-            }
+                } else {
+                    JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể mượn tài liệu này");
+                }
             
-        } catch (SQLException ex) {
-            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, ex.getMessage());
+            } catch (SQLException ex) {
+                Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+            }
         }
+        
     }   
     
     
@@ -225,51 +196,13 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ChiTietTaiLieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ChiTietTaiLieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ChiTietTaiLieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ChiTietTaiLieu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    new ChiTietTaiLieu(new Book("006")).setVisible(true);
-                    
-                } catch (SQLException ex) {
-                    Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (IOException ex) {
-                    Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-    private JButton tryButton;
-    private JButton borrowButton;
-
+    private JButton jbuttonMuon;
+    private JPanel imagePanel;
+    private JLabel imageLabel;
+    private JPanel infoPanel;
+    private JPanel mainPanel;
+    
 }

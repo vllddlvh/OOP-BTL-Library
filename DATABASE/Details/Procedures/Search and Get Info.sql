@@ -51,7 +51,7 @@ END;
 
 DROP PROCEDURE IF EXISTS searchDocument;
 DELIMITER //
-CREATE PROCEDURE searchDocument (IN documentID VARCHAR(15))
+CREATE PROCEDURE searchDocument (IN documentID VARCHAR(50))
 BEGIN
 			SELECT 
 				books.ISBN AS ISBN,

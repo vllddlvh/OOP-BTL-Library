@@ -13,7 +13,12 @@ import model.entity.Request;
 public class RequestDAO {
     
     public static LinkedList<Request> getAllRequest() throws SQLException {
-        String sql = "SELECT * FROM library_2nd_edition.request";
+        String sql = """
+                     SELECT r.*,
+                          coalesce((SELECT CONCAT_WS(" ", lastName, firstName) FROM  library_2nd_edition.Member WHERE ID = r.userID),
+                          (SELECT CONCAT_WS(" ", lastName, firstName) FROM  library_2nd_edition.Staff WHERE ID = r.userID)) user_fullName,
+                          (SELECT title FROM  library_2nd_edition.Documents WHERE ID = r.documentID) document_title
+                     FROM library_2nd_edition.request r;""";
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         
@@ -22,7 +27,9 @@ public class RequestDAO {
             
             Request nextRequest = new Request(rs.getString(1),
                                                 rs.getString(2),
+                                           rs.getString(7),
                                              rs.getString(3),
+                                          rs.getString(8),
                                           rs.getInt(4),
                                              rs.getString(5),
                                              rs.getString(6));
@@ -61,6 +68,20 @@ public class RequestDAO {
             return rs.getBoolean("Result");
         }
         return false;
+    }
+    
+    public static boolean updateDateRequest(Request alterRequest) throws SQLException {
+        String sql = """
+                     UPDATE library_2nd_edition.request
+                     SET borrowDate = ?,
+                         returnDate = ?
+                     WHERE requestID = ?""";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        ps.setString(1, alterRequest.getBorrowDate());
+        ps.setString(2, alterRequest.getReturnDate());
+        ps.setString(3, alterRequest.getRequestID());
+        
+        return ps.executeUpdate() > 0;
     }
     
     /**

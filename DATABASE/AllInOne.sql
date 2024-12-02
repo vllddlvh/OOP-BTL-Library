@@ -11,7 +11,7 @@ CREATE TABLE User (
 
 CREATE TABLE Login (
 	ID VARCHAR(10),
-    password VARCHAR(30),
+    password VARCHAR(50),
     Role ENUM('Staff', 'Member'),
     
     primary key (ID),
@@ -31,10 +31,10 @@ CREATE TABLE Member (
 
 CREATE TABLE Staff (
 	ID VARCHAR(10),
-    firstName VARCHAR(10) NOT NULL,
-    lastName VARCHAR(20) NOT NULL,
+    firstName VARCHAR(50) NOT NULL,
+    lastName VARCHAR(50) NOT NULL,
     contact VARCHAR(50) NOT NULL,
-    jobTitle VARCHAR(20),
+    jobTitle VARCHAR(30),
     reportToID VARCHAR(10),
     
     primary key (ID),
@@ -43,7 +43,7 @@ CREATE TABLE Staff (
 );
 
 CREATE TABLE Documents (
-	ID VARCHAR(15),
+	ID VARCHAR(50),
     Title VARCHAR(50) not null,
     genre ENUM('Thesis', 'Book') not null,
     totalQuantity INT unsigned not null,
@@ -56,7 +56,7 @@ CREATE TABLE Documents (
 );
 
 CREATE TABLE Books (
-	ISBN VARCHAR(15),
+	ISBN VARCHAR(50),
     author VARCHAR(50) NOT NULL,
     publisher VARCHAR(50),
     releaseYear INT(4),
@@ -65,19 +65,8 @@ CREATE TABLE Books (
     foreign key (ISBN) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
-CREATE TABLE Thesis (
-	ID VARCHAR(15),
-	writerID VARCHAR(10),
-    advisor VARCHAR(50),
-    fieldOfStudy VARCHAR(50),
-    
-    primary key (ID),
-    foreign key (ID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE,
-    foreign key (writerID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE
-);
-
 CREATE TABLE storedDocument (
-	ID VARCHAR(15),
+	ID VARCHAR(50),
 	Cover BLOB,
 	PDF MEDIUMBLOB,
      
@@ -89,7 +78,7 @@ CREATE TABLE storedDocument (
 CREATE TABLE Request (
 	requestID VARCHAR(20),
     userID VARCHAR(10),
-    documentID VARCHAR(15),
+    documentID VARCHAR(50),
     quantityBorrow INT unsigned,
     borrowDate DATE not null,
     returnDate DATE,
@@ -98,7 +87,6 @@ CREATE TABLE Request (
     foreign key (userID) references User(ID) ON UPDATE CASCADE ON DELETE CASCADE,
     foreign key (documentID) references Documents(ID) ON UPDATE CASCADE ON DELETE CASCADE
 );
-
 
 DROP TRIGGER IF EXISTS genMemberID;
 DROP TRIGGER IF EXISTS genStaffID;
@@ -135,13 +123,10 @@ CREATE TRIGGER genRequestID
 BEFORE INSERT ON Request
 FOR EACH ROW
 BEGIN
-	DECLARE newMonth INT;
-    DECLARE month_prefix CHAR(3);
+    DECLARE month_prefix CHAR(7);
     DECLARE count INT;
     
-    SET newMonth = MONTH(NEW.borrowDate);
-    
-    SET month_prefix = CASE newMonth
+    SET month_prefix = CASE MONTH(NEW.borrowDate)
         WHEN 1 THEN 'Jan' WHEN 2 THEN 'Feb'
         WHEN 3 THEN 'Mar' WHEN 4 THEN 'Apr'
         WHEN 5 THEN 'May' WHEN 6 THEN 'Jun'
@@ -150,9 +135,11 @@ BEGIN
         WHEN 11 THEN 'Nov' WHEN 12 THEN 'Dec'
     END;
     
-    SET count = (SELECT COUNT(*) + 1 FROM Request WHERE MONTH(borrowDate) = newMonth);
+    SET month_prefix = CONCAT(YEAR(NEW.borrowDate), month_prefix);
     
-    SET NEW.requestID = CONCAT(YEAR(NEW.borrowDate), month_prefix, count);
+    SET count = (SELECT COUNT(*) + 1 FROM Request r WHERE left(r.requestID, 7) = month_prefix);
+    
+    SET NEW.requestID = CONCAT(month_prefix, count);
 END;
 // DELIMITER ;
 
@@ -214,7 +201,7 @@ END;
 DROP PROCEDURE IF EXISTS addBook;
 DELIMITER //
 CREATE PROCEDURE addBook (IN 
-	newISBN VARCHAR(15),
+	newISBN VARCHAR(50),
     newTitle VARCHAR(50),
     theAuthor VARCHAR(50),
 	storedQuantity INT unsigned,
@@ -244,7 +231,7 @@ END;
 
 DROP PROCEDURE IF EXISTS loadMoreDocumentCopies;
 DELIMITER //
-CREATE PROCEDURE loadMoreDocumentCopies (IN documentID VARCHAR(15), quantityChange INT ,staffWhoDid VARCHAR(10))
+CREATE PROCEDURE loadMoreDocumentCopies (IN documentID VARCHAR(50), quantityChange INT ,staffWhoDid VARCHAR(10))
 BEGIN
 	IF (SELECT COUNT(*) FROM Staff WHERE ID = staffWhoDid) <> 0
 	THEN 
@@ -258,7 +245,7 @@ END;
 
 DROP PROCEDURE IF EXISTS loadDocumentCover;
 DELIMITER //
-CREATE PROCEDURE loadDocumentCover (IN documentID VARCHAR(10), newCover BLOB)
+CREATE PROCEDURE loadDocumentCover (IN documentID VARCHAR(50), newCover BLOB)
 BEGIN
 	UPDATE storeddocument 
     SET cover = newCover
@@ -268,7 +255,7 @@ END;
 
 DROP PROCEDURE IF EXISTS loadDocumentPDF;
 DELIMITER //
-CREATE PROCEDURE loadDocumentPDF (IN documentID VARCHAR(10), newPDF MEDIUMBLOB)
+CREATE PROCEDURE loadDocumentPDF (IN documentID VARCHAR(50), newPDF MEDIUMBLOB)
 BEGIN
 	UPDATE storeddocument 
     SET PDF = newPDF
@@ -279,7 +266,7 @@ END;
 
 DROP PROCEDURE IF EXISTS deleteDocument;
 DELIMITER //
-CREATE PROCEDURE deleteDocument (IN delDocumentID VARCHAR(15), whoDelete VARCHAR(10))
+CREATE PROCEDURE deleteDocument (IN delDocumentID VARCHAR(50), whoDelete VARCHAR(10))
 BEGIN
 	IF (SELECT COUNT(*) FROM Staff WHERE ID = whoDelete) <> 0
 	THEN 
@@ -320,7 +307,7 @@ CREATE PROCEDURE addStaff (IN
     newFirstName VARCHAR(50),
     newLastName VARCHAR(50),
     newContact VARCHAR(50),
-    newJobTitle VARCHAR(20),
+    newJobTitle VARCHAR(30),
     newReportToID VARCHAR(10)
 )
 BEGIN
@@ -351,10 +338,10 @@ END;
 
 DROP PROCEDURE IF EXISTS login;
 DELIMITER //
-CREATE PROCEDURE login (IN userID VARCHAR(10), passwordTry VARCHAR(30))
+CREATE PROCEDURE login (IN userID VARCHAR(10), passwordTry VARCHAR(50))
 BEGIN
 	DECLARE thisRole VARCHAR(10);
-    DECLARE thisPassword VARCHAR(30);
+    DECLARE thisPassword VARCHAR(50);
     
     SELECT Role, password 
     INTO thisRole, thisPassword
@@ -376,7 +363,7 @@ END;
 
 DROP PROCEDURE IF EXISTS changePassword;
 DELIMITER //
-CREATE PROCEDURE changePassword (IN userID VARCHAR(10), oldPassword VARCHAR(30), newPassword VARCHAR(30))
+CREATE PROCEDURE changePassword (IN userID VARCHAR(10), oldPassword VARCHAR(50), newPassword VARCHAR(50))
 BEGIN
 	IF (newPassword <> userID AND oldPassword <> newPassword)
     THEN
@@ -394,7 +381,7 @@ END;
 
 DROP PROCEDURE IF EXISTS borrowDocument;
 DELIMITER //
-CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(10), borrowQuantity INT)
+CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(50), borrowQuantity INT)
 BEGIN
 	DECLARE quantityAvailable INT;
 	SELECT quantityLeft INTO quantityAvailable
@@ -414,7 +401,7 @@ END;
 
 DROP PROCEDURE IF EXISTS returnDocument;
 DELIMITER //
-CREATE PROCEDURE returnDocument (IN rqID VARCHAR(15), uID VARCHAR(10))
+CREATE PROCEDURE returnDocument (IN rqID VARCHAR(20), uID VARCHAR(10))
 BEGIN
 	IF uID = (SELECT userID FROM Request WHERE requestID = rqID)
     THEN 
@@ -496,7 +483,6 @@ END;
 // DELIMITER ;
 
 
-
 DROP PROCEDURE IF EXISTS searchBook;
 DELIMITER //
 CREATE PROCEDURE searchBook (IN 
@@ -529,7 +515,7 @@ END;
 
 DROP PROCEDURE IF EXISTS searchDocument;
 DELIMITER //
-CREATE PROCEDURE searchDocument (IN documentID VARCHAR(15))
+CREATE PROCEDURE searchDocument (IN documentID VARCHAR(50))
 BEGIN
 			SELECT 
 				books.ISBN AS ISBN,
@@ -540,12 +526,13 @@ BEGIN
 				books.releaseYear AS releaseYear,
 				documents.Description AS Description,
 				books.category AS category,
-                documents.genre AS genre,
-                documents.language AS language
+                documents.language AS language,
+				documents.genre AS genre
 			FROM books left join documents ON (books.isbn = documents.ID)
 			WHERE books.isbn = documentID;
 END;
 // DELIMITER ;
+
 
 use library_2nd_edition;
 
@@ -560,10 +547,17 @@ SET SQL_SAFE_UPDATES = 1;
 CALL addMember('M001', 'Nguyen', 'An', '0901234567', '2000-05-01');
 CALL addMember('M002', 'Le', 'Binh', '0912345678', '1999-09-10');
 CALL addMember('M003', 'Tran', 'Chi', '0923456789', '1998-12-20');
+CALL addMember('1662', 'Nguyễn Minh', 'Fucka', '0934567890', '2005-09-12');
+CALL addMember('1750', 'Lê Long Vũ', 'Đào', '123456789', '2005-06-05');
+CALL addMember('1666', 'Hải Phương', 'Bùi', '987654321', '2005-09-06');
+CALL addMember('1686', 'Trường Sơn', 'Nguyễn', '123456789', '2005-07-27');
 
 
 -- Thêm 1 Staff
-CALL addStaff('PhucTester', 'Nguyễn Minh', 'Fucka', '0934567890', 'Ăn Tạp', NULL);
+CALL addStaff('23021662', 'Nguyễn Minh', 'Fucka', '0934567890', 'Ăn Tạp', NULL);
+CALL addStaff('23021750', 'Lê Long Vũ', 'Đào', '123456789', 'High', '23021662');
+CALL addStaff('23021666', 'Hải Phương', 'Bùi', '987654321', 'High', '23021662');
+CALL addStaff('23021686', 'Trường Sơn', 'Nguyễn', '123456789', 'High', '23021662');
 
 
 
@@ -577,6 +571,3 @@ CALL addBook('012', 'The Road', 'Cormac McCarthy', 100, 64, 'A father and son jo
 CALL addBook('013', 'Don Quixote', 'Miguel de Cervantes', 100, 128, 'The comedic adventures of a man who believes he is a knight.', 'Francisco de Robles', 1605, 'English');
 CALL addBook('014', 'The Picture of Dorian Gray', 'Oscar Wilde', 100, 2, 'A man sells his soul to retain his youth and beauty.', 'Lippincott\'s Monthly Magazine', 1890, 'English');
 CALL addBook('015', 'Animal Farm', 'George Orwell', 100, 256, 'A satirical allegory about a group of farm animals who overthrow their owner.', 'Secker & Warburg', 1945, 'English');
-
-
-
