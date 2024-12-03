@@ -140,33 +140,49 @@ public class MuonSachJFrame extends javax.swing.JFrame {
             }
         });
 
+        jButtonLuuThongTin.setBackground(new java.awt.Color(80, 141, 78));
+        jButtonLuuThongTin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonLuuThongTin.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonLuuThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoSaveAS.png"))); // NOI18N
+        jButtonLuuThongTin.setText("Lưu thông tin");
+        jButtonLuuThongTin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonLuuThongTinMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnMuonSachLayout = new javax.swing.GroupLayout(jpnMuonSach);
         jpnMuonSach.setLayout(jpnMuonSachLayout);
         jpnMuonSachLayout.setHorizontalGroup(
             jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnMuonSachLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(jpnMuonSachLayout.createSequentialGroup()
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(documentIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(returnDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(borrowDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(documentTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(returnDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(userIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(documentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(documentTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(borrowDateTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(52, 52, 52)
-                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(returnButton)
-                    .addComponent(jButtonReset))
-                .addContainerGap(54, Short.MAX_VALUE))
+                    .addGroup(jpnMuonSachLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(documentIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(returnDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(borrowDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userNameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userIDLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(documentTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)
+                        .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(returnDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(userIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(documentIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(documentTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(userNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(borrowDateTextField, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jpnMuonSachLayout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jButtonLuuThongTin)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(returnButton)))
+                .addContainerGap(183, Short.MAX_VALUE))
         );
 
         jpnMuonSachLayout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {borrowDateLabel, documentIDLabel, documentTitleLabel, returnDateLabel, userIDLabel, userNameLabel});
@@ -181,9 +197,8 @@ public class MuonSachJFrame extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(documentTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(documentTitleLabel)
-                    .addComponent(returnButton))
-                .addGap(22, 22, 22)
+                    .addComponent(documentTitleLabel))
+                .addGap(23, 23, 23)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(userIDTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(userIDLabel))
@@ -194,13 +209,20 @@ public class MuonSachJFrame extends javax.swing.JFrame {
                 .addGap(26, 26, 26)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(borrowDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(borrowDateLabel)
-                    .addComponent(jButtonReset))
+                    .addComponent(borrowDateLabel))
                 .addGap(18, 18, 18)
                 .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(returnDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(returnDateLabel))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jpnMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jButtonLuuThongTin)
+                        .addGroup(jpnMuonSachLayout.createSequentialGroup()
+                            .addComponent(jButtonReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGap(2, 2, 2)))
+                    .addComponent(returnButton, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         jpnMuonSachLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {borrowDateLabel, documentIDLabel, documentTitleLabel, returnDateLabel, userIDLabel, userNameLabel});
@@ -212,25 +234,10 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         borrowDateLabel.getAccessibleContext().setAccessibleName("");
         returnDateLabel.getAccessibleContext().setAccessibleName("");
 
-        jButtonLuuThongTin.setBackground(new java.awt.Color(80, 141, 78));
-        jButtonLuuThongTin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButtonLuuThongTin.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonLuuThongTin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/logoSaveAS.png"))); // NOI18N
-        jButtonLuuThongTin.setText("Lưu thông tin");
-        jButtonLuuThongTin.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonLuuThongTinMouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanelBigMuonSachLayout = new javax.swing.GroupLayout(jPanelBigMuonSach);
         jPanelBigMuonSach.setLayout(jPanelBigMuonSachLayout);
         jPanelBigMuonSachLayout.setHorizontalGroup(
             jPanelBigMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBigMuonSachLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButtonLuuThongTin)
-                .addGap(15, 15, 15))
             .addGroup(jPanelBigMuonSachLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jpnMuonSach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -238,11 +245,9 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         );
         jPanelBigMuonSachLayout.setVerticalGroup(
             jPanelBigMuonSachLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelBigMuonSachLayout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
-                .addComponent(jButtonLuuThongTin)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jpnMuonSach, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(jPanelBigMuonSachLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jpnMuonSach, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(24, 24, 24))
         );
 

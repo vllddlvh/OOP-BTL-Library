@@ -43,11 +43,6 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="jButtonLuuThongTin" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-              </Group>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jpnMuonSach" max="32767" attributes="0"/>
@@ -57,11 +52,9 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="28" max="32767" attributes="0"/>
-                  <Component id="jButtonLuuThongTin" min="-2" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jpnMuonSach" min="-2" max="-2" attributes="0"/>
+                  <Component id="jpnMuonSach" max="32767" attributes="0"/>
                   <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -89,33 +82,40 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="documentIDLabel" linkSize="1" min="-2" pref="146" max="-2" attributes="0"/>
-                          <Component id="returnDateLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                          <Component id="borrowDateLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                          <Component id="userNameLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                          <Component id="userIDLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                          <Component id="documentTitleLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="returnDateTextField" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
-                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                              <Component id="userIDTextField" min="-2" pref="220" max="-2" attributes="0"/>
-                              <Component id="documentIDTextField" min="-2" pref="220" max="-2" attributes="0"/>
-                              <Component id="documentTitleTextField" min="-2" pref="220" max="-2" attributes="0"/>
-                              <Component id="userNameTextField" min="-2" pref="220" max="-2" attributes="0"/>
-                              <Component id="borrowDateTextField" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="documentIDLabel" linkSize="1" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="returnDateLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="borrowDateLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="userNameLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="userIDLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                                  <Component id="documentTitleLabel" linkSize="1" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="returnDateTextField" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                                      <Component id="userIDTextField" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Component id="documentIDTextField" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Component id="documentTitleTextField" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Component id="userNameTextField" min="-2" pref="220" max="-2" attributes="0"/>
+                                      <Component id="borrowDateTextField" alignment="1" min="-2" pref="220" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                              <Component id="jButtonLuuThongTin" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jButtonReset" min="-2" pref="132" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="returnButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="returnButton" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonReset" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
+                      <EmptySpace pref="183" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -131,9 +131,8 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="documentTitleTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="documentTitleLabel" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="returnButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="userIDTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="userIDLabel" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -147,14 +146,24 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="borrowDateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="borrowDateLabel" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonReset" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="returnDateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="returnDateLabel" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="26" max="32767" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jButtonLuuThongTin" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jButtonReset" max="32767" attributes="0"/>
+                                  <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="returnButton" min="-2" pref="25" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -314,28 +323,28 @@
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="returnButtonMouseClicked"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="jButtonLuuThongTin">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="4e" green="8d" red="50" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="12" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/image/logoSaveAS.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="L&#x1b0;u th&#xf4;ng tin"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonLuuThongTinMouseClicked"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="jButtonLuuThongTin">
-          <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="4e" green="8d" red="50" type="rgb"/>
-            </Property>
-            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="12" style="1"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="ff" red="ff" type="rgb"/>
-            </Property>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/image/logoSaveAS.png"/>
-            </Property>
-            <Property name="text" type="java.lang.String" value="L&#x1b0;u th&#xf4;ng tin"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonLuuThongTinMouseClicked"/>
-          </Events>
-        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

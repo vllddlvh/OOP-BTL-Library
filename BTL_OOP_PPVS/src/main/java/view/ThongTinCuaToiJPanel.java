@@ -4,6 +4,10 @@
  */
 package view;
 
+import controller.LoginController;
+import model.entity.Member;
+import model.entity.User;
+
 /**
  *
  * @author ADMIN
@@ -15,6 +19,19 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
      */
     public ThongTinCuaToiJPanel() {
         initComponents();
+        User acc = LoginController.getAcc();
+        if (acc instanceof Member) {
+        JTextFieldID.setText(acc.getID());
+        jTextFieldFirstName.setText(acc.getFirstName());
+        jTextFieldLastName.setText(acc.getLastName());
+        jTextFieldContact.setText(((Member) acc).getContact());
+        jTextFieldDateOfBirth.setText(((Member) acc).getDateOfBirth());
+        JTextFieldID.setEditable(false);
+        jTextFieldContact.setEditable(false);
+        jTextFieldDateOfBirth.setEditable(false);
+        jTextFieldFirstName.setEditable(false);
+        jTextFieldLastName.setEditable(false);
+        }
     }
 
     /**
@@ -26,19 +43,132 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextFieldDateOfBirth = new javax.swing.JTextField();
+        jTextFieldContact = new javax.swing.JTextField();
+        jTextFieldLastName = new javax.swing.JTextField();
+        jTextFieldFirstName = new javax.swing.JTextField();
+        JTextFieldID = new javax.swing.JTextField();
+        jlbID = new javax.swing.JLabel();
+        jlbFirstName = new javax.swing.JLabel();
+        jlbLastName = new javax.swing.JLabel();
+        jlbContact = new javax.swing.JLabel();
+        jlbDateOfBirth = new javax.swing.JLabel();
+
+        jPanel1.setBackground(new java.awt.Color(128, 175, 129));
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("PROFILE");
+
+        jlbID.setBackground(new java.awt.Color(255, 255, 255));
+        jlbID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbID.setForeground(new java.awt.Color(255, 255, 255));
+        jlbID.setText("ID:");
+
+        jlbFirstName.setBackground(new java.awt.Color(255, 255, 255));
+        jlbFirstName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbFirstName.setForeground(new java.awt.Color(255, 255, 255));
+        jlbFirstName.setText("FirstName:");
+
+        jlbLastName.setBackground(new java.awt.Color(255, 255, 255));
+        jlbLastName.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbLastName.setForeground(new java.awt.Color(255, 255, 255));
+        jlbLastName.setText("LastName:");
+
+        jlbContact.setBackground(new java.awt.Color(255, 255, 255));
+        jlbContact.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbContact.setForeground(new java.awt.Color(255, 255, 255));
+        jlbContact.setText("Contact:");
+
+        jlbDateOfBirth.setBackground(new java.awt.Color(255, 255, 255));
+        jlbDateOfBirth.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jlbDateOfBirth.setForeground(new java.awt.Color(255, 255, 255));
+        jlbDateOfBirth.setText("DateOfBirth:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(310, 310, 310)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(250, 250, 250)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbDateOfBirth)
+                            .addComponent(jlbFirstName)
+                            .addComponent(jlbLastName)
+                            .addComponent(jlbContact))
+                        .addGap(15, 15, 15)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextFieldContact)
+                            .addComponent(jTextFieldDateOfBirth)
+                            .addComponent(JTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldFirstName)
+                            .addComponent(jTextFieldLastName))))
+                .addGap(250, 250, 250))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jlbID))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(JTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldFirstName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbFirstName))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldLastName, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbLastName))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextFieldContact, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jlbContact))
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jlbDateOfBirth)
+                    .addComponent(jTextFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(209, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 665, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField JTextFieldID;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTextFieldContact;
+    private javax.swing.JTextField jTextFieldDateOfBirth;
+    private javax.swing.JTextField jTextFieldFirstName;
+    private javax.swing.JTextField jTextFieldLastName;
+    private javax.swing.JLabel jlbContact;
+    private javax.swing.JLabel jlbDateOfBirth;
+    private javax.swing.JLabel jlbFirstName;
+    private javax.swing.JLabel jlbID;
+    private javax.swing.JLabel jlbLastName;
     // End of variables declaration//GEN-END:variables
 }

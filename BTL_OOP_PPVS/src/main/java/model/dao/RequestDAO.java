@@ -157,7 +157,7 @@ public class RequestDAO {
             req.add(new Request(rs.getString(1), 
                                         userID, 
                                rs.getString(2),
-                            rs.getInt(3), 
+                               rs.getInt(3), 
                                rs.getString(4), 
                                rs.getString(5)));
         }
