@@ -23,19 +23,15 @@ import javax.swing.JTextArea;
 import model.dao.FileFormatException;
 import model.entity.Book;
 
-/**
- *
- * @author FuK
- */
+
 public class ChiTietTaiLieu extends javax.swing.JFrame {
     
     private Book currentShowDocument;
     private static Image defaultCoverImage;
     
     /**
-     * Hiển thị thông tin chi tiết sách trong cửa sổ mới (JFrame)
-     * 
-     * @param document
+     * Tạo ra JFrame mới để giới thiệu chi tiết tài liệu.
+     * @param document Tài liệu cần giới thiệu chi tiết.
      */
     public ChiTietTaiLieu(Book document) {
         currentShowDocument = document;
