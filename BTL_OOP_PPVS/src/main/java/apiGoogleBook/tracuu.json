@@ -1,92 +1,59 @@
 {
   "kind": "books#volumes",
-  "totalItems": 719,
+  "totalItems": 847,
   "items": [
     {
       "kind": "books#volume",
-      "id": "sX0qDwAAQBAJ",
-      "etag": "YV6Y10oR+Fw",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/sX0qDwAAQBAJ",
+      "id": "0fiuDwAAQBAJ",
+      "etag": "9KSz+9GHcmc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/0fiuDwAAQBAJ",
       "volumeInfo": {
-        "title": "Attack on Titan",
+        "title": "B_ gi_i ngh_a Tân __c c_a Tyndale: Gia-c_",
         "authors": [
-          "Hajime Isayama"
+          "Douglas J. Moo"
         ],
-        "publisher": "Kodansha Comics",
-        "publishedDate": "2017",
-        "description": "Anime Season 2 coming to Funimation in April 2017! The blockbuster manga edges closer to its thrilling conclusions. The mysteries of the Titans are being revealed… who will escape death at the hands of giants and human beings?",
+        "publisher": "Lulu.com",
+        "publishedDate": "2019-07-25",
+        "description": "Bộ sách giải nghĩa này được ra đời nhằm giúp độc giả hiểu ý nghĩa nguyên thủy của Kinh Thánh và ý nghĩa áp dụng ngày nay. Phần giới thiệu cung cấp phần nghiên cứu ngắn gọn nhưng đầy đủ về quyền tác giả, niên đại, bối cảnh và mục đích, các trọng tâm về thần học. Sau phần Cấu Trúc của sách là phần giải nghĩa theo từng phân đoạn của sách, rút ra những chủ đề chính của mỗi phần, cũng như cung cấp chú giải từng câu. Mục tiêu của bộ sách là giải thích ý nghĩa thực sự của Kinh Thánh và làm cho thông điệp của nó trở nên đơn giản, dễ hiểu nhất cho độc giả ngày nay Tính đặc sắc của thư Gia-cơ được thể hiện trong lời kêu gọi mạnh mẽ về sự ăn năn, về hành động và nếp sống Cơ Đốc kiên định. Trong tập này, Douglas Moo khích lệ độc giả để lời Chúa trong Gia-cơ phán với chúng ta cách nghiêm túc trong các tranh luận thần học, trong những định kiến cá nhân, những trăn trở thuộc linh và đưa chúng ta trở lại con đường hướng đến Cơ Đốc giáo dựa tên nền tảng Kinh Thánh đầy sinh lực đem lại sự biến đổi.",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9781682337837"
+            "identifier": "9781988990118"
           },
           {
             "type": "ISBN_10",
-            "identifier": "1682337839"
+            "identifier": "1988990114"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 194,
+        "pageCount": 257,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Religion"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.1.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.2.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=sX0qDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=sX0qDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=0fiuDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=0fiuDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=sX0qDwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=1&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "22",
-          "volumeSeries": [
-            {
-              "seriesId": "bof3GgAAABCYnM",
-              "seriesBookType": "COLLECTED_EDITION",
-              "orderNumber": 22
-            }
-          ]
-        }
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=0fiuDwAAQBAJ&pg=PA222&dq=c&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=0fiuDwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/B_gi_i_ngh_a_T%C3%A2n_c_c_a_Tyndale_Gia_c.html?hl=&id=0fiuDwAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 159788,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 159788,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ&rdid=book-sX0qDwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 159788000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 159788000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
       },
       "accessInfo": {
         "country": "VN",
@@ -95,107 +62,72 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-epub.acsm?id=sX0qDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-pdf.acsm?id=sX0qDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/B_gi_i_ngh_a_T%C3%A2n_c_c_a_Tyndale_Gia_c-sample-pdf.acsm?id=0fiuDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=sX0qDwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=0fiuDwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "Anime Season 2 coming to Funimation in April 2017! The blockbuster manga edges closer to its thrilling conclusions. The mysteries of the Titans are being revealed… who will escape death at the hands of giants and human beings?"
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e mục đích làm tăng thêm sức mạnh cho bất cứ ai đang bệnh ( xem 1511–1515 ) . Tuy nhiên , Gia - cơ cũng nhấn mạnh rằng việc xức dầu tập trung nhiều vào việc chữa bệnh hơn là tăng thêm sức mạnh thuộc linh . Dù vậy , dầu \u003cb\u003ecó\u003c/b\u003e thể được xem là&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "t5A_DwAAQBAJ",
-      "etag": "vXGpp4edhjU",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/t5A_DwAAQBAJ",
+      "id": "iukeEAAAQBAJ",
+      "etag": "nnV9lDvo2mU",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/iukeEAAAQBAJ",
       "volumeInfo": {
-        "title": "Attack on Titan",
+        "title": "Ng_t h_n m_t: Gi_ng các sách C_u __c",
         "authors": [
-          "Hajime Isayama"
+          "Christopher J. H. Wright"
         ],
-        "publisher": "Kodansha Comics",
-        "description": "THE DREAM OF FREEDOM DIES The truth revealed through the memories in Grisha's journals shakes all of Eren's deepest beliefs. There is no rugged but free land beyond the Walls--there is a whole other world, equally full of oppression and war. Suddenly, the ambitions that have animated the Survey Corps for generations seem small and naïve. What is there left to fight for?",
+        "publisher": "Lulu.com",
+        "publishedDate": "2020-04-07",
+        "description": "Nhi_u ng__i tránh gi_ng C_u __c vì h_ c_m th_y r_ng C_u __c _ã l_i th_i so v_i Tân __c, khó hi_u và khó gi_i thích. Bên c_nh _ó, m_t s_ ng__i th__ng xuyên gi_ng t_ C_u __c nh_ng không gi_i quy_t v_n __ m_t cách th_u _áo, và k_t qu_ là h_ ch_ __a ra các quy t_c pháp lý, ho_c rút ra ý ngh_a bi_u t__ng cho __i s_ng thu_c linh c_a chúng ta. Trong sách này, Christopher J. H. Wright khích l_ nh_ng ng__i gi_ng __ng b_ qua C_u __c! _ó là l_i c_a __c Chúa Tr_i, __t n_n t_ng cho __c tin c_a chúng ta. Và _ó c_ng chính là Kinh thánh mà chính Chúa Giê-xu _ã __c và dùng. C_u __c là ph_n __u tiên trong câu chuy_n Kinh thánh v_ __i, t_ s_ sáng t_o __n s_ sáng t_o _i. Và _ó c_ng là m_t hành trình d_n chúng ta __n v_i __ng Christ, nên th_t s_ C_u __c c_ng là m_t ph_n trong câu chuy_n c_a cu_c __i chúng ta.",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9781642120486"
+            "identifier": "9781988990156"
           },
           {
             "type": "ISBN_10",
-            "identifier": "1642120480"
+            "identifier": "1988990157"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 194,
+        "pageCount": 282,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Religion"
         ],
-        "averageRating": 5,
-        "ratingsCount": 1,
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.1.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.2.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=t5A_DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=t5A_DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=iukeEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=iukeEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=t5A_DwAAQBAJ&pg=PT29&dq=Attack+on+Titan&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=t5A_DwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=t5A_DwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "23",
-          "volumeSeries": [
-            {
-              "seriesId": "bof3GgAAABCYnM",
-              "seriesBookType": "COLLECTED_EDITION",
-              "orderNumber": 23
-            }
-          ]
-        }
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=iukeEAAAQBAJ&pg=PA245&dq=c&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=iukeEAAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Ng_t_h_n_m_t_Gi_ng_c%C3%A1c_s%C3%A1ch_C_u_c.html?hl=&id=iukeEAAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 159788,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 159788,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=t5A_DwAAQBAJ&rdid=book-t5A_DwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 159788000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 159788000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
       },
       "accessInfo": {
         "country": "VN",
@@ -204,95 +136,72 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-epub.acsm?id=t5A_DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-pdf.acsm?id=t5A_DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Ng_t_h_n_m_t_Gi_ng_c%C3%A1c_s%C3%A1ch_C_u_c-sample-pdf.acsm?id=iukeEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=t5A_DwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=iukeEAAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... HIT THEIR NECKS ... W THE BUT ... 100MM BOTH OF EVEN ARMOR- OUR \u003cb\u003eTITANS\u003c/b\u003e ONE OF V ARE THE SHELLS QUICK ... NINE . THEY FIRE ... DOES HAPPEN ? AND THERE IS NO GUARANTEE THAT WE&#39;LL BE ABLE TO REGAIN THE POWER OF THAT \u003cb\u003eTITAN\u003c/b\u003e . WE WILL&nbsp;..."
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e lẽ sẽ ích lợi hơn khi chọn một vài chủ đề chính chúng ta thấy được lặp đi lặp lại , rồi giảng những chủ đề đó ... \u003cb\u003ec\u003c/b\u003e ) Sự khôn ngoan và công việc • Đúng : Việc làm là một trong những quà tặng tốt đẹp của Đức Chúa Trời trong công&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "aMliDwAAQBAJ",
-      "etag": "V0EToWkAMh8",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/aMliDwAAQBAJ",
+      "id": "-aR2DwAAQBAJ",
+      "etag": "H+eP0Z9SwEo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/-aR2DwAAQBAJ",
       "volumeInfo": {
-        "title": "Attack on Titan Character Encyclopedia",
-        "subtitle": "Volune 1",
+        "title": "N_p S_ng T_nh Th_c C_a __c __t Lai L_t Ma T_p 1",
         "authors": [
-          "Hajime Isayama"
+          "Thích N_ Gi_i H__ng"
         ],
-        "publisher": "Kodansha America LLC",
-        "publishedDate": "2018-07-10",
+        "publisher": "Lulu.com",
+        "publishedDate": "2018-09-15",
+        "description": "Trong khuôn khổ nhỏ gọn của một cuốn sách, nên tác giả chỉ chọn những đoạn văn tâm đắc, ý nghĩa cô động có thể gợi cho chúng ta suy nghĩ về nhân cách thánh thiện, về nếp sống tỉnh thức của Đức Đạt Lai Lạt Ma thứ 14, để giúp chúng ta có đời sống hướng thiện hơn về tâm linh",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9781642123357"
+            "identifier": "9780359082544"
           },
           {
             "type": "ISBN_10",
-            "identifier": "1642123358"
+            "identifier": "0359082548"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 178,
+        "pageCount": 201,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Religion"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.3.1.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "1.2.2.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=aMliDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=aMliDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=-aR2DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=-aR2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=aMliDwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=3&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ"
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=-aR2DwAAQBAJ&pg=PA63&dq=c&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=-aR2DwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/N_p_S_ng_T_nh_Th_c_C_a_c_t_Lai_L_t_Ma_T.html?hl=&id=-aR2DwAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 293179,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 199362,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ&rdid=book-aMliDwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 293179000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 199362000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
       },
       "accessInfo": {
         "country": "VN",
@@ -301,92 +210,72 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Character_Encyclopedia-sample-epub.acsm?id=aMliDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Character_Encyclopedia-sample-pdf.acsm?id=aMliDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/N_p_S_ng_T_nh_Th_c_C_a_c_t_Lai_L_t_Ma_T-sample-pdf.acsm?id=-aR2DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=aMliDwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=-aR2DwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e thể đi đến kết luận rằng chẳng gì \u003cb\u003ecó\u003c/b\u003e thể diệt trừ được sự tương tục của tánh thông suốt và tánh tỉnh giác vi tế (của bản tâm). Theo cái hiểu biết trước giờ của tôi, không \u003cb\u003ecó\u003c/b\u003e một nhà tâm lý học, vật lý học hay thần kinh học hiện&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "Z7ogEAAAQBAJ",
-      "etag": "S7qG3h9ljbg",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/Z7ogEAAAQBAJ",
+      "id": "2PiuDwAAQBAJ",
+      "etag": "kR2TEya7rUg",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/2PiuDwAAQBAJ",
       "volumeInfo": {
-        "title": "Attack on Titan: The Anime Guide",
+        "title": "__c Kinh Thánh M_t và M_t",
         "authors": [
-          "Hajime Isayama"
+          "David Helm"
         ],
-        "publisher": "Kodansha America LLC",
-        "publishedDate": "2021-03-16",
-        "description": "The definitive guide to the Attack on Titan anime, just in time for season two! The creators behind the hit anime tell it all! Colossal-sized and in full color, this official guidebook includes: • An in-depth interview with Hajime Isayama and director Tetsuro Araki, where a surprise about Eren and Armin is revealed! • A detailed look at the world of Attack on Titan–from side characters, to weaponry, and even all the Titans • Exclusive interviews with the unforgettable voice actors, and the musicians behind the iconic theme songs • Four special-edition postcards you can’t get anywhere else!",
+        "publisher": "Lulu.com",
+        "publishedDate": "2019-07-27",
+        "description": "Đọc Kinh Thánh một với một là một biến thể của hoạt động trọng tâm trong đời sống Cơ Đốc - đọc Kinh Thánh - nhưng được thực hiện trong bối cảnh đọc chung với một người khác. Đó là việc mà một Cơ Đốc nhân làm với một người khác, trên cơ sở thường xuyên, dựa trên một lượng thời gian mà cả hai đã thống nhất, với ý định đọc qua và thảo luận về một sách hoặc một phần của một sách trong Kinh Thánh. \"David Helm đã viết sách chỉ dẫn giúp các Cơ Đốc nhân sử dụng một trong những phương pháp cơ bản nhất của việc giúp đỡ người khác: đọc Kinh Thánh với họ. Trong truyền giảng, gây dựng, không điều gì có thể so sánh với việc mở bản văn Kinh Thánh và đọc những gì chính Đức Chúa Trời đã phán dạy. Cơ Đốc nhân chỉ cần đặt lòng tin nơi Lời Chúa và có một kỹ năng cơ bản trong việc đọc Kinh Thánh với người khác cơ bản. David đã hỗ trợ chúng ta cách giúp người khác có được kỹ năng cơ bản đó\" (Philip Jensen)",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9781636990293"
+            "identifier": "9781988990125"
           },
           {
             "type": "ISBN_10",
-            "identifier": "1636990290"
+            "identifier": "1988990122"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 180,
+        "pageCount": 58,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Religion"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.1.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.2.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=Z7ogEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=Z7ogEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=2PiuDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=2PiuDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=Z7ogEAAAQBAJ&pg=PA118&dq=Attack+on+Titan&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=Z7ogEAAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Z7ogEAAAQBAJ"
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=2PiuDwAAQBAJ&pg=PA20&dq=c&hl=&cd=4&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=2PiuDwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/c_Kinh_Th%C3%A1nh_M_t_v%C3%A0_M_t.html?hl=&id=2PiuDwAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 293179,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 199362,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=Z7ogEAAAQBAJ&rdid=book-Z7ogEAAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 293179000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 199362000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
       },
       "accessInfo": {
         "country": "VN",
@@ -395,108 +284,72 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_The_Anime_Guide-sample-epub.acsm?id=Z7ogEAAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_The_Anime_Guide-sample-pdf.acsm?id=Z7ogEAAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/c_Kinh_Th%C3%A1nh_M_t_v%C3%A0_M_t-sample-pdf.acsm?id=2PiuDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=Z7ogEAAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=2PiuDwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eattack on titan\u003c/b\u003e Adjusting gas compression allows users to control output The ODM Gear is so important to the soldiers fighting the Titans that it could be considered a second pair of limbs . In Episodes 7 and 8 , we&#39;re given an&nbsp;..."
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e (tùy thuộc vào phương pháp bạn sử dụng). 4. Cầu nguyện dựa trên những gì bạn đã đọc và một lần nữa cầu nguyện cho buổi gặp của bạn sắp tới. 7. Một. Kinh. Nghiệm. \u003cb\u003eCá\u003c/b\u003e. Nhân. Khi sống ở Chicago, tôi quen biết một người đàn ông cần cù và \u003cb\u003ecó\u003c/b\u003e&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "zQb2DwAAQBAJ",
-      "etag": "FGASU7YEu58",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/zQb2DwAAQBAJ",
+      "id": "iq7RDwAAQBAJ",
+      "etag": "fqIUOJm7xwc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/iq7RDwAAQBAJ",
       "volumeInfo": {
-        "title": "Attack on Titan 31",
+        "title": "__i s_ng gia _ình c_a ng__i lãnh __o C_ __c",
         "authors": [
-          "Hajime Isayama"
+          "Ajith Fernando"
         ],
-        "publisher": "Kodansha America LLC",
-        "publishedDate": "2020-08-25",
-        "description": "After breaking through a stronghold of old friends and enemies, Zeke hands down his plan for the Eldians to Eren. But what Eren was plotting with his rumbling powers leaves his brother in the dust, betrayed and alone once more. Now, with some help from Ymir, a parade of massive Titans are roused from their centuries-long slumber, breaking free of the Walls to answer their founder’s call. Where the march leads, only Eren knows…",
+        "publisher": "Lulu.com",
+        "publishedDate": "2020-02-17",
+        "description": "Ai làm lãnh __o C_ __c c_ng c_m bi_t nh_ng thách th_c trong vi_c ph_i quân bình gi_a m_c v_ và nh_ng trách nhi_m trong gia _ình. C_ man nh_ng _òi h_i th__ng kéo ng__i lãnh __o theo nh_ng h__ng khác nhau, làm cho h_ d_ dàng cho r_ng ___ng nhiên Chúa ph_i can thi_p vào __i s_ng c_a h_. T_ kinh nghi_m c_a nhi_u th_p k_ t_ v_n và ch_m sóc m_c v_ cá nhân, Ajith Fernando mu_n giúp cho nh_ng ai _ang trong m_c v_ phát tri_n nh_ng nh_p _i_u __ có ___c n_p s_ng gia _ình lành m_nh. B_ng cách áp d_ng nh_ng nguyên t_c Kinh Thánh vào nh_ng v_n __ quen thu_c mà t_t c_ các lãnh __o __u ph_i __i di_n, quy_n sách này s_ cung c_p nh_ng ch_ d_n __ ng__i lãnh __o bi_t nuôi d__ng tình yêu, làm sâu s_c thêm s_ hi_p nh_t và tìm ki_m ni_m vui th_a trong gia _ình - gi_i thi_u cho các lãnh __o m_t cách ti_p c_n __i s_ng gia _ình trong _ó Chúa _ v_ trí trung tâm, cách ti_p c_n _y ch_a __ng n_ng quy_n bi_n __i gia _ình gia _ình c_a h_.",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9781646597598"
+            "identifier": "9781988990132"
           },
           {
             "type": "ISBN_10",
-            "identifier": "1646597591"
+            "identifier": "1988990130"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 195,
+        "pageCount": 222,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Family & Relationships"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.2.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.2.0.preview.1",
         "panelizationSummary": {
-          "containsEpubBubbles": true,
-          "containsImageBubbles": true,
-          "epubBubbleVersion": "2d9d0bc5f8f3919d_A",
-          "imageBubbleVersion": "2d9d0bc5f8f3919d_A"
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=zQb2DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=zQb2DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=iq7RDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=iq7RDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=zQb2DwAAQBAJ&pg=PT55&dq=Attack+on+Titan&hl=&cd=5&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=zQb2DwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=zQb2DwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "31",
-          "volumeSeries": [
-            {
-              "seriesId": "bof3GgAAABCYnM",
-              "seriesBookType": "COLLECTED_EDITION",
-              "orderNumber": 31
-            }
-          ]
-        }
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=iq7RDwAAQBAJ&pg=PA142&dq=c&hl=&cd=5&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=iq7RDwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/i_s_ng_gia_%C3%ACnh_c_a_ng_i_l%C3%A3nh_o_C_c.html?hl=&id=iq7RDwAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 159788,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 159788,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=zQb2DwAAQBAJ&rdid=book-zQb2DwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 159788000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 159788000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
       },
       "accessInfo": {
         "country": "VN",
@@ -505,19 +358,384 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_31-sample-epub.acsm?id=zQb2DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_31-sample-pdf.acsm?id=zQb2DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/i_s_ng_gia_%C3%ACnh_c_a_ng_i_l%C3%A3nh_o_C_c-sample-pdf.acsm?id=iq7RDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=zQb2DwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=iq7RDwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eTITANS\u003c/b\u003e ! 2 10000 THE ARMOR STRIPPED AWAY FROM ME SOMEHOW ... THE DEBRIS FROM THE WALL HIT ME STRAIGHT ON ... ... STOP HIM ... I ... COULD NOT ... REINERM."
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e thể nói rằng vui đùa là một đặc điểm quan trọng trong đời sống của trẻ con trong thời Kinh Thánh . Tôi thường nói với các bậc phụ huynh \u003cb\u003ecó\u003c/b\u003e con nhỏ rằng trong những năm tháng đầu đời của chúng , chơi quan trọng hơn học . Chúng \u003cb\u003ecó\u003c/b\u003e thể&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "YhiODgAAQBAJ",
+      "etag": "uBlVtP4NPaw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/YhiODgAAQBAJ",
+      "volumeInfo": {
+        "title": "T_ V_n M_c V_ Có Chi_n L__c",
+        "authors": [
+          "David G. Benner"
+        ],
+        "publisher": "Lulu.com",
+        "publishedDate": "2017-01-14",
+        "description": "Tín hữu tại Việt Nam luôn có khuynh hướng tìm đến Mục sư để được tư vấn, giúp đỡ trong khi đó các Mục sư luôn phải gánh vác rất nhiều trọng trách trong Hội Thánh. Cuốn sách này giới thiệu một mô hình tư vấn phù hợp với lịch làm việc dày đặc của các Mục sư tư vấn tại Việt Nam. Một trong những ưu điểm của sách là không dùng nhiều biệt ngữ nhưng luôn có những giải thích, minh họa cụ thể giúp độc giả dễ dàng nắm bắt. Rõ ràng, đây là một cuốn sổ tay thực hành có giá trị về chăm sóc mục vụ và tư vấn dành cho cả Mục sư, lãnh đạo Hội thánh cũng như các anh chị linh hướng cho các ban ngành trong Hội thánh.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780993974984"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0993974988"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 218,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.5.2.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=YhiODgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=YhiODgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=YhiODgAAQBAJ&pg=PA158&dq=c&hl=&cd=6&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=YhiODgAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/T_V_n_M_c_V_C%C3%B3_Chi_n_L_c.html?hl=&id=YhiODgAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/T_V_n_M_c_V_C%C3%B3_Chi_n_L_c-sample-pdf.acsm?id=YhiODgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=YhiODgAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e chút oán giận. Kế đến, Mục sư hỏi Ellen \u003cb\u003ecó\u003c/b\u003e thể cho ông biết một chút về chồng cô và hôn nhân của họ không. Ellen gặp Rick trong trường đại học, và họ hẹn hò lúc \u003cb\u003ecó\u003c/b\u003e lúc không vài năm sau đó trước khi đám cưới khi cả hai đều hai&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "83kkDwAAQBAJ",
+      "etag": "KXo3KdQqk8Y",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/83kkDwAAQBAJ",
+      "volumeInfo": {
+        "title": "B_c Tranh L_n c_a __c Chúa Tr_i",
+        "authors": [
+          "Vaughan Roberts"
+        ],
+        "publisher": "Lulu.com",
+        "publishedDate": "2017-04-06",
+        "description": "Bức Tranh Lớn của Đức Chúa Trời, chuyển ngữ từ cuốn God's Big Picture của Vaughan Roberts, cung cấp công cụ hữu ích để độc giả có thể đọc và hiểu Kinh Thánh một cách toàn diện thông qua chủ đề quan trọng của cả Kinh Thánh: Chúa Giê-xu Christ và sự cứu rỗi của Đức Chúa Trời ban cho con người. Quyển sách này nhằm phục vụ tín hữu bình thường và bao gồm phần nghiên cứu Kinh Thánh. Với phần nghiên cứu Kinh Thánh sau mỗi chương, sách phù hợp làm tài liệu cho lớp trường Chúa Nhật (cho người lớn), nhóm nhỏ, hoặc nghiên cứu cá nhân. Tuy nhiên, các Mục sư sẽ tìm thấy trong sách này một tầm nhìn khái quát về cả Kinh Thánh: bức tranh lớn giúp chúng ta giảng Cựu Ước trong ánh sáng của Phúc Âm.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780993974991"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0993974996"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 168,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=83kkDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=83kkDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=83kkDwAAQBAJ&pg=PA66&dq=c&hl=&cd=7&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=83kkDwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/B_c_Tranh_L_n_c_a_c_Ch%C3%BAa_Tr_i.html?hl=&id=83kkDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/B_c_Tranh_L_n_c_a_c_Ch%C3%BAa_Tr_i-sample-pdf.acsm?id=83kkDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=83kkDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e thể ở trong vị trí \u003cb\u003ecó\u003c/b\u003e thể giúp đỡ khi các anh đến và kết quả là dân sự còn phôi thai của Đức Chúa Trời được bảo toàn. Đức Chúa Trời luôn cai trị để bảo đảm rằng những lời hứa Phúc Âm được bảo vệ. \u003cb\u003eCó\u003c/b\u003e thể chúng ta không phải lúc nào&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "OlSSDwAAQBAJ",
+      "etag": "jKW7O00laAY",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/OlSSDwAAQBAJ",
+      "volumeInfo": {
+        "title": "__c Ph_t - Chi_n Tranh và Hòa Bình",
+        "authors": [
+          "Philippe NGO"
+        ],
+        "publisher": "Lulu.com",
+        "publishedDate": "2019-04-10",
+        "description": "Trong thế giới đa cực ngày nay, mặc dù rất nhiều nỗ lực đã được hiện thực, nhiều cơ chế chính trị đã được hình thành (như Liên Hiệp Quốc) nhằm bảo vệ nhân loại, chiến tranh vẫn luôn là đề tài thường trực đang và, buồn thay, vẫn sẽ là chủ đề còn tồn lại cùng nhân loại chí ít vài chục thế kỷ nữa. Phật Giáo, trong vai trò là tôn giáo lớn của thế giới, dẫn đắt gần 10%% dân số nhân loại, hơn 12%% dân số châu Á, và chắc chắn là giáo lý của Phật Giáo cũng như các lãnh tụ của Phật Giáo ảnh hưởng không nhỏ đến nền hòa bình của nhân loại. Vì vậy, việc tìm hiểu tư tưởng của Đức Phật về vấn đề này đương nhiên là một việc quan trọng. Một đặc điểm lớn của tất cả các cuốn sách là được viết theo lối diễn dịch, tức là phần kinh điển là chỉ là những ví dụ dẫn chứng cho tư tưởng đề cập đến trong bài viết. Cuốn sách này chọn cho mình hướng ngược lại, theo hướng quy nạp, tức là sưu tập lại toàn bộ các trích dẫn kinh điển trong giáo pháp của Đức Phật theo từng chủ đề chính, để từ đó đúc kết tư tưởng của Đức Phật trong từng chủ đề.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780359580477"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0359580475"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 82,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.3.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=OlSSDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=OlSSDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=OlSSDwAAQBAJ&pg=PA29&dq=c&hl=&cd=8&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=OlSSDwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/c_Ph_t_Chi_n_Tranh_v%C3%A0_H%C3%B2a_B%C3%ACnh.html?hl=&id=OlSSDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/c_Ph_t_Chi_n_Tranh_v%C3%A0_H%C3%B2a_B%C3%ACnh-sample-pdf.acsm?id=OlSSDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=OlSSDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e sự thắng trận cho phe bên này , sẽ \u003cb\u003ecó\u003c/b\u003e sự bại trận cho phe bên kia &quot; . Còn vị ấy thì từ bỏ những tà mạng kể trên . Như vậy là giới hạnh của vị ấy trong giới luật . ” Kinh Khởi Thế Nhân Bổn ( 27 ) : “ \u003cb\u003ecó\u003c/b\u003e người Sát để ly không sát sanh&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "MsVSDwAAQBAJ",
+      "etag": "nlf643BRf4o",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/MsVSDwAAQBAJ",
+      "volumeInfo": {
+        "title": "R�n Luy_n T‰m Linh Trong N_p S_ng C_ __c",
+        "authors": [
+          "Donald S. Whitney"
+        ],
+        "publisher": "Lulu.com",
+        "publishedDate": "2018-03-13",
+        "description": "L? C_ __c nh?n, nh_ng ng__i _? ch_y __n c?ng __c Ch?a Tr_i, tin n_i Ch?a Gi?-xu v? ___c ban cho __c Th?nh Linh, ch?ng ta ___c k?u g_i ph_i tr_ n?n gi_ng Ch?a h_n m_i ng?y. __c Th?nh Linh s_ng trong ch?ng ta v? khi_n ch?ng ta _eo _u_i m_t __i s_ng th?nh khi_t. Nh_ng ch?ng ta s_ _eo _u_i s_ th?nh khi_t nh_ th_ n?o, v? l?m sao __ tr_ n?n gi_ng Ch?a C_u Th_ Gi?-xu, Con __c Ch?a Tr_i? R?n Luy_n T?m Linh Trong N_p S_ng C_ __c s_ cung _ng cho ch?ng ta c?u tr_ l_i c_ng nh_ nh_ng h__ng d_n th_c ti_n v_ ph__ng c?ch r?n luy_n n_p s_ng t?m linh __ h__ng __n m_t n_p s_ng tin k?nh. Con ___ng duy nh_t d_n __n s_ tin k?nh v? tr__ng th?nh C_ __c l? th?ng qua vi_c luy_n t_p k_ lu_t thu_c linh. __c Ch?a Tr_i k?u g_i v? _?i h_i nh_ng ng__i theo Ng?i b__c v?o s_ r?n luy_n n?y v_i tinh th_n vui th?ch v? n_m bi_t ni_m vui, ph__c h_nh c_a n_p s_ng k_ lu_t, kh?ng ph_i v? ?p bu_c, g?nh n_ng.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780995944770"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0995944776"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 496,
+        "printType": "BOOK",
+        "categories": [
+          "Religion"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.2.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=MsVSDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=MsVSDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "vi",
+        "previewLink": "http://books.google.com.vn/books?id=MsVSDwAAQBAJ&pg=PA362&dq=c&hl=&cd=9&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=MsVSDwAAQBAJ&dq=c&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/R_n_Luy_n_T_m_Linh_Trong_N_p_S_ng_C_c.html?hl=&id=MsVSDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/R_n_Luy_n_T_m_Linh_Trong_N_p_S_ng_C_c-sample-pdf.acsm?id=MsVSDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=MsVSDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ecó\u003c/b\u003e thể ở yên lặng và ở riêng một mình. Tìm những chỗ như thế ngay trong nhà, trong quãng đường đi bộ, trong vài phút lái xe và trong khoảng cách hợp lý để \u003cb\u003ecó\u003c/b\u003e thời gian dưỡng linh qua đêm hoặc lâu hơn. Nếu nhà bạn \u003cb\u003ecó\u003c/b\u003e trẻ con, việc tìm&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "VKO-j_g1y9UC",
+      "etag": "MtcnzmIFytE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/VKO-j_g1y9UC",
+      "volumeInfo": {
+        "title": "Roscoe's Digest of the Law of Evidence in Criminal Cases",
+        "authors": [
+          "Henry Roscoe",
+          "Horace Smith"
+        ],
+        "publishedDate": "1874",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "SRLF:AA0008368367"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 996,
+        "printType": "BOOK",
+        "categories": [
+          "Evidence, Criminal"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.9.12.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=VKO-j_g1y9UC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=VKO-j_g1y9UC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=VKO-j_g1y9UC&pg=PR45&dq=c&hl=&cd=10&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=VKO-j_g1y9UC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=VKO-j_g1y9UC"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=VKO-j_g1y9UC&rdid=book-VKO-j_g1y9UC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/Roscoe_s_Digest_of_the_Law_of_Evidence_i.epub?id=VKO-j_g1y9UC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=VKO-j_g1y9UC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003ec\u003c/b\u003e . 47 , s . 65 , 258 s . 30 , 466 • \u003cb\u003ec\u003c/b\u003e . 51 , 537 s . 38 , . 172 \u003cb\u003ec\u003c/b\u003e . 56 , s . 17 , 223 s . 41 , . 466 \u003cb\u003ec\u003c/b\u003e . 65 , ss . 54 , 64 , 66 , 259 s . 43 ,. 537 \u003cb\u003ec\u003c/b\u003e . 82 , ss . 1 , 2 , 242 , 243 с . 114 , 65 3 &amp; 4 Vict . \u003cb\u003ec\u003c/b\u003e . 9 , 683 s . 1 , 215 \u003cb\u003ec\u003c/b\u003e&nbsp;..."
       }
     }
   ]

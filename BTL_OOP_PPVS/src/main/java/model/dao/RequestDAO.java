@@ -5,14 +5,43 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 import model.DatabaseConnector;
 import model.entity.Request;
 
 
 public class RequestDAO {
     
-    public static LinkedList<Request> getAllRequest() throws SQLException {
+    public static Request getRequest(String requestID) throws SQLException {
+        String sql = """
+                     SELECT r.*,
+                          coalesce((SELECT CONCAT_WS(" ", lastName, firstName) FROM  library_2nd_edition.Member WHERE ID = r.userID),
+                            (SELECT CONCAT_WS(" ", lastName, firstName) FROM  library_2nd_edition.Staff WHERE ID = r.userID)) user_fullName,
+                          (SELECT title FROM  library_2nd_edition.Documents WHERE ID = r.documentID) document_title
+                     FROM library_2nd_edition.request r
+                     WHERE r.requestID = ?""";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+        ps.setString(1, requestID);
+        ResultSet rs = ps.executeQuery();
+        
+        Request result = null;
+        while(rs.next()) {
+            
+            result = new Request(rs.getString(1),
+                                   rs.getString(2),
+                              rs.getString(7),
+                                rs.getString(3),
+                             rs.getString(8),
+                             rs.getInt(4),
+                                rs.getString(5),
+                                rs.getString(6));
+        }
+        
+        ps.close();
+        rs.close();
+        return result;
+    }
+    
+    public static ArrayList<Request> getAllRequest() throws SQLException {
         String sql = """
                      SELECT r.*,
                           coalesce((SELECT CONCAT_WS(" ", lastName, firstName) FROM  library_2nd_edition.Member WHERE ID = r.userID),
@@ -22,7 +51,7 @@ public class RequestDAO {
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         
-        LinkedList<Request> list = new LinkedList<>();
+        ArrayList<Request> list = new ArrayList<>();
         while(rs.next()) {
             
             Request nextRequest = new Request(rs.getString(1),
@@ -93,19 +122,13 @@ public class RequestDAO {
      * 
      * @throws SQLException 
      */
-    public static boolean returnDocument(String userID, String requestID) throws SQLException {
+    public static boolean returnDocument(String userID, String documentID) throws SQLException {
         CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call returnDocument(?, ?) }");
         
-        finder.setString(1, requestID);
+        finder.setString(1, documentID);
         finder.setString(2, userID);
         
-        ResultSet rs;
-        rs = finder.executeQuery();
-        
-        while (rs.next()) {
-            return rs.getBoolean("Result");
-        }
-        return false;
+        return finder.executeUpdate() > 0;
     }
     
     /**
@@ -117,7 +140,7 @@ public class RequestDAO {
      */
     public static ArrayList<Request> getUnreturnDocument(String userID) throws SQLException {
         
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call checkForUnreturn_BookList(?) }");
+        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call checkForUnreturn_DocumentList(?) }");
         
         finder.setString(1, userID);
         
@@ -128,9 +151,11 @@ public class RequestDAO {
         while(rs.next()) {
             req.add(new Request(rs.getString(1), 
                                         userID, 
-                               rs.getString(2),
-                            rs.getInt(3), 
-                               rs.getString(4), 
+                             rs.getString(2),
+                               rs.getString(3),
+                            rs.getString(4),
+                            rs.getInt(5), 
+                               rs.getString(6), 
                                null));
         }
         
@@ -156,10 +181,12 @@ public class RequestDAO {
         while(rs.next()) {
             req.add(new Request(rs.getString(1), 
                                         userID, 
-                               rs.getString(2),
-                               rs.getInt(3), 
-                               rs.getString(4), 
-                               rs.getString(5)));
+                             rs.getString(2),
+                               rs.getString(3),
+                            rs.getString(4),
+                            rs.getInt(5), 
+                               rs.getString(6), 
+                               rs.getString(7)));
         }
         
         return req;

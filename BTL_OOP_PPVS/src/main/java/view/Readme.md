@@ -11,7 +11,7 @@ LoginJFrame
 |		|
 |		|- TuMuonSachJFrame (sưaxxxxxxxxxxxxxxxxx)
 |		|- HoSoCuaToi 
-|			|- ThongTinCuaToiJPanel
+|			|- ThongTinCuaToiJPanel (Chưa có)
 |			|- SachDaMuonJPanel
 |-Staff -> GDMain
 		|- TrangChuJPanel

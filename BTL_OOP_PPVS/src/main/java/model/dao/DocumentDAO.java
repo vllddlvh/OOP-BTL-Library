@@ -103,12 +103,12 @@ public abstract class DocumentDAO {
     /**
      * Lấy toàn bộ Book trên database.
      * 
-     * @return = ?
+     * @return = ? 
      * 
      * @throws SQLException
      * @throws IOException 
      */
-    public static LinkedList<Book> getAllBook() throws SQLException, IOException {
+    public static ArrayList<Book> getAllBook() throws SQLException, IOException {
         String sql = """
                      SELECT
                      \t\tbooks.ISBN AS ISBN,
@@ -122,10 +122,10 @@ public abstract class DocumentDAO {
                      \t\tdocuments.language AS language
                      \tFROM books left join documents ON (books.isbn = documents.ID)""";
         ResultSet rs;
-        LinkedList<Book> list;
+        ArrayList<Book> list;
         try (PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql)) {
             rs = ps.executeQuery();
-            list = new LinkedList<>();
+            list = new ArrayList<>();
             while(rs.next()) {
                 
                 Book nextBook = new Book(rs.getString(1),

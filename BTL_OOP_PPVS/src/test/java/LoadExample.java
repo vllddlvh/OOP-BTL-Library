@@ -20,7 +20,7 @@ public class LoadExample {
         DatabaseConnector.getInstance();
         List<Book> list = DocumentDAO.getAllBook();
         for (Book x : list) {
-            x.setCover(new File("src\\Ảnh mẫu ban đầu\\" + x.getID() + ".jpg"));
+            x.setCover(new File("src\\Ảnh mẫu ban đầu (nha Phúc)\\" + x.getID() + ".jpg"));
             System.out.println(x.getID());
             System.out.println(x.getTitle());
             System.out.println(x.getAuthor());

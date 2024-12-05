@@ -3,7 +3,7 @@ package controller;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
@@ -20,23 +20,40 @@ import model.dao.RequestDAO;
 import model.entity.Request;
 
 public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
+    public static final int MY_HISTORY = 0;
+    public static final int ALL_SYSTEM = 1;
+    
     private static final UpdateTableMuonTraTaiLieu singleTon = new UpdateTableMuonTraTaiLieu();
 
     private UpdateTableMuonTraTaiLieu() {
     }
-
-    public static UpdateTableMuonTraTaiLieu getInstance() {
+    
+    public static void initTable(int optionList) {
         try {
-            singleTon.allElement = RequestDAO.getAllRequest();
+            switch (optionList) {
+                case MY_HISTORY : 
+                    singleTon.allElement = LoginController.getAcc().getMyBorrowHistory();
+                    break;
+                case ALL_SYSTEM :
+                    if (LoginController.getAcc() instanceof model.entity.Staff) {
+                        singleTon.allElement = RequestDAO.getAllRequest();
+                    } else {
+                        singleTon.allElement = new ArrayList<>();
+                    }
+                    break;
+            }
             
         } catch (SQLException ex) {
             Logger.getLogger(UpdateTableMuonTraTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public static UpdateTableMuonTraTaiLieu getInstance() {
         return singleTon;
     }
 
     @Override
-    public LinkedList<Request> getListElement()  {
+    public ArrayList<Request> getListElement()  {
         return allElement;
     }
 
@@ -52,6 +69,16 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
     @Override
     public boolean updateElement(Request updatedRequest) throws SQLException {
         model.dao.RequestDAO.updateDateRequest(updatedRequest);
+        
+        String target = updatedRequest.getRequestID();
+        for (int i = allElement.size() - 1; i >= 0; i--) {
+            Request x = allElement.get(i);
+            if (x.getRequestID().equals(target)) {
+                allElement.set(i, updatedRequest);
+                break;
+            }
+        }
+        
         updateRow(updatedRequest);
         return true;
     }
@@ -80,12 +107,8 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
         singleTon.jbtAdd = jbtAdd;
         singleTon.jtfSearch = jtfSearch;
         
-        // Lấy toàn bộ thông tin từ DB. 
         // addAll dòng mới vào trong tableModel
-        getListElement();
-        for (Request req : allElement) {
-            addRow(req);
-        }
+        rewriteTable();
         
         
         // Setting để có chức năng sort ngay trên table
@@ -143,6 +166,39 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
         }
     }
     
+    public static void unreturnFilter() {
+        int i = singleTon.tableModel.getRowCount() - 1;
+        for (; i >= 0; i--) {
+            String s = (String) singleTon.tableModel.getValueAt(i, 6);
+            if (s == null || s.length() == 0) {
+                continue;
+            }
+            singleTon.tableModel.removeRow(i);
+        }
+    }
+    
+    public static void rewriteTable() {
+        int i = singleTon.tableModel.getRowCount() - 1;
+        for (; i >= 0; i--) {
+            singleTon.tableModel.removeRow(i);
+        }
+        for (Request req : singleTon.allElement) {
+            singleTon.addRow(req);
+        }
+    }
+    
+    public void returnRequest(Request req) throws SQLException {
+        // Nếu Staff tự trả của bản thân, thì thông tin cần được update ngay lên trang chủ.
+        if (req.getUserID().equals(LoginController.getAcc().getID())) {
+            LoginController.returnDocument(req.getDocumentID());
+        } else {
+            RequestDAO.returnDocument(req.getUserID(), req.getDocumentID());
+        }
+        
+        req = RequestDAO.getRequest(req.getRequestID());
+        updateElement(req);
+    }
+    
     
     
     // Đoạn này không dùng. Do không tự dưng add phiếu mượn được, hay xóa đi được.
@@ -155,10 +211,10 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
     protected void addRow(Request request) {
         String[] newRow = new String[7];
         newRow[0] = request.getRequestID();
-        newRow[1] = request.getDocumentID();
-        newRow[2] = request.getDocument_title();
-        newRow[3] = request.getUserID();
-        newRow[4] = request.getUser_fullName();
+        newRow[1] = request.getUserID();
+        newRow[2] = request.getUser_fullName();
+        newRow[3] = request.getDocumentID();
+        newRow[4] = request.getDocument_title();
         newRow[5] = request.getBorrowDate();
         newRow[6] = request.getReturnDate();
         

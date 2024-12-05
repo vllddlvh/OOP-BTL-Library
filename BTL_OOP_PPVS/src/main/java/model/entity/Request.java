@@ -13,6 +13,17 @@ public class Request {
     private String user_fullName = null;
     private String document_title = null;
     
+    public Request(Request org) {
+        this.requestID = org.requestID;
+        this.userID = org.userID;
+        this.documentID = org.documentID;
+        this.quantityBorrow = org.quantityBorrow;
+        this.borrowDate = org.borrowDate;
+        this.returnDate = org.returnDate;
+        this.user_fullName = org.user_fullName;
+        this.document_title = org.document_title;
+    }
+    
     public Request(String requestID, String userID, String documentID, int quantityBorrow, String borrowDate, String returnDate) { 
         this.requestID = requestID;
         this.userID = userID;
