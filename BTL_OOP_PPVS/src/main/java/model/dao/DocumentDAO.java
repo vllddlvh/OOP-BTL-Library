@@ -92,9 +92,10 @@ public abstract class DocumentDAO {
      * @throws SQLException 
      */
     public static void deleteDocument(String documentID) throws SQLException  {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteDocument(?) }");
+        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteDocument(?, ?) }");
         
         finder.setString(1, documentID);
+        finder.setString(2, "23021686");
         
         finder.executeQuery();
     }
@@ -197,7 +198,7 @@ public abstract class DocumentDAO {
      */
     public static boolean addBook(Book newBook) throws SQLException, IOException, FileFormatException  {
         
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call addBook(?, ?, ?, ?, ?, ?, ?, ?) }");
+        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call addBook(?, ?, ?, ?, ?, ?, ?, ?, ?) }");
         
         finder.setString(1, newBook.getID());
         finder.setString(2, newBook.getTitle());
