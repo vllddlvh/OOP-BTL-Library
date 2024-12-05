@@ -113,7 +113,7 @@ public abstract class Document {
         for (String x : this.category) {
             result.append(", ").append(x);
         }
-        return result.substring(2).toString();
+        return result.substring(2);
     }
 
     public void setCategory(ArrayList<String> category) {

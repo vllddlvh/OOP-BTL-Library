@@ -95,8 +95,8 @@ public abstract class User {
      * 
      * @throws SQLException 
      */
-    public boolean returnDocument(String requestID) throws SQLException {
-        return RequestDAO.returnDocument(ID, requestID);
+    public boolean returnDocument(String documentID) throws SQLException {
+        return RequestDAO.returnDocument(ID, documentID);
     }
     
     /**

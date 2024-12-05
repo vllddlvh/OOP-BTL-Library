@@ -29,8 +29,10 @@ import model.entity.Book;
 
 public class TimKiemCungAPI extends javax.swing.JPanel {
     private List<Book> documents;
+    public static TimKiemCungAPI newest;
     
     public TimKiemCungAPI() {
+        newest = this;
         initComponents();
         // Sử dụng GridLayout cho jPanelBook
         jPanelBook.setLayout(new GridLayout(0, 4, 10, 10)); // 4 cột, khoảng cách 10px giữa các phần tử
@@ -84,6 +86,17 @@ public class TimKiemCungAPI extends javax.swing.JPanel {
         }
 }
 
+    public void displaySingleDocument(Book document) throws IOException, SQLException, FileFormatException {
+        JPanel documentCard = createDocumentCard(document);
+
+        // Đặt kích thước cố định cho mỗi thẻ (200x300)
+        documentCard.setPreferredSize(new Dimension(200, 300));
+
+        // Thêm thẻ vào jPanelBook
+        jPanelBook.add(documentCard);
+        jPanelBook.revalidate();
+        jPanelBook.repaint();
+    }
 
     
     private void displayDocuments(List<Book> documents) throws IOException, SQLException, FileFormatException {
@@ -239,15 +252,8 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
         if (evt.getClickCount() > 0) {
             String keyword = JTextFieldTimKiem.getText().trim();
             if (keyword.length() > 0) {
-                documents = apiGoogleBook.APIConnector.searchBook(keyword);
-                try {
-                    // Hiển thị danh sách toàn bộ tài liệu lưu trữ
-                    displayDocuments(documents);
-            
-                } catch (IOException | SQLException | FileFormatException ex) {
-                    Logger.getLogger(TimKiemCungAPI.class.getName()).log(Level.SEVERE, null, ex);
-                    JOptionPane.showMessageDialog(this, ex.getMessage());
-                }
+                documents = new ArrayList<>();
+                apiGoogleBook.APIConnector.searchBook(keyword, documents);
             }
         }
     }//GEN-LAST:event_buttonAPIMouseClicked

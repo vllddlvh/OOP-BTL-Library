@@ -2,7 +2,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JButton;
 import javax.swing.JTable;
@@ -15,7 +15,7 @@ import model.dao.FileFormatException;
  * @author ADMIN
  */
 public abstract class UpdateTable <T> {
-    protected LinkedList<T> allElement;
+    protected ArrayList<T> allElement;
     protected JButton jbtAdd;
     protected JTextField jtfSearch;
     protected DefaultTableModel tableModel;

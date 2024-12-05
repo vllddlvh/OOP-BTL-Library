@@ -9,10 +9,8 @@ import java.awt.Color;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.sql.SQLException;
-import model.entity.Member;
-import model.entity.Staff;
-import model.entity.User;
-import model.entity.User.LoginAlert;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -154,30 +152,7 @@ public class LoginJFrame extends javax.swing.JFrame {
             // Xử lý khi click chuột vào nút "Đăng nhập"
             @Override
             public void mouseClicked(MouseEvent e) {
-                try {
-                    if (jtfUsername.getText().trim().length() == 0) {
-                        jlbMessage.setText("Vui lòng nhập tên tài khoản");
-                    } else if (jpfPassword.getText().trim().length() == 0) {
-                        jlbMessage.setText("Vui lòng nhập mật khẩu");
-                    } else {
-                        LoginAlert result = User.login(jtfUsername.getText(), jpfPassword.getText());
-                        switch (result) {
-                            case CORRECT_PASSWORD_AS_STAFF  -> {
-                                LoginController.setAcc(new Staff(jtfUsername.getText()));
-                                dispose();
-                            }
-                            case CORRECT_PASSWORD_AS_MEMBER -> {
-                                LoginController.setAcc(new Member(jtfUsername.getText()));
-                                dispose();
-                            }
-                            case WRONG_PASSWORD -> {
-                                jlbMessage.setText("Tên đăng nhập và mật khẩu không đúng!");
-                            }
-                        }
-                    }
-                } catch (SQLException ex) {
-                    jlbMessage.setText(ex.toString());
-                }
+                mouseClickedActionPerformed(e);
             }
 
             // Xử lý khi chuột di chuyển vào gần nút "Đăng nhập"
@@ -194,6 +169,25 @@ public class LoginJFrame extends javax.swing.JFrame {
         });
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
+    private void mouseClickedActionPerformed(MouseEvent e) {
+        try {
+            if (jtfUsername.getText().trim().length() == 0) {
+                jlbMessage.setText("Vui lòng nhập tên tài khoản");
+            } else if (jpfPassword.getText().trim().length() == 0) {
+                jlbMessage.setText("Vui lòng nhập mật khẩu");
+            } else {
+                if (!LoginController.login(jtfUsername.getText(), jpfPassword.getText())) {
+                    jlbMessage.setText("Tên đăng nhập và mật khẩu không đúng!");
+                } else {
+                    this.dispose();
+                }
+            }
+        } catch (SQLException ex) {
+            jlbMessage.setText(ex.toString());
+            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+    
     /**
      * @param args the command line arguments
      */

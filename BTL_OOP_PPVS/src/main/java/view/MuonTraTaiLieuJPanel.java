@@ -26,6 +26,7 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
         initComponents();
         initTableMuonTraSach();
         
+        UpdateTableMuonTraTaiLieu.initTable(UpdateTableMuonTraTaiLieu.ALL_SYSTEM);
         UpdateTableMuonTraTaiLieu ctrl = UpdateTableMuonTraTaiLieu.getInstance();
         try {
             ctrl.setTableUpToDate(jTableMuonTraSach, null, JTextFieldTimKiemThongTinSachMuonTra);

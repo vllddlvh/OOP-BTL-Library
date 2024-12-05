@@ -7,7 +7,7 @@ import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.LinkedList;
+import java.util.ArrayList;
 import model.DatabaseConnector;
 import model.entity.Member;
 import model.entity.User;
@@ -203,12 +203,12 @@ public class UserDAO {
      * 
      * @throws SQLException 
      */
-    public static LinkedList<Member> getAllMember() throws SQLException {
+    public static ArrayList<Member> getAllMember() throws SQLException {
         String sql = "SELECT * FROM library_2nd_edition.member";
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         
-        LinkedList<Member> list = new LinkedList<>();
+        ArrayList<Member> list = new ArrayList<>();
         while(rs.next()) {
             
             Member member = new Member(rs.getString(1),

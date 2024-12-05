@@ -1,11 +1,10 @@
 package view;
 
+import controller.LoginController;
 import controller.UpdateTableMuonTraTaiLieu;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
 import model.entity.Request;
 
@@ -24,6 +23,9 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         currentRequest = x;
         
         initComponents();
+        initTextField();
+        
+        
         documentIDTextField.setEditable(false);
         documentTitleTextField.setEditable(false);
         userIDTextField.setEditable(false);
@@ -267,22 +269,40 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void initTextField() {
+        documentIDTextField.setEditable(false);
+        documentTitleTextField.setEditable(false);
+        userIDTextField.setEditable(false);
+        userNameTextField.setEditable(false);
+        this.setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
+        
+        if (!(LoginController.getAcc() instanceof model.entity.Staff)) {
+            returnDateTextField.setEditable(false);
+            borrowDateTextField.setEditable(false);
+        }
+    }
+    
     private void returnButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseClicked
         // TODO add your handling code here:
-        if (evt.getClickCount() > 0 && returnButton.isEnabled()) {
-            String s = borrowDateTextField.getText();
-            currentRequest.setBorrowDate(s);
-            s = returnDateTextField.getText();
-            if (!s.equals("")) {
-                currentRequest.setReturnDate(s);
-            }
+        Request org = new Request(currentRequest);
+        
+        if (evt.getClickCount() > 0 && returnButton.isEnabled()) {     
             try {
+                // Chỉnh ngày mượn theo thông tin được nhập
+                currentRequest.setBorrowDate(borrowDateTextField.getText());
                 UpdateTableMuonTraTaiLieu.getInstance().updateElement(currentRequest);
+                
+                // Chỉnh ngày trả là hôm nay
+                UpdateTableMuonTraTaiLieu.getInstance().returnRequest(currentRequest);
+                JOptionPane.showMessageDialog(this, "Cập nhật thành công");
                 this.dispose();
                 
             } catch (SQLException ex) {
                 Logger.getLogger(MuonSachJFrame.class.getName()).log(Level.SEVERE, null, ex);
                 JOptionPane.showMessageDialog(this, ex.getMessage());
+                currentRequest.setBorrowDate(org.getBorrowDate());
+                currentRequest.setReturnDate(org.getReturnDate());
             }
         }
     }//GEN-LAST:event_returnButtonMouseClicked
@@ -296,15 +316,18 @@ public class MuonSachJFrame extends javax.swing.JFrame {
 
     private void jButtonLuuThongTinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonLuuThongTinMouseClicked
         // TODO add your handling code here:
+        Request org = new Request(currentRequest);
+        
         try {
             String s = borrowDateTextField.getText();
             currentRequest.setBorrowDate(s);
             s = returnDateTextField.getText();
-            if (!s.equals("Chưa trả")) {
+            if (!s.replace("Chưa trả", "").trim().equals("")) {
                 currentRequest.setReturnDate(s);
                 model.dao.RequestDAO.updateDateRequest(currentRequest);
+                
             } else {
-                JOptionPane.showMessageDialog(this, "Không thực hiện cập nhật yêu cầu");
+                JOptionPane.showMessageDialog(this, "Xác nhận không thực hiện yêu cầu cập nhật");
             }
 
             this.dispose();
@@ -312,6 +335,8 @@ public class MuonSachJFrame extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(MuonSachJFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
+            currentRequest.setBorrowDate(org.getBorrowDate());
+            currentRequest.setReturnDate(org.getReturnDate());
         }
     }//GEN-LAST:event_jButtonLuuThongTinMouseClicked
 

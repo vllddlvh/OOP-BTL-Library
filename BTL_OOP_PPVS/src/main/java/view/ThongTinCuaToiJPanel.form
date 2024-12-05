@@ -16,7 +16,11 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -36,49 +40,53 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="310" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jlbID" alignment="0" min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="jlbDateOfBirth" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlbFirstName" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlbLastName" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jlbContact" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="jlbFirstName" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlbID" alignment="1" min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="jlbLastName" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlbDateOfBirth" alignment="1" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlbContact" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jTextFieldContact" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextFieldDateOfBirth" alignment="0" max="32767" attributes="0"/>
-                              <Component id="JTextFieldID" min="-2" pref="153" max="-2" attributes="0"/>
-                              <Component id="jTextFieldFirstName" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTextFieldLastName" alignment="0" max="32767" attributes="0"/>
+                              <Component id="buttonEditInfo" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
+                              <Component id="buttonChangePassword" alignment="1" min="-2" pref="194" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace min="-2" pref="250" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="jTextFieldContact" alignment="0" pref="249" max="32767" attributes="0"/>
+                          <Component id="jTextFieldLastName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldFirstName" alignment="0" max="32767" attributes="0"/>
+                          <Component id="JTextFieldID" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jTextFieldDateOfBirth" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <EmptySpace pref="217" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" pref="37" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="3" max="-2" attributes="0"/>
                           <Component id="jlbID" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="JTextFieldID" min="-2" pref="30" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="JTextFieldID" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -100,7 +108,11 @@
                       <Component id="jlbDateOfBirth" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jTextFieldDateOfBirth" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="209" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                  <Component id="buttonEditInfo" min="-2" pref="41" max="-2" attributes="0"/>
+                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <Component id="buttonChangePassword" min="-2" pref="42" max="-2" attributes="0"/>
+                  <EmptySpace pref="60" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -114,7 +126,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="PROFILE"/>
+            <Property name="text" type="java.lang.String" value="Th&#xf4;ng tin ng&#x1b0;&#x1edd;i d&#xf9;ng"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldDateOfBirth">
@@ -152,7 +164,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="FirstName:"/>
+            <Property name="text" type="java.lang.String" value="T&#xea;n"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jlbLastName">
@@ -166,7 +178,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="LastName:"/>
+            <Property name="text" type="java.lang.String" value="H&#x1ecd; v&#xe0; t&#xea;n &#x111;&#x1ec7;m"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jlbContact">
@@ -180,7 +192,7 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Contact:"/>
+            <Property name="text" type="java.lang.String" value="Email"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jlbDateOfBirth">
@@ -194,8 +206,36 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="DateOfBirth:"/>
+            <Property name="text" type="java.lang.String" value="Ng&#xe0;y th&#xe1;ng n&#x103;m sinh"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonEditInfo">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4e" green="8d" red="50" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="S&#x1eed;a th&#xf4;ng tin c&#xe1; nh&#xe2;n"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonEditInfoMouseClicked"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="buttonChangePassword">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4e" green="8d" red="50" type="rgb"/>
+            </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="14" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i m&#x1ead;t kh&#x1ea9;u"/>
+          </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="buttonChangePasswordMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

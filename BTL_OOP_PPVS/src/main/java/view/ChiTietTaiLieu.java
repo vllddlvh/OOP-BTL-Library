@@ -23,22 +23,33 @@ import javax.swing.JTextArea;
 import model.dao.FileFormatException;
 import model.entity.Book;
 
-
+/**
+ *
+ * @author FuK
+ */
 public class ChiTietTaiLieu extends javax.swing.JFrame {
     
     private Book currentShowDocument;
     private static Image defaultCoverImage;
+    private boolean isBorrowing;
+    
     
     /**
-     * Tạo ra JFrame mới để giới thiệu chi tiết tài liệu.
-     * @param document Tài liệu cần giới thiệu chi tiết.
+     * Hiển thị thông tin chi tiết sách trong cửa sổ mới (JFrame)
+     * 
+     * @param document
      */
     public ChiTietTaiLieu(Book document) {
         currentShowDocument = document;
-        try {
-            defaultCoverImage = ImageIO.read(new File("src\\main\\java\\image\\default-null-book-cover.png"));
-        } catch (IOException ex) {
-            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+        // kiểm tra xem người dùng hiên tại có mượn quyển này không
+        isBorrowing = LoginController.isBorrowingThis(document); 
+        
+        if (defaultCoverImage == null) {
+            try {
+                defaultCoverImage = ImageIO.read(new File("src\\main\\java\\image\\default-null-book-cover.png"));
+            } catch (IOException ex) {
+                Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         
         // Setup frame mới (cửa sổ)
@@ -84,16 +95,17 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
             imageLabel.setIcon(new ImageIcon(scaledImage));
         }
         
-        // Tạo nút "Mượn sách"
-        jbuttonMuon = new JButton("Mượn sách");
+        // Tạo nút "Mượn trả sách"
+        setTextButtonMuonTra();
+        
         {
-            jbuttonMuon.setBackground(new Color(80, 141, 78));
-            jbuttonMuon.setForeground(Color.WHITE);
-            jbuttonMuon.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
-            jbuttonMuon.setFocusPainted(false);
-            jbuttonMuon.setPreferredSize(new Dimension(100, 40)); // Đặt kích thước cho nút
+            
+            jbuttonMuonTra.setForeground(Color.WHITE);
+            jbuttonMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
+            jbuttonMuonTra.setFocusPainted(false);
+            jbuttonMuonTra.setPreferredSize(new Dimension(100, 40)); // Đặt kích thước cho nút
             // Gán sự kiện cho nút
-            jbuttonMuon.addMouseListener(new java.awt.event.MouseAdapter() {
+            jbuttonMuonTra.addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
                     jButtonMuonClicked(evt);
@@ -103,7 +115,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
 
         
         // Thêm ảnh và nút vào imagePanel
-        imagePanel.add(jbuttonMuon, BorderLayout.SOUTH); // Nút nằm dưới
+        imagePanel.add(jbuttonMuonTra, BorderLayout.SOUTH); // Nút nằm dưới
         imagePanel.add(imageLabel, BorderLayout.CENTER); // Ảnh nằm ở trung tâm
         mainPanel.add(imagePanel, BorderLayout.WEST);
         
@@ -144,17 +156,40 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }   
     
+    private void setTextButtonMuonTra() {
+        if (isBorrowing) {
+            jbuttonMuonTra.setText("Trả sách");
+            jbuttonMuonTra.setBackground(Color.RED);
+        } else {
+            jbuttonMuonTra.setText("Mượn sách");
+            jbuttonMuonTra.setBackground(new Color(80, 141, 78));
+        }
+    }
+    
     private void jButtonMuonClicked(java.awt.event.MouseEvent evt) {                                             
         // TODO add your handling code here:
         int n = evt.getClickCount();
         if (n >= 1) {
             try {
-                if (LoginController.getAcc().borrowDocument(currentShowDocument.getID())) {
-                    // Đáng nhẽ là open file PDF
-                    JOptionPane.showMessageDialog(this, "Mượn thành công");
-                
+                if (isBorrowing) {
+                    // Thực hiện trả đối với tài liệu đã mượn
+                    if (LoginController.returnDocument(currentShowDocument.getID())) {
+                        JOptionPane.showMessageDialog(this, "Trả sách thành công");
+                        isBorrowing = !isBorrowing;
+                        setTextButtonMuonTra();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể trả tài liệu này");
+                    }
+                    
                 } else {
-                    JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể mượn tài liệu này");
+                    // Thực hiện mượn đối với tài liệu mới trắng
+                    if (LoginController.borrowDocument(currentShowDocument)) {
+                        JOptionPane.showMessageDialog(this, "Mượn sách thành công");
+                        isBorrowing = !isBorrowing;
+                        setTextButtonMuonTra();
+                    } else {
+                        JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể mượn tài liệu này");
+                    }
                 }
             
             } catch (SQLException ex) {
@@ -162,7 +197,6 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, ex.getMessage());
             }
         }
-        
     }   
     
     
@@ -195,10 +229,10 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
-    private JButton jbuttonMuon;
+    private JButton jbuttonMuonTra = new JButton();
     private JPanel imagePanel;
     private JLabel imageLabel;
-    private JPanel infoPanel;
+    private final JPanel infoPanel;
     private JPanel mainPanel;
     
 }
