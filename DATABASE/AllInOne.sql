@@ -524,7 +524,7 @@ BEGIN
 				books.publisher AS publisher,
 				books.releaseYear AS releaseYear,
 				documents.Description AS Description,
-				books.category AS category,
+				documents.category AS category,
                 documents.language AS language,
 				documents.genre AS genre
 			FROM books left join documents ON (books.isbn = documents.ID)

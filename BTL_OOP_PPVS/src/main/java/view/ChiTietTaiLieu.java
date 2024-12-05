@@ -44,7 +44,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         // kiểm tra xem người dùng hiên tại có mượn quyển này không
         isBorrowing = LoginController.isBorrowingThis(document); 
         
-        if (defaultCoverImage != null) {
+        if (defaultCoverImage == null) {
             try {
                 defaultCoverImage = ImageIO.read(new File("src\\main\\java\\image\\default-null-book-cover.png"));
             } catch (IOException ex) {

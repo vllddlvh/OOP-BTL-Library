@@ -102,6 +102,7 @@ public class SachDaMuonJPanel extends javax.swing.JPanel {
         jTableMuonTraSach.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTableMuonTraSach);
 
+        isUnReturnCheckBox.setBackground(new java.awt.Color(128, 175, 129));
         isUnReturnCheckBox.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         isUnReturnCheckBox.setText("Chỉ yêu cầu chưa trả tài liệu");
         isUnReturnCheckBox.addActionListener(new java.awt.event.ActionListener() {

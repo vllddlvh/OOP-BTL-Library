@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
  */
 public class ThreadPool {
     private static final int RENDER_MAX_THREADS = 2; // vẽ ảnh trên app
-    private static final int GETTER_MAX_THREADS = 1; // lấy ảnh từ URL
+    private static final int GETTER_MAX_THREADS = 1; // luồng lấy ảnh từ URL
     private static final int SETTER_MAX_THREADS = 1; // Setup cơ bản cho tài liệu
     
     private static ExecutorService bookRender = Executors.newFixedThreadPool(RENDER_MAX_THREADS);
