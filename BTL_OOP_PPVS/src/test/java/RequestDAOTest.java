@@ -39,7 +39,7 @@ class RequestDAOTest {
         when(resultSet.getString(8)).thenReturn("document_title");
 
         // Call the method to test
-        LinkedList<Request> requests = RequestDAO.getAllRequest();
+        ArrayList<Request> requests = RequestDAO.getAllRequest();
 
         // Assertions
         assertNotNull(requests);

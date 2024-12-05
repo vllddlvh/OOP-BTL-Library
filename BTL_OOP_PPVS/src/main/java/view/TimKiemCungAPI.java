@@ -253,7 +253,7 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
             String keyword = JTextFieldTimKiem.getText().trim();
             if (keyword.length() > 0) {
                 documents = new ArrayList<>();
-                apiGoogleBook.APIConnector.searchBook(keyword, documents);
+                apiGoogleBook.APIConnector.searchBook(keyword);
             }
         }
     }//GEN-LAST:event_buttonAPIMouseClicked

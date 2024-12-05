@@ -94,7 +94,7 @@ class DocumentDAOTest {
 
     @Test
     void testGetAllBook() throws SQLException, IOException {
-        LinkedList<Book> books = DocumentDAO.getAllBook();
+        ArrayList<Book> books = DocumentDAO.getAllBook();
         assertNotNull(books, "Book list should not be null");
         assertFalse(books.isEmpty(), "Book list should not be empty");
     }
