@@ -13,14 +13,14 @@
     </properties>
     
     <build>
-    <resources>
-        <resource>
-            <directory>src/main/java</directory>
-            <includes>
-                <include>**/image/**</include>
-            </includes>
-        </resource>
-    </resources>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/image/**</include>
+                </includes>
+            </resource>
+        </resources>
     </build>
 
     
@@ -56,7 +56,12 @@
             <version>RELEASE113</version>
             <type>jar</type>
         </dependency>
+        <!-- Dependency cho JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version> <!-- Thay thế phiên bản này nếu cần -->
+            <scope>test</scope>
+        </dependency>
     </dependencies>
-    
-   
 </project>
