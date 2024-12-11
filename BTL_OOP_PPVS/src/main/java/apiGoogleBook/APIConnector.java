@@ -33,7 +33,7 @@ import model.entity.Book;
  */
 public class APIConnector {
     private static final String API_KEY = "AIzaSyB5dvT2OSJZxqpMKgS7gEw-5GN_uKpQAPs";
-    private static final int MAX_RESULTS = 40;
+    private static final int MAX_RESULTS = 4;
     
     public static void searchBook(String keyword, List<Book> storedDocument) {
         try {

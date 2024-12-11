@@ -1,6 +1,7 @@
 package model.dao;
 
 
+import java.awt.Image;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
@@ -212,6 +213,10 @@ public abstract class DocumentDAO {
                 FileHandle.uploadDocumentCover(newBook.getID(), newBook.getCover(), newBook.getCoverFormat());
             }
             if (newBook.getPDF() != null) {
+                if (newBook.getCover() == null) {
+                    Image tempCover = FileHandle.getFirstPage(newBook.getID(), FileHandle.convertURL_File(newBook.getPDF()));
+                    newBook.setCover(tempCover, "png");
+                }
                 FileHandle.uploadDocumentPDF(newBook.getID(), newBook.getPDF(), newBook.getCover() == null);
             }
             return rs.getBoolean(1);
@@ -230,7 +235,7 @@ public abstract class DocumentDAO {
      * @throws SQLException
      * @throws IOException 
      */
-    public static boolean updateBook(Book alter) throws SQLException, IOException, FileFormatException {
+    public static boolean updateBook(Book alter) throws SQLException, IOException, FileFormatException, URISyntaxException {
         String sql1 = """
                      update documents
                      set title = ?, Description = ?, category = ?, language = ?
@@ -262,6 +267,13 @@ public abstract class DocumentDAO {
         
         if (alter.getCoverFormat() != null) {
             FileHandle.uploadDocumentCover(alter.getID(), alter.getCover(), alter.getCoverFormat());
+        }
+        if (alter.getPDF() != null) {
+            if (alter.getCover() == null) {
+                    Image tempCover = FileHandle.getFirstPage(alter.getID(), FileHandle.convertURL_File(alter.getPDF()));
+                    alter.setCover(tempCover, "png");
+                }
+            FileHandle.uploadDocumentPDF(alter.getID(), alter.getPDF(), alter.getCover() == null);
         }
         
         return true;

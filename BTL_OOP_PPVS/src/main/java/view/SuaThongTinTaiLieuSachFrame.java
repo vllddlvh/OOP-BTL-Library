@@ -6,6 +6,7 @@ package view;
 
 import controller.UpdateTableTaiLieu;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -363,14 +364,7 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Sửa không thành công");
             }
             
-        } catch (SQLException ex) {
-            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-            
-        } catch (IOException ex) {
-            Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(rootPane, ex.getMessage());
-        } catch (FileFormatException ex) {
+        } catch (SQLException | IOException | FileFormatException | URISyntaxException ex) {
             Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, ex.getMessage());
         }

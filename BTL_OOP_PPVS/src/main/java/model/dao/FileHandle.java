@@ -19,6 +19,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import javax.imageio.ImageIO;
 import model.DatabaseConnector;
+import model.entity.Document;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
 import org.apache.tika.Tika;
@@ -152,22 +153,15 @@ public class FileHandle {
                                                                                                             FileFormatException,
                                                                                                             URISyntaxException {
         File pdf = convertURL_File(PDF);
-        PDDocument document = PDDocument.load(pdf);
-        if (document.getNumberOfPages() > 0) {
-            if (firstPageBeingCover) {
-                File cover = new File("src\\OuterData\\temp.bin");
-                PDFRenderer renderer = new PDFRenderer(document);
-                BufferedImage image = renderer.renderImageWithDPI(0, 50); // Trang đầu tiên, DPI = 300
-            
-                uploadDocumentCover(documentID, image, "PNG");
-                cover.delete();
-            }
-            
-        } else {
-            throw new FileFormatException("File trống. Vui lòng thử lại");
+        
+        // Nếu đây là file tải sẵn về từ db (path là thư mục gốc), thì bỏ qua không upload
+        if (pdf.getPath().equals("src/OuterData/" + documentID + ".pdf")) {
+            return false;
         }
         
-        
+        if (firstPageBeingCover) {
+            uploadDocumentCover(documentID, getFirstPage(documentID, pdf), "PNG");
+        }
         
         CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loadDocumentPDF(?, ?) }");   
         
@@ -185,6 +179,21 @@ public class FileHandle {
         }
         
         return false;
+    }
+    
+    public static Image getFirstPage(String documentID, File pdf) throws FileFormatException, IOException, SQLException {
+        PDDocument document = PDDocument.load(pdf);
+        if (document.getNumberOfPages() > 0) {
+            File cover = new File("src\\OuterData\\temp.bin");
+            PDFRenderer renderer = new PDFRenderer(document);
+            BufferedImage image = renderer.renderImageWithDPI(0, 50); // Trang đầu tiên, DPI = 300
+            
+            cover.delete();
+            return image;
+            
+        } else {
+            throw new FileFormatException("File trống. Vui lòng thử lại");
+        }
     }
     
     /**

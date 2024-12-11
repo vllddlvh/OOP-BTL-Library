@@ -1,597 +1,92 @@
 {
   "kind": "books#volumes",
-  "totalItems": 722,
+  "totalItems": 725,
   "items": [
     {
       "kind": "books#volume",
-      "id": "D5c1AQAAMAAJ",
-      "etag": "+tANZ4vsvY4",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/D5c1AQAAMAAJ",
+      "id": "sX0qDwAAQBAJ",
+      "etag": "oFoiBW/rrjI",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/sX0qDwAAQBAJ",
       "volumeInfo": {
-        "title": "Saddle Road (State Route 200) Mamalahoa Highway (State Route 190) to Milepost 6, County of Hawai'i",
-        "subtitle": "Environmental Impact Statement",
-        "publishedDate": "1999",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NWU:35556032582876"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 726,
-        "printType": "BOOK",
-        "averageRating": 5,
-        "ratingsCount": 1,
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.6.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=D5c1AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=D5c1AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=D5c1AQAAMAAJ&pg=PA7&dq=hi&hl=&cd=1&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ&rdid=book-D5c1AQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Saddle_Road_State_Route_200_Mamalahoa_Hi.epub?id=D5c1AQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=D5c1AQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96755 Robert Stevens 121 Puako Beach Drive Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Dino Chiappetta P. O. Box 1306 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Anne E. Field - Gomes P. O. Box 6368 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 James Thomas P. O. Box 1821 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Carl Carlson , Jr&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "j9ahkB1ruygC",
-      "etag": "Rj2MDjnr66A",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/j9ahkB1ruygC",
-      "volumeInfo": {
-        "title": "Catalog of Information on Water Data",
-        "subtitle": "Index to water-data acquisition",
-        "publishedDate": "1974",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "IND:30000097948495"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 88,
-        "printType": "BOOK",
-        "categories": [
-          "Stream measurements"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.2.3.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=j9ahkB1ruygC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=j9ahkB1ruygC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=j9ahkB1ruygC&pg=SL1-PA14&dq=hi&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC&rdid=book-j9ahkB1ruygC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Catalog_of_Information_on_Water_Data.epub?id=j9ahkB1ruygC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=j9ahkB1ruygC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e KAUNAKAKAI GULCH AT KAUNAKAKAI \u003cb\u003eHI\u003c/b\u003e UNNAMED GULCH AT KAUNAKAKAI \u003cb\u003eHI\u003c/b\u003e KAMILCLCA GULCH MOLOKAI \u003cb\u003eHI\u003c/b\u003e EF KAWELA GULCH NR KAMALO \u003cb\u003eHI\u003c/b\u003e WAWAIA GULCH AT KAMALO \u003cb\u003eHI\u003c/b\u003e PUNAULA GULCH NR PUKOO \u003cb\u003eHI\u003c/b\u003e POHAKUPILI GULCH NR HALAWA \u003cb\u003eHI\u003c/b\u003e PAPIO GULCH AT HALAWA \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "MRRs6nDJk8EC",
-      "etag": "e1p8Js5sxDQ",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/MRRs6nDJk8EC",
-      "volumeInfo": {
-        "title": "Federal Register",
-        "publishedDate": "1984-10-10",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UIUC:30112059138864"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1482,
-        "printType": "BOOK",
-        "categories": [
-          "Administrative law"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=MRRs6nDJk8EC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=MRRs6nDJk8EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=MRRs6nDJk8EC&pg=PA40001&dq=hi&hl=&cd=3&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC&rdid=book-MRRs6nDJk8EC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Federal_Register.epub?id=MRRs6nDJk8EC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=MRRs6nDJk8EC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e FIX VIA W ALTER . TYPHO , \u003cb\u003eHI\u003c/b\u003e FIX 8000 BITES , WV FIX * 5000 * 4400 - MCA LANAI VORTAC , E BND * 1000 - MOCA ** 4400 - MOCA IS AMENDED TO DELETE SHEDS , FL FIX * 3000 CORAL , \u003cb\u003eHI\u003c/b\u003e FIX MAKAI , \u003cb\u003eHI\u003c/b\u003e FIX * 4000 SOUTH KAUAI , \u003cb\u003eHI\u003c/b\u003e VORTAC&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "wYerCEhjUUMC",
-      "etag": "GMnG4nfWUuA",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/wYerCEhjUUMC",
-      "volumeInfo": {
-        "title": "Catalog of Information on Water Data",
-        "subtitle": "Surface Water Stations",
+        "title": "Attack on Titan",
         "authors": [
-          "Geological Survey (U.S.). Office of Water Data Coordination"
+          "Hajime Isayama"
         ],
-        "publishedDate": "1967",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UCR:31210020799332"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 628,
-        "printType": "BOOK",
-        "categories": [
-          "Hydrological stations"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.4.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=wYerCEhjUUMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=wYerCEhjUUMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=wYerCEhjUUMC&pg=PA583&dq=hi&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC&rdid=book-wYerCEhjUUMC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Catalog_of_Information_on_Water_Data.epub?id=wYerCEhjUUMC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=wYerCEhjUUMC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 14201 KOOLAU D AT HAIPUAENA NR HUELO \u003cb\u003eHI\u003c/b\u003e 14202 MANUEL LUIS D AT PUOHO NR HUELO \u003cb\u003eHI HI\u003c/b\u003e 009 STREAM 1919 205104 1561128 \u003cb\u003eHI\u003c/b\u003e 009 STREAM 1913 1967 C REC 205115 1561125 \u003cb\u003eHI\u003c/b\u003e 009 CANAL 1922 C REC 205117 1561119 \u003cb\u003eHI\u003c/b\u003e 009 CANAL 1932 205148 1561100 \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "Oh03AQAAIAAJ",
-      "etag": "38YEMkG15y8",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/Oh03AQAAIAAJ",
-      "volumeInfo": {
-        "title": "Department of Agriculture and Related Agencies Appropriations for Fiscal Year 1968",
-        "subtitle": "Hearings Before the Subcommittee of the Committee on Appropriations, United States Senate, Ninetieth Congress, First Session, on H.R. 10509",
-        "authors": [
-          "United States. Congress. Senate. Committee on Appropriations"
-        ],
-        "publishedDate": "1967",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UCAL:$B642637"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1304,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.7.7.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=Oh03AQAAIAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=Oh03AQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=Oh03AQAAIAAJ&pg=PA221&dq=hi&hl=&cd=5&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=Oh03AQAAIAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Oh03AQAAIAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=Oh03AQAAIAAJ&rdid=book-Oh03AQAAIAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Department_of_Agriculture_and_Related_Ag.epub?id=Oh03AQAAIAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=Oh03AQAAIAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e $ 1,236,355 BOX 3230 , HONOLULU \u003cb\u003eHI\u003c/b\u003e 577,426 OAHU SUGAR CO BOX 3230 , HONOLULU \u003cb\u003eHI\u003c/b\u003e 526,171 WAIALUA AGRICULTURAL CO LTD BOX 2990 , HONOLULU \u003cb\u003eHI\u003c/b\u003e 516,520 PIONEER MILL CO BOX 3230 , HONOLULU \u003cb\u003eHI\u003c/b\u003e 489,369 EWA PLANTATION CO BOX 2990&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "LZ7b4yZvlwoC",
-      "etag": "74HdtSx0n4k",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/LZ7b4yZvlwoC",
-      "volumeInfo": {
-        "title": "Department of Agriculture and Related Agencies Appropriations for Fiscal Year 1968, Hearings Before ... 90-1, on H.R. 10509",
-        "authors": [
-          "United States. Congress. Senate. Appropriations"
-        ],
-        "publishedDate": "1967",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "STANFORD:36105119581945"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1530,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.10.10.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=LZ7b4yZvlwoC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=LZ7b4yZvlwoC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=LZ7b4yZvlwoC&pg=PA221&dq=hi&hl=&cd=6&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=LZ7b4yZvlwoC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=LZ7b4yZvlwoC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=LZ7b4yZvlwoC&rdid=book-LZ7b4yZvlwoC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Department_of_Agriculture_and_Related_Ag.epub?id=LZ7b4yZvlwoC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=LZ7b4yZvlwoC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e BOX 3020 , HONOLULU \u003cb\u003eHI\u003c/b\u003e BOX 3020 , HONOLULU \u003cb\u003eHI\u003c/b\u003e BOX 3440 , HONOLULU \u003cb\u003eHI\u003c/b\u003e BOX 3470 , HONOLULU \u003cb\u003eHI\u003c/b\u003e 80X 3230 , HONOLULU \u003cb\u003eHI\u003c/b\u003e BOX 3440 , HONOLULU \u003cb\u003eHI\u003c/b\u003e MAKAWELI \u003cb\u003eHI\u003c/b\u003e BOX 3230 , HONOLULU \u003cb\u003eHI\u003c/b\u003e PO BOX 338 , PAHALA \u003cb\u003eHI\u003c/b\u003e TOTAL PAYMENTS ADDRESS COUNTY&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "dadBAAAAIAAJ",
-      "etag": "KA911DudaKM",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/dadBAAAAIAAJ",
-      "volumeInfo": {
-        "title": "英華分韻撮要",
-        "authors": [
-          "Samuel Wells Williams"
-        ],
-        "publishedDate": "1856",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UCAL:B76975"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 920,
-        "printType": "BOOK",
-        "categories": [
-          "Cantonese dialects"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.8.8.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=dadBAAAAIAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=dadBAAAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=dadBAAAAIAAJ&pg=PA81&dq=hi&hl=&cd=7&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=dadBAAAAIAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=dadBAAAAIAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=dadBAAAAIAAJ&rdid=book-dadBAAAAIAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/%E8%8B%B1%E8%8F%AF%E5%88%86%E9%9F%BB%E6%92%AE%E8%A6%81.epub?id=dadBAAAAIAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/%E8%8B%B1%E8%8F%AF%E5%88%86%E9%9F%BB%E6%92%AE%E8%A6%81.pdf?id=dadBAAAAIAAJ&hl=&output=pdf&sig=ACfU3U3maE9EzQslDmp5n7X8vE426z1ucw&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=dadBAAAAIAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehí\u003c/b\u003e s&#39;an sk&#39;ü , to irritate , to anger ; mok shang \u003cb\u003ehỉ\u003c/b\u003e don&#39;t get angry ; hò \u003cb\u003ehỉ\u003c/b\u003e shik , good looking , fair ; \u003cb\u003ehỉ\u003c/b\u003e tséung form , car- riage ; hò \u003cb\u003ehỉ\u003c/b\u003e hüt , portly , ro . bust ; d&#39;in \u003cb\u003ehỉ\u003c/b\u003e the weather ; chí \u003cb\u003ehi\u003c/b\u003e energy , nerve ; chím \u003cb\u003ehi\u003c/b\u003e &#39; ché , a diviner&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "oxx6uhWxLBMC",
-      "etag": "bO+aT8sGNUQ",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/oxx6uhWxLBMC",
-      "volumeInfo": {
-        "title": "Medicare Unique Physician Identification Number Directory",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "STANFORD:36105111220310"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 472,
-        "printType": "BOOK",
-        "categories": [
-          "Medicare"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.5.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=oxx6uhWxLBMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=oxx6uhWxLBMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=oxx6uhWxLBMC&pg=PA3-IA23&dq=hi&hl=&cd=8&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=oxx6uhWxLBMC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=oxx6uhWxLBMC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=oxx6uhWxLBMC&rdid=book-oxx6uhWxLBMC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Medicare_Unique_Physician_Identification.epub?id=oxx6uhWxLBMC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=oxx6uhWxLBMC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 968133009 NP P08002 \u003cb\u003eHI\u003c/b\u003e 967923199 ΤΑΚΑΙ TAKANO MASAKI MD H17737 \u003cb\u003eHI\u003c/b\u003e 967930000 LINA MA MD H48306 \u003cb\u003eHI\u003c/b\u003e 967923199 NP P13427 968170000 50 TAM SING KELLY K MD H25713 \u003cb\u003eHI\u003c/b\u003e 968191496 PA P32407 \u003cb\u003eHI\u003c/b\u003e 968133009 97 TANABE ANNE A MD H32021 \u003cb\u003eHI\u003c/b\u003e 968130000 NP&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "VrDoDwAAQBAJ",
-      "etag": "eFYIkdRwpjM",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/VrDoDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Magicians of Manumanua",
-        "subtitle": "Living Myth in Kalauna",
-        "authors": [
-          "Michael W. Young"
-        ],
-        "publisher": "University of California Press",
-        "publishedDate": "2021-01-08",
-        "description": "This title is part of UC Press's Voices Revived program, which commemorates University of California Press’s mission to seek out and cultivate the brightest minds and give them voice, reach, and impact. Drawing on a backlist dating to 1893, Voices Revived makes high-quality, peer-reviewed scholarship accessible once again using print-on-demand technology. This title was originally published in 1983.",
+        "publisher": "Kodansha Comics",
+        "publishedDate": "2017",
+        "description": "Anime Season 2 coming to Funimation in April 2017! The blockbuster manga edges closer to its thrilling conclusions. The mysteries of the Titans are being revealed… who will escape death at the hands of giants and human beings?",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9780520363885"
+            "identifier": "9781682337837"
           },
           {
             "type": "ISBN_10",
-            "identifier": "0520363884"
+            "identifier": "1682337839"
           }
         ],
         "readingModes": {
-          "text": false,
+          "text": true,
           "image": true
         },
-        "pageCount": 340,
+        "pageCount": 194,
         "printType": "BOOK",
         "categories": [
-          "Social Science"
+          "Comics & Graphic Novels"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.3.2.0.preview.1",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.1.0.preview.3",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=VrDoDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=VrDoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=sX0qDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=sX0qDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=VrDoDwAAQBAJ&pg=PA283&dq=hi&hl=&cd=9&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=VrDoDwAAQBAJ&dq=hi&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Magicians_of_Manumanua.html?hl=&id=VrDoDwAAQBAJ"
+        "previewLink": "http://books.google.com.vn/books?id=sX0qDwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "22",
+          "volumeSeries": [
+            {
+              "seriesId": "bof3GgAAABCYnM",
+              "seriesBookType": "COLLECTED_EDITION",
+              "orderNumber": 22
+            }
+          ]
+        }
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 293179,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 199362,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ&rdid=book-sX0qDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 293179000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 199362000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
       },
       "accessInfo": {
         "country": "VN",
@@ -600,212 +95,202 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": false
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-epub.acsm?id=sX0qDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Magicians_of_Manumanua-sample-pdf.acsm?id=VrDoDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-pdf.acsm?id=sX0qDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=VrDoDwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=sX0qDwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHi\u003c/b\u003e - yavaina \u003cb\u003ehi\u003c/b\u003e - nanau eight o&#39;clock leyaya Then sea leyaya \u003cb\u003ehi\u003c/b\u003e - dododi . two of them bottles they put them inside . wayaine ada \u003cb\u003ehi\u003c/b\u003e - itadi . Vavine and he sees them ( go ) ... \u003cb\u003ehi\u003c/b\u003e - seyena . she threw it away . \u003cb\u003ehi\u003c/b\u003e 283 APPENDIX II."
+        "textSnippet": "Anime Season 2 coming to Funimation in April 2017! The blockbuster manga edges closer to its thrilling conclusions. The mysteries of the Titans are being revealed… who will escape death at the hands of giants and human beings?"
       }
     },
     {
       "kind": "books#volume",
-      "id": "BPYPRAEderIC",
-      "etag": "2v6jRK6QbF8",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/BPYPRAEderIC",
+      "id": "aMliDwAAQBAJ",
+      "etag": "c59LHE25P0w",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/aMliDwAAQBAJ",
       "volumeInfo": {
-        "title": "Selected Statistics on the Developing USA",
+        "title": "Attack on Titan Character Encyclopedia",
+        "subtitle": "Volune 1",
         "authors": [
-          "Chi Ta W. Chen"
+          "Hajime Isayama"
         ],
-        "publishedDate": "1977",
+        "publisher": "Kodansha America LLC",
+        "publishedDate": "2018-07-10",
         "industryIdentifiers": [
           {
-            "type": "OTHER",
-            "identifier": "UCD:35555000093221"
+            "type": "ISBN_13",
+            "identifier": "9781642123357"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1642123358"
           }
         ],
         "readingModes": {
-          "text": false,
+          "text": true,
           "image": true
         },
-        "pageCount": 208,
+        "pageCount": 178,
         "printType": "BOOK",
         "categories": [
-          "United States"
+          "Comics & Graphic Novels"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.0.1.0.full.1",
+        "allowAnonLogging": true,
+        "contentVersion": "1.3.1.0.preview.3",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=BPYPRAEderIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=BPYPRAEderIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=aMliDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=aMliDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=BPYPRAEderIC&pg=PP33&dq=hi&hl=&cd=10&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=BPYPRAEderIC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=BPYPRAEderIC"
+        "previewLink": "http://books.google.com.vn/books?id=aMliDwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FREE",
+        "saleability": "FOR_SALE",
         "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=BPYPRAEderIC&rdid=book-BPYPRAEderIC&rdot=1&source=gbs_api"
+        "listPrice": {
+          "amount": 293179,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 199362,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ&rdid=book-aMliDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 293179000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 199362000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
       },
       "accessInfo": {
         "country": "VN",
-        "viewability": "ALL_PAGES",
+        "viewability": "PARTIAL",
         "embeddable": true,
-        "publicDomain": true,
+        "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Selected_Statistics_on_the_Developing_US.epub?id=BPYPRAEderIC&hl=&output=epub&source=gbs_api"
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Character_Encyclopedia-sample-epub.acsm?id=aMliDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
         "pdf": {
-          "isAvailable": false
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Character_Encyclopedia-sample-pdf.acsm?id=aMliDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=BPYPRAEderIC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "webReaderLink": "http://play.google.com/books/reader?id=aMliDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 1935 \u003cb\u003eHI\u003c/b\u003e 1934 1933 \u003cb\u003eHI\u003c/b\u003e 1932 \u003cb\u003eHI\u003c/b\u003e 1931 \u003cb\u003eHI\u003c/b\u003e 1930 \u003cb\u003eHI\u003c/b\u003e 1929 \u003cb\u003eHI\u003c/b\u003e 1928 \u003cb\u003eHI\u003c/b\u003e 1927 \u003cb\u003eHI\u003c/b\u003e 1926 1925 \u003cb\u003eHI\u003c/b\u003e 1924 \u003cb\u003eHI\u003c/b\u003e 1923 \u003cb\u003eHI\u003c/b\u003e 1922 \u003cb\u003eHI\u003c/b\u003e 1921 \u003cb\u003eHI\u003c/b\u003e 1920 \u003cb\u003eHI\u003c/b\u003e 1919 \u003cb\u003eHI\u003c/b\u003e 1918 \u003cb\u003eHI\u003c/b\u003e &#39; 1917 \u003cb\u003eHI\u003c/b\u003e 1916 \u003cb\u003eHI\u003c/b\u003e 1915 \u003cb\u003eHI\u003c/b\u003e 1914 \u003cb\u003eHI\u003c/b\u003e 1913 \u003cb\u003eHI\u003c/b\u003e 1912 \u003cb\u003eHI\u003c/b\u003e 1911 \u003cb\u003eHI\u003c/b\u003e 1910 \u003cb\u003eHI\u003c/b\u003e 1909 \u003cb\u003eHI\u003c/b\u003e 1908 \u003cb\u003eHI\u003c/b\u003e 1907 \u003cb\u003eHI\u003c/b\u003e 1906 \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "KOe5RcaV05AC",
-      "etag": "WcBm0nVsttE",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/KOe5RcaV05AC",
+      "id": "om8-DwAAQBAJ",
+      "etag": "+nYOkv2GHYA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/om8-DwAAQBAJ",
       "volumeInfo": {
-        "title": "Cumulative List of Organizations Described in Section 170 (c) of the Internal Revenue Code of 1954",
+        "title": "Attack on Titan: Before the Fall",
         "authors": [
-          "United States. Internal Revenue Service"
+          "Ryo Suzukaze"
         ],
-        "publishedDate": "1993",
+        "publisher": "Kodansha Comics",
+        "publishedDate": "2017",
+        "description": "A PLAN IN MOTION Angel and Xenophon's Device, meant to help humanity combat the Titans, has always confounded those who were meant to use it. But years later, after Sharle successfully brings Angel out of his underground home, he is ready to correct its fatal flaw for good. But that's only half of the problem--the Survey Corps will need a grueling new training program to make use of it!",
         "industryIdentifiers": [
           {
-            "type": "OTHER",
-            "identifier": "UOM:39015062223873"
+            "type": "ISBN_13",
+            "identifier": "9781642120028"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1642120022"
           }
         ],
         "readingModes": {
-          "text": false,
+          "text": true,
           "image": true
         },
-        "pageCount": 1056,
+        "pageCount": 230,
         "printType": "BOOK",
         "categories": [
-          "Charitable uses, trusts, and foundations"
+          "Comics & Graphic Novels"
         ],
         "averageRating": 1,
         "ratingsCount": 1,
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.9.6.0.full.1",
+        "allowAnonLogging": true,
+        "contentVersion": "1.2.1.0.preview.3",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=KOe5RcaV05AC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=KOe5RcaV05AC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=om8-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=om8-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=KOe5RcaV05AC&pg=PA833&dq=hi&hl=&cd=11&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=KOe5RcaV05AC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=KOe5RcaV05AC"
+        "previewLink": "http://books.google.com.vn/books?id=om8-DwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=om8-DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=om8-DwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "12",
+          "volumeSeries": [
+            {
+              "seriesId": "R8_3GgAAABCx1M",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 12
+            }
+          ]
+        }
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FREE",
+        "saleability": "FOR_SALE",
         "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=KOe5RcaV05AC&rdid=book-KOe5RcaV05AC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Cumulative_List_of_Organizations_Describ.epub?id=KOe5RcaV05AC&hl=&output=epub&source=gbs_api"
+        "listPrice": {
+          "amount": 293179,
+          "currencyCode": "VND"
         },
-        "pdf": {
-          "isAvailable": false
+        "retailPrice": {
+          "amount": 199362,
+          "currencyCode": "VND"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=KOe5RcaV05AC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHAWAII\u003c/b\u003e 833 HAYES \u003cb\u003eHawaii\u003c/b\u003e Tennis Patrons Association , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Theater Center , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Transgendered Outreach , Until 9506 , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Tropical Botanical Garden , Hilo , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Tumor Registry ,&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "WtDdCgAAQBAJ",
-      "etag": "WzUFzXhxaH8",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/WtDdCgAAQBAJ",
-      "volumeInfo": {
-        "title": "The Ghost-dance Religion and Wounded Knee",
-        "authors": [
-          "James Mooney"
-        ],
-        "publisher": "Courier Corporation",
-        "publishedDate": "1991-01-01",
-        "description": "Classic of American anthropology explores messianic cult behind Indian resistance, from Pontiac to the 1890s. Extremely detailed and thorough. Originally published in 1896 by the Bureau of American Ethnology. 38 plates, 49 other illustrations.",
-        "industryIdentifiers": [
+        "buyLink": "https://play.google.com/store/books/details?id=om8-DwAAQBAJ&rdid=book-om8-DwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
           {
-            "type": "ISBN_13",
-            "identifier": "9780486267593"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "0486267598"
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 293179000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 199362000000,
+              "currencyCode": "VND"
+            }
           }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 578,
-        "printType": "BOOK",
-        "categories": [
-          "Social Science"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.1.0.0.preview.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=WtDdCgAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=WtDdCgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=WtDdCgAAQBAJ&pg=PA1031&dq=hi&hl=&cd=12&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=WtDdCgAAQBAJ&dq=hi&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/The_Ghost_dance_Religion_and_Wounded_Kne.html?hl=&id=WtDdCgAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
+        ]
       },
       "accessInfo": {
         "country": "VN",
@@ -814,1928 +299,127 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": false
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Before_the_Fall-sample-epub.acsm?id=om8-DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/The_Ghost_dance_Religion_and_Wounded_Kne-sample-pdf.acsm?id=WtDdCgAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Before_the_Fall-sample-pdf.acsm?id=om8-DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=WtDdCgAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=om8-DwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e - \u003cb\u003eHI\u003c/b\u003e&#39;\u003cb\u003eHI\u003c/b\u003e HAI - YAI &#39; \u003cb\u003eHi\u003c/b\u003e&#39;awu&#39;\u003cb\u003ehi\u003c/b\u003e - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! \u003cb\u003eHi\u003c/b\u003e&#39;awu&#39;\u003cb\u003ehi\u003c/b\u003e - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e hai &#39; - yai &#39; ! Ni&#39;äsi&#39;tano&#39;ni - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! Ni&#39;äsi&#39;tano&#39;ni - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! \u003cb\u003eHi\u003c/b\u003e&#39;äma &#39; wihu&#39;i - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! \u003cb\u003eHi\u003c/b\u003e&#39;äma &#39; wihu&#39;&nbsp;..."
+        "textSnippet": "A PLAN IN MOTION Angel and Xenophon&#39;s Device, meant to help humanity combat the Titans, has always confounded those who were meant to use it."
       }
     },
     {
       "kind": "books#volume",
-      "id": "0AQqAAAAYAAJ",
-      "etag": "14kznWlHCtc",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/0AQqAAAAYAAJ",
+      "id": "1wXzDQAAQBAJ",
+      "etag": "cLxTBHItotE",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/1wXzDQAAQBAJ",
       "volumeInfo": {
-        "title": "The Ghost-Dance Religion and the Sioux Outbreak of 1890",
+        "title": "Attack on Titan",
         "authors": [
-          "James Mooney"
+          "Hajime Isayama"
         ],
-        "publishedDate": "1896",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "HARVARD:TZ1RB4"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 598,
-        "printType": "BOOK",
-        "categories": [
-          "Social Science"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.2.7.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=0AQqAAAAYAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=0AQqAAAAYAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=0AQqAAAAYAAJ&pg=PA1031&dq=hi&hl=&cd=13&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=0AQqAAAAYAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=0AQqAAAAYAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=0AQqAAAAYAAJ&rdid=book-0AQqAAAAYAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/The_Ghost_Dance_Religion_and_the_Sioux_O.epub?id=0AQqAAAAYAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/The_Ghost_Dance_Religion_and_the_Sioux_O.pdf?id=0AQqAAAAYAAJ&hl=&output=pdf&sig=ACfU3U345KRN9K9GSCAPplmL4r_QqCB9Bw&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=0AQqAAAAYAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI HI\u003c/b\u003e HAI - YAI \u003cb\u003eHi\u003c/b\u003e&#39;awuhi - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! \u003cb\u003eHi\u003c/b\u003e&#39;awu&#39;\u003cb\u003ehi\u003c/b\u003e - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! Ni&#39;äsi&#39;tano&#39;ni - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! Ni&#39;äsi&#39;tano&#39;ni - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! \u003cb\u003eHi\u003c/b\u003e&#39;äma &#39; wihu&#39;i - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&#39;hai &#39; - yai &#39; ! \u003cb\u003eHi\u003c/b\u003e&#39;äma &#39; wihu&#39;i - \u003cb\u003eHi\u003c/b\u003e&#39;\u003cb\u003ehi\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "Wyo0AQAAMAAJ",
-      "etag": "CJHc2t3gzLc",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/Wyo0AQAAMAAJ",
-      "volumeInfo": {
-        "title": "Ewa Beach, Proposed Ewa Marina, Oahu",
-        "subtitle": "Environmental Impact Statement",
-        "publishedDate": "1993",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NWU:35556031267339"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 722,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.7.7.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=Wyo0AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=Wyo0AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=Wyo0AQAAMAAJ&pg=RA7-PP10&dq=hi&hl=&cd=14&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=Wyo0AQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Wyo0AQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=Wyo0AQAAMAAJ&rdid=book-Wyo0AQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Ewa_Beach_Proposed_Ewa_Marina_Oahu.epub?id=Wyo0AQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=Wyo0AQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96706 91-389 Fort Weaver Rd . Ewa Beach , \u003cb\u003eHI\u003c/b\u003e 96706 Mr. Mike Rossman 3100 Ualena St. Honolulu , \u003cb\u003eHI\u003c/b\u003e 96819 Mr. Morton Fox Laie , \u003cb\u003eHI\u003c/b\u003e 96762 Mr. Masami Abe P. O. Box 652 Ewa Beach , \u003cb\u003eHI\u003c/b\u003e 96706 Mr. Manuel Sabal 91-027 Pohakupuna Pl . Ewa&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "s5NsxvOK2gQC",
-      "etag": "94+HJJ3DBLg",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/s5NsxvOK2gQC",
-      "volumeInfo": {
-        "title": "Credit Union Directory",
-        "publishedDate": "1984",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "IND:30000088860071"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 396,
-        "printType": "BOOK",
-        "categories": [
-          "Credit unions"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.6.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=s5NsxvOK2gQC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=s5NsxvOK2gQC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=s5NsxvOK2gQC&pg=PA82&dq=hi&hl=&cd=15&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=s5NsxvOK2gQC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=s5NsxvOK2gQC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=s5NsxvOK2gQC&rdid=book-s5NsxvOK2gQC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Credit_Union_Directory.epub?id=s5NsxvOK2gQC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=s5NsxvOK2gQC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96805 1336 5,104,888 17962 CASTLE MEDICAL CENTER 14002 640 ULUKAHIKI STREET KAILUA \u003cb\u003eHI\u003c/b\u003e 96734 771 1,357,374 CENTRAL OAHU COMMUNITY BUILDING 100 - CREDIT UNION WHEELER AFB \u003cb\u003eHI\u003c/b\u003e 96854 4566 4,894,459 23035 CHURCH OF WORLD MESSIANITY&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "9AQVAAAAQAAJ",
-      "etag": "evB1TChgfv0",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/9AQVAAAAQAAJ",
-      "volumeInfo": {
-        "title": "Monasticon Hibernicum: or, An history of the abbeys, priories, and other religious houses in Ireland, ed. by P.F. Moran",
-        "authors": [
-          "Mervyn Archdall"
-        ],
-        "publishedDate": "1873",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "OXFORD:590028522"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 372,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.3.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=9AQVAAAAQAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=9AQVAAAAQAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=9AQVAAAAQAAJ&pg=PA131&dq=hi&hl=&cd=16&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=9AQVAAAAQAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=9AQVAAAAQAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=9AQVAAAAQAAJ&rdid=book-9AQVAAAAQAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Monasticon_Hibernicum_or_An_history_of_t.epub?id=9AQVAAAAQAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/Monasticon_Hibernicum_or_An_history_of_t.pdf?id=9AQVAAAAQAAJ&hl=&output=pdf&sig=ACfU3U29MFdrWuDZp-39Q0OoKdL7Hsr24A&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=9AQVAAAAQAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHi\u003c/b\u003e Diarmata , i.e. \u003cb\u003eHi\u003c/b\u003e Diarmada and \u003cb\u003eHi\u003c/b\u003e Cochlain are its heredi- tary occupiers . Dun Tulcha Cill Curnain ; Croch , out of which are \u003cb\u003eHi\u003c/b\u003e Dathail of Croch . Árd Ceanannais and Dun ar aill are one Baile , and out of it are \u003cb\u003eHi\u003c/b\u003e Faelain and&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "zCk0AQAAMAAJ",
-      "etag": "8euL51pGeco",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/zCk0AQAAMAAJ",
-      "volumeInfo": {
-        "title": "Kahului Light Draft Navigation Improvements, Maui",
-        "subtitle": "Environmental Impact Statement",
-        "publishedDate": "1989",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NWU:35556031267297"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 564,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.6.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=zCk0AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=zCk0AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=zCk0AQAAMAAJ&pg=RA5-PA61&dq=hi&hl=&cd=17&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=zCk0AQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=zCk0AQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=zCk0AQAAMAAJ&rdid=book-zCk0AQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Kahului_Light_Draft_Navigation_Improveme.epub?id=zCk0AQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=zCk0AQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e KAHULUI \u003cb\u003eHI\u003c/b\u003e 96732 KAHULUI MAKAWAO \u003cb\u003eHI\u003c/b\u003e 96768 KAHULUI WAILUKU \u003cb\u003eHI\u003c/b\u003e WAILUKU PAIA \u003cb\u003eHI\u003c/b\u003e 96779 WAKAWAO \u003cb\u003eHI\u003c/b\u003e 96768 KAHULUI \u003cb\u003eHI\u003c/b\u003e 96732 KAHULUI \u003cb\u003eHI\u003c/b\u003e 96732 WAILUKU \u003cb\u003eHI\u003c/b\u003e 96793 WAILUKU \u003cb\u003eHI\u003c/b\u003e 96793 PUKALANI \u003cb\u003eHI\u003c/b\u003e 96768 PUKALANI \u003cb\u003eHI\u003c/b\u003e 96768 KULA \u003cb\u003eHI\u003c/b\u003e 96790 PUKALANI \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "lKQRAAAAIAAJ",
-      "etag": "gv3RkZ50U7k",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/lKQRAAAAIAAJ",
-      "volumeInfo": {
-        "title": "The American Phonetic Dictionary of the English Language",
-        "authors": [
-          "Daniel S. Smalley"
-        ],
-        "publishedDate": "1855",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NYPL:33433075923916"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 834,
-        "printType": "BOOK",
-        "categories": [
-          "English language"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.6.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=lKQRAAAAIAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=lKQRAAAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=lKQRAAAAIAAJ&pg=PA695&dq=hi&hl=&cd=18&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=lKQRAAAAIAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=lKQRAAAAIAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=lKQRAAAAIAAJ&rdid=book-lKQRAAAAIAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/The_American_Phonetic_Dictionary_of_the.epub?id=lKQRAAAAIAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/The_American_Phonetic_Dictionary_of_the.pdf?id=lKQRAAAAIAAJ&hl=&output=pdf&sig=ACfU3U2yQkDWfxHXiK5abjVcoF84fpnb0w&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=lKQRAAAAIAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHi\u003c/b\u003e - bér - ni - a , and Hybernia , \u003cb\u003eHi\u003c/b\u003e - ber - ni - a . Hibrildes , \u003cb\u003eHi\u003c/b\u003e - bril - dɛz . Hicetaon , Hik - ɛ - tá - on . Hicetas , \u003cb\u003eHi\u003c/b\u003e - sé - tas . Hiempsal , \u003cb\u003eHi\u003c/b\u003e - emp - sal ... \u003cb\u003eHi\u003c/b\u003e - la , and Hylas , \u003cb\u003eHi\u003c/b\u003e GREK AND LATIN PROPER NⱭмZ . 695."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "62AuLto6rAwC",
-      "etag": "pDKMFJz+/LE",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/62AuLto6rAwC",
-      "volumeInfo": {
-        "title": "Minimum Enroute IFR Altitudes Over Particular Routes and Intersections",
-        "publishedDate": "1988",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "MINN:31951D00823083E"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 196,
-        "printType": "BOOK",
-        "categories": [
-          "Airways"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "2.5.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=62AuLto6rAwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=62AuLto6rAwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=62AuLto6rAwC&pg=PA112&dq=hi&hl=&cd=19&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=62AuLto6rAwC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=62AuLto6rAwC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=62AuLto6rAwC&rdid=book-62AuLto6rAwC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Minimum_Enroute_IFR_Altitudes_Over_Parti.epub?id=62AuLto6rAwC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=62AuLto6rAwC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e FIX HARPO , \u003cb\u003eHI\u003c/b\u003e FIX HARPO , \u003cb\u003eHI\u003c/b\u003e FIX MAUI , \u003cb\u003eHI\u003c/b\u003e VORTAC TIFT MYERS , GA VOR VIENNA , GA VORTAC §95.6402 \u003cb\u003eHAWAII\u003c/b\u003e VOR FEDERAL AIRWAY 2 HONOLULU , \u003cb\u003eHI\u003c/b\u003e VORTAC PALAY , \u003cb\u003eHI\u003c/b\u003e FIX PALAY , \u003cb\u003eHI\u003c/b\u003e FIX LANAI , \u003cb\u003eHI\u003c/b\u003e VORTAC LANAI , \u003cb\u003eHI\u003c/b\u003e VORTAC HARPO , \u003cb\u003eHI\u003c/b\u003e FIX ST&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "OZezMLxbqVIC",
-      "etag": "a//CuMcfI2A",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/OZezMLxbqVIC",
-      "volumeInfo": {
-        "title": "FAA Inspection Authorization Directory",
-        "publishedDate": "1997-04",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "MINN:31951003038748B"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 284,
-        "printType": "BOOK",
-        "categories": [
-          "Aviation mechanics (Persons)"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=OZezMLxbqVIC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=OZezMLxbqVIC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=OZezMLxbqVIC&pg=PA91&dq=hi&hl=&cd=20&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=OZezMLxbqVIC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=OZezMLxbqVIC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=OZezMLxbqVIC&rdid=book-OZezMLxbqVIC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/FAA_Inspection_Authorization_Directory.epub?id=OZezMLxbqVIC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=OZezMLxbqVIC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96720 HAZEN , CHRISTOPHER L 59-530 ΑΚΑNOHO PLACE HALEIWA \u003cb\u003eHI\u003c/b\u003e 96712 GA 30215 BROWN , ROY WESLEY HORITA , MICHAEL Y 73-1272 AWAKEA STREET 5586 BROOKDALE RD KAILUA - KΟΝΑ \u003cb\u003eHI\u003c/b\u003e 96740 4296 ΚΑΑΝA STREET LIHUE \u003cb\u003eHI\u003c/b\u003e 96766 SEE REMARKS TOCCOA GA&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "1uBqx7QZeN0C",
-      "etag": "anvJePzpuLQ",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/1uBqx7QZeN0C",
-      "volumeInfo": {
-        "title": "Field Operations of the Division of Soils",
-        "publishedDate": "1905",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UOM:39015069835471"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 98,
-        "printType": "BOOK",
-        "categories": [
-          "Soil surveys"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.2.2.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=1uBqx7QZeN0C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=1uBqx7QZeN0C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=1uBqx7QZeN0C&pg=PA27-IA1&dq=hi&hl=&cd=21&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=1uBqx7QZeN0C&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=1uBqx7QZeN0C"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=1uBqx7QZeN0C&rdid=book-1uBqx7QZeN0C&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Field_Operations_of_the_Division_of_Soil.epub?id=1uBqx7QZeN0C&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=1uBqx7QZeN0C&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e Br He DI Hc H DI Ho Pinney SH He H DI saylor HC Ho Errek K \u003cb\u003eHI\u003c/b\u003e Ws Hs DI Ws \u003cb\u003eHI\u003c/b\u003e HS Ho DI HC Garden Br . HC HC Etk Hs Hc B 1000 NASHVILLE BOUNDARY Hs Ds Hc \u003cb\u003eHI\u003c/b\u003e East CENTRAL South Hc Central Fork AND He 1707 JISVILLE Pumpkin CLARK Crock&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "idMfAAAAMAAJ",
-      "etag": "QHZwJUwx/Vg",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/idMfAAAAMAAJ",
-      "volumeInfo": {
-        "title": "Hearings on National Defense Authorization Act for Fiscal Year 1991--H.R. 4739 and Oversight of Previously Authorized Programs, Before the Committee on Armed Services, House of Representatives, One Hundred First Congress, Second Session",
-        "subtitle": "Readiness Subcommittee Hearings on Title III--Operation and Maintenance : Hearings Held February 27, 28, March 1, 7, 8, 13, 14, 15, 20, 22, 27, 28, April 3, 4, 19, and May 15, 1990",
-        "authors": [
-          "United States. Congress. House. Committee on Armed Services. Readiness Subcommittee"
-        ],
-        "publishedDate": "1991",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "LOC:00186347912"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1844,
-        "printType": "BOOK",
-        "categories": [
-          "United States"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.4.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=idMfAAAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=idMfAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=idMfAAAAMAAJ&pg=PA715&dq=hi&hl=&cd=22&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=idMfAAAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=idMfAAAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=idMfAAAAMAAJ&rdid=book-idMfAAAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Hearings_on_National_Defense_Authorizati.epub?id=idMfAAAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=idMfAAAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI HI\u003c/b\u003e RA IRP FRENCH FRIGATE \u003cb\u003eHI HI\u003c/b\u003e RA FORMER SITE FORMER SITE IRP GENERAL LYMAN , \u003cb\u003eHI HI\u003c/b\u003e PA AIR FORCE IRP HEEIA NAVAL RADIO \u003cb\u003eHI HI\u003c/b\u003e RA FORMER SITE IRP HILO COMM AGS , \u003cb\u003eHI HI\u003c/b\u003e PA AIR FORCE IRP JOHNSTON ISLAND , \u003cb\u003eHI HI\u003c/b\u003e MGT AIR FORCE IRP JOHNSTON&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "2YhEAQAAMAAJ",
-      "etag": "x4Xcz8NOKB8",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/2YhEAQAAMAAJ",
-      "volumeInfo": {
-        "title": "Chinese dictionary in the Cantonese dialect",
-        "authors": [
-          "Ernest John Eitel"
-        ],
-        "publisher": "Books for Libraries",
-        "publishedDate": "1910",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "CORNELL:31924008818977"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 736,
-        "printType": "BOOK",
-        "categories": [
-          "Foreign Language Study"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=2YhEAQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=2YhEAQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=2YhEAQAAMAAJ&pg=PA208&dq=hi&hl=&cd=23&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=2YhEAQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=2YhEAQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=2YhEAQAAMAAJ&rdid=book-2YhEAQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Chinese_dictionary_in_the_Cantonese_dial.epub?id=2YhEAQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=2YhEAQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e , I congratulate you on the new ( year&#39;s ) happiness . hinin , a jubilee year . shong , i.w.\u003cb\u003ehi\u003c/b\u003e. ] K. Wide apart ; scattered ; separated ; few ; rare ; seldom ; A surname . 115,7 . [ 8.a ... \u003cb\u003ehi\u003c/b\u003e pat ,, do I not ? how \u003cb\u003eHí Hí\u003c/b\u003e [ 208 ]"
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "xxWGZbLejAAC",
-      "etag": "y3L29F1J724",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/xxWGZbLejAAC",
-      "volumeInfo": {
-        "title": "Alphabetic List of Lenders",
-        "publishedDate": "1985",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "STANFORD:36105216493119"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 596,
-        "printType": "BOOK",
-        "categories": [
-          "Student aid"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "3.5.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=xxWGZbLejAAC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=xxWGZbLejAAC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=xxWGZbLejAAC&pg=PA55&dq=hi&hl=&cd=24&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=xxWGZbLejAAC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=xxWGZbLejAAC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=xxWGZbLejAAC&rdid=book-xxWGZbLejAAC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Alphabetic_List_of_Lenders.epub?id=xxWGZbLejAAC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=xxWGZbLejAAC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96793 B 814392 CM N N J6 NNNNNYNNNNNNNNNNNNNNNNNNN NNNNNYNNNNNNNNNNNNNNNNNNN LT - LENDER TYPE PT = PARENT TYPE FL ... \u003cb\u003eHI\u003c/b\u003e 96762 B 814392 CM \u003cb\u003eHI\u003c/b\u003e 96706 B 814392 CM N \u003cb\u003eHI\u003c/b\u003e 96779 B 814392 CM N \u003cb\u003eHI\u003c/b\u003e 96755 B 814392 CM N \u003cb\u003eHI\u003c/b\u003e 96761 B 814392 CM&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "gJ7QAAAAMAAJ",
-      "etag": "W4FP9JZd10U",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/gJ7QAAAAMAAJ",
-      "volumeInfo": {
-        "title": "EDA Directory of Approved Projects",
-        "authors": [
-          "United States. Economic Development Administration"
-        ],
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UOM:39015077917402"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 278,
-        "printType": "BOOK",
-        "categories": [
-          "United States"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "3.12.11.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=gJ7QAAAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=gJ7QAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=gJ7QAAAAMAAJ&pg=PA68&dq=hi&hl=&cd=25&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=gJ7QAAAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=gJ7QAAAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=gJ7QAAAAMAAJ&rdid=book-gJ7QAAAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/EDA_Directory_of_Approved_Projects.epub?id=gJ7QAAAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=gJ7QAAAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 02/04/77 06/03/77 01/31/77 HONOLULU CITY OF \u003cb\u003eHI\u003c/b\u003e 09/30/77 \u003cb\u003eHI\u003c/b\u003e 09/30/77 \u003cb\u003eHI\u003c/b\u003e 09/30/77 \u003cb\u003eHI\u003c/b\u003e 09/3/77 \u003cb\u003eHI\u003c/b\u003e 09/10/77 \u003cb\u003eHI\u003c/b\u003e 09/30 ... \u003cb\u003eHAWAII HAWAII\u003c/b\u003e IDAHO 9921262."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "6uilDwAAQBAJ",
-      "etag": "Bzglja/3W2Y",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/6uilDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Global Innovation Index 2019: Creating Healthy Lives — The Future of Medical Innovation",
-        "authors": [
-          "World Intellectual Property Organization",
-          "INSEAD",
-          "Cornell University"
-        ],
-        "publisher": "WIPO",
-        "publishedDate": "2019-07-24",
-        "description": "The Global Innovation Index 2019 provides detailed metrics about the innovation performance of 129 countries and economies around the world. Its 80 indicators explore a broad vision of innovation, including political environment, education, infrastructure and business sophistication. The GII 2019 analyzes the medical innovation landscape of the next decade, looking at how technological and non-technological medical innovation will transform the delivery of healthcare worldwide. It also explores the role and dynamics of medical innovation as it shapes the future of healthcare, and the potential influence this may have on economic growth. Chapters of the report provide more details on this year’s theme from academic, business, and particular country perspectives from leading experts and decision makers.",
+        "publisher": "Kodansha Comics",
+        "publishedDate": "2013-10-29",
+        "description": "BLOOD ON HIS HANDS The expedition outside the wall was Eren's chance to prove himself. But it failed, and the female Titan is free once more! With his squad dead, Eren faces a royal summons. Will Mikasa and Armin have to betray their king to save their friend? And can they discover the female Titan's identity before she kills again? ? ? PRAISE FOR THE HIT ANIME \"A visceral and fantastically intense action/horror story.\" - Anime News Network ? \"Japan's equivalent of The Walking Dead.\" - io9",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9791095870142"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 451,
-        "printType": "BOOK",
-        "categories": [
-          "Law"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.1.2.0.preview.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=6uilDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=6uilDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=6uilDwAAQBAJ&pg=PR36&dq=hi&hl=&cd=26&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=6uilDwAAQBAJ&dq=hi&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Global_Innovation_Index_2019_Creating_He.html?hl=&id=6uilDwAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Global_Innovation_Index_2019_Creating_He-sample-pdf.acsm?id=6uilDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=6uilDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 1 SEAO 1 Switzerland 71.02 2 \u003cb\u003eHI\u003c/b\u003e 2 EUR 1 United States of America 70.85 3 \u003cb\u003eHI\u003c/b\u003e 3 NAC 1 Sweden 70.43 4 \u003cb\u003eHI\u003c/b\u003e 4 EUR 2 Denmark 69.33 5 \u003cb\u003eHI\u003c/b\u003e 5 EUR 3 United Kingdom 68.22 6 \u003cb\u003eHI\u003c/b\u003e 6 EUR 4 Finland 68.04 7 \u003cb\u003eHI\u003c/b\u003e 7 EUR 5 Hong Kong, China 66.69 8 \u003cb\u003eHI\u003c/b\u003e 8&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "U_bdjljAB9QC",
-      "etag": "aUrLy3D65TE",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/U_bdjljAB9QC",
-      "volumeInfo": {
-        "title": "Cumulative List of Organizations Described in Section 170 (c) of the Internal Revenue Code of 1954",
-        "publishedDate": "2002",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "MINN:31951D02275088Q"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1068,
-        "printType": "BOOK",
-        "categories": [
-          "Charitable uses, trusts, and foundations"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.10.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=U_bdjljAB9QC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=U_bdjljAB9QC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=U_bdjljAB9QC&pg=PA1871&dq=hi&hl=&cd=27&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=U_bdjljAB9QC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=U_bdjljAB9QC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=U_bdjljAB9QC&rdid=book-U_bdjljAB9QC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Cumulative_List_of_Organizations_Describ.epub?id=U_bdjljAB9QC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=U_bdjljAB9QC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHi\u003c/b\u003e . Maui Day Care Center for Senior Citizens and Disabled , Kahului , \u003cb\u003eHi\u003c/b\u003e . Maui Economic Concerns of the Community Inc. , Wailuku , \u003cb\u003eHi\u003c/b\u003e . Maui Economic Development Board Inc. Medb , Kihei , \u003cb\u003eHi\u003c/b\u003e . Maui Economic Opportunity Inc. , Wailuku , \u003cb\u003eHi\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "AvU8AQAAIAAJ",
-      "etag": "+X3BwvPv8kI",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/AvU8AQAAIAAJ",
-      "volumeInfo": {
-        "title": "The Osage Tribe: the Rite of Vigil",
-        "authors": [
-          "Francis La Flesche"
-        ],
-        "publishedDate": "1925",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "STANFORD:36105048891803"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 670,
-        "printType": "BOOK",
-        "categories": [
-          "Indians of North America"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=AvU8AQAAIAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=AvU8AQAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=AvU8AQAAIAAJ&pg=PA408&dq=hi&hl=&cd=28&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=AvU8AQAAIAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=AvU8AQAAIAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=AvU8AQAAIAAJ&rdid=book-AvU8AQAAIAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/The_Osage_Tribe_the_Rite_of_Vigil.epub?id=AvU8AQAAIAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=AvU8AQAAIAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , The - tho \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Ga - mo &quot; \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha . 8 . Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , The - tho \u003cb\u003ehi\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "AuRjDwAAQBAJ",
-      "etag": "Sj5wcyYjS9s",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/AuRjDwAAQBAJ",
-      "volumeInfo": {
-        "title": "The Global Innovation Index 2018",
-        "subtitle": "Energizing the World with Innovation",
-        "authors": [
-          "Cornell University",
-          "INSEAD",
-          "World Intellectual Property Organization"
-        ],
-        "publisher": "WIPO",
-        "publishedDate": "2018-07-10",
-        "description": "The Global Innovation Index 2018 provides detailed metrics about the innovation performance of 126 countries and economies around the world. Its 80 indicators explore a broad vision of innovation, including political environment, education, infrastructure and business sophistication. The GII 2018 analyses the energy innovation landscape of the next decade and identifies possible breakthroughs in fields such as energy production, storage, distribution, and consumption. It also looks at how breakthrough innovation occurs at the grassroots level and describes how small-scale renewable systems are on the rise.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9791095870098"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 428,
-        "printType": "BOOK",
-        "categories": [
-          "Business & Economics"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "1.2.2.0.preview.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=AuRjDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=AuRjDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=AuRjDwAAQBAJ&pg=PR22&dq=hi&hl=&cd=29&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=AuRjDwAAQBAJ&dq=hi&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/The_Global_Innovation_Index_2018.html?hl=&id=AuRjDwAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/The_Global_Innovation_Index_2018-sample-pdf.acsm?id=AuRjDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=AuRjDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 1 SEAO 1 69.67 2 \u003cb\u003eHI\u003c/b\u003e 2 EUR 1 69.21 3 \u003cb\u003eHI\u003c/b\u003e 3 EUR 2 67.89 4 \u003cb\u003eHI\u003c/b\u003e 4 EUR 3 67.88 5 \u003cb\u003eHI\u003c/b\u003e 5 EUR 4 67.81 6 \u003cb\u003eHI\u003c/b\u003e 6 NAC 1 67.43 7 \u003cb\u003eHI\u003c/b\u003e 7 EUR 5 66.71 8 \u003cb\u003eHI\u003c/b\u003e 8 SEAO 2 66.45 9 \u003cb\u003eHI\u003c/b\u003e 9 EUR 6 65.67 10 \u003cb\u003eHI\u003c/b\u003e 10 NAC 2 65.66 11 \u003cb\u003eHI\u003c/b\u003e 11 SEAO 3 65.41 12 \u003cb\u003eHI\u003c/b\u003e 12 64.18 13&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "Yt3iAAAAMAAJ",
-      "etag": "jQ+KPjXqmxU",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/Yt3iAAAAMAAJ",
-      "volumeInfo": {
-        "title": "Annual Report of the Bureau of American Ethnology to the Secretary of the Smithsonian Institution",
-        "authors": [
-          "Smithsonian Institution. Bureau of American Ethnology"
-        ],
-        "publishedDate": "1915",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "PSU:000021101014"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 670,
-        "printType": "BOOK",
-        "categories": [
-          "America"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.9.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=Yt3iAAAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=Yt3iAAAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=Yt3iAAAAMAAJ&pg=PA408&dq=hi&hl=&cd=30&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=Yt3iAAAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Yt3iAAAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=Yt3iAAAAMAAJ&rdid=book-Yt3iAAAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Annual_Report_of_the_Bureau_of_American.epub?id=Yt3iAAAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/Annual_Report_of_the_Bureau_of_American.pdf?id=Yt3iAAAAMAAJ&hl=&output=pdf&sig=ACfU3U3jYn_3QD2TxA7JzcltSAfB7KGbbw&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=Yt3iAAAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , The - tho \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Ga - mo &quot; \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha . 8 . Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , Wa - dsi \u003cb\u003ehi\u003c/b\u003e - tho - be he tha , The - tho \u003cb\u003ehi\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "aB9zDwAAQBAJ",
-      "etag": "Ib3R2qKqZj4",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/aB9zDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Global Innovation Index 2011",
-        "subtitle": "Accelerating Growth and Development",
-        "authors": [
-          "Cornell University",
-          "INSEAD",
-          "World Intellectual Property Organization",
-          "Soumitra Dutta"
-        ],
-        "publisher": "WIPO",
-        "publishedDate": "19??",
-        "description": "The Global Innovation Index ranks the innovation performance of 125 countries and economies around the world, based on 80 indicators. This edition explores the impact of innovation-oriented policies on economic growth and development. High-income and developing countries alike are seeking innovation-driven growth through different strategies. Some countries are successfully improving their innovation capacity, while others still struggle.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9782952221016"
+            "identifier": "9781612626819"
           },
           {
             "type": "ISBN_10",
-            "identifier": "2952221014"
+            "identifier": "1612626815"
           }
         ],
         "readingModes": {
-          "text": false,
+          "text": true,
           "image": true
         },
-        "pageCount": 380,
+        "pageCount": 192,
         "printType": "BOOK",
         "categories": [
-          "Law"
+          "Comics & Graphic Novels"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.1.0.0.preview.1",
+        "allowAnonLogging": true,
+        "contentVersion": "1.4.3.0.preview.3",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=aB9zDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=aB9zDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=1wXzDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=1wXzDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=aB9zDwAAQBAJ&pg=PA20&dq=hi&hl=&cd=31&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=aB9zDwAAQBAJ&dq=hi&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Global_Innovation_Index_2011.html?hl=&id=aB9zDwAAQBAJ"
+        "previewLink": "http://books.google.com.vn/books?id=1wXzDQAAQBAJ&pg=PT156&dq=Attack+on+Titan&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=1wXzDQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=1wXzDQAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "8",
+          "volumeSeries": [
+            {
+              "seriesId": "bof3GgAAABCYnM",
+              "seriesBookType": "COLLECTED_EDITION",
+              "orderNumber": 8
+            }
+          ]
+        }
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 293179,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 199362,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=1wXzDQAAQBAJ&rdid=book-1wXzDQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 293179000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 199362000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
       },
       "accessInfo": {
         "country": "VN",
-        "viewability": "ALL_PAGES",
+        "viewability": "PARTIAL",
         "embeddable": true,
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": false
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-epub.acsm?id=1wXzDQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Global_Innovation_Index_2011-sample-pdf.acsm?id=aB9zDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-pdf.acsm?id=1wXzDQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=aB9zDwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=1wXzDQAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 1 EAS 1 Hong Kong ( SAR ) , China 69.77 2 \u003cb\u003eHI\u003c/b\u003e 2 EAS 2 Switzerland 66.07 3 \u003cb\u003eHI\u003c/b\u003e 3 ECS 1 Ireland Sweden Finland 65.53 4 \u003cb\u003eHI\u003c/b\u003e 4 ECS 2 64.85 5 \u003cb\u003eHI\u003c/b\u003e 5 ECS 3 64.71 6 \u003cb\u003eHI\u003c/b\u003e 6 ECS 4 Denmark 64.57 7 \u003cb\u003eHI\u003c/b\u003e 7 ECS 5 Canada 64.41 8 \u003cb\u003eHI\u003c/b\u003e 8 NAC 1 Luxembourg 63.93 9&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "pe1ulXe6nqEC",
-      "etag": "sh3uX+behvM",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/pe1ulXe6nqEC",
-      "volumeInfo": {
-        "title": "Financial Assistance by Geographic Area",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "WISC:89113493688"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 952,
-        "printType": "BOOK",
-        "categories": [
-          "Federal aid to higher education"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.4.4.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=pe1ulXe6nqEC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=pe1ulXe6nqEC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=pe1ulXe6nqEC&pg=RA8-PA70&dq=hi&hl=&cd=32&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=pe1ulXe6nqEC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=pe1ulXe6nqEC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=pe1ulXe6nqEC&rdid=book-pe1ulXe6nqEC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Financial_Assistance_by_Geographic_Area.epub?id=pe1ulXe6nqEC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=pe1ulXe6nqEC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHAWAII\u003c/b\u003e RECIPIENT \u003cb\u003eHAWAII\u003c/b\u003e INSTITUTE OF HAIR DESIGN \u003cb\u003eHAWAII\u003c/b\u003e LOA COLLEGE CATALOG NUMBER / PROGRAM TITLE 84.007 SUPPLEMENTAL EDUCATIONAL OPPORTUNITY GRANTS AMOUNT RECIPIENT $ 9,500 \u003cb\u003eHI\u003c/b\u003e ST DEPARTMENT OF EDUCATION \u003cb\u003eHI\u003c/b\u003e ST DEPARTMENT OF EDUCATION \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "DqXmC5rnNBkC",
-      "etag": "dwArPxjM8m0",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/DqXmC5rnNBkC",
-      "volumeInfo": {
-        "title": "Neues Vollständiges Kritisches Wörterbuch Der Englischen und Deutschen Sprache A New and Complete Critical Dictionary of the English and German Languages. New Stereotype Ed. ... Enl. and Impr. by E. Preusser with the Cooperation of H. Breithaupt",
-        "subtitle": "Englisch-Deutsch",
-        "authors": [
-          "Friedrich Wilhelm Thieme"
-        ],
-        "publishedDate": "1859",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "ONB:+Z229287007"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 788,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=DqXmC5rnNBkC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=DqXmC5rnNBkC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=DqXmC5rnNBkC&pg=PA260&dq=hi&hl=&cd=33&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=DqXmC5rnNBkC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=DqXmC5rnNBkC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=DqXmC5rnNBkC&rdid=book-DqXmC5rnNBkC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Neues_Vollst%C3%A4ndiges_Kritisches_W%C3%B6rterb.epub?id=DqXmC5rnNBkC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=DqXmC5rnNBkC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e - gro - skop - ik , a . by Hypermeter , \u003cb\u003ehi\u003c/b\u003e - per - mi - tår , s . das gez Hypochondriacism ] Hypochondriacism , Hypochondria- sis , hip - o. Hydriodic ] - Serpentin , m . 260 limes , s . pl . hydraulische Kalk , Wasser | Hydrophite&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "3x4l5n4ThjcC",
-      "etag": "5/TmQcsPS7g",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/3x4l5n4ThjcC",
-      "volumeInfo": {
-        "title": "1977 census of transportation",
-        "subtitle": "volume II, truck inventory and use survey",
-        "publishedDate": "1980",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "IND:30000093960569"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "printType": "BOOK",
-        "averageRating": 5,
-        "ratingsCount": 1,
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.3.1.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=3x4l5n4ThjcC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=3x4l5n4ThjcC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=3x4l5n4ThjcC&pg=SA37-PA28&dq=hi&hl=&cd=34&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=3x4l5n4ThjcC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=3x4l5n4ThjcC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=3x4l5n4ThjcC&rdid=book-3x4l5n4ThjcC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=3x4l5n4ThjcC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e NI I I I I I I I wzH» цо »zmuœwa о: o» ют I I I I I I I I \u003cb\u003eHI\u003c/b\u003e I \u003cb\u003eHI\u003c/b\u003e N. I I NI NI NI :I I I I I I mzH» цо »zmuœma шт 241» шищд I I I I I I \u003cb\u003eHI\u003c/b\u003e I s. I \u003cb\u003eHI\u003c/b\u003e o. I I ост 0.ю H.N oIm I I I I I I IomHœœ4u m4&lt;Hœm»&lt;£ mDooœ&lt;N&lt;I nmHœœ&lt;u mJ«Hœm»«z&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "_dPhQ4820XwC",
-      "etag": "RYWNBvgtRXA",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/_dPhQ4820XwC",
-      "volumeInfo": {
-        "title": "Cumulative List of Organizations Described in Section 170 (c) of the Internal Revenue Code of 1986",
-        "publishedDate": "1988",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NYPL:33433016643771"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1530,
-        "printType": "BOOK",
-        "categories": [
-          "Charitable uses, trusts, and foundations"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.8.10.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=_dPhQ4820XwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=_dPhQ4820XwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=_dPhQ4820XwC&pg=PA608&dq=hi&hl=&cd=35&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=_dPhQ4820XwC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=_dPhQ4820XwC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=_dPhQ4820XwC&rdid=book-_dPhQ4820XwC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Cumulative_List_of_Organizations_Describ.epub?id=_dPhQ4820XwC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=_dPhQ4820XwC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Literary Arts Council , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Loa College , Kaneohe , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Lupus Foundation Inc. , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Maritime Center , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Meals on Wheels Inc. , Honolulu , \u003cb\u003eHi\u003c/b\u003e . \u003cb\u003eHawaii\u003c/b\u003e Medical&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "dG6lY-FRdrwC",
-      "etag": "qn7yhWaO4nA",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/dG6lY-FRdrwC",
-      "volumeInfo": {
-        "title": "Merchant Vessels of the United States",
-        "authors": [
-          "United States. Coast Guard"
-        ],
-        "publishedDate": "1981",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UCLA:31158009068668"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1320,
-        "printType": "BOOK",
-        "categories": [
-          "Merchant marine"
-        ],
-        "averageRating": 5,
-        "ratingsCount": 1,
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.6.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=dG6lY-FRdrwC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=dG6lY-FRdrwC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=dG6lY-FRdrwC&pg=PA2311&dq=hi&hl=&cd=36&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=dG6lY-FRdrwC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=dG6lY-FRdrwC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=dG6lY-FRdrwC&rdid=book-dG6lY-FRdrwC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Merchant_Vessels_of_the_United_States.epub?id=dG6lY-FRdrwC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=dG6lY-FRdrwC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e BALL 249757 FISHERMAN HIDE A WHILE 526260 SEA BIRD 529216 I SPEAK II \u003cb\u003eHI\u003c/b\u003e BALL 519460 MARILYN D HIDE AWAY 508218 THE SANDPIPER \u003cb\u003eHI\u003c/b\u003e BALL 549184 INTERIM HIDE AWAY 290536 SCHATZIE 534157 HURLEY GIRLEY II 269274 BAR 64 \u003cb\u003eHI\u003c/b\u003e BALL II 226416&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "YhHD1RFlCgMC",
-      "etag": "4kVzoKZbPVE",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/YhHD1RFlCgMC",
-      "volumeInfo": {
-        "title": "A Dictionary of the Welsh Language",
-        "subtitle": "With English Synonymes and Explanations to which is Prefixed a Grammar of the Welsh Language",
-        "authors": [
-          "William Spurrell"
-        ],
-        "publishedDate": "1850",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "KBR:KBR0000103347"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 476,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.0.1.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=YhHD1RFlCgMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=YhHD1RFlCgMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=YhHD1RFlCgMC&pg=PA162&dq=hi&hl=&cd=37&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=YhHD1RFlCgMC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=YhHD1RFlCgMC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=YhHD1RFlCgMC&rdid=book-YhHD1RFlCgMC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/A_Dictionary_of_the_Welsh_Language.epub?id=YhHD1RFlCgMC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=YhHD1RFlCgMC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e - ji ăn , a . iechydol Hygiene , \u003cb\u003ehi\u003c/b\u003e - ji&#39;in , n . iechyd ; ffordd i gadw iechyd Hygrometer , \u003cb\u003ehi\u003c/b\u003e - grŏm&#39;i - tūr , Hygroscope , \u003cb\u003ehi\u003c/b\u003e&#39;gro - skop , n . offeryn i fesur lleithder yr awyr Hymen , \u003cb\u003ehi\u003c/b\u003e&#39;měn , n . duw priodas ; priodas&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "0UVQAAAAIAAJ",
-      "etag": "8c3P7g43hiA",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/0UVQAAAAIAAJ",
-      "volumeInfo": {
-        "title": "A Critical Pronouncing Dictionary of the English Language",
-        "subtitle": "Incorporating the Labours of Sheridan and Walker ... Also a Key to the Pronunciation of Classical and Scripture Proper Names",
-        "authors": [
-          "James Knowles"
-        ],
-        "publishedDate": "1851",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UCAL:$B223951"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 818,
-        "printType": "BOOK",
-        "categories": [
-          "English language"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.8.9.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=0UVQAAAAIAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=0UVQAAAAIAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=0UVQAAAAIAAJ&pg=PA351&dq=hi&hl=&cd=38&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=0UVQAAAAIAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=0UVQAAAAIAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=0UVQAAAAIAAJ&rdid=book-0UVQAAAAIAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/A_Critical_Pronouncing_Dictionary_of_the.epub?id=0UVQAAAAIAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/A_Critical_Pronouncing_Dictionary_of_the.pdf?id=0UVQAAAAIAAJ&hl=&output=pdf&sig=ACfU3U2MGiz_Y2So0aC-m4dg8gn_RNu6bA&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=0UVQAAAAIAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e - dro - jén , n . One of the principles of HYGROMETRICAL , \u003cb\u003ehi\u003c/b\u003e - gro - met - rik - ål , a . Made by HYPERBOLIZED , \u003cb\u003ehi\u003c/b\u003e - per - bo - li&#39;zd , pp . Exaggerated . HYPERBOLIZING , \u003cb\u003ehi\u003c/b\u003e - per - bo - li&#39;z - ing , ppr . Exagge- rating . HYPERBOLOID&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "pMUkAQAAMAAJ",
-      "etag": "WuYXS8OlZ4c",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/pMUkAQAAMAAJ",
-      "volumeInfo": {
-        "title": "The miser. Monsieur de Pourceaugnac. The magnificent lovers. The citizen who apes the nobleman. Psyche. The rogueries of Scapin. The Countess of Escarbagnas. The learned ladies. The maginary invalid. The jealousy of Le Barbouillé. The flying doctor",
-        "authors": [
-          "Molière"
-        ],
-        "publishedDate": "1878",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NWU:35556021910773"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 646,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.7.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=pMUkAQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=pMUkAQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=pMUkAQAAMAAJ&pg=PA225&dq=hi&hl=&cd=39&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=pMUkAQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=pMUkAQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=pMUkAQAAMAAJ&rdid=book-pMUkAQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/The_miser_Monsieur_de_Pourceaugnac_The_m.epub?id=pMUkAQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "downloadLink": "http://books.google.com.vn/books/download/The_miser_Monsieur_de_Pourceaugnac_The_m.pdf?id=pMUkAQAAMAAJ&hl=&output=pdf&sig=ACfU3U1MaxRmmJn763fCEtH2JlUfz1bZlQ&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=pMUkAQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e . &quot; M. JOUR . What have you to laugh at ? Nic . ( Laughing ) . \u003cb\u003eHi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e . M. JOUR . What does this slut mean ? NIC . \u003cb\u003eHi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e . How you are built ! \u003cb\u003eHi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e , \u003cb\u003ehi\u003c/b\u003e . M. JOUR . How is that&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "os5EAAAAcAAJ",
-      "etag": "E3TgMbX1shw",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/os5EAAAAcAAJ",
-      "volumeInfo": {
-        "title": "Grammar and Dictionary of the Dakota Language",
-        "authors": [
-          "Minnesota Historical Society"
-        ],
-        "publisher": "Washington [D.C.] : Smithsonian Institution ; New York : G.P. Putnam",
-        "publishedDate": "1852",
-        "description": "This volume was prepared, in part, from an Missionary effort to preach the Gospel to the Dakotas in their own language. It contains more than sixteen thousand words.",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "BSB:BSB10524288"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 422,
-        "printType": "BOOK",
-        "categories": [
-          "Dakota language"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.5.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=os5EAAAAcAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=os5EAAAAcAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=os5EAAAAcAAJ&pg=RA1-PA65&dq=hi&hl=&cd=40&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=os5EAAAAcAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=os5EAAAAcAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=os5EAAAAcAAJ&rdid=book-os5EAAAAcAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Grammar_and_Dictionary_of_the_Dakota_Lan.epub?id=os5EAAAAcAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=os5EAAAAcAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003ehi\u003c/b\u003e - i&#39;a &#39; - ki - ya , v . n . to show one&#39;s teeth , to grin , - wakiya , \u003cb\u003ehi\u003c/b\u003e , v . n . to come to , arrive at , -wahi , yahi , unhipi : \u003cb\u003ehi\u003c/b\u003e - na - zin , v . n . ( \u003cb\u003ehi\u003c/b\u003e and nazin ) to come and en mahi , he came to me . 4 hin - hpa &#39; - ya&nbsp;..."
+        "textSnippet": "Hajime Isayama. YOUR OR- DERS 12 THAT VER \u003cb\u003eTITAN\u003c/b\u003e ... IT ! DON&#39;T LET ... WHAT. HOH .... WAIT JUST WHAT ? SQUAD : . A ... LEADER !! L ... IS IT MOV- ING ? \u003cb\u003eTITANS\u003c/b\u003e ALL THROUGH ... AND IF NOT ,. IS THE WHOLE WALL PACKED FULL OF \u003cb\u003eTITANS\u003c/b\u003e ? DID&nbsp;..."
       }
     }
   ]

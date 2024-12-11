@@ -7,9 +7,9 @@ import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.LinkedList;
 
 class DocumentDAOTest {
 
@@ -49,7 +49,7 @@ class DocumentDAOTest {
     }
 
     @Test
-    void testAddBook() throws SQLException, IOException, FileFormatException {
+    void testAddBook() throws SQLException, IOException, FileFormatException, URISyntaxException {
         Book newBook = new Book(
             "987654321",
             "Test Book Title",
@@ -58,7 +58,7 @@ class DocumentDAOTest {
             "Test Publisher",
             2024,
             "Test Description",
-            1, // Test Category Encrypt // ai bào m nhập bằng enccrypt hả e =))sos
+            "Historical",
             "Test Language"
         );
 
@@ -67,7 +67,7 @@ class DocumentDAOTest {
     }
 
     @Test
-    void testAddDuplicateBook() throws SQLException, IOException, FileFormatException {
+    void testAddDuplicateBook() throws SQLException, IOException, FileFormatException, URISyntaxException {
         Book duplicateBook = new Book(
             "987654321", // ID trùng với sách đã thêm
             "Duplicate Book Title",
@@ -89,7 +89,7 @@ class DocumentDAOTest {
         String keyword = "Test"; // Từ khóa tìm kiếm sách
         ArrayList<Book> books = DocumentDAO.searchBook(keyword, "", 0, 0, "");
         assertNotNull(books, "Search result should not be null");
-        assertTrue(books.isEmpty(), "Search result should not be empty");
+        assertFalse(books.isEmpty(), "Search result should not be empty");
     }
 
     @Test

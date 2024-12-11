@@ -27,7 +27,7 @@ public abstract class UpdateTable <T> {
     
     public abstract boolean addElement(T newElement) throws SQLException, IOException, FileFormatException, URISyntaxException;
     
-    public abstract boolean updateElement(T alter) throws SQLException, IOException, FileFormatException;
+    public abstract boolean updateElement(T alter) throws SQLException, IOException, FileFormatException, URISyntaxException;
     
     public abstract boolean deleteElement(T alter) throws SQLException;
     

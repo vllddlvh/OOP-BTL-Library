@@ -1,7 +1,5 @@
 package controller;
 
-
-
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
@@ -86,7 +84,7 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
      * @throws model.dao.FileFormatException 
      */
     @Override
-    public boolean updateElement(Book alter) throws SQLException, IOException, FileFormatException {
+    public boolean updateElement(Book alter) throws SQLException, IOException, FileFormatException, URISyntaxException {
         if (DocumentDAO.updateBook(alter)) {
             int i = 0;
             while (i < allElement.size()) {
@@ -159,9 +157,10 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
                 
                 tableModel.setValueAt(alter.getTitle(), row, 1);
                 tableModel.setValueAt(alter.getAuthor(), row, 2);
-                tableModel.setValueAt(alter.getReleaseYear(), row, 3);
-                tableModel.setValueAt(alter.getCategory(), row, 4);
-                tableModel.setValueAt(alter.getLanguage(), row, 5);
+                tableModel.setValueAt(alter.getPublisher(), row, 3);
+                tableModel.setValueAt(alter.getReleaseYear(), row, 4);
+                tableModel.setValueAt(alter.getCategory(), row, 5);
+                tableModel.setValueAt(alter.getLanguage(), row, 6);
 
                 // Còn availableCopies, description, publíher
                 

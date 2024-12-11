@@ -1,5 +1,6 @@
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -14,7 +15,7 @@ import model.entity.Book;
  * @author Littl
  */
 public class LoadExample {
-    public static void main(String[] args) throws SQLException, IOException, FileFormatException {
+    public static void main(String[] args) throws SQLException, IOException, FileFormatException, URISyntaxException {
         // Sau khi chạy AllInOne.sql để tạo database. Đến đoạn nạp đống ảnh của Vũ
         
         DatabaseConnector.getInstance();

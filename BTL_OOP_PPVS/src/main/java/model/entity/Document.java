@@ -165,7 +165,7 @@ public abstract class Document {
         this.cover = ImageIO.read(cover);
         haveCover = true;
     }
-    
+        
     public void setCover(Image cover, String coverFormat) {
         this.coverFormat = coverFormat;
         this.cover = cover;
@@ -181,7 +181,14 @@ public abstract class Document {
         return PDF;
     }
 
-    public void setPDF(File PDF) throws IOException {   
+    public void setPDF(File PDF) throws IOException, FileFormatException, SQLException {   
+        FileHandle.checkFilePDF(PDF);
+        
+        if (cover == null || !haveCover) {
+            setCover(FileHandle.getFirstPage(ID, PDF), "png");
+            haveCover = false;
+        }
+        
         this.PDF = model.dao.FileHandle.convertFile_URL(PDF);
         havePDF = true;
     }
