@@ -5,8 +5,11 @@
 package view;
 
 import controller.LoginController;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import model.entity.Member;
-import model.entity.User;
 
 /**
  *
@@ -15,15 +18,16 @@ import model.entity.User;
 public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
     
     private boolean editable = false;
+    private Member currentUser;
 
     /**
      * Creates new form ThongTinCuaToiJPanel
      */
     public ThongTinCuaToiJPanel() {
         initComponents();
-        User acc = LoginController.getAcc();
+        currentUser = (Member) LoginController.getAcc();
         
-        initOnStart(acc);
+        initOnStart();
     }
 
     /**
@@ -104,22 +108,17 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jlbFirstName)
-                            .addComponent(jlbID, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jlbLastName)
-                            .addComponent(jlbDateOfBirth)
-                            .addComponent(jlbContact)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(buttonEditInfo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(buttonChangePassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(128, 128, 128)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jlbFirstName)
+                    .addComponent(jlbLastName)
+                    .addComponent(jlbDateOfBirth)
+                    .addComponent(jlbContact)
+                    .addComponent(jlbID))
                 .addGap(15, 15, 15)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(buttonChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonEditInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jTextFieldContact, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
@@ -156,11 +155,11 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbDateOfBirth)
                     .addComponent(jTextFieldDateOfBirth, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(55, 55, 55)
+                .addGap(53, 53, 53)
                 .addComponent(buttonEditInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(buttonChangePassword, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -178,12 +177,12 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void initOnStart(User acc) {
-        JTextFieldID.setText(acc.getID());
-        jTextFieldFirstName.setText(acc.getFirstName());
-        jTextFieldLastName.setText(acc.getLastName());
-        jTextFieldContact.setText(((Member) acc).getContact());
-        jTextFieldDateOfBirth.setText(((Member) acc).getDateOfBirth());
+    private void initOnStart() {
+        JTextFieldID.setText(currentUser.getID());
+        jTextFieldFirstName.setText(currentUser.getFirstName());
+        jTextFieldLastName.setText(currentUser.getLastName());
+        jTextFieldContact.setText(((Member) currentUser).getContact());
+        jTextFieldDateOfBirth.setText(((Member) currentUser).getDateOfBirth());
         JTextFieldID.setEditable(false);
         jTextFieldContact.setEditable(false);
         jTextFieldDateOfBirth.setEditable(false);
@@ -193,20 +192,50 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
     
     private void buttonEditInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditInfoMouseClicked
         // TODO add your handling code here:
-        jTextFieldContact.setEditable(true);
-        jTextFieldDateOfBirth.setEditable(true);
-        jTextFieldFirstName.setEditable(true);
-        jTextFieldLastName.setEditable(true);
+        if (editable) {
+            currentUser.setContact(jTextFieldContact.getText());
+            currentUser.setDateOfBirth(jTextFieldDateOfBirth.getText());
+            currentUser.setFirstName(jTextFieldFirstName.getText());
+            currentUser.setLastName(jTextFieldLastName.getText());
+            
+            try {
+                if (model.dao.MemberDAO.updateMember(currentUser)) {
+                    JOptionPane.showMessageDialog(this, "Sửa thông tin thành công");
+                } else {
+                    JOptionPane.showMessageDialog(this, "Sửa thông tin thất bại");
+                }
+                
+                initOnStart();
+                buttonChangePassword.setText("Đổi mật khẩu");  
+            } catch (SQLException ex) {
+                Logger.getLogger(ThongTinCuaToiJPanel.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+            }
+            
+        } else {
+            // Sang trạng thái chỉnh sửa
+            jTextFieldContact.setEditable(true);
+            jTextFieldDateOfBirth.setEditable(true);
+            jTextFieldFirstName.setEditable(true);
+            jTextFieldLastName.setEditable(true);
         
-        buttonChangePassword.setText("Hủy thay đổi");
-        editable = true;
+            buttonChangePassword.setText("Hủy thay đổi");
+            editable = true;
+        }
         
     }//GEN-LAST:event_buttonEditInfoMouseClicked
 
     private void buttonChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonChangePasswordMouseClicked
         // TODO add your handling code here:
         if (editable) {
-            
+            // Tức bây giờ đang là nút hủy thay đổi
+            initOnStart();
+            buttonChangePassword.setText("Đổi mật khẩu");
+        } else {
+            // Mở cửa sổ đổi mật khẩu
+            DoiMatKhauJFrame changeP = new DoiMatKhauJFrame();
+            changeP.setAlwaysOnTop(true);
+            changeP.setVisible(true);
         }
     }//GEN-LAST:event_buttonChangePasswordMouseClicked
 

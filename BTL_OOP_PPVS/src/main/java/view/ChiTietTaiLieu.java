@@ -7,6 +7,7 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -55,7 +56,8 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         // Setup frame mới (cửa sổ)
         this.setTitle("Chi Tiết Sách");
         {
-            this.setSize(720, 500);
+            this.setSize(720, 516);
+            this.setResizable(false);
             this.setLayout(new BorderLayout());
         }
         
@@ -97,9 +99,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         
         // Tạo nút "Mượn trả sách"
         setTextButtonMuonTra();
-        
-        {
-            
+        {  
             jbuttonMuonTra.setForeground(Color.WHITE);
             jbuttonMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
             jbuttonMuonTra.setFocusPainted(false);
@@ -108,15 +108,31 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
             jbuttonMuonTra.addMouseListener(new java.awt.event.MouseAdapter() {
                 @Override
                 public void mouseClicked(java.awt.event.MouseEvent evt) {
-                    jButtonMuonClicked(evt);
+                    jButtonMuonTraClicked(evt);
+                }
+            });
+        }
+        
+        setTextButtonDoc();
+        {
+            jbuttonDoc.setForeground(Color.WHITE);
+            jbuttonDoc.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 12));
+            jbuttonDoc.setFocusPainted(false);
+            jbuttonDoc.setPreferredSize(new Dimension(100, 40)); // Đặt kích thước cho nút
+            // Gán sự kiện cho nút
+            jbuttonDoc.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseClicked(java.awt.event.MouseEvent evt) {
+                    jButtonDocClicked(evt);
                 }
             });
         }
 
         
         // Thêm ảnh và nút vào imagePanel
-        imagePanel.add(jbuttonMuonTra, BorderLayout.SOUTH); // Nút nằm dưới
-        imagePanel.add(imageLabel, BorderLayout.CENTER); // Ảnh nằm ở trung tâm
+        imagePanel.add(jbuttonMuonTra, BorderLayout.CENTER); // Nút nằm dưới
+        imagePanel.add(jbuttonDoc, BorderLayout.SOUTH); // Nút nằm dưới nữa
+        imagePanel.add(imageLabel, BorderLayout.NORTH); // Ảnh nằm ở trung tâm
         mainPanel.add(imagePanel, BorderLayout.WEST);
         
 
@@ -166,7 +182,12 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         }
     }
     
-    private void jButtonMuonClicked(java.awt.event.MouseEvent evt) {                                             
+    private void setTextButtonDoc() {
+        jbuttonDoc.setText("Đọc thử");
+        jbuttonDoc.setBackground(Color.BLUE);
+    }
+    
+    private void jButtonMuonTraClicked(java.awt.event.MouseEvent evt) {                                             
         // TODO add your handling code here:
         int n = evt.getClickCount();
         if (n >= 1) {
@@ -199,7 +220,25 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         }
     }   
     
-    
+    private void jButtonDocClicked(java.awt.event.MouseEvent evt) { 
+        try {
+            if (currentShowDocument.getPDF() == null) {
+                JOptionPane.showMessageDialog(this, 
+                                                "Hiện tại sách không có bản đọc thử.", 
+                                                "Thông báo", 
+                                            JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+            currentShowDocument.openPDF();
+            
+        } catch (IOException | SQLException | URISyntaxException ex) {
+            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, 
+                                                "Đã xảy ra lỗi:\n" + ex.getMessage(), 
+                                                "Lỗi", 
+                                            JOptionPane.ERROR_MESSAGE);
+        }
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -230,6 +269,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
     private JButton jbuttonMuonTra = new JButton();
+    private JButton jbuttonDoc = new JButton();
     private JPanel imagePanel;
     private JLabel imageLabel;
     private final JPanel infoPanel;

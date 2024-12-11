@@ -88,20 +88,28 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jlbLanguage" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlbID" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlbTitle" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlbAuthor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlbPublisher" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlbPublicationYear" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlbCategory" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jlbSummary" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jlbLanguage" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbID" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbTitle" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbAuthor" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbPublisher" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbPublicationYear" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="jlbCategory" alignment="0" max="32767" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane2" min="-2" pref="414" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+                              <Component id="ButtonReset" min="-2" pref="92" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                   <Component id="jTextFieldLanguage" alignment="0" pref="200" max="32767" attributes="0"/>
                                   <Component id="jTextFieldCategory" alignment="0" max="32767" attributes="0"/>
@@ -111,28 +119,18 @@
                                   <Component id="jTextFieldBookID" alignment="0" max="32767" attributes="0"/>
                                   <Component id="jTextFieldBookTitle" alignment="0" max="32767" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="150" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane2" min="-2" pref="343" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="1" attributes="0">
-                                          <Component id="jlbImage" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jlbSummary" min="-2" pref="68" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jlbImage" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                       <Component id="jButtonChonFileAnh" min="-2" max="-2" attributes="0"/>
                                   </Group>
+                                  <Component id="demoImageLabel" min="-2" pref="190" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
-                              <Component id="ButtonReset" min="-2" pref="92" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="180" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -140,14 +138,15 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jlbID" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="jTextFieldBookID" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonChonFileAnh" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jlbImage" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jlbID" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                                  <Component id="jTextFieldBookID" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlbSummary" alignment="3" min="-2" pref="32" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jlbTitle" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                                   <Component id="jTextFieldBookTitle" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -156,8 +155,6 @@
                               <Group type="103" groupAlignment="3" attributes="0">
                                   <Component id="jlbAuthor" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   <Component id="jTextFieldBookAuthor" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jlbImage" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
-                                  <Component id="jButtonChonFileAnh" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -169,25 +166,35 @@
                                   <Component id="jlbPublicationYear" alignment="3" min="-2" pref="36" max="-2" attributes="0"/>
                                   <Component id="jTextFieldPublicationYear" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
+                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="jlbCategory" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="jTextFieldCategory" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                              <Component id="jScrollPane2" min="-2" pref="86" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="demoImageLabel" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jlbCategory" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="jTextFieldCategory" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jlbLanguage" alignment="3" min="-2" pref="29" max="-2" attributes="0"/>
                           <Component id="jTextFieldLanguage" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                      <Component id="ButtonReset" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="56" max="32767" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jlbSummary" min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jScrollPane2" pref="158" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="ButtonReset" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -283,9 +290,6 @@
             <Component class="javax.swing.JTextField" name="jTextFieldBookAuthor">
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldBookPublisher">
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextFieldBookPublisherActionPerformed"/>
-              </Events>
             </Component>
             <Component class="javax.swing.JTextField" name="jTextFieldPublicationYear">
             </Component>
@@ -352,6 +356,17 @@
                 </Component>
               </SubComponents>
             </Container>
+            <Component class="javax.swing.JLabel" name="demoImageLabel">
+              <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                    <BevelBorder>
+                      <Color PropertyName="highlightInner" blue="99" green="99" red="99" type="rgb"/>
+                    </BevelBorder>
+                  </Border>
+                </Property>
+              </Properties>
+            </Component>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JButton" name="ButtonSaveBook">

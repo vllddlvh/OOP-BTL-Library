@@ -191,7 +191,7 @@ public class UserDAO {
         CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteUser(?, ?) }");
         
         finder.setString(1, ID);
-        finder.setString(2, "S001");
+        finder.setString(2, controller.LoginController.getAcc().getID());
                 
         finder.executeQuery();
     }

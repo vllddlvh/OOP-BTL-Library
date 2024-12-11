@@ -109,7 +109,7 @@ public class TrangChuJPanel extends javax.swing.JPanel {
             JPanel documentCard = createDocumentCard(document);
 
             // Đặt kích thước cố định cho mỗi thẻ (200x300)
-            documentCard.setPreferredSize(new Dimension(200, 300));
+            documentCard.setPreferredSize(new Dimension(200, 340));
 
             // Thêm thẻ vào jPanelBook
             jPanelBook.add(documentCard);
@@ -159,7 +159,18 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
         }
     });
 
-    return card;
+    JPanel wrapper = new JPanel();
+    wrapper.setBackground(new Color(128, 175, 129));
+    wrapper.add(card);
+
+    wrapper.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+            new ChiTietTaiLieu(document).setVisible(true);
+        }
+    });
+
+    return wrapper;
 }
 
     

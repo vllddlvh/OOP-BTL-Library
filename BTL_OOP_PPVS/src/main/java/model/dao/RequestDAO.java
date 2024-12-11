@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.io.File;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -128,7 +129,14 @@ public class RequestDAO {
         finder.setString(1, documentID);
         finder.setString(2, userID);
         
-        return finder.executeUpdate() > 0;
+        if (finder.executeUpdate() > 0) {
+            File pdf = new File("src/OuterData/" + documentID + ".pdf");
+            if (pdf.exists()) {
+                pdf.delete();
+            }
+            return true;
+        }
+        return false;
     }
     
     /**

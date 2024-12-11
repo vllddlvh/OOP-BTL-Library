@@ -126,10 +126,14 @@ public class Book extends Document {
         this.author = org.author;
         this.publisher = org.publisher;
         this.releaseYear = org.releaseYear;
+        this.description = org.description;
         this.availableCopies = org.availableCopies;
         this.category = new ArrayList<>();
         this.category.addAll(org.category);
         this.language = org.language;
+        this.PDF = org.PDF;
+        this.cover = org.cover;
+        this.coverFormat = org.coverFormat;
     }
     
     /**

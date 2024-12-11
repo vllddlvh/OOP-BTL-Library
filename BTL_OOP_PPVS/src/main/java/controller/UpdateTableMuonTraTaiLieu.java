@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
-import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
@@ -23,7 +22,7 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
     public static final int MY_HISTORY = 0;
     public static final int ALL_SYSTEM = 1;
     
-    private static final UpdateTableMuonTraTaiLieu singleTon = new UpdateTableMuonTraTaiLieu();
+    private static final UpdateTableMuonTraTaiLieu instance = new UpdateTableMuonTraTaiLieu();
 
     private UpdateTableMuonTraTaiLieu() {
     }
@@ -32,13 +31,13 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
         try {
             switch (optionList) {
                 case MY_HISTORY : 
-                    singleTon.allElement = LoginController.getAcc().getMyBorrowHistory();
+                    instance.allElement = LoginController.getAcc().getMyBorrowHistory();
                     break;
                 case ALL_SYSTEM :
                     if (LoginController.getAcc() instanceof model.entity.Staff) {
-                        singleTon.allElement = RequestDAO.getAllRequest();
+                        instance.allElement = RequestDAO.getAllRequest();
                     } else {
-                        singleTon.allElement = new ArrayList<>();
+                        instance.allElement = new ArrayList<>();
                     }
                     break;
             }
@@ -49,7 +48,7 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
     }
 
     public static UpdateTableMuonTraTaiLieu getInstance() {
-        return singleTon;
+        return instance;
     }
 
     @Override
@@ -103,9 +102,9 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
     
     @Override
     public void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException {
-        singleTon.tableModel = (DefaultTableModel) table.getModel();
-        singleTon.jbtAdd = jbtAdd;
-        singleTon.jtfSearch = jtfSearch;
+        instance.tableModel = (DefaultTableModel) table.getModel();
+        instance.jbtAdd = jbtAdd;
+        instance.jtfSearch = jtfSearch;
         
         // addAll dòng mới vào trong tableModel
         rewriteTable();
@@ -167,23 +166,23 @@ public class UpdateTableMuonTraTaiLieu extends UpdateTable<Request> {
     }
     
     public static void unreturnFilter() {
-        int i = singleTon.tableModel.getRowCount() - 1;
+        int i = instance.tableModel.getRowCount() - 1;
         for (; i >= 0; i--) {
-            String s = (String) singleTon.tableModel.getValueAt(i, 6);
+            String s = (String) instance.tableModel.getValueAt(i, 6);
             if (s == null || s.length() == 0) {
                 continue;
             }
-            singleTon.tableModel.removeRow(i);
+            instance.tableModel.removeRow(i);
         }
     }
     
     public static void rewriteTable() {
-        int i = singleTon.tableModel.getRowCount() - 1;
+        int i = instance.tableModel.getRowCount() - 1;
         for (; i >= 0; i--) {
-            singleTon.tableModel.removeRow(i);
+            instance.tableModel.removeRow(i);
         }
-        for (Request req : singleTon.allElement) {
-            singleTon.addRow(req);
+        for (Request req : instance.allElement) {
+            instance.addRow(req);
         }
     }
     

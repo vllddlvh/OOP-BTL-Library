@@ -1,5 +1,6 @@
 package model.dao;
 
+import java.awt.Desktop;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
@@ -8,6 +9,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.nio.file.Paths;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -24,6 +29,25 @@ import org.apache.tika.Tika;
  */
 public class FileHandle {
     private final static Tika checking = new Tika(); // Để check định dạng của file.
+    
+    public static void openURL(URL url) throws IOException, URISyntaxException {
+            Desktop.getDesktop().browse(url.toURI());
+    }
+    
+    public static File convertURL_File(URL url) throws URISyntaxException {
+        if (url != null && url.getPath().startsWith("file:")) {
+            File file = Paths.get(url.toURI()).toFile();
+            return file;
+        }
+        return null;
+    }
+    
+    public static URL convertFile_URL(File file) throws MalformedURLException {
+        if (file != null) {
+            return file.toURI().toURL();
+        }
+        return null;
+    }
     
     /**
      * Upload ảnh bìa cho tài liệu.
@@ -123,12 +147,11 @@ public class FileHandle {
      * @throws SQLException 
      * @throws model.dao.FileFormatException 
      */
-    public static boolean uploadDocumentPDF(String documentID, File pdf, boolean firstPageBeingCover) throws IOException, 
+    public static boolean uploadDocumentPDF(String documentID, URL PDF, boolean firstPageBeingCover) throws IOException, 
                                                                                                             SQLException, 
-                                                                                                            FileFormatException {
-        
-        checkFilePDF(pdf);
-        
+                                                                                                            FileFormatException,
+                                                                                                            URISyntaxException {
+        File pdf = convertURL_File(PDF);
         PDDocument document = PDDocument.load(pdf);
         if (document.getNumberOfPages() > 0) {
             if (firstPageBeingCover) {
@@ -176,6 +199,11 @@ public class FileHandle {
      * @throws SQLException 
      */
     public static File getDocumentPDF(String documentID) throws IOException, SQLException {
+        File result = new File("src/OuterData/" + documentID + ".pdf");
+        if (result.exists()) {
+            return result;
+        }
+        
         String sql = "SELECT PDF FROM library_2nd_edition.storedDocument WHERE ID = ?";
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
         
@@ -202,7 +230,7 @@ public class FileHandle {
             rs.close();
             
             // return the path contain the file.
-            return new File("src/OuterData/" + documentID + ".pdf");
+            return result;
         }
         
         return null;
@@ -265,22 +293,5 @@ public class FileHandle {
         }
         
         return true;
-    }
-    
-    public static void main(String[] args) {
-        File pdf = new File("src\\OuterData\\Phát triển ứng dụng quản lý thư viện bằng Java.pdf");
-        
-        try {
-            checkFilePDF(pdf);
-            
-            //uploadDocumentCover("T001", cover);
-            uploadDocumentPDF("T001", pdf, true);
-            // Cover lấy luôn trang đầu.
-            
-            getDocumentCover("T001");
-            getDocumentPDF("T001");
-        } catch (IOException | SQLException | FileFormatException ex) {
-            System.out.println(ex.getMessage());
-        }
     }
 }

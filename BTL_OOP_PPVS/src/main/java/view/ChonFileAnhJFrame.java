@@ -1,27 +1,45 @@
 package view;
 
+import java.awt.FileDialog;
+import java.awt.Frame;
+import java.awt.Image;
 import java.io.File;
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import java.io.FilenameFilter;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import model.dao.FileFormatException;
+import model.entity.Book;
 
 
 public class ChonFileAnhJFrame extends javax.swing.JFrame {
-    private static File fileImage;
+    private static File fileImage = null;
+    private Book prototype;
+    private JLabel whereToPutDemoImage;
 
+    /**
+     *
+     * @return
+     */
     public static File getFileImage() {
         return fileImage;
-    }
-
-    public static void setFileImage(File fileImage) {
-        ChonFileAnhJFrame.fileImage = fileImage;
     }
     /**
      * Creates new form JFrameChonFileAnh
      */
-    public ChonFileAnhJFrame() {
+    public ChonFileAnhJFrame(Book prototype, JLabel whereToPutDemoImage) {
         initComponents();
+        
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        this.prototype = prototype;
+        this.whereToPutDemoImage = whereToPutDemoImage;
         
         FileNameExtensionFilter filter = new FileNameExtensionFilter("png", "jpg", "jpeg", "bmp", "gif");
         jFileChooserFileAnh.setFileFilter(filter);
@@ -76,67 +94,75 @@ public class ChonFileAnhJFrame extends javax.swing.JFrame {
 
     
     private void jFileChooserFileAnhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooserFileAnhActionPerformed
-    String command = evt.getActionCommand();
-    if (command.equals(javax.swing.JFileChooser.APPROVE_SELECTION)) {
-        File selectedFile = jFileChooserFileAnh.getSelectedFile();
-        String fileName = selectedFile.getName().toLowerCase();
-
-        // Kiểm tra định dạng ảnh hợp lệ
-        if (fileName.endsWith(".jpg") || fileName.endsWith(".jpeg") ||
-            fileName.endsWith(".png") || fileName.endsWith(".gif") ||
-            fileName.endsWith(".bmp")) {
-
-            // Đường dẫn đến thư mục "src/main/java/image/"
-            File destDir = new File("src/main/java/image");
-            if (!destDir.exists()) {
-                destDir.mkdirs(); // Tạo thư mục nếu chưa tồn tại
-            }
-
-            // Gán tên file vào biến tĩnh hoặc sử dụng sau
-                ChonFileAnhJFrame.setFileImage(selectedFile);
-            // File đích (tên file giữ nguyên)
-            File destFile = new File(destDir, selectedFile.getName());
-
+        String command = evt.getActionCommand();
+        if (command.equals(javax.swing.JFileChooser.APPROVE_SELECTION)) {
+            File fileImage = jFileChooserFileAnh.getSelectedFile();
             try {
-                // Sao chép file từ vị trí gốc vào thư mục "/src/main/java/image/"
-                java.nio.file.Files.copy(
-                    selectedFile.toPath(),
-                    destFile.toPath(),
-                    java.nio.file.StandardCopyOption.REPLACE_EXISTING
-                );
-
-                // Thông báo thành công
-                javax.swing.JOptionPane.showMessageDialog(this,
-                    "File ảnh đã được lưu vào thư mục /src/main/java/image/: " + destFile.getAbsolutePath(),
-                    "Thành công",
-                    javax.swing.JOptionPane.INFORMATION_MESSAGE);
-
-//                // Đóng cửa sổ
-//                this.setVisible(false);
-
-            } catch (java.io.IOException ex) {
-                ex.printStackTrace();
-                javax.swing.JOptionPane.showMessageDialog(this,
-                    "Lỗi khi sao chép file: " + ex.getMessage(),
-                    "Lỗi",
-                    javax.swing.JOptionPane.ERROR_MESSAGE);
+                prototype.setCover(fileImage);
+                
+                Image scaledImage = prototype.getCover().getScaledInstance(286, 241, Image.SCALE_SMOOTH);
+                whereToPutDemoImage.setIcon(new ImageIcon(scaledImage));
+            
+            } catch (FileFormatException | IOException ex) {
+                Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, ex.getMessage());
+                try {
+                    prototype.setCover(null);
+                } catch (FileFormatException | IOException ex1) {
+                    Logger.getLogger(ChonFileAnhJFrame.class.getName()).log(Level.SEVERE, null, ex1);
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(ChonFileAnhJFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } else {
-            // Hiển thị thông báo lỗi nếu file không hợp lệ
+            this.dispose();
+        
+        } else if (command.equals(javax.swing.JFileChooser.CANCEL_SELECTION)) {
+            // Hiển thị thông báo nếu người dùng hủy chọn file
             javax.swing.JOptionPane.showMessageDialog(this, 
-                "File không phải là định dạng ảnh hợp lệ!", 
-                "Lỗi", 
-                javax.swing.JOptionPane.ERROR_MESSAGE);
-        }
-    } else if (command.equals(javax.swing.JFileChooser.CANCEL_SELECTION)) {
-        // Hiển thị thông báo nếu người dùng hủy chọn file
-        javax.swing.JOptionPane.showMessageDialog(this, 
             "Bạn đã hủy chọn file.", 
             "Thông báo", 
             javax.swing.JOptionPane.WARNING_MESSAGE);
-    }
+        }
     }//GEN-LAST:event_jFileChooserFileAnhActionPerformed
 
+    
+    public static File openWindowFileChooser() {
+        // Tạo Frame để làm nền cho FileDialog
+        Frame frame = new Frame();
+        frame.setVisible(true);
+        frame.setSize(0, 0); // Không cần hiển thị frame, chỉ dùng để làm parent
+
+        // Tạo FileDialog để mở file
+        FileDialog fileDialog = new FileDialog(frame, "Select a file", FileDialog.LOAD);
+        fileDialog.setDirectory(null); // Đặt thư mục khởi đầu
+        
+        fileDialog.setFilenameFilter(new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                String tag = name.substring(name.length() - 4);
+                switch (tag) {
+                    case ".jpg":
+                    case "jpeg":
+                    case ".png":
+                    case ".bmp":
+                    case ".gif":
+                        return true;
+                }
+                return false;
+            }
+        });
+
+        // Hiển thị hộp thoại
+        fileDialog.setSize(1500, 1000);
+        fileDialog.setVisible(true);
+
+        frame.dispose(); // Đóng Frame
+        if (fileDialog.getFile() == null) {
+            return null;
+        }
+        return new File(fileDialog.getDirectory() + fileDialog.getFile());
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFileChooser jFileChooserFileAnh;
     private javax.swing.JPanel jPanel1;

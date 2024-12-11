@@ -90,7 +90,7 @@ public class TimKiemCungAPI extends javax.swing.JPanel {
         JPanel documentCard = createDocumentCard(document);
 
         // Đặt kích thước cố định cho mỗi thẻ (200x300)
-        documentCard.setPreferredSize(new Dimension(200, 300));
+        documentCard.setPreferredSize(new Dimension(200, 340));
 
         // Thêm thẻ vào jPanelBook
         jPanelBook.add(documentCard);
@@ -105,7 +105,7 @@ public class TimKiemCungAPI extends javax.swing.JPanel {
             JPanel documentCard = createDocumentCard(document);
 
             // Đặt kích thước cố định cho mỗi thẻ (200x300)
-            documentCard.setPreferredSize(new Dimension(200, 300));
+            documentCard.setPreferredSize(new Dimension(200, 340));
 
             // Thêm thẻ vào jPanelBook
             jPanelBook.add(documentCard);
@@ -253,7 +253,7 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
             String keyword = JTextFieldTimKiem.getText().trim();
             if (keyword.length() > 0) {
                 documents = new ArrayList<>();
-                apiGoogleBook.APIConnector.searchBook(keyword);
+                apiGoogleBook.APIConnector.searchBook(keyword, documents);
             }
         }
     }//GEN-LAST:event_buttonAPIMouseClicked

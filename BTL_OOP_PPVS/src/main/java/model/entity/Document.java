@@ -15,6 +15,8 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.awt.Image;
+import java.net.URISyntaxException;
+import java.net.URL;
 import javax.imageio.ImageIO;
 import model.dao.DocumentDAO;
 import model.dao.FileFormatException;
@@ -27,25 +29,19 @@ import model.dao.FileHandle;
 public abstract class Document {
     protected String ID;
     protected String title;
-    protected int availableCopies;
+    protected int availableCopies = 100;
     protected ArrayList<String> category = new ArrayList<>();
     protected String description;
     protected String language = "Không rõ";
     
     protected Image cover = null;
-    protected File PDF = null;
+    protected URL PDF = null;
     
     // Chỉ sử dụng nội trong model. 
     // Tránh down lại file nhiều lần, và xác định định dạng ảnh. 
     protected boolean haveCover = true;
     protected boolean havePDF = true;
     protected String coverFormat = null;
-    
-    public void destroy() {
-        if (PDF != null) {
-            PDF.delete();
-        }
-    }
     
     /**
      * Get document search by title. 
@@ -113,14 +109,28 @@ public abstract class Document {
         for (String x : this.category) {
             result.append(", ").append(x);
         }
+        if (result.length() < 2) {
+            return "";
+        }
         return result.substring(2);
     }
 
     public void setCategory(ArrayList<String> category) {
-        this.category = category;
+        for (String x : category) {
+            this.category.add(x.trim());
+        }
+    }
+    
+    public void setCategory(String category) {
+        this.category = new ArrayList<>();
+        String[] arr = category.split("[,.]+");
+        for (String x : arr) {
+            this.category.add(x.trim());
+        }
     }
     
     public int getCategoryEncrypt() throws IOException {
+        System.out.println(this.category);
         return CategoryType.encrypt(this.category);
     }
 
@@ -135,11 +145,6 @@ public abstract class Document {
     public String getCoverFormat() {
         return coverFormat;
     }
-    
-    @Override
-    public String toString() {
-        return "Document{" + "ID=" + ID + ", title=" + title + ", availableCopies=" + availableCopies + ", category=" + category + ", description=" + description;
-    }
 
     public Image getCover() throws IOException, SQLException, FileFormatException  {
         if (cover == null && haveCover) {
@@ -150,6 +155,11 @@ public abstract class Document {
     }
 
     public void setCover(File cover) throws FileFormatException, IOException {
+        if (cover == null) {
+            this.cover = null;
+            return;
+        }
+        
         coverFormat = FileHandle.checkFileCover(cover);
         
         this.cover = ImageIO.read(cover);
@@ -162,23 +172,31 @@ public abstract class Document {
         haveCover = true;
     }
 
-    public File getPDF() throws IOException, SQLException, FileFormatException {
+    public URL getPDF() throws IOException, SQLException {
         if (PDF == null && havePDF) {
-            PDF = FileHandle.getDocumentPDF(ID);
+            File file = FileHandle.getDocumentPDF(ID);
+            PDF = model.dao.FileHandle.convertFile_URL(file);
             havePDF = false;
         }
         return PDF;
     }
 
-    public void setPDF(File PDF) throws FileFormatException, IOException {
-        FileHandle.checkFilePDF(PDF);
-        
-        this.PDF = PDF;
+    public void setPDF(File PDF) throws IOException {   
+        this.PDF = model.dao.FileHandle.convertFile_URL(PDF);
         havePDF = true;
     }
     
+    public void setPDF(URL url) {
+        this.PDF = url;
+        havePDF = true;
+    }
     
-    
+    public void openPDF() throws IOException, SQLException, URISyntaxException {
+        if (this.PDF == null) {
+            this.getPDF();
+        }
+        FileHandle.openURL(this.PDF);
+    }
     
     public static class CategoryType {
         private static ArrayList<String> decoder;
@@ -245,9 +263,21 @@ public abstract class Document {
             if (encrypter == null) {
                 loadDecoder();
             }
+            System.out.println(category);
             
             int result = 0;
+            int singleCategory;
+            ArrayList<String> newCate = new ArrayList<>(); 
             for (String x : category) {
+                singleCategory = encrypter.getOrDefault(x, 0);
+                if (singleCategory == 0) {
+                    newCate.add(x);
+                } else {
+                    result += singleCategory;
+                }
+            }
+            addNewCategory(newCate);
+            for (String x : newCate) {
                 result += encrypter.getOrDefault(x, 0);
             }
             

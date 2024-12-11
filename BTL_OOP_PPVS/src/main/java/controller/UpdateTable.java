@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +25,7 @@ public abstract class UpdateTable <T> {
     
     public abstract void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException, IOException;
     
-    public abstract boolean addElement(T newElement) throws SQLException, IOException, FileFormatException;
+    public abstract boolean addElement(T newElement) throws SQLException, IOException, FileFormatException, URISyntaxException;
     
     public abstract boolean updateElement(T alter) throws SQLException, IOException, FileFormatException;
     

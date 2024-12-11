@@ -2,6 +2,7 @@ package model.entity;
 
 
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 
 import java.util.ArrayList;
@@ -191,7 +192,7 @@ public class Staff extends User {
      * @throws SQLException 
      * @throws IOException
      */
-    public boolean addBook(Book newBook) throws SQLException, IOException, FileFormatException  {
+    public boolean addBook(Book newBook) throws SQLException, IOException, FileFormatException, URISyntaxException  {
         return DocumentDAO.addBook(newBook);
     }
     
@@ -205,7 +206,7 @@ public class Staff extends User {
      * @throws SQLException 
      * @throws IOException
      */
-    public boolean addDocument(Document newDocument) throws SQLException, IOException, FileFormatException {
+    public boolean addDocument(Document newDocument) throws SQLException, IOException, FileFormatException, URISyntaxException {
         if (newDocument instanceof Book) {
            return addBook((Book) newDocument);
         } 

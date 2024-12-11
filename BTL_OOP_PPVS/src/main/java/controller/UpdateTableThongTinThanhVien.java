@@ -24,7 +24,7 @@ import model.dao.UserDAO;
  */
 public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     
-    private static UpdateTableThongTinThanhVien singleTon = new UpdateTableThongTinThanhVien();
+    private static UpdateTableThongTinThanhVien instance = new UpdateTableThongTinThanhVien();
     
     private UpdateTableThongTinThanhVien() {}
     
@@ -33,10 +33,10 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
      * Đông thời khi thêm thành viên, ThemThanhVienJFrame gọi thẳng được cái này.
      * Nên sẽ add thêm dòng vào bảng được luôn.
      * 
-     * @return singleTon duy nhất tồn tại
+     * @return instance duy nhất tồn tại
      */
     public static UpdateTableThongTinThanhVien getInstance() {
-        return singleTon;
+        return instance;
     }
     
     /**
@@ -182,9 +182,9 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     @Override
     public void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException {
        
-        singleTon.tableModel = (DefaultTableModel) table.getModel();
-        singleTon.jbtAdd = jbtAdd;
-        singleTon.jtfSearch = jtfSearch;
+        instance.tableModel = (DefaultTableModel) table.getModel();
+        instance.jbtAdd = jbtAdd;
+        instance.jtfSearch = jtfSearch;
         
         // Lấy toàn bộ thông tin từ DB. 
         // addAll dòng mới vào trong tableModel

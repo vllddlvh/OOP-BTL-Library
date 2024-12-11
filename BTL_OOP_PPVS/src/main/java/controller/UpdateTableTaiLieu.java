@@ -5,6 +5,7 @@ package controller;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JButton;
@@ -17,10 +18,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
-import view.SuaThongTinTaiLieuSachFrame;
 import model.entity.Book;
 import model.dao.DocumentDAO;
 import model.dao.FileFormatException;
+import model.dao.FileHandle;
+import view.ThemTaiLieuFrame;
 
 /**
  * Quản lý cập nhật bảng Book (JTable) đồng bộ với dữ liệu trong Database.
@@ -63,7 +65,7 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
      * @throws model.dao.FileFormatException
      */
     @Override
-    public boolean addElement(Book newBook) throws SQLException, IOException, FileFormatException {
+    public boolean addElement(Book newBook) throws SQLException, IOException, FileFormatException, URISyntaxException {
         if (DocumentDAO.addBook(newBook)) {
             allElement.add(newBook);
             addRow(newBook);
@@ -93,6 +95,7 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
                     
                     break;
                 }
+                i++;
             }
             updateRow(alter); // Cập nhật hiển thị trên bảng
             return true;
@@ -157,7 +160,7 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
                 tableModel.setValueAt(alter.getTitle(), row, 1);
                 tableModel.setValueAt(alter.getAuthor(), row, 2);
                 tableModel.setValueAt(alter.getReleaseYear(), row, 3);
-                tableModel.setValueAt(alter.getCategory().toString(), row, 4);
+                tableModel.setValueAt(alter.getCategory(), row, 4);
                 tableModel.setValueAt(alter.getLanguage(), row, 5);
 
                 // Còn availableCopies, description, publíher
@@ -229,7 +232,7 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
                     
                     // Mở form chỉnh sửa tại đây (nếu có)
                     if (book != null) {
-                        new SuaThongTinTaiLieuSachFrame(book).setVisible(true);
+                        new ThemTaiLieuFrame(book).setVisible(true);
                     }
                 }
             }
