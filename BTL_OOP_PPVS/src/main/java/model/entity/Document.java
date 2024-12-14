@@ -2,6 +2,7 @@ package model.entity;
 
 
 
+import java.awt.Graphics2D;
 import java.sql.SQLException;
 
 import java.util.List;
@@ -15,8 +16,11 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import model.dao.DocumentDAO;
 import model.dao.FileFormatException;
@@ -130,7 +134,6 @@ public abstract class Document {
     }
     
     public int getCategoryEncrypt() throws IOException {
-        System.out.println(this.category);
         return CategoryType.encrypt(this.category);
     }
 
@@ -162,7 +165,18 @@ public abstract class Document {
         
         coverFormat = FileHandle.checkFileCover(cover);
         
+        // Ảnh gốc
         this.cover = ImageIO.read(cover);
+        
+        // Vẽ lại toàn bộ ảnh, thay đổi kích thước, giảm resolution
+        BufferedImage resizedImage = new BufferedImage(300, 375, BufferedImage.TYPE_INT_RGB);
+        Graphics2D g2d = resizedImage.createGraphics();
+        g2d.drawImage(this.cover, 0, 0, 300, 375, null);
+        g2d.dispose();
+        
+        // gán ảnh sau khi đã giảm độ phân giải
+        this.cover = resizedImage;
+        
         haveCover = true;
     }
         
@@ -198,11 +212,35 @@ public abstract class Document {
         havePDF = true;
     }
     
-    public void openPDF() throws IOException, SQLException, URISyntaxException {
-        if (this.PDF == null) {
-            this.getPDF();
+    public boolean openSamplePDF() throws IOException, SQLException, URISyntaxException {
+        if (PDF == null) {
+            getPDF();
         }
+        if (PDF == null) {
+            return false;
+        }
+        
+        try {
+            FileHandle.openURL(this.PDF);
+            Thread.sleep(500);
+            FileHandle.convertURL_File(PDF).delete();
+            
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Document.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return true;
+    }
+    
+    public boolean openFullPDF() throws IOException, SQLException, URISyntaxException {
+        if (PDF == null) {
+            getPDF();
+        }
+        if (PDF == null) {
+            return false;
+        }
+        
         FileHandle.openURL(this.PDF);
+        return true;
     }
     
     public static class CategoryType {
@@ -270,7 +308,6 @@ public abstract class Document {
             if (encrypter == null) {
                 loadDecoder();
             }
-            System.out.println(category);
             
             int result = 0;
             int singleCategory;

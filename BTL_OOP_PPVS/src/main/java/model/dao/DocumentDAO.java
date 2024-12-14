@@ -10,6 +10,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import model.DatabaseConnector;
 import model.entity.Book;
@@ -89,7 +91,7 @@ public abstract class DocumentDAO {
         CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteDocument(?, ?) }");
         
         finder.setString(1, documentID);
-        finder.setString(2, controller.LoginController.getAcc().getID());
+        finder.setString(2, "23021686");
         
         finder.executeQuery();
     }
@@ -158,7 +160,11 @@ public abstract class DocumentDAO {
         finder.setString(1, titleKeyword);
         finder.setString(2, authorKeyword);
         finder.setInt(3, releaseYear);
-        finder.setInt(4, category);
+        if (category != 0) {
+            finder.setInt(4, category);
+        } else {
+            finder.setString(4, null);
+        }
         finder.setString(5, language);
         
         ResultSet rs;
@@ -209,6 +215,12 @@ public abstract class DocumentDAO {
         rs = finder.executeQuery();
         
         while(rs.next()) {
+            
+            if (rs.getBoolean(1) == false) {
+                return false;
+                // nếu hàm trả về kết quả false, không thêm sách được.
+            }
+            
             if (newBook.getCover() != null) {
                 FileHandle.uploadDocumentCover(newBook.getID(), newBook.getCover(), newBook.getCoverFormat());
             }
@@ -219,7 +231,7 @@ public abstract class DocumentDAO {
                 }
                 FileHandle.uploadDocumentPDF(newBook.getID(), newBook.getPDF(), newBook.getCover() == null);
             }
-            return rs.getBoolean(1);
+            return true;
         }
         
         return false;

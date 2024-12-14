@@ -9,17 +9,19 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.nio.file.Paths;
+import java.net.URLDecoder;
 import java.sql.CallableStatement;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import model.DatabaseConnector;
-import model.entity.Document;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.rendering.PDFRenderer;
 import org.apache.tika.Tika;
@@ -36,9 +38,17 @@ public class FileHandle {
     }
     
     public static File convertURL_File(URL url) throws URISyntaxException {
-        if (url != null && url.getPath().startsWith("file:")) {
-            File file = Paths.get(url.toURI()).toFile();
-            return file;
+        System.out.println(url.getProtocol());
+        if (url.getProtocol().equals("file")) {
+            try {
+                String decodedPath = URLDecoder.decode(url.toURI().getPath(), "UTF-8");
+                System.out.println(decodedPath);
+                return new File(decodedPath);
+                
+            } catch (UnsupportedEncodingException ex) {
+                System.out.println("Original URL: " + url.getPath());
+                Logger.getLogger(FileHandle.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         return null;
     }
@@ -86,11 +96,7 @@ public class FileHandle {
  
         // Execute the statement ả
         int row = loader.executeUpdate();
-        if (row > 0) {
-            return true;
-        }
-        
-        return false;
+        return row > 0;
     }
     
     /**
@@ -155,7 +161,7 @@ public class FileHandle {
         File pdf = convertURL_File(PDF);
         
         // Nếu đây là file tải sẵn về từ db (path là thư mục gốc), thì bỏ qua không upload
-        if (pdf.getPath().equals("src/OuterData/" + documentID + ".pdf")) {
+        if (pdf == null || pdf.getPath().equals("src/OuterData/" + documentID + ".pdf")) {
             return false;
         }
         
@@ -174,11 +180,7 @@ public class FileHandle {
  
         // Execute the statement
         int row = loader.executeUpdate();
-        if (row > 0) {
-            return true;
-        }
-        
-        return false;
+        return row > 0;
     }
     
     public static Image getFirstPage(String documentID, File pdf) throws FileFormatException, IOException, SQLException {
@@ -222,18 +224,15 @@ public class FileHandle {
         
         while(rs.next()) {
             
-            var fis = rs.getBinaryStream(1);
-            if (fis == null) {
-                return null;
+            FileOutputStream fos;
+            try (java.io.InputStream fis = rs.getBinaryStream(1)) {
+                if (fis == null) {
+                    return null;
+                }   // setup a place for the file to be download in
+                fos = new FileOutputStream("src/OuterData/" + documentID + ".pdf", false);
+                // write the file on the place
+                fos.write(fis.readAllBytes());
             }
-            
-            // setup a place for the file to be download in
-            FileOutputStream fos = new FileOutputStream("src/OuterData/" + documentID + ".pdf", false);
-            
-            // write the file on the place
-            fos.write(fis.readAllBytes());
-            
-            fis.close();
             fos.close();
             ps.close();
             rs.close();
@@ -267,11 +266,6 @@ public class FileHandle {
         if (!image.canRead()) {
             throw new FileFormatException("Hiện không thể đọc file tại đường dẫn này\n" + image.getAbsolutePath());
         }
-
-        // Check kích thước file nếu quá lớn.
-        if (image.length() > 65535) {
-            throw new FileFormatException("File quá lớn. Hãy đảm bảo dung lượng dưới 64KB\n" + image.getAbsolutePath());
-        }
         
         // Check định dạng file ảnh. Chỉ nhận file png hoặc jpeg.
         String mimeType = checking.detect(image);
@@ -295,7 +289,6 @@ public class FileHandle {
         }
         
         // check định dạng. Tuy nhiên ko có prefix, nên cam chịu vậy.
-        Tika checking = new Tika();
         String mimeType = checking.detect(pdf);
         if (!mimeType.equals("application/pdf")) {
             throw new FileFormatException("Yêu cầu file định dạng PDF");

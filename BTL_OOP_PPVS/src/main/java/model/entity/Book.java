@@ -128,11 +128,15 @@ public class Book extends Document {
         this.releaseYear = org.releaseYear;
         this.description = org.description;
         this.availableCopies = org.availableCopies;
+        this.language = org.language;
+        
         this.category = new ArrayList<>();
         this.category.addAll(org.category);
-        this.language = org.language;
+        
         this.PDF = org.PDF;
+        
         this.cover = org.cover;
+        this.haveCover = (org.cover != null);      // để không bị dán đè ảnh khi nạp PDF
         this.coverFormat = org.coverFormat;
     }
     

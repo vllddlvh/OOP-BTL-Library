@@ -141,7 +141,11 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
     image.add(imageLabel);
 
     // Thông tin sách
-    JTextArea infoArea = new JTextArea(document.getTitle() + "\nTác giả: " + document.getAuthor() + "\nNăm: " + document.getReleaseYear());
+    JTextArea infoArea = new JTextArea(document.getTitle() + 
+                                        "\nTác giả: " + document.getAuthor() +
+                                        "\nThể loại: " + document.getCategory() +
+                                        "\nNăm: " + document.getReleaseYear() +
+                                        "\t         Ngôn ngữ: " + document.getLanguage());
     infoArea.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 10));
     infoArea.setForeground(Color.BLACK);
     infoArea.setEditable(false);
@@ -162,13 +166,6 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
     JPanel wrapper = new JPanel();
     wrapper.setBackground(new Color(128, 175, 129));
     wrapper.add(card);
-
-    wrapper.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            new ChiTietTaiLieu(document).setVisible(true);
-        }
-    });
 
     return wrapper;
 }

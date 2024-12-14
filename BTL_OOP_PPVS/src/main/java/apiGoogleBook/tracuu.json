@@ -1,274 +1,406 @@
 {
   "kind": "books#volumes",
-  "totalItems": 787,
+  "totalItems": 647,
   "items": [
     {
       "kind": "books#volume",
-      "id": "D5c1AQAAMAAJ",
-      "etag": "SVew1fS81tw",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/D5c1AQAAMAAJ",
+      "id": "l-6fDwAAQBAJ",
+      "etag": "JVLJJ9mH630",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/l-6fDwAAQBAJ",
       "volumeInfo": {
-        "title": "Saddle Road (State Route 200) Mamalahoa Highway (State Route 190) to Milepost 6, County of Hawai'i",
-        "subtitle": "Environmental Impact Statement",
-        "publishedDate": "1999",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "NWU:35556032582876"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 726,
-        "printType": "BOOK",
-        "averageRating": 5,
-        "ratingsCount": 1,
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.6.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=D5c1AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=D5c1AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=D5c1AQAAMAAJ&pg=PA7&dq=hi&hl=&cd=1&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ&rdid=book-D5c1AQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Saddle_Road_State_Route_200_Mamalahoa_Hi.epub?id=D5c1AQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=D5c1AQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96755 Robert Stevens 121 Puako Beach Drive Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Dino Chiappetta P. O. Box 1306 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Anne E. Field - Gomes P. O. Box 6368 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 James Thomas P. O. Box 1821 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Carl Carlson , Jr&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "j9ahkB1ruygC",
-      "etag": "6A6wMndWcR4",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/j9ahkB1ruygC",
-      "volumeInfo": {
-        "title": "Catalog of Information on Water Data",
-        "subtitle": "Index to water-data acquisition",
-        "publishedDate": "1974",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "IND:30000097948495"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 88,
-        "printType": "BOOK",
-        "categories": [
-          "Stream measurements"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.2.3.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=j9ahkB1ruygC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=j9ahkB1ruygC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=j9ahkB1ruygC&pg=SL1-PA14&dq=hi&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC&rdid=book-j9ahkB1ruygC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Catalog_of_Information_on_Water_Data.epub?id=j9ahkB1ruygC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=j9ahkB1ruygC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e KAUNAKAKAI GULCH AT KAUNAKAKAI \u003cb\u003eHI\u003c/b\u003e UNNAMED GULCH AT KAUNAKAKAI \u003cb\u003eHI\u003c/b\u003e KAMILCLCA GULCH MOLOKAI \u003cb\u003eHI\u003c/b\u003e EF KAWELA GULCH NR KAMALO \u003cb\u003eHI\u003c/b\u003e WAWAIA GULCH AT KAMALO \u003cb\u003eHI\u003c/b\u003e PUNAULA GULCH NR PUKOO \u003cb\u003eHI\u003c/b\u003e POHAKUPILI GULCH NR HALAWA \u003cb\u003eHI\u003c/b\u003e PAPIO GULCH AT HALAWA \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "MRRs6nDJk8EC",
-      "etag": "RQuGH1oGvYQ",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/MRRs6nDJk8EC",
-      "volumeInfo": {
-        "title": "Federal Register",
-        "publishedDate": "1984-10-10",
-        "industryIdentifiers": [
-          {
-            "type": "OTHER",
-            "identifier": "UIUC:30112059138864"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 1482,
-        "printType": "BOOK",
-        "categories": [
-          "Administrative law"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.6.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=MRRs6nDJk8EC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=MRRs6nDJk8EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=MRRs6nDJk8EC&pg=PA40001&dq=hi&hl=&cd=3&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC&rdid=book-MRRs6nDJk8EC&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Federal_Register.epub?id=MRRs6nDJk8EC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=MRRs6nDJk8EC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e FIX VIA W ALTER . TYPHO , \u003cb\u003eHI\u003c/b\u003e FIX 8000 BITES , WV FIX * 5000 * 4400 - MCA LANAI VORTAC , E BND * 1000 - MOCA ** 4400 - MOCA IS AMENDED TO DELETE SHEDS , FL FIX * 3000 CORAL , \u003cb\u003eHI\u003c/b\u003e FIX MAKAI , \u003cb\u003eHI\u003c/b\u003e FIX * 4000 SOUTH KAUAI , \u003cb\u003eHI\u003c/b\u003e VORTAC&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "wYerCEhjUUMC",
-      "etag": "KMoamIyOUoo",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/wYerCEhjUUMC",
-      "volumeInfo": {
-        "title": "Catalog of Information on Water Data",
-        "subtitle": "Surface Water Stations",
+        "title": "Bloodborne #13",
         "authors": [
-          "Geological Survey (U.S.). Office of Water Data Coordination"
+          "Ales Kot"
         ],
-        "publishedDate": "1967",
+        "publisher": "Titan Comics",
+        "publishedDate": "2019-07-17",
+        "description": "The city of Yharnam: an ancient, gothic metropolis and home to the Healing Church. The Healing Church is known for its miraculous blood-based curatives, of which many – citizens and travellers alike – seek to exploit. Recent days have seen the city fall foul to a nightmarish plague known as the Ashen Blood disease, the source of which remains a mystery. Trapped in a threatening world of gods and monsters, where reality is never what it seems, one man resolves to welcome the madness, and the truth it may reveal…",
         "industryIdentifiers": [
           {
-            "type": "OTHER",
-            "identifier": "UCR:31210020799332"
+            "type": "ISBN_13",
+            "identifier": "9781787733459"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1787733459"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 628,
+        "pageCount": 34,
         "printType": "BOOK",
         "categories": [
-          "Hydrological stations"
+          "Comics & Graphic Novels"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "1288b61674ce6733_A"
+        },
+        "comicsContent": true,
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=l-6fDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=l-6fDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=l-6fDwAAQBAJ&pg=PT28&dq=Blood+born&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=l-6fDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=l-6fDwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "13",
+          "volumeSeries": [
+            {
+              "seriesId": "St0BGwAAABBKxM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 13
+            }
+          ]
+        }
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 106449,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 79837,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=l-6fDwAAQBAJ&rdid=book-l-6fDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 106449000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 79837000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_13-sample-pdf.acsm?id=l-6fDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=l-6fDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e : The Death of Sleep Out Now \u003cb\u003eBloodborne\u003c/b\u003e : The Healing Thirst Out Now AVAILABLE DIGITALLY WWW.TITAN-COMICS.COM \u003cb\u003eBloodborne\u003c/b\u003e © 2019 Sony Interactive Entertainment Inc. TITAN® COMICS \u003cb\u003eBloodborne\u003c/b\u003e NEXT ISSUE # 14 \u003cb\u003eBloodborne\u003c/b\u003e THE VEIL ,&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "aSmRDwAAQBAJ",
+      "etag": "yUqkUE+a1Jo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/aSmRDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Bloodborne #11",
+        "authors": [
+          "Ales Kot"
+        ],
+        "publisher": "Titan Comics",
+        "publishedDate": "2019-04-17",
+        "description": "The city of Yharnam: an ancient, gothic metropolis and the home to the Healing Chruch. Recent days have seen the city fall foul to a nightmarish plague known as the Ashen Blood disease, the source of which remains a mystery. In a world of gods and monsters, sanity is merely subjective, and fear and blood are sanctified. Hunters now stalk the streets in search of beasts as the moon hangs ominously low in Yharnam’s sky. But as uncertainty fills the air, and the thirst for blood becomes insatiable, the hunters become the hunted.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781787731974"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1787731979"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 34,
+        "printType": "BOOK",
+        "categories": [
+          "Comics & Graphic Novels"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.0.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "comicsContent": true,
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=aSmRDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=aSmRDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=aSmRDwAAQBAJ&pg=PT29&dq=Blood+born&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=aSmRDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aSmRDwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "11",
+          "volumeSeries": [
+            {
+              "seriesId": "St0BGwAAABBKxM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 11
+            }
+          ]
+        }
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 106449,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 79837,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=aSmRDwAAQBAJ&rdid=book-aSmRDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 106449000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 79837000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_11-sample-pdf.acsm?id=aSmRDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=aSmRDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e COLLECTIONS &#39; WHETHER YOU&#39;VE PLAYED OR NOT , THIS IS A NIGHTMARE WORTH DREAMING ! - 109.COM \u003cb\u003eBloodborne\u003c/b\u003e | \u003cb\u003eBloodborne\u003c/b\u003e THE HEALING THIRST THE DEATH OF SLEEP KOT KOWALSKI SIMPSON KOT KOWALSKI SIMPSON \u003cb\u003eBloodborne\u003c/b\u003e : The Death of&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "3zEaM_f8cW8C",
+      "etag": "jJ3Sg4Nwr8Y",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/3zEaM_f8cW8C",
+      "volumeInfo": {
+        "title": "Bloodborne Pathogens",
+        "authors": [
+          "Karen Carruthers",
+          "American Academy of Orthopaedic Surgeons"
+        ],
+        "publisher": "Jones & Bartlett Learning",
+        "publishedDate": "2005",
+        "description": "Over five million workers in health care related fields are at risk to exposure to bloodborne pathogens, such as the HIV virus and hepatitis B virus, as well as tuberculosis.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "0763728179"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9780763728175"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 84,
+        "printType": "BOOK",
+        "categories": [
+          "Medical"
         ],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
-        "contentVersion": "1.4.5.0.full.1",
+        "contentVersion": "0.10.10.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=wYerCEhjUUMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=wYerCEhjUUMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=3zEaM_f8cW8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=3zEaM_f8cW8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=wYerCEhjUUMC&pg=PA583&dq=hi&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC"
+        "previewLink": "http://books.google.com.vn/books?id=3zEaM_f8cW8C&pg=PA3&dq=Blood+born&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=3zEaM_f8cW8C&dq=Blood+born&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Bloodborne_Pathogens.html?hl=&id=3zEaM_f8cW8C"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC&rdid=book-wYerCEhjUUMC&rdot=1&source=gbs_api"
+        "saleability": "NOT_FOR_SALE",
+        "isEbook": false
       },
       "accessInfo": {
         "country": "VN",
-        "viewability": "ALL_PAGES",
+        "viewability": "PARTIAL",
         "embeddable": true,
-        "publicDomain": true,
+        "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Catalog_of_Information_on_Water_Data.epub?id=wYerCEhjUUMC&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
           "isAvailable": false
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=wYerCEhjUUMC&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_Pathogens-sample-pdf.acsm?id=3zEaM_f8cW8C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=3zEaM_f8cW8C&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 14201 KOOLAU D AT HAIPUAENA NR HUELO \u003cb\u003eHI\u003c/b\u003e 14202 MANUEL LUIS D AT PUOHO NR HUELO \u003cb\u003eHI HI\u003c/b\u003e 009 STREAM 1919 205104 1561128 \u003cb\u003eHI\u003c/b\u003e 009 STREAM 1913 1967 C REC 205115 1561125 \u003cb\u003eHI\u003c/b\u003e 009 CANAL 1922 C REC 205117 1561119 \u003cb\u003eHI\u003c/b\u003e 009 CANAL 1932 205148 1561100 \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
+        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e Pathogens Standard . CPL 2-0.124 effective December 1999 clarifies OSHA&#39;s multiemployer citation policy . Personnel Services and Multi - Employer Worksite Guidelines Personnel services firms employ medical care staff and&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "fweGDwAAQBAJ",
+      "etag": "Jqr38vqaRk0",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/fweGDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Bloodborne #9",
+        "authors": [
+          "Ales Kot"
+        ],
+        "publisher": "Titan Comics",
+        "publishedDate": "2019-02-20",
+        "description": "The city of Yharnam: an ancient, gothic metropolis and home to the Healing Church. Recent days have seen the city fall foul to a nightmarish plague known as the Ashen Blood disease, the source of which remains a mystery. In a world of gods and monsters, sanity is merely subjective, and fear and blood are sanctified. Hunters now stalk the streets in search of beasts as the moon hangs ominously low in Yharnam’s sky. But as uncertainty fills the air, and the thirst for blood becomes insatiable, the hunters become the hunted…",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781787731950"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1787731952"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 34,
+        "printType": "BOOK",
+        "categories": [
+          "Comics & Graphic Novels"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "d9923a2ec7d9aacd_A"
+        },
+        "comicsContent": true,
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=fweGDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=fweGDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=fweGDwAAQBAJ&pg=PA2021&dq=Blood+born&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=fweGDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=fweGDwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "9",
+          "volumeSeries": [
+            {
+              "seriesId": "St0BGwAAABBKxM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 9
+            }
+          ]
+        }
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 106449,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 79837,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=fweGDwAAQBAJ&rdid=book-fweGDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 106449000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 79837000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_9-sample-pdf.acsm?id=fweGDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=fweGDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e COLLECTIONS &#39; WHETHER YOU&#39;VE PLAYED OR NOT , THIS IS A NIGHTMARE WORTH DREAMING ! - 109.COM \u003cb\u003eBloodborne\u003c/b\u003e | \u003cb\u003eBloodborne\u003c/b\u003e THE HEALING THIRST THE DEATH OF SLEEP KOT KOWALSKI SIMPSON KOT KOWALSKI SIMPSON \u003cb\u003eBloodborne\u003c/b\u003e : The Death of&nbsp;..."
       }
     }
   ]

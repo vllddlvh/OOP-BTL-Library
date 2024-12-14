@@ -73,46 +73,6 @@ public class UserDAO {
     }
     
     /**
-     * Download FULL pdf and WRITE A COPY of the file you want from DATABASE.
-     * 
-     * @param bookID = ID of the book whose the file.
-     * 
-     * @return the PATH where contain the file temporary.
-     * 
-     * @throws SQLException
-     * @throws IOException 
-     */
-    public static File getFullBookPDF(String bookID) throws SQLException, IOException {
-        ResultSet rs;
-        CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loodDocumentPDF(?) }"); 
-        
-        loader.setString(1, bookID);
-        
-        rs = loader.executeQuery();
-        
-        while(rs.next()) {
-            var fis = rs.getBinaryStream("PDF");
-            if (fis == null) {
-                return null;
-            }
-            
-            // setup a place for the file to be download in
-            FileOutputStream fos = new FileOutputStream("src/OuterData/" + bookID + ".pdf", false);
-            
-            // write the file on the place
-            fos.write(fis.readAllBytes());
-            
-            fis.close();
-            fos.close();
-            
-            // return the path contain the file.
-            return new File("src/OuterData/" + bookID + ".pdf");
-        }
-        
-        return null;
-    }
-    
-    /**
      * Download a prototype pdf of first few page.
      * WRITE A COPY of the file you want from DATABASE.
      * 
@@ -189,9 +149,13 @@ public class UserDAO {
      */
     public static void deleteUser(String ID) throws SQLException {
         CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteUser(?, ?) }");
+        if (controller.LoginController.getAcc() != null) {
+            finder.setString(2, controller.LoginController.getAcc().getID());
+        } else {
+            finder.setString(2, "23021686"); // cho test, vì sẽ không có loginAccount
+        }
         
         finder.setString(1, ID);
-        finder.setString(2, controller.LoginController.getAcc().getID());
                 
         finder.executeQuery();
     }
@@ -243,7 +207,6 @@ public class UserDAO {
         ResultSet rs;
         rs = finder.executeQuery();
         
-        String[] date;
         while (rs.next()) {
             return new Member(rs.getString(1),
                          rs.getString(2),

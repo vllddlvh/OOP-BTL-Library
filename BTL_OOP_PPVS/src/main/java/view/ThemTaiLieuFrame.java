@@ -9,6 +9,8 @@ import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 import java.net.URISyntaxException;
+import java.net.URL;
+import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,6 +28,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
 
     private Book emptyForm = null;
     private Image defaultImage = null;
+    private URL defaultPDF = null;
     private boolean isNewBook;
     
     /**
@@ -42,6 +45,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         isNewBook = true;
         initComponents();
         this.setLocationRelativeTo(null);
+        clearInputFields();
     }
     
     public ThemTaiLieuFrame(Book document) {
@@ -50,12 +54,14 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         jTextFieldBookID.setEditable(false);
         
-        emptyForm = new Book(document); // make a clone object
         try {
             defaultImage = document.getCover();
+            defaultPDF = document.getPDF();
         } catch (IOException | SQLException | FileFormatException ex) {
             Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        emptyForm = new Book(document); // make a clone object
         clearInputFields();
     }
 
@@ -93,6 +99,8 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         demoImageLabel = new javax.swing.JLabel();
         jButtonChonFilePDF = new javax.swing.JButton();
         jblPDF = new javax.swing.JLabel();
+        jlbPdfPath = new javax.swing.JLabel();
+        jlbImagePath = new javax.swing.JLabel();
         ButtonSaveBook = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -138,6 +146,18 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
             }
         });
 
+        jTextFieldBookTitle.setMaximumSize(new java.awt.Dimension(64, 22));
+
+        jTextFieldBookID.setMaximumSize(new java.awt.Dimension(64, 22));
+
+        jTextFieldBookAuthor.setMaximumSize(new java.awt.Dimension(64, 22));
+
+        jTextFieldBookPublisher.setMaximumSize(new java.awt.Dimension(64, 22));
+
+        jTextFieldPublicationYear.setMaximumSize(new java.awt.Dimension(64, 22));
+
+        jTextFieldCategory.setMaximumSize(new java.awt.Dimension(64, 22));
+
         jlbLanguage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbLanguage.setForeground(new java.awt.Color(255, 255, 255));
         jlbLanguage.setText("Ngôn ngữ:");
@@ -145,6 +165,8 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         jlbSummary.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbSummary.setForeground(new java.awt.Color(255, 255, 255));
         jlbSummary.setText("Tóm tắt:");
+
+        jTextFieldLanguage.setMaximumSize(new java.awt.Dimension(64, 22));
 
         jlbImage.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jlbImage.setForeground(new java.awt.Color(255, 255, 255));
@@ -160,6 +182,8 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
 
         jTextAreaTomTat.setColumns(20);
         jTextAreaTomTat.setRows(5);
+        jTextAreaTomTat.setMaximumSize(new java.awt.Dimension(232, 2147483647));
+        jTextAreaTomTat.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane2.setViewportView(jTextAreaTomTat);
 
         demoImageLabel.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, null, new java.awt.Color(153, 153, 153), null, null));
@@ -176,6 +200,12 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         jblPDF.setForeground(new java.awt.Color(255, 255, 255));
         jblPDF.setText("Nội dung:");
         jblPDF.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        jlbPdfPath.setText("jLabel1");
+        jlbPdfPath.setToolTipText("");
+
+        jlbImagePath.setText("jLabel1");
+        jlbImagePath.setToolTipText("");
 
         javax.swing.GroupLayout jpnThemTaiLieuLayout = new javax.swing.GroupLayout(jpnThemTaiLieu);
         jpnThemTaiLieu.setLayout(jpnThemTaiLieuLayout);
@@ -196,33 +226,34 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
-                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jTextFieldLanguage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(jTextFieldCategory, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldPublicationYear, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldBookPublisher, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldBookAuthor, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldBookID, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextFieldBookTitle, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(85, 85, 85)
-                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
-                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButtonChonFileAnh)
-                                    .addComponent(jButtonChonFilePDF, javax.swing.GroupLayout.Alignment.TRAILING))
-                                .addGap(56, 56, 56))
-                            .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
-                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jblPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jlbImage))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addComponent(demoImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57))
-                    .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(72, 72, 72)
                         .addComponent(ButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(86, 86, 86))))
+                        .addContainerGap(95, Short.MAX_VALUE))
+                    .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jTextFieldLanguage, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(jTextFieldCategory, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldPublicationYear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldBookID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldBookTitle, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldBookAuthor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jTextFieldBookPublisher, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
+                                .addGap(85, 85, 85)
+                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButtonChonFilePDF)
+                                    .addComponent(jlbImage)
+                                    .addComponent(jButtonChonFileAnh)
+                                    .addComponent(jlbImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jblPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(demoImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
+                                .addGap(83, 83, 83)
+                                .addComponent(jlbPdfPath, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(15, 15, 15))))
         );
         jpnThemTaiLieuLayout.setVerticalGroup(
             jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -235,8 +266,8 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                             .addComponent(jTextFieldBookID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jlbImage, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(15, 15, 15)
-                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnThemTaiLieuLayout.createSequentialGroup()
                                 .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jlbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldBookTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -244,36 +275,36 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                                 .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jlbAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextFieldBookAuthor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jblPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(15, 15, 15)
-                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jlbPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldBookPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonChonFilePDF))
-                                .addGap(15, 15, 15)
-                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jlbPublicationYear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldPublicationYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(15, 15, 15)
-                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jlbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(17, 17, 17)
-                                .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jlbLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextFieldLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
-                            .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
+                                    .addComponent(jlbImagePath, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(15, 15, 15))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnThemTaiLieuLayout.createSequentialGroup()
                                 .addComponent(jButtonChonFileAnh)
-                                .addGap(274, 274, 274))))
-                    .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
-                        .addComponent(demoImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                                .addGap(83, 83, 83)))
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlbPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldBookPublisher, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jblPDF, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlbPublicationYear, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldPublicationYear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonChonFilePDF))
+                        .addGap(15, 15, 15)
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlbCategory, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jlbPdfPath, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jlbLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextFieldLanguage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(demoImageLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addComponent(jlbSummary, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(ButtonReset)))
@@ -296,7 +327,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         jpnViewThemTaiLieuLayout.setHorizontalGroup(
             jpnViewThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jpnViewThemTaiLieuLayout.createSequentialGroup()
-                .addComponent(jpnThemTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, 803, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jpnThemTaiLieu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jpnViewThemTaiLieuLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -361,9 +392,6 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                                             JOptionPane.WARNING_MESSAGE);
             return;
         }
-
-        
-        
 
         try {
             // Tạo đối tượng Document từ dữ liệu nhập
@@ -434,9 +462,12 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             File pdf = ChonFileAnhJFrame.openWindowFileChooser();
+            if (pdf == null){
+                return;
+            }
             emptyForm.setPDF(pdf);
             
-            displayImage(emptyForm.getCover());
+            jlbPdfPath.setText(pdf.getAbsolutePath());
             
         } catch (FileFormatException | IOException | SQLException ex) {
             Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
@@ -452,6 +483,9 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         
         Image scaledImage = img.getScaledInstance(180, 250, Image.SCALE_SMOOTH);
         demoImageLabel.setIcon(new ImageIcon(scaledImage));
+        if (img != defaultImage) {
+            jlbImagePath.setText("Đã thay đổi ảnh bìa");
+        }
     }
     
     private void clearInputFields() {
@@ -464,8 +498,24 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         jTextFieldLanguage.setText(emptyForm.getLanguage());
         jTextFieldPublicationYear.setText(String.valueOf(emptyForm.getReleaseYear()));
         
+        emptyForm.setCover(defaultImage, null);
+        emptyForm.setPDF(defaultPDF); 
+        // Trong trường hợp chọn file xong reset, và ko add file nữa. Thì reset về file cũ.
+        
         displayImage(defaultImage);
-}
+        
+        try {
+            jlbImagePath.setText("Ảnh bìa ban đầu");
+        
+            if (emptyForm.getPDF() == null) {
+                jlbPdfPath.setText("Không có file nội dung");
+            } else {
+                jlbPdfPath.setText(URLDecoder.decode(emptyForm.getPDF().toURI().getPath(), "UTF-8").substring(1));
+            }
+        } catch (IOException | SQLException | URISyntaxException ex) {
+            Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
 
@@ -489,7 +539,9 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
     private javax.swing.JLabel jlbCategory;
     private javax.swing.JLabel jlbID;
     private javax.swing.JLabel jlbImage;
+    private javax.swing.JLabel jlbImagePath;
     private javax.swing.JLabel jlbLanguage;
+    private javax.swing.JLabel jlbPdfPath;
     private javax.swing.JLabel jlbPublicationYear;
     private javax.swing.JLabel jlbPublisher;
     private javax.swing.JLabel jlbSummary;

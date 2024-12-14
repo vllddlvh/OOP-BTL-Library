@@ -200,7 +200,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -227,14 +227,18 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
     }
     
     private void setTextButtonDoc() {
-        jbuttonDoc.setText("Đọc thử");
-        jbuttonDoc.setBackground(new Color(0, 162, 232));
+        if (isBorrowing) {
+            jbuttonDoc.setText("Mở tài liệu");
+            jbuttonDoc.setBackground(new Color(0, 162, 232));   
+        } else {
+            jbuttonDoc.setText("Đọc thử");
+            jbuttonDoc.setBackground(new Color(0, 162, 232));
+        }
     }
     
     private void jButtonMuonTraClicked(java.awt.event.MouseEvent evt) {                                             
         // TODO add your handling code here:
-        int n = evt.getClickCount();
-        if (n >= 1) {
+        if (evt.getClickCount() >= 1) {
             try {
                 if (isBorrowing) {
                     // Thực hiện trả đối với tài liệu đã mượn
@@ -242,6 +246,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Trả sách thành công");
                         isBorrowing = !isBorrowing;
                         setTextButtonMuonTra();
+                        setTextButtonDoc();
                     } else {
                         JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể trả tài liệu này");
                     }
@@ -252,6 +257,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
                         JOptionPane.showMessageDialog(this, "Mượn sách thành công");
                         isBorrowing = !isBorrowing;
                         setTextButtonMuonTra();
+                        setTextButtonDoc();
                     } else {
                         JOptionPane.showMessageDialog(this, "Lỗi!!! Tạm thời không thể mượn tài liệu này");
                     }
@@ -265,22 +271,28 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
     }   
     
     private void jButtonDocClicked(java.awt.event.MouseEvent evt) { 
-        try {
-            if (currentShowDocument.getPDF() == null) {
+        if (evt.getClickCount() > 0) {
+            try {
+                if (isBorrowing) {
+                    if (currentShowDocument.openFullPDF()) {
+                        return;
+                    }
+                } else {
+                    if (currentShowDocument.openSamplePDF()) {
+                        return;
+                    }
+                }
                 JOptionPane.showMessageDialog(this, 
-                                                "Hiện tại sách không có bản đọc thử.", 
-                                                "Thông báo", 
-                                            JOptionPane.INFORMATION_MESSAGE);
-                return;
-            }
-            currentShowDocument.openPDF();
-            
-        } catch (IOException | SQLException | URISyntaxException ex) {
-            Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
-            JOptionPane.showMessageDialog(this, 
-                                                "Đã xảy ra lỗi:\n" + ex.getMessage(), 
+                                                    "Hiện tại sách không có bản đọc thử.", 
+                                                    "Thông báo", 
+                                                JOptionPane.INFORMATION_MESSAGE);
+            } catch (IOException | SQLException | URISyntaxException ex) {
+                Logger.getLogger(ChiTietTaiLieu.class.getName()).log(Level.SEVERE, null, ex);
+                JOptionPane.showMessageDialog(this, 
+                                                     "Đã xảy ra lỗi:\n" + ex.getMessage(), 
                                                 "Lỗi", 
                                             JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 

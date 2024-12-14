@@ -26,6 +26,7 @@
     
     <!-- Dependencies section -->
     <dependencies>
+        <!-- Kết nối database -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -38,7 +39,7 @@
             <version>RELEASE230</version>
         </dependency>
         
-
+        <!-- Liên quan tới xử lý file PDF, ảnh -->
         <dependency>
             <groupId>org.apache.pdfbox</groupId>
             <artifactId>pdfbox</artifactId>
@@ -50,34 +51,26 @@
             <artifactId>tika-core</artifactId>
             <version>1.28</version>
         </dependency>
+        
+        <!-- Liên quan tới xử lý file json cho API -->
         <dependency>
             <groupId>org.netbeans.external</groupId>
             <artifactId>com-google-gson</artifactId>
             <version>RELEASE113</version>
             <type>jar</type>
         </dependency>
+        
+        <!-- Liên quan tới tạo test -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.junit.jupiter</groupId>
-            <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.8.2</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>5.5.0</version>
-            <scope>test</scope>
-        </dependency>
 
         <dependency>
             <groupId>org.mockito</groupId>
-            <artifactId>mockito-junit-jupiter</artifactId>
+            <artifactId>mockito-core</artifactId>
             <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
