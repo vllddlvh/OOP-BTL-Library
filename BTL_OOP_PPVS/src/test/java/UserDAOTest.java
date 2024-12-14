@@ -1,90 +1,102 @@
-import model.DatabaseConnector;
-import model.entity.User;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+package test;
 
-import java.sql.*;
 import model.dao.UserDAO;
-import static org.mockito.Mockito.*;
+import model.entity.User;
+import model.entity.Member;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+
+import java.sql.SQLException;
+import java.io.File;
+import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 public class UserDAOTest {
 
-    private Connection connection;
-    private CallableStatement callableStatement;
-    private ResultSet resultSet;
-
-    @Test
-    public void testLoginCorrectPassword() throws SQLException {
-        // Arrange
-        String userID = "user123";
-        String password = "password123";
-
-        when(callableStatement.executeQuery()).thenReturn(resultSet);
-        when(resultSet.next()).thenReturn(true);
-        when(resultSet.getString(1)).thenReturn("Staff");
-        when(resultSet.getBoolean(2)).thenReturn(false);
-
-        // Act
-        User.LoginAlert result = UserDAO.login(userID, password);
-
-        // Assert
-        assertEquals(User.LoginAlert.CORRECT_PASSWORD_AS_STAFF, result);
+    @BeforeAll
+    public static void setup() {
+        // Thiết lập kết nối cơ sở dữ liệu hoặc cơ sở dữ liệu giả
+        // Cần phải có một cơ sở dữ liệu test hoặc thiết lập trước
+        // Example: DatabaseConnector.connectForTesting();
     }
 
     @Test
-    public void testLoginWrongPassword() throws SQLException {
-        // Arrange
-        String userID = "user123";
+    public void testLogin_ValidUser() throws SQLException {
+        String userID = "testUser";
+        String password = "testPassword";
+
+        User.LoginAlert alert = UserDAO.login(userID, password);
+
+        assertEquals(User.LoginAlert.CORRECT_PASSWORD_AS_MEMBER, alert, "Login should succeed for valid user");
+    }
+
+    @Test
+    public void testLogin_InvalidPassword() throws SQLException {
+        String userID = "testUser";
         String password = "wrongPassword";
 
-        when(callableStatement.executeQuery()).thenReturn(resultSet);
-        when(resultSet.next()).thenReturn(false);
+        User.LoginAlert alert = UserDAO.login(userID, password);
 
-        // Act
-        User.LoginAlert result = UserDAO.login(userID, password);
-
-        // Assert
-        assertEquals(User.LoginAlert.WRONG_PASSWORD, result);
+        assertEquals(User.LoginAlert.WRONG_PASSWORD, alert, "Login should fail with wrong password");
     }
 
     @Test
-    public void testChangePasswordSuccess() throws SQLException {
-        // Arrange
-        String userID = "user123";
-        String oldPassword = "oldPass";
-        String newPassword = "newPass";
+    public void testChangePassword_Valid() throws SQLException {
+        String userID = "testUser";
+        String oldPassword = "oldPassword";
+        String newPassword = "newPassword";
 
-        when(callableStatement.executeQuery()).thenReturn(resultSet);
-        when(resultSet.next()).thenReturn(true);
-        when(resultSet.getInt(1)).thenReturn(1);
-
-        // Act
         boolean result = UserDAO.changePassword(userID, oldPassword, newPassword);
 
-        // Assert
-        assertTrue(result);
+        assertTrue(result, "Password should be changed successfully");
     }
 
     @Test
-    public void testChangePasswordFailure() throws SQLException {
-        // Arrange
-        String userID = "user123";
-        String oldPassword = "oldPass";
-        String newPassword = "newPass";
+    public void testChangePassword_Invalid() throws SQLException {
+        String userID = "testUser";
+        String oldPassword = "wrongOldPassword";
+        String newPassword = "newPassword";
 
-        when(callableStatement.executeQuery()).thenReturn(resultSet);
-        when(resultSet.next()).thenReturn(true);
-        when(resultSet.getInt(1)).thenReturn(0);
-
-        // Act
         boolean result = UserDAO.changePassword(userID, oldPassword, newPassword);
 
-        // Assert
-        assertFalse(result);
+        assertFalse(result, "Password change should fail with incorrect old password");
     }
 
-    // More tests can be added for other methods
+    @Test
+    public void testGetFullBookPDF() throws SQLException, IOException {
+        String bookID = "testBookID";
+
+        File file = UserDAO.getFullBookPDF(bookID);
+
+        assertNotNull(file, "File should not be null");
+        assertTrue(file.exists(), "Downloaded file should exist");
+    }
+
+    @Test
+    public void testGetAllMember() throws SQLException {
+        var members = UserDAO.getAllMember();
+
+        assertNotNull(members, "List of members should not be null");
+        assertTrue(members.size() > 0, "There should be at least one member in the list");
+    }
+
+    @Test
+    public void testGetMemberInfo_Valid() throws SQLException {
+        String memberID = "testMemberID";
+
+        Member member = UserDAO.getMemberInfo(memberID);
+
+        assertNotNull(member, "Member should not be null");
+        assertEquals(memberID, member.getID(), "Member ID should match");
+    }
+
+    @Test
+    public void testGetMemberInfo_Invalid() throws SQLException {
+        String memberID = "nonExistentID";
+
+        Member member = UserDAO.getMemberInfo(memberID);
+
+        assertNull(member, "Member should be null for non-existent ID");
+    }
 }

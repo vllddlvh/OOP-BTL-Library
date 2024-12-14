@@ -1,75 +1,91 @@
+import model.dao.MemberDAO;
 import model.entity.Member;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.sql.SQLException;
-import java.util.ArrayList;
-import model.dao.MemberDAO;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-public class MemberDAOTest {
+class MemberDAOTest {
 
-    private Member testMember;
-
-    @BeforeAll
-    public void setup() {
-        // Tạo một Member test mẫu để dùng trong các bài kiểm tra
-        testMember = new Member("testID", "Test", "User", "123456789", "2000-01-01");
+    @BeforeEach
+    void setUp() {
+        // Thiết lập cơ sở dữ liệu cho kiểm thử.
+        // Có thể chèn các dữ liệu thử nghiệm vào cơ sở dữ liệu để kiểm tra.
     }
 
     @Test
-    @Order(1)
-    public void testAddNewMember() throws SQLException {
-        boolean result = MemberDAO.addNewMember(testMember);
-        assertTrue(result, "Adding a new member should return true");
+    void testGetAllMember() throws SQLException {
+        // Kiểm tra lấy tất cả các thành viên từ cơ sở dữ liệu
+        List<Member> members = MemberDAO.getAllMember();
+        assertNotNull(members, "Danh sách thành viên không được null");
+        assertTrue(members.size() > 0, "Danh sách thành viên không được rỗng");
     }
 
     @Test
-    @Order(2)
-    public void testGetAllMember() throws SQLException {
-        ArrayList<Member> members = MemberDAO.getAllMember();
-        assertNotNull(members, "Member list should not be null");
-        assertTrue(members.size() > 0, "Member list should have at least one member");
+    void testGetMemberInfo() throws SQLException {
+        // Kiểm tra lấy thông tin thành viên theo ID
+        String testID = "1662"; // Thay bằng ID người dùng thực tế có trong cơ sở dữ liệu
+        Member member = MemberDAO.getMemberInfo(testID);
+        
+        assertNotNull(member, "Thành viên không được null");
+        assertEquals(testID, member.getID(), "ID thành viên không khớp");
+        assertEquals("Nguyễn Minh", member.getFirstName(), "Tên không khớp");
     }
 
     @Test
-    @Order(3)
-    public void testGetMemberInfo() throws SQLException {
-        Member member = MemberDAO.getMemberInfo("testID");
-        assertNotNull(member, "Member info should not be null");
-        assertEquals(testMember.getID(), member.getID(), "Member ID should match the test member");
+void testAddNewMember() throws SQLException {
+    // Thử thêm một thành viên mới
+    Member newMember = new Member("677", "Janee", "Doee", "jane.doe@example.com", "1990-05-15");
+    
+    // Thêm thành viên vào cơ sở dữ liệu
+    boolean isAdded = MemberDAO.addNewMember(newMember);
+    
+    assertTrue(isAdded, "Thành viên mới không thể thêm vào cơ sở dữ liệu");
+    
+    // Kiểm tra lại trong cơ sở dữ liệu
+    Member addedMember = MemberDAO.getMemberInfo("677");
+    assertNotNull(addedMember, "Thành viên không được thêm vào");
+    assertEquals("Janee", addedMember.getFirstName(), "Tên không khớp");
+    
+    // Sau khi kiểm tra xong, xóa thành viên đã thêm vào
+    boolean isDeleted = MemberDAO.deleteMember(addedMember);
+    
+}
+
+
+    @Test
+    void testUpdateMember() throws SQLException {
+        // Thử cập nhật thông tin thành viên
+        Member existingMember = new Member("12345");
+        existingMember.setID("123");
+        existingMember.setFirstName("UpdatedFirstName");
+        existingMember.setLastName("UpdatedLastName");
+        existingMember.setContact("updated.contact@example.com");
+        existingMember.setDateOfBirth("1985-06-20");
+        
+        boolean isUpdated = MemberDAO.updateMember(existingMember);
+        
+        assertTrue(isUpdated, "Không thể cập nhật thành viên");
+        
+        // Kiểm tra lại thông tin đã được cập nhật
+        Member updatedMember = MemberDAO.getMemberInfo("12345");
+        assertNotNull(updatedMember, "Không tìm thấy thành viên sau khi cập nhật");
+        assertEquals("UpdatedFirstName", updatedMember.getFirstName(), "Tên không khớp");
     }
 
     @Test
-    @Order(4)
-    public void testUpdateMember() throws SQLException {
-        // Cập nhật thông tin của testMember
-        testMember.setFirstName("UpdatedName");
-        boolean result = MemberDAO.updateMember(testMember);
-        assertTrue(result, "Updating member should return true");
-
-        // Kiểm tra thông tin đã cập nhật
-        Member updatedMember = MemberDAO.getMemberInfo("testID");
-        assertNotNull(updatedMember, "Updated member should not be null");
-        assertEquals("UpdatedName", updatedMember.getFirstName(), "Member first name should be updated");
-    }
-
-    @Test
-    @Order(5)
-    public void testDeleteMember() throws SQLException {
-        boolean result = MemberDAO.deleteMember(testMember);
-        assertTrue(result, "Deleting member should return true");
-
-        // Kiểm tra member đã bị xóa
-        Member deletedMember = MemberDAO.getMemberInfo("testID");
-        assertNull(deletedMember, "Deleted member should be null");
-    }
-
-    @AfterAll
-    public void cleanup() throws SQLException {
-        // Đảm bảo xóa testMember trong trường hợp test bị thất bại
-        MemberDAO.deleteMember(testMember);
+    void testDeleteMember() throws SQLException {
+        // Thử xóa một thành viên
+        Member memberToDelete = new Member("67890"); // Thay bằng ID thành viên thực tế
+        boolean isDeleted = MemberDAO.deleteMember(memberToDelete);
+        
+        assertTrue(isDeleted, "Không thể xóa thành viên");
+        
+        // Kiểm tra lại xem thành viên đã bị xóa chưa
+        Member deletedMember = MemberDAO.getMemberInfo("67890");
+        assertNull(deletedMember, "Thành viên vẫn còn tồn tại trong cơ sở dữ liệu");
     }
 }
