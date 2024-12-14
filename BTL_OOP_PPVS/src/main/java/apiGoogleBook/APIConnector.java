@@ -29,7 +29,7 @@ import model.entity.Book;
 
 /**
  *
- * @author FuK
+ * @author Phúc
  */
 public class APIConnector {
     private static final String API_KEY = "AIzaSyB5dvT2OSJZxqpMKgS7gEw-5GN_uKpQAPs";

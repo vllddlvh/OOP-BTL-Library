@@ -1,425 +1,274 @@
 {
   "kind": "books#volumes",
-  "totalItems": 725,
+  "totalItems": 787,
   "items": [
     {
       "kind": "books#volume",
-      "id": "sX0qDwAAQBAJ",
-      "etag": "oFoiBW/rrjI",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/sX0qDwAAQBAJ",
+      "id": "D5c1AQAAMAAJ",
+      "etag": "SVew1fS81tw",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/D5c1AQAAMAAJ",
       "volumeInfo": {
-        "title": "Attack on Titan",
-        "authors": [
-          "Hajime Isayama"
-        ],
-        "publisher": "Kodansha Comics",
-        "publishedDate": "2017",
-        "description": "Anime Season 2 coming to Funimation in April 2017! The blockbuster manga edges closer to its thrilling conclusions. The mysteries of the Titans are being revealed… who will escape death at the hands of giants and human beings?",
+        "title": "Saddle Road (State Route 200) Mamalahoa Highway (State Route 190) to Milepost 6, County of Hawai'i",
+        "subtitle": "Environmental Impact Statement",
+        "publishedDate": "1999",
         "industryIdentifiers": [
           {
-            "type": "ISBN_13",
-            "identifier": "9781682337837"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1682337839"
+            "type": "OTHER",
+            "identifier": "NWU:35556032582876"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 194,
+        "pageCount": 726,
         "printType": "BOOK",
-        "categories": [
-          "Comics & Graphic Novels"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.1.0.preview.3",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=sX0qDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=sX0qDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=sX0qDwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=1&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "22",
-          "volumeSeries": [
-            {
-              "seriesId": "bof3GgAAABCYnM",
-              "seriesBookType": "COLLECTED_EDITION",
-              "orderNumber": 22
-            }
-          ]
-        }
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 293179,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 199362,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=sX0qDwAAQBAJ&rdid=book-sX0qDwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 293179000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 199362000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-epub.acsm?id=sX0qDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-pdf.acsm?id=sX0qDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=sX0qDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "Anime Season 2 coming to Funimation in April 2017! The blockbuster manga edges closer to its thrilling conclusions. The mysteries of the Titans are being revealed… who will escape death at the hands of giants and human beings?"
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "aMliDwAAQBAJ",
-      "etag": "c59LHE25P0w",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/aMliDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Attack on Titan Character Encyclopedia",
-        "subtitle": "Volune 1",
-        "authors": [
-          "Hajime Isayama"
-        ],
-        "publisher": "Kodansha America LLC",
-        "publishedDate": "2018-07-10",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9781642123357"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1642123358"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 178,
-        "printType": "BOOK",
-        "categories": [
-          "Comics & Graphic Novels"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.3.1.0.preview.3",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=aMliDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=aMliDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=aMliDwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 293179,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 199362,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=aMliDwAAQBAJ&rdid=book-aMliDwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 293179000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 199362000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Character_Encyclopedia-sample-epub.acsm?id=aMliDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Character_Encyclopedia-sample-pdf.acsm?id=aMliDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=aMliDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "om8-DwAAQBAJ",
-      "etag": "+nYOkv2GHYA",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/om8-DwAAQBAJ",
-      "volumeInfo": {
-        "title": "Attack on Titan: Before the Fall",
-        "authors": [
-          "Ryo Suzukaze"
-        ],
-        "publisher": "Kodansha Comics",
-        "publishedDate": "2017",
-        "description": "A PLAN IN MOTION Angel and Xenophon's Device, meant to help humanity combat the Titans, has always confounded those who were meant to use it. But years later, after Sharle successfully brings Angel out of his underground home, he is ready to correct its fatal flaw for good. But that's only half of the problem--the Survey Corps will need a grueling new training program to make use of it!",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9781642120028"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1642120022"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 230,
-        "printType": "BOOK",
-        "categories": [
-          "Comics & Graphic Novels"
-        ],
-        "averageRating": 1,
+        "averageRating": 5,
         "ratingsCount": 1,
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.2.1.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.6.0.full.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=om8-DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=om8-DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=D5c1AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=D5c1AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=om8-DwAAQBAJ&printsec=frontcover&dq=Attack+on+Titan&hl=&cd=3&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=om8-DwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=om8-DwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "12",
-          "volumeSeries": [
-            {
-              "seriesId": "R8_3GgAAABCx1M",
-              "seriesBookType": "ISSUE",
-              "orderNumber": 12
-            }
-          ]
-        }
+        "previewLink": "http://books.google.com.vn/books?id=D5c1AQAAMAAJ&pg=PA7&dq=hi&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
+        "saleability": "FREE",
         "isEbook": true,
-        "listPrice": {
-          "amount": 293179,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 199362,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=om8-DwAAQBAJ&rdid=book-om8-DwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 293179000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 199362000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "buyLink": "https://play.google.com/store/books/details?id=D5c1AQAAMAAJ&rdid=book-D5c1AQAAMAAJ&rdot=1&source=gbs_api"
       },
       "accessInfo": {
         "country": "VN",
-        "viewability": "PARTIAL",
+        "viewability": "ALL_PAGES",
         "embeddable": true,
-        "publicDomain": false,
+        "publicDomain": true,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Before_the_Fall-sample-epub.acsm?id=om8-DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/Saddle_Road_State_Route_200_Mamalahoa_Hi.epub?id=D5c1AQAAMAAJ&hl=&output=epub&source=gbs_api"
         },
         "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan_Before_the_Fall-sample-pdf.acsm?id=om8-DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=om8-DwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
+        "webReaderLink": "http://play.google.com/books/reader?id=D5c1AQAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "A PLAN IN MOTION Angel and Xenophon&#39;s Device, meant to help humanity combat the Titans, has always confounded those who were meant to use it."
+        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 96755 Robert Stevens 121 Puako Beach Drive Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Dino Chiappetta P. O. Box 1306 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Anne E. Field - Gomes P. O. Box 6368 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 James Thomas P. O. Box 1821 Kamuela , \u003cb\u003eHI\u003c/b\u003e 96743 Carl Carlson , Jr&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "1wXzDQAAQBAJ",
-      "etag": "cLxTBHItotE",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/1wXzDQAAQBAJ",
+      "id": "j9ahkB1ruygC",
+      "etag": "6A6wMndWcR4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/j9ahkB1ruygC",
       "volumeInfo": {
-        "title": "Attack on Titan",
-        "authors": [
-          "Hajime Isayama"
-        ],
-        "publisher": "Kodansha Comics",
-        "publishedDate": "2013-10-29",
-        "description": "BLOOD ON HIS HANDS The expedition outside the wall was Eren's chance to prove himself. But it failed, and the female Titan is free once more! With his squad dead, Eren faces a royal summons. Will Mikasa and Armin have to betray their king to save their friend? And can they discover the female Titan's identity before she kills again? ? ? PRAISE FOR THE HIT ANIME \"A visceral and fantastically intense action/horror story.\" - Anime News Network ? \"Japan's equivalent of The Walking Dead.\" - io9",
+        "title": "Catalog of Information on Water Data",
+        "subtitle": "Index to water-data acquisition",
+        "publishedDate": "1974",
         "industryIdentifiers": [
           {
-            "type": "ISBN_13",
-            "identifier": "9781612626819"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1612626815"
+            "type": "OTHER",
+            "identifier": "IND:30000097948495"
           }
         ],
         "readingModes": {
-          "text": true,
+          "text": false,
           "image": true
         },
-        "pageCount": 192,
+        "pageCount": 88,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Stream measurements"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "1.4.3.0.preview.3",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.3.0.full.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=1wXzDQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=1wXzDQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=j9ahkB1ruygC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=j9ahkB1ruygC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=1wXzDQAAQBAJ&pg=PT156&dq=Attack+on+Titan&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=1wXzDQAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=1wXzDQAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "8",
-          "volumeSeries": [
-            {
-              "seriesId": "bof3GgAAABCYnM",
-              "seriesBookType": "COLLECTED_EDITION",
-              "orderNumber": 8
-            }
-          ]
-        }
+        "previewLink": "http://books.google.com.vn/books?id=j9ahkB1ruygC&pg=SL1-PA14&dq=hi&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC"
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FOR_SALE",
+        "saleability": "FREE",
         "isEbook": true,
-        "listPrice": {
-          "amount": 293179,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 199362,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=1wXzDQAAQBAJ&rdid=book-1wXzDQAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 293179000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 199362000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
+        "buyLink": "https://play.google.com/store/books/details?id=j9ahkB1ruygC&rdid=book-j9ahkB1ruygC&rdot=1&source=gbs_api"
       },
       "accessInfo": {
         "country": "VN",
-        "viewability": "PARTIAL",
+        "viewability": "ALL_PAGES",
         "embeddable": true,
-        "publicDomain": false,
+        "publicDomain": true,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-epub.acsm?id=1wXzDQAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/Catalog_of_Information_on_Water_Data.epub?id=j9ahkB1ruygC&hl=&output=epub&source=gbs_api"
         },
         "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attack_on_Titan-sample-pdf.acsm?id=1wXzDQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=1wXzDQAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
+        "webReaderLink": "http://play.google.com/books/reader?id=j9ahkB1ruygC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "Hajime Isayama. YOUR OR- DERS 12 THAT VER \u003cb\u003eTITAN\u003c/b\u003e ... IT ! DON&#39;T LET ... WHAT. HOH .... WAIT JUST WHAT ? SQUAD : . A ... LEADER !! L ... IS IT MOV- ING ? \u003cb\u003eTITANS\u003c/b\u003e ALL THROUGH ... AND IF NOT ,. IS THE WHOLE WALL PACKED FULL OF \u003cb\u003eTITANS\u003c/b\u003e ? DID&nbsp;..."
+        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e KAUNAKAKAI GULCH AT KAUNAKAKAI \u003cb\u003eHI\u003c/b\u003e UNNAMED GULCH AT KAUNAKAKAI \u003cb\u003eHI\u003c/b\u003e KAMILCLCA GULCH MOLOKAI \u003cb\u003eHI\u003c/b\u003e EF KAWELA GULCH NR KAMALO \u003cb\u003eHI\u003c/b\u003e WAWAIA GULCH AT KAMALO \u003cb\u003eHI\u003c/b\u003e PUNAULA GULCH NR PUKOO \u003cb\u003eHI\u003c/b\u003e POHAKUPILI GULCH NR HALAWA \u003cb\u003eHI\u003c/b\u003e PAPIO GULCH AT HALAWA \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "MRRs6nDJk8EC",
+      "etag": "RQuGH1oGvYQ",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/MRRs6nDJk8EC",
+      "volumeInfo": {
+        "title": "Federal Register",
+        "publishedDate": "1984-10-10",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UIUC:30112059138864"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 1482,
+        "printType": "BOOK",
+        "categories": [
+          "Administrative law"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.5.6.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=MRRs6nDJk8EC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=MRRs6nDJk8EC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=MRRs6nDJk8EC&pg=PA40001&dq=hi&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=MRRs6nDJk8EC&rdid=book-MRRs6nDJk8EC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/Federal_Register.epub?id=MRRs6nDJk8EC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=MRRs6nDJk8EC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e FIX VIA W ALTER . TYPHO , \u003cb\u003eHI\u003c/b\u003e FIX 8000 BITES , WV FIX * 5000 * 4400 - MCA LANAI VORTAC , E BND * 1000 - MOCA ** 4400 - MOCA IS AMENDED TO DELETE SHEDS , FL FIX * 3000 CORAL , \u003cb\u003eHI\u003c/b\u003e FIX MAKAI , \u003cb\u003eHI\u003c/b\u003e FIX * 4000 SOUTH KAUAI , \u003cb\u003eHI\u003c/b\u003e VORTAC&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "wYerCEhjUUMC",
+      "etag": "KMoamIyOUoo",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/wYerCEhjUUMC",
+      "volumeInfo": {
+        "title": "Catalog of Information on Water Data",
+        "subtitle": "Surface Water Stations",
+        "authors": [
+          "Geological Survey (U.S.). Office of Water Data Coordination"
+        ],
+        "publishedDate": "1967",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "UCR:31210020799332"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 628,
+        "printType": "BOOK",
+        "categories": [
+          "Hydrological stations"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.4.5.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=wYerCEhjUUMC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=wYerCEhjUUMC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=wYerCEhjUUMC&pg=PA583&dq=hi&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=wYerCEhjUUMC&rdid=book-wYerCEhjUUMC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/Catalog_of_Information_on_Water_Data.epub?id=wYerCEhjUUMC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=wYerCEhjUUMC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eHI\u003c/b\u003e 14201 KOOLAU D AT HAIPUAENA NR HUELO \u003cb\u003eHI\u003c/b\u003e 14202 MANUEL LUIS D AT PUOHO NR HUELO \u003cb\u003eHI HI\u003c/b\u003e 009 STREAM 1919 205104 1561128 \u003cb\u003eHI\u003c/b\u003e 009 STREAM 1913 1967 C REC 205115 1561125 \u003cb\u003eHI\u003c/b\u003e 009 CANAL 1922 C REC 205117 1561119 \u003cb\u003eHI\u003c/b\u003e 009 CANAL 1932 205148 1561100 \u003cb\u003eHI\u003c/b\u003e&nbsp;..."
       }
     }
   ]

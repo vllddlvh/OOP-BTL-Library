@@ -20,6 +20,7 @@ public class ThreadPool {
         // hủy tasks cũ
         bookRender.shutdownNow();
         getter.shutdownNow();
+        setter.shutdown();
         
         // tạo pool nạp tasks mới
         bookRender = Executors.newFixedThreadPool(RENDER_MAX_THREADS);
