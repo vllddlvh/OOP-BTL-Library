@@ -11,10 +11,17 @@ import static org.junit.jupiter.api.Assertions.*;
 class MemberDAOTest {
 
     @BeforeEach
-    void setUp() {
-        // Thiết lập cơ sở dữ liệu cho kiểm thử.
-        // Có thể chèn các dữ liệu thử nghiệm vào cơ sở dữ liệu để kiểm tra.
+void cleanUp() throws SQLException {
+    // Xóa thành viên trước khi chạy test
+    String memberId = "677";
+    Member existingMember = MemberDAO.getMemberInfo(memberId);
+    if (existingMember != null) {
+        boolean isDeleted = MemberDAO.deleteMember(existingMember);
+        assertTrue(isDeleted, "Không thể xóa thành viên trước khi kiểm thử");
     }
+}
+
+
 
     @Test
     void testGetAllMember() throws SQLException {
@@ -36,24 +43,21 @@ class MemberDAOTest {
     }
 
     @Test
-void testAddNewMember() throws SQLException {
-    // Thử thêm một thành viên mới
-    Member newMember = new Member("677", "Janee", "Doee", "jane.doe@example.com", "1990-05-15");
-    
-    // Thêm thành viên vào cơ sở dữ liệu
-    boolean isAdded = MemberDAO.addNewMember(newMember);
-    
-    assertTrue(isAdded, "Thành viên mới không thể thêm vào cơ sở dữ liệu");
-    
-    // Kiểm tra lại trong cơ sở dữ liệu
-    Member addedMember = MemberDAO.getMemberInfo("677");
-    assertNotNull(addedMember, "Thành viên không được thêm vào");
-    assertEquals("Janee", addedMember.getFirstName(), "Tên không khớp");
-    
-    // Sau khi kiểm tra xong, xóa thành viên đã thêm vào
-    boolean isDeleted = MemberDAO.deleteMember(addedMember);
-    
-}
+    void testAddNewMember() throws SQLException {
+        // Thử thêm một thành viên mới
+        Member newMember = new Member("67777", "Janee", "Doee", "jane.doe@example.com", "1990-05-15");
+
+        // Thêm thành viên vào cơ sở dữ liệu
+        boolean isAdded = MemberDAO.addNewMember(newMember);
+
+        assertTrue(isAdded, "Thành viên mới không thể thêm vào cơ sở dữ liệu");
+
+        // Kiểm tra lại trong cơ sở dữ liệu
+        Member addedMember = MemberDAO.getMemberInfo("67777");
+        assertNotNull(addedMember, "Thành viên không được thêm vào");
+        assertEquals("Janee", addedMember.getFirstName(), "Tên không khớp");
+        MemberDAO.deleteMember(newMember);
+    }
 
 
     @Test
