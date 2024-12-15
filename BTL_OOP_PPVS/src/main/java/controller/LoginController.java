@@ -10,10 +10,7 @@ import model.entity.User;
 import view.GDMain;
 import view.GDMainNguoiDung;
 
-/**
- *
- * @author HP
- */
+
 public class LoginController {
     
     private static User currentUser;

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import controller.UpdateTableTaiLieu;
@@ -15,10 +11,7 @@ import javax.swing.JOptionPane;
 import model.dao.FileFormatException;
 import model.entity.Book;
 
-/**
- *
- * @// author HP
- */
+
 public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
 
     /**
@@ -33,7 +26,6 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
     // Khởi tạo giao diện
         initComponents();
 
-        // Gán giá trị vào các JTextField
         jTextAreaSummary.setText(book.getDescription());
         jTextFieldBookAuthor.setText(book.getAuthor());
         jTextFieldBookID.setText(book.getID());
@@ -307,12 +299,12 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonResetActionPerformed
 
     private void jTextFieldBookPublisherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldBookPublisherActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_jTextFieldBookPublisherActionPerformed
 
     private void ButtonXoaTaiLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonXoaTaiLieuActionPerformed
-        // TODO add your handling code here:
-         // Tạo một Document với thông tin từ các JTextField
+
+        // Tạo một Document với thông tin từ các JTextField
          
         Book doc = new Book(
                             jTextFieldBookID.getText(),
@@ -343,7 +335,7 @@ public class SuaThongTinTaiLieuSachFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonXoaTaiLieuActionPerformed
 
     private void ButtonSaveBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonSaveBookActionPerformed
-        // TODO add your handling code here:
+
         Book doc = new Book(
                             jTextFieldBookID.getText(),
                            jTextFieldBookTitle.getText(),

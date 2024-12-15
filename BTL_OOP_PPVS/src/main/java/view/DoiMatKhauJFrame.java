@@ -174,7 +174,7 @@ public class DoiMatKhauJFrame extends javax.swing.JFrame {
 
     private void jButtonConfirmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonConfirmMouseClicked
         try {
-            // TODO add your handling code here:
+            
             if (jpfNewPassword.getText().equals(jpfReconfirm.getText())) {
                 if (LoginController.getAcc().changeOwnPassword(jpfOldPassword.getText(), jpfNewPassword.getText())) {
                     JOptionPane.showMessageDialog(this, "Đổi mật khẩu thành công");
@@ -193,7 +193,6 @@ public class DoiMatKhauJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonConfirmMouseClicked
 
     private void jButtonCancelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonCancelMouseClicked
-        // TODO add your handling code here:
         this.dispose();
     }//GEN-LAST:event_jButtonCancelMouseClicked
 

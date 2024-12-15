@@ -11,10 +11,7 @@ import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
 import model.dao.FileFormatException;
 
-/**
- *
- * @author ADMIN
- */
+
 public abstract class UpdateTable <T> {
     protected ArrayList<T> allElement;
     protected JButton jbtAdd;
