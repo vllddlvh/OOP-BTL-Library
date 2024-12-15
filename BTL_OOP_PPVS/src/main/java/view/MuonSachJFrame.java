@@ -8,10 +8,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.entity.Request;
 
-/**
- *
- * @author ADMIN
- */
+
 public class MuonSachJFrame extends javax.swing.JFrame {
     
     private Request currentRequest;
@@ -284,7 +281,7 @@ public class MuonSachJFrame extends javax.swing.JFrame {
     }
     
     private void returnButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_returnButtonMouseClicked
-        // TODO add your handling code here:
+
         Request org = new Request(currentRequest);
         
         if (evt.getClickCount() > 0 && returnButton.isEnabled()) {     
@@ -308,14 +305,14 @@ public class MuonSachJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_returnButtonMouseClicked
 
     private void jButtonResetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonResetMouseClicked
-        // TODO add your handling code here:
+
         if (evt.getClickCount() > 0) {
             setRequestInfo();
         }
     }//GEN-LAST:event_jButtonResetMouseClicked
 
     private void jButtonLuuThongTinMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonLuuThongTinMouseClicked
-        // TODO add your handling code here:
+
         Request org = new Request(currentRequest);
         
         try {

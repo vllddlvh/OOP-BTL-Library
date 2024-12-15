@@ -9,10 +9,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author ADMIN
- */
+
 public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
 
     /**
@@ -149,7 +146,7 @@ public class MuonTraTaiLieuJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraFocusLost
 
     private void JTextFieldTimKiemThongTinSachMuonTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
-        // TODO add your handling code here:
+
 
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
 
