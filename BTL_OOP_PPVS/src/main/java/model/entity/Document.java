@@ -26,10 +26,7 @@ import model.dao.DocumentDAO;
 import model.dao.FileFormatException;
 import model.dao.FileHandle;
 
-/**
- *
- * @author Littl
- */
+
 public abstract class Document {
     protected String ID;
     protected String title;
@@ -192,16 +189,16 @@ public abstract class Document {
         
         coverFormat = FileHandle.checkFileCover(cover);
         
-        // Ảnh gốc
+
         this.cover = ImageIO.read(cover);
         
-        // Vẽ lại toàn bộ ảnh, thay đổi kích thước, giảm resolution
+
         BufferedImage resizedImage = new BufferedImage(300, 375, BufferedImage.TYPE_INT_RGB);
         Graphics2D g2d = resizedImage.createGraphics();
         g2d.drawImage(this.cover, 0, 0, 300, 375, null);
         g2d.dispose();
         
-        // gán ảnh sau khi đã giảm độ phân giải
+
         this.cover = resizedImage;
         
         haveCover = true;

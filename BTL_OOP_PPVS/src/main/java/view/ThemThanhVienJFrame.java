@@ -203,14 +203,13 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonResetActionPerformed
 
     private void jButtonLuuDuLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLuuDuLieuActionPerformed
-        // TODO add your handling code here:
+
         String rawDateOfBirth = jTextFieldDateOfBirth.getText(); // Lấy giá trị ngày sinh
         String formattedDateOfBirth = null;
 
         try {
-        // Định dạng người dùng nhập: "2-9-2005"
+      
         SimpleDateFormat inputFormat = new SimpleDateFormat("d/M/yyyy");
-        // Định dạng chuẩn bạn muốn lưu: "2005-09-02"
         SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
         
         // Chuyển đổi định dạng
@@ -218,7 +217,7 @@ public class ThemThanhVienJFrame extends javax.swing.JFrame {
         formattedDateOfBirth = outputFormat.format(date);
         } catch (ParseException e) {
         JOptionPane.showMessageDialog(rootPane, "Ngày sinh không đúng định dạng. Hãy nhập: dd-MM-yyyy");
-        return; // Dừng xử lý nếu có lỗi định dạng
+        return; 
         }
         Member s = new Member(JTextFieldID.getText(),
                          jTextFieldFirstName.getText(),

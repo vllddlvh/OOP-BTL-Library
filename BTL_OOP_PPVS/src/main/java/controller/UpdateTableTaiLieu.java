@@ -23,7 +23,7 @@ import model.dao.FileHandle;
 import view.ThemTaiLieuFrame;
 
 /**
- * Quản lý cập nhật bảng Book (JTable) đồng bộ với dữ liệu trong Database.
+ * Quản lý cập nhật bảng hiển thị tài liệu sách của admin (JTable) đồng bộ với dữ liệu trong Database.
  */
 public class UpdateTableTaiLieu extends UpdateTable<Book> {
 
@@ -53,15 +53,16 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
     }
     
     /**
-     * Thêm một Book vào cơ sở dữ liệu và cập nhật bảng.
-     * 
-     * @param newBook.
-     * @return 
-     * 
-     * @throws java.sql.SQLException
-     * @throws java.io.IOException
-     * @throws model.dao.FileFormatException
-     */
+    * Thêm một đối tượng sách (Book) vào cơ sở dữ liệu và đồng thời cập nhật hiển thị trên bảng danh sách.
+    * 
+    * @param alter đối tượng sách cần thêm vào cơ sở dữ liệu.
+    * @return {@code true} nếu thêm thành công, {@code false} nếu thêm thất bại.
+    * 
+    * @throws SQLException nếu xảy ra lỗi truy cập cơ sở dữ liệu.
+    * @throws IOException nếu xảy ra lỗi nhập/xuất dữ liệu.
+    * @throws model.dao.FileFormatException nếu định dạng dữ liệu không hợp lệ.
+    * @throws URISyntaxException nếu URI của tài nguyên không đúng định dạng.
+    */
     @Override
     public boolean addElement(Book newBook) throws SQLException, IOException, FileFormatException, URISyntaxException {
         if (DocumentDAO.addBook(newBook)) {
@@ -73,16 +74,16 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
     }
 
     /**
-     * Chỉnh sửa tài liệu trên bảng danh sách và database.
-     * 
-     * @param alter = bản sau chỉnh sửa.
-     * 
-     * @return true nếu chỉnh sửa thành công.
-     * 
-     * @throws SQLException
-     * @throws IOException 
-     * @throws model.dao.FileFormatException 
-     */
+    * Chỉnh sửa thông tin của một đối tượng sách (Book) trong cơ sở dữ liệu và đồng thời cập nhật trên bảng danh sách.
+    * 
+    * @param alter đối tượng sách đã chỉnh sửa, chứa thông tin mới.
+    * @return {@code true} nếu chỉnh sửa thành công, {@code false} nếu chỉnh sửa thất bại.
+    * 
+    * @throws SQLException nếu xảy ra lỗi truy cập cơ sở dữ liệu.
+    * @throws IOException nếu xảy ra lỗi nhập/xuất dữ liệu.
+    * @throws model.dao.FileFormatException nếu định dạng dữ liệu không hợp lệ.
+    * @throws URISyntaxException nếu URI của tài nguyên không đúng định dạng.
+    */
     @Override
     public boolean updateElement(Book alter) throws SQLException, IOException, FileFormatException, URISyntaxException {
         if (DocumentDAO.updateBook(alter)) {
@@ -102,14 +103,13 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
     }
 
     /**
-     * Xóa một Book khỏi cơ sở dữ liệu và bảng.
-     * 
-     * @param deleteBook = xóa sách.
-     * 
-     * @return true nếu xóa xong.
-     * 
-     * @throws SQLException 
-     */
+    * Xóa một đối tượng sách (Book) khỏi cơ sở dữ liệu và cập nhật hiển thị trên bảng.
+    * 
+    * @param deleteBook sách cần xóa khỏi cơ sở dữ liệu và bảng.
+    * @return {@code true} nếu xóa thành công.
+    * 
+    * @throws SQLException nếu xảy ra lỗi truy cập cơ sở dữ liệu.
+    */
     @Override
     public boolean deleteElement(Book deleteBook) throws SQLException {
         
@@ -126,10 +126,10 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
     }
 
     /**
-     * Thêm một hàng (row) mới vào bảng hiển thị (JTable).
-     * 
-     * @param newBook = sách mới được thêm vào bảng.
-     */
+    * Thêm một hàng mới vào bảng hiển thị (JTable).
+    * 
+    * @param newBook sách mới được thêm vào bảng hiển thị.
+    */
     @Override
     protected void addRow(Book newBook) {
         String[] newRow = new String[7];
@@ -146,10 +146,10 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
     }
     
     /**
-     * Cập nhật một hàng (row) trong bảng hiển thị (JTable).
-     * 
-     * @param alter = Tài liệu đã chỉnh sửa thông tin được cập nhật vào bảng.
-     */
+    * Cập nhật một hàng trong bảng hiển thị (JTable) với thông tin mới.
+    * 
+    * @param alter sách đã được chỉnh sửa thông tin cần cập nhật vào bảng.
+    */
     @Override
     protected void updateRow(Book alter) {
         for (int row = 0; row < tableModel.getRowCount(); row++) {
@@ -169,6 +169,11 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
         }
     }
 
+    /**
+    * Xóa một hàng khỏi bảng hiển thị (JTable).
+    * 
+    * @param deletedOne sách cần xóa khỏi bảng.
+    */
     @Override
     protected void deleteRow(Book deletedOne) {
         int n = tableModel.getRowCount();
@@ -182,6 +187,16 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
     }
     
 
+    /**
+    * Thiết lập bảng hiển thị, nút "Add", và trường tìm kiếm để đồng bộ với dữ liệu cơ sở dữ liệu.
+    * 
+    * @param table bảng JTable cần đồng bộ dữ liệu.
+    * @param jbtAdd nút thêm sách.
+    * @param jtfSearch trường tìm kiếm sách.
+    * 
+    * @throws SQLException nếu xảy ra lỗi truy cập cơ sở dữ liệu.
+    * @throws IOException nếu xảy ra lỗi nhập/xuất dữ liệu.
+    */
     @Override
     public void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException, IOException {
         singleton.tableModel = (DefaultTableModel) table.getModel();
@@ -238,7 +253,12 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
         });
     }
 
-    
+    /**
+    * Cập nhật bộ lọc tìm kiếm của bảng dựa trên nội dung trong trường tìm kiếm.
+    * 
+    * @param jtfSearch trường tìm kiếm.
+    * @param rowSorter bộ lọc của bảng.
+    */
     private void updateFilter(JTextField jtfSearch, TableRowSorter<TableModel> rowSorter) {
         String text = jtfSearch.getText();
         if (text.trim().isEmpty()) {
