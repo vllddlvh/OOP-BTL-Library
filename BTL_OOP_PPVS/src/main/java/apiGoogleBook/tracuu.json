@@ -1,144 +1,310 @@
 {
   "kind": "books#volumes",
-  "totalItems": 756,
+  "totalItems": 575,
   "items": [
     {
       "kind": "books#volume",
-      "id": "HqU2AQAAMAAJ",
-      "etag": "s94HIG/Q3hs",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/HqU2AQAAMAAJ",
+      "id": "GuOmDwAAQBAJ",
+      "etag": "DL/eDypG/fc",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/GuOmDwAAQBAJ",
       "volumeInfo": {
-        "title": "Arapaho National Forest (N.F.), Roosevelt National Forest (N.F.), Lakewood Raw Water Pipeline",
-        "subtitle": "Environmental Impact Statement",
-        "publishedDate": "1998",
+        "title": "Life is Strange #8",
+        "authors": [
+          "Emma Vieceli"
+        ],
+        "publisher": "Titan Comics",
+        "publishedDate": "2019-08-21",
+        "description": "Tristan told his tory to Max – during a drug deal gone bad, his powers kicked in, and he phased away, just when his friend needed him the most. In the chaos, the cops closed in and Tristan’s friend was shot, his final words cursed Tristan for abandoning him… even though Tristan was there the whole time. Max realized the significance of finding another person with powers, however, Chloe felt betrayed that Max found it easier to talk to Tristan than to her and Rachel. Later, at Callie’s influencer party, Callie overdosed, and while Rachel and Chloe ran to her aid, Max ducked outside to call 911…",
         "industryIdentifiers": [
           {
-            "type": "OTHER",
-            "identifier": "NWU:35556031804131"
+            "type": "ISBN_13",
+            "identifier": "9781787731042"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1787731049"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 420,
+        "pageCount": 34,
         "printType": "BOOK",
+        "categories": [
+          "Comics & Graphic Novels"
+        ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.5.5.0.full.1",
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.0.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
-          "containsImageBubbles": false
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "dc9baab57c697793"
         },
+        "comicsContent": true,
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=HqU2AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=HqU2AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=GuOmDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=GuOmDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=HqU2AQAAMAAJ&pg=RA4-PA56&dq=hi+lo&hl=&cd=1&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=HqU2AQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=HqU2AQAAMAAJ"
+        "previewLink": "http://books.google.com.vn/books?id=GuOmDwAAQBAJ&pg=PT3&dq=Life+is+Strange&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=GuOmDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=GuOmDwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "8",
+          "volumeSeries": [
+            {
+              "seriesId": "XXcjGwAAABB_bM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 8
+            }
+          ]
+        }
       },
       "saleInfo": {
         "country": "VN",
-        "saleability": "FREE",
+        "saleability": "FOR_SALE",
         "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=HqU2AQAAMAAJ&rdid=book-HqU2AQAAMAAJ&rdot=1&source=gbs_api"
+        "listPrice": {
+          "amount": 106449,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 79837,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=GuOmDwAAQBAJ&rdid=book-GuOmDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 106449000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 79837000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
       },
       "accessInfo": {
         "country": "VN",
-        "viewability": "ALL_PAGES",
+        "viewability": "PARTIAL",
         "embeddable": true,
-        "publicDomain": true,
+        "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Arapaho_National_Forest_N_F_Roosevelt_Na.epub?id=HqU2AQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
           "isAvailable": false
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=HqU2AQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Life_is_Strange_8-sample-pdf.acsm?id=GuOmDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=GuOmDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... Lo VHi VHi No VHi LO VHi VHi Lo \u003cb\u003eHi LO\u003c/b\u003e Hi Hi No \u003cb\u003eHi Lo\u003c/b\u003e Lo Lo No Lo Lo VHi VHi No Hi L No Lo Lo No No Н LO Hi \u003cb\u003eHi Lo\u003c/b\u003e Hi No VHi VHi LO VHi No Hi \u003cb\u003eHi Lo\u003c/b\u003e Hi Н No VHi VHi No VHi No VHi VHi No VHi LO VHi VHi No \u003cb\u003eHi LO\u003c/b\u003e Hi Hi No \u003cb\u003eHi Lo\u003c/b\u003e Hi Hi No&nbsp;..."
+        "textSnippet": "... \u003cb\u003eLIFE IS STRANGE\u003c/b\u003e # 8 , September 2019. FIRST PRINTING . Published by Titan Comics , a division of Titan Publishing Group , Ltd. 144 Southwark Street , London SE1 0UP . Titan Comics is a registered trademark of Titan Publishing Group&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "pm5rCQAAQBAJ",
-      "etag": "fpCjNl0mKTk",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/pm5rCQAAQBAJ",
+      "id": "Pyv_DwAAQBAJ",
+      "etag": "jGMofl+cEh4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Pyv_DwAAQBAJ",
       "volumeInfo": {
-        "title": "Machine Learning and Its Applications",
-        "subtitle": "Advanced Lectures",
+        "title": "Life is Strange #2.1",
+        "subtitle": "Partners in Time",
         "authors": [
-          "Georgios Paliouras",
-          "Vangelis Karkaletsis",
-          "Constantine D. Spyropoulos"
+          "Emma Vieceli"
         ],
-        "publisher": "Springer",
-        "publishedDate": "2003-06-29",
-        "description": "In recent years machine learning has made its way from artificial intelligence into areas of administration, commerce, and industry. Data mining is perhaps the most widely known demonstration of this migration, complemented by less publicized applications of machine learning like adaptive systems in industry, financial prediction, medical diagnosis and the construction of user profiles for Web browsers. This book presents the capabilities of machine learning methods and ideas on how these methods could be used to solve real-world problems. The first ten chapters assess the current state of the art of machine learning, from symbolic concept learning and conceptual clustering to case-based reasoning, neural networks, and genetic algorithms. The second part introduces the reader to innovative applications of ML techniques in fields such as data mining, knowledge discovery, human language technology, user modeling, data analysis, discovery science, agent technology, finance, etc.",
+        "publisher": "Titan Comics",
+        "publishedDate": "2020-10-14",
+        "description": "The adventures of Max, Chloe, and Rachel, from the hit game Life is Strange, continue into a new era! Time-rewinding photographer Max has spent the last couple of years in a reality parallel to her own. Lately, she realised she was running from her responsibilities... and from the Chloe she left. Now... there may be a way for her to get home. With the universe against her, it's time for the coast-to-coast road trip of multiple lifetimes to find it - following the band The High Seas towards an uncertain destiny!",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9783540446736"
+            "identifier": "9781787735446"
           },
           {
             "type": "ISBN_10",
-            "identifier": "3540446737"
+            "identifier": "1787735443"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 334,
+        "pageCount": 36,
         "printType": "BOOK",
         "categories": [
-          "Computers"
+          "Comics & Graphic Novels"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
+        "allowAnonLogging": true,
+        "contentVersion": "0.1.0.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "0aca4d5377228c4a_A"
+        },
+        "comicsContent": true,
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Pyv_DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Pyv_DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=Pyv_DwAAQBAJ&pg=PT2&dq=Life+is+Strange&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=Pyv_DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Pyv_DwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "shortSeriesBookTitle": "Partners in Time",
+          "bookDisplayNumber": "13",
+          "volumeSeries": [
+            {
+              "seriesId": "XXcjGwAAABB_bM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 13
+            }
+          ]
+        }
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 106449,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 79837,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=Pyv_DwAAQBAJ&rdid=book-Pyv_DwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 106449000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 79837000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Life_is_Strange_2_1-sample-pdf.acsm?id=Pyv_DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Pyv_DwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Partners in Time Emma Vieceli. \u003cb\u003eLIFE IS STRANGE\u003c/b\u003e PARTNERS IN TIME TRACKS - PART 1 OF 4 WRITTEN BY EMMA VIECELI ARTWORK BY CLAUDIA LEONARDI COLORS BY ANDREA IZZO LETTERS BY RICHARD STARKINGS &amp; COMICRAFT&#39;S JIMMY ... \u003cb\u003eLIFE IS STRANGE\u003c/b\u003e ..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "uw3ADwAAQBAJ",
+      "etag": "tkWP7jI5qys",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/uw3ADwAAQBAJ",
+      "volumeInfo": {
+        "title": "Life Is Strange #11",
+        "authors": [
+          "Emma Vieceli"
+        ],
+        "publisher": "Titan Comics",
+        "publishedDate": "2019-12-11",
+        "description": "Chloe introduced Rachel to their new mode of transport, and home when they’re touring – Gladys. Tristan showed Max a newspaper that revealed Max had arrived in this timeline the day that Tristan got his powers. He offered the photo could be a way for her to jump back and rewind all that had happened, but Max refused to sacrifice him. Meanwhile, Tristan’s attempt to phase from one string of time to the next led to a vision of another Chloe, from another reality. Is this the Chloe that Max is trying to return to? As swiftly as the vision appeared, she vanished…",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781787733886"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1787733882"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 34,
+        "printType": "BOOK",
+        "categories": [
+          "Comics & Graphic Novels"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
         "contentVersion": "0.1.1.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
-          "containsImageBubbles": false
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "5dbcc74018a18c71_A"
         },
+        "comicsContent": true,
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=pm5rCQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=pm5rCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=uw3ADwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=uw3ADwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=pm5rCQAAQBAJ&pg=PA79&dq=hi+lo&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=pm5rCQAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=pm5rCQAAQBAJ"
+        "previewLink": "http://books.google.com.vn/books?id=uw3ADwAAQBAJ&pg=PA1995&dq=Life+is+Strange&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=uw3ADwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=uw3ADwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "11",
+          "volumeSeries": [
+            {
+              "seriesId": "XXcjGwAAABB_bM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 11
+            }
+          ]
+        }
       },
       "saleInfo": {
         "country": "VN",
         "saleability": "FOR_SALE",
         "isEbook": true,
         "listPrice": {
-          "amount": 1439714,
+          "amount": 106449,
           "currencyCode": "VND"
         },
         "retailPrice": {
-          "amount": 1007800,
+          "amount": 79837,
           "currencyCode": "VND"
         },
-        "buyLink": "https://play.google.com/store/books/details?id=pm5rCQAAQBAJ&rdid=book-pm5rCQAAQBAJ&rdot=1&source=gbs_api",
+        "buyLink": "https://play.google.com/store/books/details?id=uw3ADwAAQBAJ&rdid=book-uw3ADwAAQBAJ&rdot=1&source=gbs_api",
         "offers": [
           {
             "finskyOfferType": 1,
             "listPrice": {
-              "amountInMicros": 1439714000000,
+              "amountInMicros": 106449000000,
               "currencyCode": "VND"
             },
             "retailPrice": {
-              "amountInMicros": 1007800000000,
+              "amountInMicros": 79837000000,
               "currencyCode": "VND"
             }
           }
@@ -155,156 +321,99 @@
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Machine_Learning_and_Its_Applications-sample-pdf.acsm?id=pm5rCQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Life_Is_Strange_11-sample-pdf.acsm?id=uw3ADwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=pm5rCQAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=uw3ADwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... lo lo lo lo lo \u003cb\u003ehi lo\u003c/b\u003e lo med lo lo lo med hi med lo \u003cb\u003ehi lo\u003c/b\u003e lo lo hi hi hi med med lo med med \u003cb\u003ehi lo\u003c/b\u003e med med hi hi hi \u003cb\u003ehi lo\u003c/b\u003e lo hi hi \u003cb\u003ehi lo\u003c/b\u003e hi values x1 = med , x2 = med , and x3 = low , we derive c = 1 and y which is indeed the same as&nbsp;..."
+        "textSnippet": "Emma Vieceli. RING BONG \u003cb\u003eLIFE IS STRANGE\u003c/b\u003e UNI - CORN STRINGS - PART 3. 20 Rachel was awarded for her efforts in exposing the local drug dealers . Even though she&#39;d have preferred to share the glory , Max and Tristan both agreed that no&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "Roc2AQAAMAAJ",
-      "etag": "XItb3Nhc7yk",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/Roc2AQAAMAAJ",
+      "id": "AXi5DwAAQBAJ",
+      "etag": "4xGM64kYf8Y",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/AXi5DwAAQBAJ",
       "volumeInfo": {
-        "title": "White Mountain National Forest (N.F.), Waterville Unit Plan",
-        "subtitle": "Environmental Impact Statement",
-        "publishedDate": "1978",
+        "title": "Life is Strange #10",
+        "authors": [
+          "Emma Vieceli"
+        ],
+        "publisher": "Titan Comics",
+        "publishedDate": "2019-11-13",
+        "description": "After seeing Tristan’s powers in action before their eyes, Max used the opportunity to tell them the truth about everything, from the storm, to Chloe’, to Max’s time travel powers. Max was honest with Chloe and Rachel, and herself, for the first time since she arrived and explained she wanted to go home, if that’s even possible. Later, escaping to watch The High Seas band practice, to get her mind off of Max’s world-shattering news, Rachel learned that the band was hitting the same venue as her action tour, and Chloe announced that she was coming with her. Meanwhile, down on the beach, Tristan attempted to practice a power he still barely understands. He disengaged for a moment – but what was he trying to do?",
         "industryIdentifiers": [
           {
-            "type": "OTHER",
-            "identifier": "NWU:35556030846547"
+            "type": "ISBN_13",
+            "identifier": "9781787733879"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1787733874"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 62,
-        "printType": "BOOK",
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.6.7.0.full.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=Roc2AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=Roc2AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=Roc2AQAAMAAJ&pg=PA35&dq=hi+lo&hl=&cd=3&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=Roc2AQAAMAAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Roc2AQAAMAAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FREE",
-        "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=Roc2AQAAMAAJ&rdid=book-Roc2AQAAMAAJ&rdot=1&source=gbs_api"
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "ALL_PAGES",
-        "embeddable": true,
-        "publicDomain": true,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/White_Mountain_National_Forest_N_F_Water.epub?id=Roc2AQAAMAAJ&hl=&output=epub&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": false
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=Roc2AQAAMAAJ&hl=&source=gbs_api",
-        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "Environmental Impact Statement. ELT ROADS 1 \u003cb\u003eLO\u003c/b\u003e 2 \u003cb\u003eLO\u003c/b\u003e 2C \u003cb\u003eLO\u003c/b\u003e 3 \u003cb\u003eLO\u003c/b\u003e 105 \u003cb\u003eHI\u003c/b\u003e 405 \u003cb\u003eHI\u003c/b\u003e 6 MOD 6A \u003cb\u003eLO\u003c/b\u003e 8 \u003cb\u003eLO\u003c/b\u003e 11 \u003cb\u003eHI\u003c/b\u003e 14 \u003cb\u003eLO\u003c/b\u003e 15A \u003cb\u003eLO\u003c/b\u003e 115C \u003cb\u003eHI\u003c/b\u003e 415C \u003cb\u003eHI\u003c/b\u003e 15F MOD 2 \u003cb\u003eLO\u003c/b\u003e 2 \u003cb\u003eLO\u003c/b\u003e - 15 \u003cb\u003eLO LO\u003c/b\u003e. Π15. \u003cb\u003eLO\u003c/b\u003e CHARACTERISTICS AQUATIC Running Open Water Type Process Rate Typical&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "wpneDwAAQBAJ",
-      "etag": "lDR60cITzO4",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/wpneDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Futuristic Trends in Networks and Computing Technologies",
-        "subtitle": "Second International Conference, FTNCT 2019, Chandigarh, India, November 22–23, 2019, Revised Selected Papers",
-        "authors": [
-          "Pradeep Kumar Singh",
-          "Sanjay Sood",
-          "Yugal Kumar",
-          "Marcin Paprzycki",
-          "Anton Pljonkin",
-          "Wei-Chiang Hong"
-        ],
-        "publisher": "Springer Nature",
-        "publishedDate": "2020-04-21",
-        "description": "This book constitutes the refereed proceedings of the Second International Conference on Futuristic Trends in Network and Communication Technologies, FTNCT 2019, held in Chandigarh, India, in November 2019. The 49 revised full papers and 6 short papers presented were carefully reviewed and selected from 226 submissions. The prime aim of the conference is to invite researchers from different domains of network and communication technologies to a single platform to showcase their research ideas. The selected papers are organized in topical sections on network and computing technologies; wireless networks and Internet of Things (IoT); futuristic computing technologies; communication technologies, security and privacy.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9789811544514"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "9811544514"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 717,
+        "pageCount": 34,
         "printType": "BOOK",
         "categories": [
-          "Computers"
+          "Comics & Graphic Novels"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.1.1.0.preview.3",
+        "allowAnonLogging": true,
+        "contentVersion": "0.2.0.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
-          "containsImageBubbles": false
+          "containsImageBubbles": true,
+          "imageBubbleVersion": "d61e6a1517a631f0"
         },
+        "comicsContent": true,
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=wpneDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=wpneDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=AXi5DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=AXi5DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=wpneDwAAQBAJ&pg=PA11&dq=hi+lo&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=wpneDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wpneDwAAQBAJ"
+        "previewLink": "http://books.google.com.vn/books?id=AXi5DwAAQBAJ&pg=PT3&dq=Life+is+Strange&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=AXi5DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=AXi5DwAAQBAJ",
+        "seriesInfo": {
+          "kind": "books#volume_series_info",
+          "bookDisplayNumber": "10",
+          "volumeSeries": [
+            {
+              "seriesId": "XXcjGwAAABB_bM",
+              "seriesBookType": "ISSUE",
+              "orderNumber": 10
+            }
+          ]
+        }
       },
       "saleInfo": {
         "country": "VN",
         "saleability": "FOR_SALE",
         "isEbook": true,
         "listPrice": {
-          "amount": 1439714,
+          "amount": 106449,
           "currencyCode": "VND"
         },
         "retailPrice": {
-          "amount": 1007800,
+          "amount": 79837,
           "currencyCode": "VND"
         },
-        "buyLink": "https://play.google.com/store/books/details?id=wpneDwAAQBAJ&rdid=book-wpneDwAAQBAJ&rdot=1&source=gbs_api",
+        "buyLink": "https://play.google.com/store/books/details?id=AXi5DwAAQBAJ&rdid=book-AXi5DwAAQBAJ&rdot=1&source=gbs_api",
         "offers": [
           {
             "finskyOfferType": 1,
             "listPrice": {
-              "amountInMicros": 1439714000000,
+              "amountInMicros": 106449000000,
               "currencyCode": "VND"
             },
             "retailPrice": {
-              "amountInMicros": 1007800000000,
+              "amountInMicros": 79837000000,
               "currencyCode": "VND"
             }
           }
@@ -317,19 +426,18 @@
         "publicDomain": false,
         "textToSpeechPermission": "ALLOWED",
         "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Futuristic_Trends_in_Networks_and_Comput-sample-epub.acsm?id=wpneDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "isAvailable": false
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Futuristic_Trends_in_Networks_and_Comput-sample-pdf.acsm?id=wpneDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Life_is_Strange_10-sample-pdf.acsm?id=AXi5DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=wpneDwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=AXi5DwAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... Lo \u003cb\u003eHi Lo\u003c/b\u003e Lo LEACH DCHS 2002 Single hop Distributed Moderate Lo Hi \u003cb\u003eHi Lo\u003c/b\u003e LEACH B 2003 Multi-hop Distributed Moderate Lo Hi \u003cb\u003eHi Lo\u003c/b\u003e SLEACH 2005 Single hop Distributed Complex Lo Very Hi Hi Moderate TL-LEACH B 2006 Multi-hop Distributed&nbsp;..."
+        "textSnippet": "... \u003cb\u003eLIFE IS STRANGE\u003c/b\u003e # 10 , December 2019. FIRST PRINTING . Published by Titan Comics , a division of Titan Publishing Group , Ltd. 144 Southwark Street , London SE1 0UP . Titan Comics is a registered trademark of Titan Publishing Group&nbsp;..."
       }
     }
   ]

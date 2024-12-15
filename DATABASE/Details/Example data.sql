@@ -22,6 +22,7 @@ CALL addStaff('23021662', 'Nguyễn Minh', 'Fucka', '0934567890', 'Ăn Tạp', N
 CALL addStaff('23021750', 'Lê Long Vũ', 'Đào', '123456789', 'High', '23021662');
 CALL addStaff('23021666', 'Hải Phương', 'Bùi', '987654321', 'High', '23021662');
 CALL addStaff('23021686', 'Trường Sơn', 'Nguyễn', '123456789', 'High', '23021662');
+CALL addStaff('Admin', 'Administator', 'Highest', '666', 'Barbarian', NULL);
 
 
 
