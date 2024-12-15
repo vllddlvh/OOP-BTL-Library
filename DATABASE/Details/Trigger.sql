@@ -33,13 +33,10 @@ CREATE TRIGGER genRequestID
 BEFORE INSERT ON Request
 FOR EACH ROW
 BEGIN
-	DECLARE newMonth INT;
-    DECLARE month_prefix CHAR(3);
+    DECLARE month_prefix CHAR(7);
     DECLARE count INT;
     
-    SET newMonth = MONTH(NEW.borrowDate);
-    
-    SET month_prefix = CASE newMonth
+    SET month_prefix = CASE MONTH(NEW.borrowDate)
         WHEN 1 THEN 'Jan' WHEN 2 THEN 'Feb'
         WHEN 3 THEN 'Mar' WHEN 4 THEN 'Apr'
         WHEN 5 THEN 'May' WHEN 6 THEN 'Jun'
@@ -48,9 +45,11 @@ BEGIN
         WHEN 11 THEN 'Nov' WHEN 12 THEN 'Dec'
     END;
     
-    SET count = (SELECT COUNT(*) + 1 FROM Request WHERE MONTH(borrowDate) = newMonth);
+    SET month_prefix = CONCAT(YEAR(NEW.borrowDate), month_prefix);
     
-    SET NEW.requestID = CONCAT(YEAR(NEW.borrowDate), month_prefix, count);
+    SET count = (SELECT COUNT(*) + 1 FROM Request r WHERE left(r.requestID, 7) = month_prefix);
+    
+    SET NEW.requestID = CONCAT(month_prefix, count);
 END;
 // DELIMITER ;
 
@@ -107,5 +106,3 @@ BEGIN
     WHERE ID = NEW.documentID;
 END;
 // DELIMITER ;
-
-

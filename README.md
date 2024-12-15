@@ -3,10 +3,10 @@
 
 - Thư viện điện tử PVVS - bài tập nhóm lớp UET I24-25 INT2204 18  
 - Nhóm gồm 4 thành viên:  
-  + [Đào Lê Long Vũ](https://github.com/vllddlvh)  
-  + [Bùi Hải Phương](https://github.com/PhuongBui69)  
-  + [Nguyễn Trường Sơn](https://github.com/NostagiGuideuS)  
-  + [Nguyễn Minh Phúc](https://github.com/nguyenminhphuc1209)  
+  + [23021750 Đào Lê Long Vũ](https://github.com/vllddlvh)  
+  + [23021666 Bùi Hải Phương](https://github.com/PhuongBui69)  
+  + [23021686 Nguyễn Trường Sơn](https://github.com/NostagiGuideuS)  
+  + [23021662 Nguyễn Minh Phúc](https://github.com/nguyenminhphuc1209)  
 
 # Mục lục  
 
@@ -27,7 +27,7 @@
 - Dự án là một ứng dụng được thiết kế quản lý thư viện để quản lý tài nguyên số, cụ thể là sách điện tử (ebook). Hiện tại chỉ được demo lưu trữ nội dung định dạng PDF.  
 - Biểu đồ lớp (Class Diagram):  
 
-  ![image]("Chưa cập nhật").  
+  ![image](image/InheritanceTree.png).  
 
 <a name = "issue"></a>  
 # II. CÁC TÍNH NĂNG  
@@ -58,23 +58,21 @@
 ## Hướng dẫn cài đặt  
 
 1. Clone dự án:  
-   ```bash  
    git clone [https://github.com/vllddlvh/OOP-BTL-Library](https://github.com/vllddlvh/OOP-BTL-Library)  
-   ```  
 
 2. Cài đặt một số thư viện hỗ trợ:  
    Tải và cài đặt Maven vào IDE. Hầu hết thư viện bổ sung đã được đề cập trong `Project Files/pom.xml` và được tải tự động bởi Maven.  
 
 3. Cài đặt cơ sở dữ liệu:  
    - Sơ đồ thiết kế cơ sở dữ liệu:  
-     ![Sơ đồ thiết kế cơ sở dữ liệu]("Chưa cập nhật").  
-   - Code cơ sở dữ liệu:  
-     ![Đường dẫn code cơ sở dữ liệu].  
+     ![Sơ đồ thiết kế cơ sở dữ liệu](image/csdl.png). 
+ 
+   - [Code cơ sở dữ liệu:](DATABASE/AllInOne.sql)  
 
 4. Chạy dự án:  
    - Bạn có thể chạy trực tiếp Project. Hoặc tìm chạy file `main.Main`.  
    - Trong trường hợp Terminal báo "Connecting Database FAILED", có thể do bạn chưa tạo cơ sở dữ liệu, hoặc cần chỉnh thông tin truy cập, tại `model.DatabaseConnector`.  
-
+   - Như hình: ![Đường dẫn](image/Chúthích.png)
 <a name = "using"></a>  
 # IV. SỬ DỤNG  
 
@@ -91,42 +89,17 @@
 
 2. Giao diện:  
 
-   - **Trang chủ -> Các trang giao diện khác**:  
-     `LoginJFrame`  
-     │  
-     ├── as Member -> `GDMainNguoiDung`  
-     │        ├── `TrangChuJPanel`  
-     │        │        └── `ChiTietTaiLieu`  
-     │        ├── `TimKiemVoiAPI`  
-     │        │        └── `ChiTietTaiLieu`  
-     │        └── `HoSoCuaToi`  
-     │                  ├── `ThongTinCuaToiJPanel`  
-     │                  ├── `DoiMatKhauJFrame`  
-     │                  └── `SachDaMuonJPanel`  
-     │                          └── `MuonSachJFrame`  
-     └── as Staff -> `GDMain`  
-              ├── `TrangChuJPanel`  
-              │        └── `ChiTietTaiLieu`  
-              ├── `TimKiemVoiAPI`  
-              │        └── `ChiTietTaiLieu`  
-              │                  └── `ThemTaiLieuFrame`  
-              ├── `BanDocJPanel`  
-              │        ├── `MuonTraTaiLieu`  
-              │        │        └── `MuonSachJFrame`  
-              │        └── `ThongTinThanhVienJPanel`  
-              │                  ├── `SuaThongTinThanhVienJFrame`  
-              │                  └── `ThemThanhVienJFrame`  
-              └── `TaiLieuPanel`  
-                       ├── `ThemTaiLieuFrame`  
-                       │        └── `ChonFileAnhJFrame`  
-                       ├── `SuaThongTinTaiLieuSachJFrame`  
-                       │        └── `ChonFileAnhJFrame`  
-                       └── `HoSoCuaToi`  
-                                ├── `ThongTinCuaToiJPanel`  
-                                ├── `DoiMatKhauJFrame`  
-                                └── `SachDaMuonJPanel`  
-                                         └── `MuonSachJFrame`.  
+   - **Trang chủ -> Các trang giao diện khác**:
+   - Sơ đồ giao diện:
+     ![Sơ đồ giao diện](image/Sơđồgiaodiện.png)
 
+3. Demo giao diện:  
+
+   - Trang chủ ![menu](image/TrangChu.png)
+   - Thông tin sách ![bookDetails](image/ThôngTinNgườiDùng.png)
+   - Phiếu mượn sách ![documentCard](image/DocumentCard.png)
+   - Thông tin người dùng: ![userDetails](image/ThôngTinNgườiDùng.png)
+  
 <a name = "technique"></a>  
 # V. CÔNG NGHỆ SỬ DỤNG  
 

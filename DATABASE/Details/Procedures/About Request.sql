@@ -1,4 +1,3 @@
-
 DROP PROCEDURE IF EXISTS borrowDocument;
 DELIMITER //
 CREATE PROCEDURE borrowDocument (IN uID VARCHAR(10), docuID VARCHAR(50), borrowQuantity INT)
@@ -21,18 +20,11 @@ END;
 
 DROP PROCEDURE IF EXISTS returnDocument;
 DELIMITER //
-CREATE PROCEDURE returnDocument (IN rqID VARCHAR(20), uID VARCHAR(10))
+CREATE PROCEDURE returnDocument (IN docuID VARCHAR(20), uID VARCHAR(10))
 BEGIN
-	IF uID = (SELECT userID FROM Request WHERE requestID = rqID)
-    THEN 
-		UPDATE Request
-		SET returnDate = CURRENT_DATE()
-		WHERE requestID = rqID AND returnDate IS NULL;
-        
-        SELECT true AS Result;
-	ELSE 
-		SELECT false AS Result;
-	END IF;
+	UPDATE Request
+	SET returnDate = CURRENT_DATE()
+	WHERE returnDate IS NULL AND documentID = docuID AND  userID = uID;
 END;
 // DELIMITER ;
 
@@ -43,10 +35,13 @@ CREATE PROCEDURE checkForUnreturn_DocumentList(IN uID VARCHAR(10))
 BEGIN
     SELECT
 		requestID,
+        coalesce((SELECT CONCAT_WS(" ", firstName, lastName) FROM Staff WHERE ID = uID),
+			(SELECT CONCAT_WS(" ", firstName, lastName) FROM Member WHERE ID = uID)),
         documentID,
+        (SELECT title FROM documents WHERE ID = documentID) AS title,
         quantityBorrow,
         borrowDate
-	FROM Request
+	FROM Request r
 	WHERE userID = uID AND returnDate IS NULL;
 END;
 // DELIMITER ;
@@ -72,7 +67,10 @@ DELIMITER //
 CREATE PROCEDURE checkForHistory_DocumentList(IN uID VARCHAR(10))
 BEGIN
     SELECT requestID,
+			coalesce((SELECT CONCAT_WS(" ", firstName, lastName) FROM Staff WHERE ID = uID),
+				(SELECT CONCAT_WS(" ", firstName, lastName) FROM Member WHERE ID = uID)),
 			documentID,
+			(SELECT title FROM documents WHERE ID = documentID) AS title,
 			quantityBorrow,
 			borrowDate,
 			returnDate
