@@ -30,10 +30,21 @@ import model.entity.Book;
 public class TrangChuJPanel extends javax.swing.JPanel {
     private UpdateTableTaiLieu ctrl;
     private List<Book> documents;
-    public static TrangChuJPanel instance = new TrangChuJPanel();
+    private static TrangChuJPanel instance = new TrangChuJPanel();
     
     public static TrangChuJPanel getInstance() {
+        reloadContents();
         return instance;
+    }
+    
+    public static void reloadContents() {
+        try {
+            instance.displayDocuments(instance.documents);
+            
+        } catch (IOException | SQLException | FileFormatException ex) {
+            Logger.getLogger(TrangChuJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex.getMessage());
+        }
     }
     
     private TrangChuJPanel() {

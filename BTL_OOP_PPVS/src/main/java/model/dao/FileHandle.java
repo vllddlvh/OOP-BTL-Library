@@ -90,6 +90,9 @@ public class FileHandle {
         bufferedImage.getGraphics().drawImage(cover, 0, 0, null);
         
         ByteArrayOutputStream output = new ByteArrayOutputStream();
+        if (format == null) {
+            format = "jpg";
+        }
         ImageIO.write(bufferedImage, format, output);
         
         loader.setBytes(2, output.toByteArray());

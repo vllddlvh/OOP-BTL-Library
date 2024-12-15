@@ -114,6 +114,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         jblPDF = new javax.swing.JLabel();
         jlbPdfPath = new javax.swing.JLabel();
         jlbImagePath = new javax.swing.JLabel();
+        ButtonDelete = new javax.swing.JButton();
         ButtonSaveBook = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -226,6 +227,16 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         jlbImagePath.setText("jLabel1");
         jlbImagePath.setToolTipText("");
 
+        ButtonDelete.setBackground(new java.awt.Color(80, 141, 78));
+        ButtonDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        ButtonDelete.setForeground(new java.awt.Color(255, 255, 255));
+        ButtonDelete.setText("Xóa sách");
+        ButtonDelete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ButtonDeleteMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jpnThemTaiLieuLayout = new javax.swing.GroupLayout(jpnThemTaiLieu);
         jpnThemTaiLieu.setLayout(jpnThemTaiLieuLayout);
         jpnThemTaiLieuLayout.setHorizontalGroup(
@@ -247,7 +258,9 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(72, 72, 72)
-                        .addComponent(ButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ButtonDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(95, Short.MAX_VALUE))
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -322,6 +335,8 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                 .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(ButtonDelete)
+                        .addGap(33, 33, 33)
                         .addComponent(ButtonReset))
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -455,6 +470,9 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
             // Xử lý ngoại lệ nếu có lỗi khi thao tác với cơ sở dữ liệu
             JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi: " + ex.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);
             Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (java.lang.NullPointerException npt) {
+            Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, npt);
+            this.dispose();
         }
     }//GEN-LAST:event_ButtonSaveBookActionPerformed
 
@@ -495,6 +513,16 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
             // return;
         }
     }//GEN-LAST:event_jButtonChonFilePDFActionPerformed
+
+    private void ButtonDeleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ButtonDeleteMouseClicked
+        try {
+            // TODO add your handling code here:
+            UpdateTableTaiLieu.getInstance().deleteElement(emptyForm);
+            this.dispose();
+        } catch (SQLException ex) {
+            Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ButtonDeleteMouseClicked
 
     private void displayImage(Image img) {
         if (img == null) {
@@ -540,6 +568,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ButtonDelete;
     private javax.swing.JButton ButtonReset;
     private javax.swing.JButton ButtonSaveBook;
     private javax.swing.JLabel demoImageLabel;
