@@ -82,10 +82,6 @@ public abstract class User {
         return RequestDAO.borrowDocument(ID, documentID);
     }
     
-    public boolean readDocument(String documentID) {
-        return false;
-    }
-    
     /**
      * Thực hiên trả tài liệu
      * 
