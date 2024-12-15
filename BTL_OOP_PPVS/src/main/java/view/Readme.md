@@ -1,7 +1,3 @@
-SachJPanel 	(vô dụng)
-
-
-
 
 LoginJFrame 
 |
@@ -9,9 +5,9 @@ LoginJFrame
 |		|- TrangChuJPanel
 |		|	|- ChiTietTaiLieu
 |		|
-|		|- TuMuonSachJFrame (sưaxxxxxxxxxxxxxxxxx)
+|		|- TuMuonSachJFrame
 |		|- HoSoCuaToi 
-|			|- ThongTinCuaToiJPanel (Chưa có)
+|			|- ThongTinCuaToiJPanel
 |			|- SachDaMuonJPanel
 |-Staff -> GDMain
 		|- TrangChuJPanel
@@ -26,4 +22,4 @@ LoginJFrame
 			|- ThemTaiLieuFrame
 				|- ChonFileAnhJFrame
 			|- SuaThongTinTaiLieuSachJFrame
-				|- ChonFileAnhJFrame (Chưa làm)
+				|- ChonFileAnhJFrame

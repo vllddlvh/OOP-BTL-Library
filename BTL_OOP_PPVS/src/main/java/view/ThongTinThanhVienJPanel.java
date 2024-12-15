@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
 
@@ -16,13 +12,21 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
+ * JPanel hiển thị thông tin thành viên và các thao tác liên quan.
+ * 
+ * Chức năng chính:
+ * <ul>
+ *   <li>Hiển thị danh sách thông tin thành viên trong bảng.</li>
+ *   <li>Cho phép thêm mới thành viên.</li>
+ *   <li>Tìm kiếm thông tin thành viên theo từ khóa.</li>
+ * </ul>
  *
  * @author ADMIN
  */
 public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form ThongTinThanhVienJPanel
+     * Tạo một JPanel mới để hiển thị thông tin thành viên.
      */
     public ThongTinThanhVienJPanel() {
         initComponents();
@@ -31,13 +35,15 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
         try {
             ctrl.setTableUpToDate(tableThanhVien, JButtonThemThanhVien, JTextFieldTimKiemThanhVien);
-            
         } catch (SQLException ex) {
             Logger.getLogger(ThongTinThanhVienJPanel.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(this, ex.getMessage());
         }
     }
     
+    /**
+     * Khởi tạo bảng thông tin thành viên với các thuộc tính giao diện.
+     */
     private void initTableThanhVien() {
         tableThanhVien.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
         tableThanhVien.getTableHeader().setForeground(Color.white);
@@ -168,29 +174,41 @@ public class ThongTinThanhVienJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
     private void JTextFieldTimKiemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienActionPerformed
-        // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_JTextFieldTimKiemThanhVienActionPerformed
 
+    /**
+     * Xử lý sự kiện khi nhấn nút "Thêm thành viên".
+     * 
+     * @param evt Sự kiện được kích hoạt.
+     */
     private void JButtonThemThanhVienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JButtonThemThanhVienActionPerformed
-        // TODO add your handling code here:
         ThemThanhVienJFrame themThanhVienJFrame = new ThemThanhVienJFrame();
         themThanhVienJFrame.setVisible(true);
     }//GEN-LAST:event_JButtonThemThanhVienActionPerformed
 
+    /**
+     * Xử lý sự kiện khi trường tìm kiếm nhận được focus.
+     * 
+     * @param evt Sự kiện được kích hoạt.
+     */
     private void JTextFieldTimKiemThanhVienFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienFocusGained
-        // TODO add your handling code here:
         JTextFieldTimKiemThanhVien.setText("");
-        JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
-        JTextFieldTimKiemThanhVien.setForeground(java.awt.Color.BLACK); // Đặt màu chữ là đen
+        JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
+        JTextFieldTimKiemThanhVien.setForeground(java.awt.Color.BLACK);
     }//GEN-LAST:event_JTextFieldTimKiemThanhVienFocusGained
 
+    /**
+     * Xử lý sự kiện khi trường tìm kiếm mất focus.
+     * 
+     * @param evt Sự kiện được kích hoạt.
+     */
     private void JTextFieldTimKiemThanhVienFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThanhVienFocusLost
-        // TODO add your handling code here:
         if(JTextFieldTimKiemThanhVien.getText().equals("")) {
             JTextFieldTimKiemThanhVien.setText("Tìm kiếm thông tin thành viên");
-            JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
+            JTextFieldTimKiemThanhVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
             JTextFieldTimKiemThanhVien.setForeground(new Color(204,204,204));
         }
     }//GEN-LAST:event_JTextFieldTimKiemThanhVienFocusLost

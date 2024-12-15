@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
 import controller.UpdateTableTaiLieu;
@@ -174,7 +170,7 @@ public class TaiLieuPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(JTextFieldTimKiemTaiLieu.getText().equals("")) {
             JTextFieldTimKiemTaiLieu.setText("Tìm kiếm thông tin thành viên");
-            JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
+            JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
             JTextFieldTimKiemTaiLieu.setForeground(new Color(204,204,204));
         }
     }//GEN-LAST:event_JTextFieldTimKiemTaiLieuFocusLost

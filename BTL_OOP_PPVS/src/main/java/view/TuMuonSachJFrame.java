@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
 import javax.swing.JFrame;
@@ -9,7 +5,7 @@ import model.entity.Document;
 import model.entity.User;
 
 /**
- *
+ * JFrame tự mượn sách.
  * @author ADMIN
  */
 public class TuMuonSachJFrame extends javax.swing.JFrame {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
 import controller.LoginController;
@@ -14,7 +10,9 @@ import model.entity.Staff;
 import model.entity.User;
 
 /**
- *
+ * JPanel hiển thị thông tin cá nhân của người dùng.
+ * Cung cấp các chức năng xem và sửa thông tin cá nhân, đổi mật khẩu.
+ * 
  * @author ADMIN
  */
 public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
@@ -23,7 +21,7 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
     private User currentUser;
 
     /**
-     * Creates new form ThongTinCuaToiJPanel
+     * Tạo mới JPanel hiển thị thông tin cá nhân.
      */
     public ThongTinCuaToiJPanel() {
         initComponents();
@@ -179,6 +177,11 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    /**
+     * Phương thức khởi tạo và thiết lập giao diện ban đầu.
+     * Hiển thị thông tin của người dùng hiện tại và vô hiệu hóa các trường nhập liệu.
+     */
     private void initOnStart() {
         JTextFieldID.setText(currentUser.getID());
         jTextFieldFirstName.setText(currentUser.getFirstName());
@@ -198,45 +201,53 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         }
     } 
     
+    /**
+     * Sự kiện khi nhấn nút "Sửa thông tin cá nhân".
+     * Kiểm soát chuyển đổi giữa chế độ xem và chế độ chỉnh sửa.
+     *
+     * @param evt Sự kiện chuột.
+     */
     private void buttonEditInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditInfoMouseClicked
-        // TODO add your handling code here:
         if (editable) {
-            int result = JOptionPane.showOptionDialog(this,
-                                                       "Xác nhận các thay đổi?",
-                                                        "Xác nhận",
-                                                    JOptionPane.YES_NO_OPTION,
-                                                    JOptionPane.QUESTION_MESSAGE, 
-                                                         null,
-                                                             new String[]{"Cancel", "Save"}, null
+            // Xác nhận lưu thay đổi
+            int result = JOptionPane.showOptionDialog(
+                    this,
+                    "Xác nhận các thay đổi?",
+                    "Xác nhận",
+                    JOptionPane.YES_NO_OPTION,
+                    JOptionPane.QUESTION_MESSAGE,
+                    null,
+                    new String[]{"Cancel", "Save"},
+                    null
             );
-            
+
             if (result != 1) {
                 return;
             }
-            
+
             if (currentUser instanceof Member member) {
                 updateInfoMember(member);
             } else if (currentUser instanceof Staff staff) {
                 updateInfoStaff(staff);
             }
-            
+
             initOnStart();
-            buttonChangePassword.setText("Đổi mật khẩu");  
-            editable = !editable;
-            
+            editable = false;
         } else {
-            // Sang trạng thái chỉnh sửa
+            // Chuyển sang trạng thái chỉnh sửa
             jTextFieldContact.setEditable(true);
             jTextFieldDateOfBirth.setEditable(true);
             jTextFieldFirstName.setEditable(true);
             jTextFieldLastName.setEditable(true);
-        
-            buttonChangePassword.setText("Hủy thay đổi");
             editable = true;
         }
-        
     }//GEN-LAST:event_buttonEditInfoMouseClicked
 
+    /**
+     * Cập nhật thông tin của người dùng loại Member.
+     *
+     * @param currentUser Người dùng hiện tại (Member).
+     */
     private void updateInfoMember(Member currentUser) {
         currentUser.setContact(jTextFieldContact.getText());
         currentUser.setDateOfBirth(jTextFieldDateOfBirth.getText());
@@ -256,6 +267,11 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         }
     }
     
+    /**
+     * Cập nhật thông tin của người dùng loại Staff.
+     *
+     * @param currentUser Người dùng hiện tại (Staff).
+     */
     private void updateInfoStaff(Staff currentUser) {
         currentUser.setContact(jTextFieldContact.getText());
         currentUser.setJobTitle(jTextFieldDateOfBirth.getText());
@@ -275,15 +291,19 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         }
     }
     
+    /**
+     * Sự kiện khi nhấn nút "Đổi mật khẩu".
+     * Chuyển sang giao diện đổi mật khẩu hoặc hủy các thay đổi.
+     *
+     * @param evt Sự kiện chuột.
+     */
     private void buttonChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonChangePasswordMouseClicked
-        // TODO add your handling code here:
         if (editable) {
-            // Tức bây giờ đang là nút hủy thay đổi
+            // Hủy thay đổi và quay về trạng thái ban đầu
             initOnStart();
-            buttonChangePassword.setText("Đổi mật khẩu");
-            editable = !editable;
+            editable = false;
         } else {
-            // Mở cửa sổ đổi mật khẩu
+            // Mở giao diện đổi mật khẩu
             DoiMatKhauJFrame changeP = new DoiMatKhauJFrame();
             changeP.setAlwaysOnTop(true);
             changeP.setVisible(true);

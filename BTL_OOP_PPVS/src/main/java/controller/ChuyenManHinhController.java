@@ -1,4 +1,5 @@
 package controller;
+
 import bean.DanhMucBean;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -8,25 +9,30 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import view.TrangChuJPanel;
 import java.util.List;
-import view.BanDocJPanel;
-import view.HoSoCuaToiPanel;
-import view.MuonTraTaiLieuJPanel;
-import view.SachDaMuonJPanel;
-import view.TaiLieuPanel;
-import view.ThongTinCuaToiJPanel;
-import view.ThongTinThanhVienJPanel;
-import view.TimKiemCungAPI;
+import view.*;
 
+/**
+ * Lớp ChuyenManHinhController chịu trách nhiệm điều khiển việc chuyển đổi giữa các màn hình 
+ * dựa trên các sự kiện giao diện.
+ */
 public class ChuyenManHinhController {
     private JPanel root;
     private String kindSelected = "";
     private List<DanhMucBean> listItem = null;
-    
+
+    /**
+     * Khởi tạo đối tượng ChuyenManHinhController.
+     * @param jpnRoot JPanel gốc để chứa các màn hình con.
+     */
     public ChuyenManHinhController(JPanel jpnRoot) {
-        this.root= jpnRoot;
+        this.root = jpnRoot;
     }
-    
-    //Doi mau
+
+    /**
+     * Thiết lập màn hình mặc định ban đầu.
+     * @param jpnItem JPanel hiển thị.
+     * @param jlbItem JLabel hiển thị.
+     */
     public void setView(JPanel jpnItem, JLabel jlbItem) {
         kindSelected = "TrangChu";
         jpnItem.setBackground(new Color(26, 83, 25));
@@ -38,21 +44,34 @@ public class ChuyenManHinhController {
         root.validate();
         root.repaint();
     }
-    
+
+    /**
+     * Gán sự kiện chuyển màn hình cho các mục trong danh sách.
+     * @param listItem Danh sách các DanhMucBean đại diện cho các mục chuyển đổi.
+     */
     public void setEvent(List<DanhMucBean> listItem) {
         this.listItem = listItem;
         for (DanhMucBean item : listItem) {
             item.getJlb().addMouseListener(new LabelEvent(item.getKind(), item.getJpn(), item.getJlb()));
         }
     }
-    
+
+    /**
+     * Lớp sự kiện xử lý các thao tác chuột trên các mục.
+     */
     class LabelEvent implements MouseListener {
         private JPanel node;
         private String kind;
         private JPanel jpnItem;
         private JLabel jlbItem;
 
-        public LabelEvent(String kind,JPanel jpnItem, JLabel jlbItem) {
+        /**
+         * Khởi tạo sự kiện chuột cho một mục.
+         * @param kind Loại màn hình được liên kết.
+         * @param jpnItem JPanel đại diện cho mục.
+         * @param jlbItem JLabel đại diện cho mục.
+         */
+        public LabelEvent(String kind, JPanel jpnItem, JLabel jlbItem) {
             this.kind = kind;
             this.jpnItem = jpnItem;
             this.jlbItem = jlbItem;
@@ -60,7 +79,7 @@ public class ChuyenManHinhController {
 
         @Override
         public void mouseClicked(MouseEvent e) {
-            switch(kind) {
+            switch (kind) {
                 case "TrangChu":
                     node = TrangChuJPanel.getInstance();
                     break;
@@ -90,8 +109,8 @@ public class ChuyenManHinhController {
                     break;
                 default:
                     node = TrangChuJPanel.getInstance();
-
             }
+
             root.removeAll();
             root.setLayout(new BorderLayout());
             root.add(node);
@@ -105,15 +124,14 @@ public class ChuyenManHinhController {
             kindSelected = kind;
             jpnItem.setBackground(new Color(26, 83, 25));
             jlbItem.setBackground(new Color(26, 83, 25));
-            
         }
 
         @Override
         public void mouseReleased(MouseEvent e) {
-         if (!kindSelected.equalsIgnoreCase(kind)) {
-            jpnItem.setBackground(new Color(80, 141, 78)); // Màu cũ (mặc định)
-            jlbItem.setBackground(new Color(80, 141, 78));
-          }
+            if (!kindSelected.equalsIgnoreCase(kind)) {
+                jpnItem.setBackground(new Color(80, 141, 78));
+                jlbItem.setBackground(new Color(80, 141, 78));
+            }
         }
 
         @Override
@@ -125,24 +143,27 @@ public class ChuyenManHinhController {
         @Override
         public void mouseExited(MouseEvent e) {
             if (!kindSelected.equalsIgnoreCase(kind)) {
-               jpnItem.setBackground(new Color(80, 141, 78)); // Màu cũ (mặc định)
-               jlbItem.setBackground(new Color(80, 141, 78));
+                jpnItem.setBackground(new Color(80, 141, 78));
+                jlbItem.setBackground(new Color(80, 141, 78));
             } else {
-               jpnItem.setBackground(new Color(26, 83, 25)); // Màu khi được chọn
-               jlbItem.setBackground(new Color(26, 83, 25));
+                jpnItem.setBackground(new Color(26, 83, 25));
+                jlbItem.setBackground(new Color(26, 83, 25));
             }
         }
-        
     }
-    
+
+    /**
+     * Cập nhật màu sắc của các mục để phản ánh mục hiện tại được chọn.
+     * @param kind Loại màn hình được chọn.
+     */
     private void setChangeBackgroud(String kind) {
-        for(DanhMucBean item : listItem){
-            if(item.getKind().equalsIgnoreCase(kind)) {
+        for (DanhMucBean item : listItem) {
+            if (item.getKind().equalsIgnoreCase(kind)) {
                 item.getJpn().setBackground(new Color(26, 83, 25));
                 item.getJlb().setBackground(new Color(26, 83, 25));
             } else {
-                item.getJpn().setBackground(new Color(80,141,78));
-                item.getJlb().setBackground(new Color(80,141,78));
+                item.getJpn().setBackground(new Color(80, 141, 78));
+                item.getJlb().setBackground(new Color(80, 141, 78));
             }
         }
     }

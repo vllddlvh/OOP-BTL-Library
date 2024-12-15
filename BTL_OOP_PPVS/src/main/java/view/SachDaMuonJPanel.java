@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
 import controller.UpdateTableMuonTraTaiLieu;
@@ -14,13 +10,13 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author ADMIN
+ * Class đại diện cho giao diện hiển thị các tài liệu đã mượn.
+ * Cho phép người dùng tìm kiếm thông tin mượn trả tài liệu và lọc các tài liệu chưa trả.
  */
 public class SachDaMuonJPanel extends javax.swing.JPanel {
 
     /**
-     * Creates new form MuonTraTaiLieuJPanel
+     * Tạo mới một panel hiển thị danh sách tài liệu đã mượn.
      */
     public SachDaMuonJPanel() {
         initComponents();
@@ -37,6 +33,10 @@ public class SachDaMuonJPanel extends javax.swing.JPanel {
         }
     }
     
+    /**
+     * Cấu hình bảng hiển thị thông tin mượn trả tài liệu.
+     * Thiết lập phông chữ, màu sắc và kích thước hàng.
+     */
     private void initTableMuonTraSach() {
         jTableMuonTraSach.setEnabled(true);
         jTableMuonTraSach.getTableHeader().setFont(new Font("Arrial", Font.BOLD, 14));
@@ -150,30 +150,39 @@ public class SachDaMuonJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Xử lý sự kiện khi người dùng nhấn vào trường tìm kiếm.
+     * Loại bỏ placeholder và thay đổi phông chữ, màu chữ.
+     *
+     * @param evt Sự kiện focusGained
+     */
     private void JTextFieldTimKiemThongTinSachMuonTraFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraFocusGained
         // TODO add your handling code here:
         JTextFieldTimKiemThongTinSachMuonTra.setText("");
-        JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12)); // Đặt phông là Segoe UI, kích thước 14
-        JTextFieldTimKiemThongTinSachMuonTra.setForeground(java.awt.Color.BLACK); // Đặt màu chữ là đen
+        JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
+        JTextFieldTimKiemThongTinSachMuonTra.setForeground(java.awt.Color.BLACK); 
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraFocusGained
 
+    /**
+     * Xử lý sự kiện khi người dùng rời khỏi trường tìm kiếm.
+     * Đặt lại placeholder nếu người dùng không nhập dữ liệu.
+     *
+     * @param evt Sự kiện focusLost
+     */
     private void JTextFieldTimKiemThongTinSachMuonTraFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraFocusLost
         // TODO add your handling code here:
         if(JTextFieldTimKiemThongTinSachMuonTra.getText().equals("")) {
             JTextFieldTimKiemThongTinSachMuonTra.setText("Tìm kiếm thông tin Yêu cầu Mượn/Trả tài liệu");
-            JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12)); // Đặt phông là Segoe UI, kích thước 14
+            JTextFieldTimKiemThongTinSachMuonTra.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 12));
             JTextFieldTimKiemThongTinSachMuonTra.setForeground(new Color(204,204,204));
         }
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraFocusLost
 
     private void JTextFieldTimKiemThongTinSachMuonTraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
-        // TODO add your handling code here:
 
     }//GEN-LAST:event_JTextFieldTimKiemThongTinSachMuonTraActionPerformed
 
     private void isUnReturnCheckBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isUnReturnCheckBoxActionPerformed
-        // TODO add your handling code here:
-        
         if (isUnReturnCheckBox.isSelected()) {
             UpdateTableMuonTraTaiLieu.unreturnFilter();
         } else {

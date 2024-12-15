@@ -11,9 +11,15 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import javax.swing.JFrame;
 
+/**
+ * JFrame for updating member information.
+ * Allows users to view and edit details of an existing member.
+ */
 public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
+    
     /**
-     * Creates new form ThemThanhVienJFrame
+     * Default constructor.
+     * Initializes the frame with default settings.
      */
     public SuaThongTinThanhVienJFrame() {
         initComponents();
@@ -21,6 +27,12 @@ public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
     
+    /**
+     * Constructor with a Member object.
+     * Populates the form fields with the given member's data.
+     *
+     * @param member The member object to display and edit.
+     */
     public SuaThongTinThanhVienJFrame(Member member) {
         initComponents();
         JTextFieldID.setText(member.getID());
@@ -215,105 +227,95 @@ public class SuaThongTinThanhVienJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Resets all input fields to their default empty state.
+     *
+     * @param evt The event triggered by the Reset button.
+     */
     private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
-        // TODO add your handling code here:
         jTextFieldContact.setText("");
         jTextFieldFirstName.setText("");
         jTextFieldLastName.setText("");
         jTextFieldDateOfBirth.setText("");
     }//GEN-LAST:event_jButtonResetActionPerformed
 
+    /**
+     * Saves the updated member information to the database.
+     * Displays success or error messages based on the operation result.
+     *
+     * @param evt The event triggered by the Save button.
+     */
     private void jButtonLuuDuLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLuuDuLieuActionPerformed
-        // TODO add your handling code here:
-        String rawDateOfBirth = jTextFieldDateOfBirth.getText(); // Lấy giá trị ngày sinh
-        String formattedDateOfBirth = null;
+        String rawDateOfBirth = jTextFieldDateOfBirth.getText();
+        String formattedDateOfBirth;
 
         try {
-        // Định dạng người dùng nhập: "2-9-2005"
-        SimpleDateFormat inputFormat = new SimpleDateFormat("d/M/yyyy");
-        // Định dạng chuẩn bạn muốn lưu: "2005-09-02"
-        SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
-        
-        // Chuyển đổi định dạng
-        Date date = inputFormat.parse(rawDateOfBirth);
-        formattedDateOfBirth = outputFormat.format(date);
+            SimpleDateFormat inputFormat = new SimpleDateFormat("d/M/yyyy");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("yyyy-MM-dd");
+            Date date = inputFormat.parse(rawDateOfBirth);
+            formattedDateOfBirth = outputFormat.format(date);
         } catch (ParseException e) {
-        JOptionPane.showMessageDialog(rootPane, "Ngày sinh không đúng định dạng. Hãy nhập: dd-MM-yyyy");
-        return; // Dừng xử lý nếu có lỗi định dạng
+            JOptionPane.showMessageDialog(rootPane, "Ngày sinh không đúng định dạng. Hãy nhập: dd-MM-yyyy");
+            return;
         }
-        Member s = new Member(JTextFieldID.getText(),
-                         jTextFieldFirstName.getText(),
-                         jTextFieldLastName.getText(),
-                         jTextFieldContact.getText(),
-                         formattedDateOfBirth);
-   
+
+        Member member = new Member(
+                JTextFieldID.getText(),
+                jTextFieldFirstName.getText(),
+                jTextFieldLastName.getText(),
+                jTextFieldContact.getText(),
+                formattedDateOfBirth
+        );
+
         try {
             UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
-            if (ctrl.updateElement(s)) {
+            if (ctrl.updateElement(member)) {
                 JOptionPane.showMessageDialog(rootPane, "Sửa thành công");
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Sửa không thành công");
             }
-            
         } catch (SQLException ex) {
             Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
         }
-        
     }//GEN-LAST:event_jButtonLuuDuLieuActionPerformed
 
+    /**
+     * Deletes the member from the database.
+     * Displays success or error messages based on the operation result.
+     *
+     * @param evt The event triggered by the Delete button.
+     */
     private void jButtonXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonXoaActionPerformed
-        // TODO add your handling code here:
-        Member s = new Member(JTextFieldID.getText(),
-                         jTextFieldFirstName.getText(),
-                          jTextFieldLastName.getText(),
-                           jTextFieldContact.getText(),
-                        jTextFieldDateOfBirth.getText());
-   
+        Member member = new Member(
+                JTextFieldID.getText(),
+                jTextFieldFirstName.getText(),
+                jTextFieldLastName.getText(),
+                jTextFieldContact.getText(),
+                jTextFieldDateOfBirth.getText()
+        );
+
         try {
             UpdateTableThongTinThanhVien ctrl = UpdateTableThongTinThanhVien.getInstance();
-            if (ctrl.deleteElement(s)) {
+            if (ctrl.deleteElement(member)) {
                 JOptionPane.showMessageDialog(rootPane, "Xóa thành công");
                 this.dispose();
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Xóa không thành công");
             }
-            
         } catch (SQLException ex) {
             Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(rootPane, "Oops!!! Unknown Error");
         }
     }//GEN-LAST:event_jButtonXoaActionPerformed
 
+
     /**
-     * @param args the command line arguments
+     * Main method to run the JFrame.
+     * 
+     * @param args Command line arguments.
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SuaThongTinThanhVienJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new SuaThongTinThanhVienJFrame().setVisible(true);

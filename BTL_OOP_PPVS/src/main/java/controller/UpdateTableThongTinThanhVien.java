@@ -13,14 +13,13 @@ import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
-
 import view.SuaThongTinThanhVienJFrame;
 import model.entity.Member;
 import model.dao.UserDAO;
 
 /**
- *
- * @author ADMIN
+ * Lớp UpdateTableThongTinThanhVien giúp quản lý bảng thông tin thành viên,
+ * hỗ trợ các thao tác như thêm, sửa, xóa, cập nhật bảng.
  */
 public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     
@@ -29,20 +28,17 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     private UpdateTableThongTinThanhVien() {}
     
     /**
-     * Duy trì một UpdateMemberTable duy nhất.
-     * Đông thời khi thêm thành viên, ThemThanhVienJFrame gọi thẳng được cái này.
-     * Nên sẽ add thêm dòng vào bảng được luôn.
-     * 
-     * @return instance duy nhất tồn tại
+     * Duy trì một thể hiện duy nhất của UpdateTableThongTinThanhVien.
+     * @return instance duy nhất của lớp.
      */
     public static UpdateTableThongTinThanhVien getInstance() {
         return instance;
     }
     
     /**
-     * 
-     * 
-     * @throws SQLException 
+     * Lấy danh sách tất cả thành viên từ cơ sở dữ liệu.
+     * @return Danh sách các đối tượng Member.
+     * @throws SQLException Nếu xảy ra lỗi truy vấn cơ sở dữ liệu.
      */
     @Override
     public List<Member> getListElement() throws SQLException {
@@ -51,13 +47,10 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     }
     
     /**
-     * Thêm một thành viên vào bảng, và cả database.
-     * 
-     * @param newMember = thành viên mới.
-     * 
-     * @return true nếu không bị trùng ID.
-     * 
-     * @throws SQLException 
+     * Thêm một thành viên mới vào bảng và cơ sở dữ liệu.
+     * @param newMember Thành viên mới cần thêm.
+     * @return true nếu thêm thành công, false nếu trùng ID.
+     * @throws SQLException Nếu xảy ra lỗi truy vấn cơ sở dữ liệu.
      */
     @Override
     public boolean addElement(Member newMember) throws SQLException {
@@ -66,50 +59,39 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
             addRow(newMember);
             return true;
         }
-        
         return false;
     }
     
     /**
-     * Thêm một thành viên vào bảng ở view.
-     * 
-     * @param member = thành viên được thêm vào.
+     * Thêm một dòng mới vào bảng (hiển thị view).
+     * @param member Thành viên cần thêm vào bảng.
      */
     @Override
     protected void addRow(Member member) {
-        String[] newLine = new String[5]; // Số lượng cột trong listColumn
+        String[] newLine = new String[5];
         newLine[0] = member.getID();
         newLine[1] = member.getFirstName();
         newLine[2] = member.getLastName();
         newLine[3] = member.getContact();
-        newLine[4] = member.getDateOfBirth(); // Hiển thị ngày sinh
-            
+        newLine[4] = member.getDateOfBirth();
         tableModel.addRow(newLine);
     }
     
     /**
-     * Chỉnh sửa thông tin của một thành viên. 
-     * Cả ở database và view.
-     * 
-     * @param alter = thằng bị sửa.
-     *  
-     * @return true nếu thay đổi thành công.
-     * Không thì sẽ báo lỗi, hoặc false nếu sai ID.
-     * 
-     * @throws SQLException 
+     * Cập nhật thông tin thành viên trong cơ sở dữ liệu và bảng.
+     * @param alter Thành viên cần cập nhật thông tin.
+     * @return true nếu cập nhật thành công, false nếu ID không hợp lệ.
+     * @throws SQLException Nếu xảy ra lỗi truy vấn cơ sở dữ liệu.
      */
     @Override
     public boolean updateElement(Member alter) throws SQLException {
         if (UserDAO.updateMember(alter)) {
-            int i = 0;
-            while (i < allElement.size()) {
+            for (int i = 0; i < allElement.size(); i++) {
                 if (allElement.get(i).getID().equals(alter.getID())) {
                     allElement.set(i, new Member(alter));
-                    
                     break;
                 }
             }
-            
             updateRow(alter);
             return true;
         }
@@ -117,89 +99,77 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     }
     
     /**
-     * Chỉnh sửa thông tin của một hàng tại view.
-     * 
-     * @param alter = thành viên phải sửa thông tin.
+     * Cập nhật thông tin của một dòng trong bảng (view).
+     * @param alter Thành viên cần cập nhật.
      */
     @Override 
     protected void updateRow(Member alter) {
-        int n = tableModel.getRowCount();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
             if (tableModel.getValueAt(i, 0).equals(alter.getID())) {
                 tableModel.setValueAt(alter.getFirstName(), i, 1);
                 tableModel.setValueAt(alter.getLastName(), i, 2);
                 tableModel.setValueAt(alter.getContact(), i, 3);
                 tableModel.setValueAt(alter.getDateOfBirth(), i, 4);
-                
                 break;
             }
         }
     }
     
     /**
-     * Thực hiện xóa một Member ra khỏi database.
-     * 
-     * @param deletedOne = thằng bị xóa
-     * 
-     * @return true khi xóa xong. Không thì sẽ ném lỗi.
-     * 
-     * @throws SQLException 
+     * Xóa một thành viên khỏi cơ sở dữ liệu và bảng.
+     * @param deletedOne Thành viên cần xóa.
+     * @return true nếu xóa thành công, false nếu xảy ra lỗi.
+     * @throws SQLException Nếu xảy ra lỗi truy vấn cơ sở dữ liệu.
      */
     @Override
     public boolean deleteElement(Member deletedOne) throws SQLException {
         UserDAO.deleteUser(deletedOne.getID());
-                
-        int n = allElement.size();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < allElement.size(); i++) {
             if (allElement.get(i).getID().equals(deletedOne.getID())) {
                 allElement.remove(i);
-                
                 break;
             }
         }
-            
         deleteRow(deletedOne);
         return true;
     }
     
     /**
-     * Xóa hàng ở trong bảng ở view.
-     * 
-     * @param deletedOne = thằng bị xóa.
+     * Xóa một dòng trong bảng (view).
+     * @param deletedOne Thành viên cần xóa khỏi bảng.
      */
     @Override 
     protected void deleteRow(Member deletedOne) {
-        int n = tableModel.getRowCount();
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < tableModel.getRowCount(); i++) {
             if (tableModel.getValueAt(i, 0).equals(deletedOne.getID())) {
                 tableModel.removeRow(i);
-                
                 break;
             }
         }
     }
     
+    /**
+     * Cập nhật bảng hiển thị dựa trên dữ liệu mới nhất từ cơ sở dữ liệu.
+     * Thiết lập các tính năng tìm kiếm và chọn thành viên.
+     * @param table Bảng hiển thị thông tin.
+     * @param jbtAdd Nút thêm thành viên.
+     * @param jtfSearch Trường tìm kiếm thông tin.
+     * @throws SQLException Nếu xảy ra lỗi truy vấn cơ sở dữ liệu.
+     */
     @Override
     public void setTableUpToDate(JTable table, JButton jbtAdd, JTextField jtfSearch) throws SQLException {
-       
         instance.tableModel = (DefaultTableModel) table.getModel();
         instance.jbtAdd = jbtAdd;
         instance.jtfSearch = jtfSearch;
         
-        // Lấy toàn bộ thông tin từ DB. 
-        // addAll dòng mới vào trong tableModel
         getListElement();
         for (Member member : allElement) {
             addRow(member);
         }
         
-        
-        // Setting để có chức năng sort ngay trên table
         TableRowSorter<TableModel> rowSorter = new TableRowSorter<>(table.getModel());
         table.setRowSorter(rowSorter);
         
-        
-        // ActionListener cho thanh search (J Text Field)
         jtfSearch.getDocument().addDocumentListener(new DocumentListener() {
             @Override
             public void insertUpdate(DocumentEvent e) {
@@ -213,25 +183,20 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
 
             @Override
             public void changedUpdate(DocumentEvent e) {
-                System.out.println("Track changed Update");
+                // Không cần thiết, chỉ để tracking
             }
-        }); 
-        table.addMouseListener(new MouseAdapter(){
+        });
+        
+        table.addMouseListener(new MouseAdapter() {
             @Override 
             public void mouseClicked(MouseEvent e) {
                 if (e.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     int row = table.getSelectedRow();
-                    // Lấy thông tin từ hàng được chọn
-                    Member mem = null;
                     String targetID = table.getValueAt(row, 0).toString();
-                    for (Member x : allElement) {
-                        if (x.getID().equals(targetID)) {
-                            mem = x;
-                            break;
-                        }
-                    }
-                    
-                    // Mở form chỉnh sửa tại đây (nếu có)
+                    Member mem = allElement.stream()
+                            .filter(m -> m.getID().equals(targetID))
+                            .findFirst()
+                            .orElse(null);
                     if (mem != null) {
                         new SuaThongTinThanhVienJFrame(mem).setVisible(true);
                     }
@@ -242,11 +207,10 @@ public class UpdateTableThongTinThanhVien extends UpdateTable<Member> {
     
     private void updateFilter(JTextField jtfSearch, TableRowSorter<TableModel> rowSorter) {
         String text = jtfSearch.getText();
-        if(text.trim().equalsIgnoreCase("Tìm kiếm thông tin thành viên") || text.trim().length() == 0) {
+        if (text.trim().isEmpty() || text.equalsIgnoreCase("Tìm kiếm thông tin thành viên")) {
             rowSorter.setRowFilter(null);
         } else {
             rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
         }
     }
-    
 }
