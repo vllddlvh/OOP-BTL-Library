@@ -1,272 +1,58 @@
 {
   "kind": "books#volumes",
-  "totalItems": 647,
+  "totalItems": 982,
   "items": [
     {
       "kind": "books#volume",
-      "id": "l-6fDwAAQBAJ",
-      "etag": "JVLJJ9mH630",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/l-6fDwAAQBAJ",
+      "id": "B8aehjSIZkgC",
+      "etag": "kU1WH0RQyTk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/B8aehjSIZkgC",
       "volumeInfo": {
-        "title": "Bloodborne #13",
+        "title": "Attacking Soccer",
+        "subtitle": "Mastering the Modern Game",
         "authors": [
-          "Ales Kot"
+          "Peter Schreiner",
+          "Norbert Elgert"
         ],
-        "publisher": "Titan Comics",
-        "publishedDate": "2019-07-17",
-        "description": "The city of Yharnam: an ancient, gothic metropolis and home to the Healing Church. The Healing Church is known for its miraculous blood-based curatives, of which many – citizens and travellers alike – seek to exploit. Recent days have seen the city fall foul to a nightmarish plague known as the Ashen Blood disease, the source of which remains a mystery. Trapped in a threatening world of gods and monsters, where reality is never what it seems, one man resolves to welcome the madness, and the truth it may reveal…",
+        "publisher": "Meyer & Meyer Verlag",
+        "publishedDate": "2013",
+        "description": "Soccer fans around the world adore the offensive style of play based on fast passing combinations, spectacular dribblings, and the art of beautifully shot goals. The question regarding this style of game is how to coach your team to embrace fast attacking soccer. How do you shape your training to cover all the technical and tactical basics? Peter ......",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9781787733459"
+            "identifier": "9781782550082"
           },
           {
             "type": "ISBN_10",
-            "identifier": "1787733459"
+            "identifier": "1782550089"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 34,
+        "pageCount": 170,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "Sports & Recreation"
         ],
+        "averageRating": 5,
+        "ratingsCount": 1,
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
+        "allowAnonLogging": false,
         "contentVersion": "0.1.1.0.preview.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
-          "containsImageBubbles": true,
-          "imageBubbleVersion": "1288b61674ce6733_A"
-        },
-        "comicsContent": true,
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=l-6fDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=l-6fDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=l-6fDwAAQBAJ&pg=PT28&dq=Blood+born&hl=&cd=1&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=l-6fDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=l-6fDwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "13",
-          "volumeSeries": [
-            {
-              "seriesId": "St0BGwAAABBKxM",
-              "seriesBookType": "ISSUE",
-              "orderNumber": 13
-            }
-          ]
-        }
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 106449,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 79837,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=l-6fDwAAQBAJ&rdid=book-l-6fDwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 106449000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 79837000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_13-sample-pdf.acsm?id=l-6fDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=l-6fDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e : The Death of Sleep Out Now \u003cb\u003eBloodborne\u003c/b\u003e : The Healing Thirst Out Now AVAILABLE DIGITALLY WWW.TITAN-COMICS.COM \u003cb\u003eBloodborne\u003c/b\u003e © 2019 Sony Interactive Entertainment Inc. TITAN® COMICS \u003cb\u003eBloodborne\u003c/b\u003e NEXT ISSUE # 14 \u003cb\u003eBloodborne\u003c/b\u003e THE VEIL ,&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "aSmRDwAAQBAJ",
-      "etag": "yUqkUE+a1Jo",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/aSmRDwAAQBAJ",
-      "volumeInfo": {
-        "title": "Bloodborne #11",
-        "authors": [
-          "Ales Kot"
-        ],
-        "publisher": "Titan Comics",
-        "publishedDate": "2019-04-17",
-        "description": "The city of Yharnam: an ancient, gothic metropolis and the home to the Healing Chruch. Recent days have seen the city fall foul to a nightmarish plague known as the Ashen Blood disease, the source of which remains a mystery. In a world of gods and monsters, sanity is merely subjective, and fear and blood are sanctified. Hunters now stalk the streets in search of beasts as the moon hangs ominously low in Yharnam’s sky. But as uncertainty fills the air, and the thirst for blood becomes insatiable, the hunters become the hunted.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9781787731974"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1787731979"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 34,
-        "printType": "BOOK",
-        "categories": [
-          "Comics & Graphic Novels"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "0.1.0.0.preview.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "comicsContent": true,
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=aSmRDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=aSmRDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=aSmRDwAAQBAJ&pg=PT29&dq=Blood+born&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=aSmRDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=aSmRDwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "11",
-          "volumeSeries": [
-            {
-              "seriesId": "St0BGwAAABBKxM",
-              "seriesBookType": "ISSUE",
-              "orderNumber": 11
-            }
-          ]
-        }
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 106449,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 79837,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=aSmRDwAAQBAJ&rdid=book-aSmRDwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 106449000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 79837000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_11-sample-pdf.acsm?id=aSmRDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=aSmRDwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e COLLECTIONS &#39; WHETHER YOU&#39;VE PLAYED OR NOT , THIS IS A NIGHTMARE WORTH DREAMING ! - 109.COM \u003cb\u003eBloodborne\u003c/b\u003e | \u003cb\u003eBloodborne\u003c/b\u003e THE HEALING THIRST THE DEATH OF SLEEP KOT KOWALSKI SIMPSON KOT KOWALSKI SIMPSON \u003cb\u003eBloodborne\u003c/b\u003e : The Death of&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "3zEaM_f8cW8C",
-      "etag": "jJ3Sg4Nwr8Y",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/3zEaM_f8cW8C",
-      "volumeInfo": {
-        "title": "Bloodborne Pathogens",
-        "authors": [
-          "Karen Carruthers",
-          "American Academy of Orthopaedic Surgeons"
-        ],
-        "publisher": "Jones & Bartlett Learning",
-        "publishedDate": "2005",
-        "description": "Over five million workers in health care related fields are at risk to exposure to bloodborne pathogens, such as the HIV virus and hepatitis B virus, as well as tuberculosis.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_10",
-            "identifier": "0763728179"
-          },
-          {
-            "type": "ISBN_13",
-            "identifier": "9780763728175"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 84,
-        "printType": "BOOK",
-        "categories": [
-          "Medical"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.10.10.0.preview.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=3zEaM_f8cW8C&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=3zEaM_f8cW8C&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=B8aehjSIZkgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=B8aehjSIZkgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=3zEaM_f8cW8C&pg=PA3&dq=Blood+born&hl=&cd=3&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=3zEaM_f8cW8C&dq=Blood+born&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Bloodborne_Pathogens.html?hl=&id=3zEaM_f8cW8C"
+        "previewLink": "http://books.google.com.vn/books?id=B8aehjSIZkgC&pg=PA15&dq=Attack&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com.vn/books?id=B8aehjSIZkgC&dq=Attack&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Attacking_Soccer.html?hl=&id=B8aehjSIZkgC"
       },
       "saleInfo": {
         "country": "VN",
@@ -284,99 +70,261 @@
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_Pathogens-sample-pdf.acsm?id=3zEaM_f8cW8C&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Attacking_Soccer-sample-pdf.acsm?id=B8aehjSIZkgC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=3zEaM_f8cW8C&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=B8aehjSIZkgC&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e Pathogens Standard . CPL 2-0.124 effective December 1999 clarifies OSHA&#39;s multiemployer citation policy . Personnel Services and Multi - Employer Worksite Guidelines Personnel services firms employ medical care staff and&nbsp;..."
+        "textSnippet": "... \u003cb\u003eattack\u003c/b\u003e mentality always anticipate the possibility of a counter \u003cb\u003eattack\u003c/b\u003e and are prepared to quickly switch to \u003cb\u003eattack\u003c/b\u003e mode after gaining possession of the ball . All players keep constant track of the game and know the exact location of&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "fweGDwAAQBAJ",
-      "etag": "Jqr38vqaRk0",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/fweGDwAAQBAJ",
+      "id": "tUAOSknl6WYC",
+      "etag": "cv6xmjIHe2k",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/tUAOSknl6WYC",
       "volumeInfo": {
-        "title": "Bloodborne #9",
+        "title": "Military Dictionary",
+        "subtitle": "(advance Installment) Part. I. English-Portuguese. Part II. Portuguese-English",
         "authors": [
-          "Ales Kot"
+          "United States. War Department. Military Dictionary Project"
         ],
-        "publisher": "Titan Comics",
-        "publishedDate": "2019-02-20",
-        "description": "The city of Yharnam: an ancient, gothic metropolis and home to the Healing Church. Recent days have seen the city fall foul to a nightmarish plague known as the Ashen Blood disease, the source of which remains a mystery. In a world of gods and monsters, sanity is merely subjective, and fear and blood are sanctified. Hunters now stalk the streets in search of beasts as the moon hangs ominously low in Yharnam’s sky. But as uncertainty fills the air, and the thirst for blood becomes insatiable, the hunters become the hunted…",
+        "publishedDate": "1941",
         "industryIdentifiers": [
           {
-            "type": "ISBN_13",
-            "identifier": "9781787731950"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1787731952"
+            "type": "OTHER",
+            "identifier": "WISC:89090038779"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 34,
+        "pageCount": 396,
         "printType": "BOOK",
         "categories": [
-          "Comics & Graphic Novels"
+          "English language"
         ],
         "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": true,
-        "contentVersion": "0.1.1.0.preview.1",
+        "allowAnonLogging": false,
+        "contentVersion": "1.4.5.0.full.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
-          "containsImageBubbles": true,
-          "imageBubbleVersion": "d9923a2ec7d9aacd_A"
+          "containsImageBubbles": false
         },
-        "comicsContent": true,
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=fweGDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=fweGDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=tUAOSknl6WYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=tUAOSknl6WYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=fweGDwAAQBAJ&pg=PA2021&dq=Blood+born&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=fweGDwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=fweGDwAAQBAJ",
-        "seriesInfo": {
-          "kind": "books#volume_series_info",
-          "bookDisplayNumber": "9",
-          "volumeSeries": [
-            {
-              "seriesId": "St0BGwAAABBKxM",
-              "seriesBookType": "ISSUE",
-              "orderNumber": 9
-            }
-          ]
-        }
+        "previewLink": "http://books.google.com.vn/books?id=tUAOSknl6WYC&pg=PA14&dq=Attack&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=tUAOSknl6WYC&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=tUAOSknl6WYC"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=tUAOSknl6WYC&rdid=book-tUAOSknl6WYC&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/Military_Dictionary.epub?id=tUAOSknl6WYC&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=tUAOSknl6WYC&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eattack\u003c/b\u003e formations ataque . \u003cb\u003eattack\u003c/b\u003e from above \u003cb\u003eattack\u003c/b\u003e from below baixo . \u003cb\u003eattack\u003c/b\u003e from the air \u003cb\u003eattack\u003c/b\u003e from the rear retaguarda . \u003cb\u003eattack\u003c/b\u003e frontage formações de ataque de cima . ataque de boundaries in the \u003cb\u003eattack\u003c/b\u003e do ataque . ataque do ar&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "X374DwAAQBAJ",
+      "etag": "O8VV/29GrcA",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/X374DwAAQBAJ",
+      "volumeInfo": {
+        "title": "Computer Safety, Reliability, and Security",
+        "subtitle": "39th International Conference, SAFECOMP 2020, Lisbon, Portugal, September 16–18, 2020, Proceedings",
+        "authors": [
+          "António Casimiro",
+          "Frank Ortmeier",
+          "Friedemann Bitsch",
+          "Pedro Ferreira"
+        ],
+        "publisher": "Springer Nature",
+        "publishedDate": "2020-08-19",
+        "description": "This book constitutes the proceedings of the 39th International Conference on Computer Safety, Reliability and Security, SAFECOMP 2020, held in Lisbon, Portugal, in September 2020.* The 27 full and 2 short papers included in this volume were carefully reviewed and selected from 116 submissions. They were organized in topical sections named: safety cases and argumentation; formal verification and analysis; security modelling and methods; assurance of learning-enabled systems; practical experience and tools; threat analysis and risk mitigation; cyber-physical systems security; and fault injection and fault tolerance. *The conference was held virtually due to the COVID-19 pandemic. The chapter ‘Assurance Argument Elements for Off-the-Shelf, Complex Computational Hardware’ is available open access under an Open Government License 3.0 via link.springer.com.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9783030545499"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "3030545490"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 460,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.2.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=X374DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=X374DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=X374DwAAQBAJ&pg=PA345&dq=Attack&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=X374DwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=X374DwAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
         "saleability": "FOR_SALE",
         "isEbook": true,
         "listPrice": {
-          "amount": 106449,
+          "amount": 2447705,
           "currencyCode": "VND"
         },
         "retailPrice": {
-          "amount": 79837,
+          "amount": 1713394,
           "currencyCode": "VND"
         },
-        "buyLink": "https://play.google.com/store/books/details?id=fweGDwAAQBAJ&rdid=book-fweGDwAAQBAJ&rdot=1&source=gbs_api",
+        "buyLink": "https://play.google.com/store/books/details?id=X374DwAAQBAJ&rdid=book-X374DwAAQBAJ&rdot=1&source=gbs_api",
         "offers": [
           {
             "finskyOfferType": 1,
             "listPrice": {
-              "amountInMicros": 106449000000,
+              "amountInMicros": 2447705000000,
               "currencyCode": "VND"
             },
             "retailPrice": {
-              "amountInMicros": 79837000000,
+              "amountInMicros": 1713394000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Computer_Safety_Reliability_and_Security-sample-epub.acsm?id=X374DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Computer_Safety_Reliability_and_Security-sample-pdf.acsm?id=X374DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=X374DwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... \u003cb\u003eattack\u003c/b\u003e &quot; is to analyze the &quot; Trust Boundary &quot; , which specifies the area of protection from \u003cb\u003eattacks\u003c/b\u003e in the entire system architecture . The fourth criterion &quot; How does an \u003cb\u003eattack\u003c/b\u003e reach the target &quot; is to analyze the &quot; \u003cb\u003eAttack\u003c/b\u003e Path &quot; which&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "OG-hBQAAQBAJ",
+      "etag": "JZhp7YBFfrk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/OG-hBQAAQBAJ",
+      "volumeInfo": {
+        "title": "Computer Science and its Applications",
+        "subtitle": "Ubiquitous Information Technologies",
+        "authors": [
+          "James J. (Jong Hyuk) Park",
+          "Ivan Stojmenovic",
+          "Hwa Young Jeong",
+          "Gangman Yi"
+        ],
+        "publisher": "Springer",
+        "publishedDate": "2014-11-29",
+        "description": "The 6th FTRA International Conference on Computer Science and its Applications (CSA-14) will be held in Guam, USA, Dec. 17 - 19, 2014. CSA-14 presents a comprehensive conference focused on the various aspects of advances in engineering systems in computer science, and applications, including ubiquitous computing, U-Health care system, Big Data, UI/UX for human-centric computing, Computing Service, Bioinformatics and Bio-Inspired Computing and will show recent advances on various aspects of computing technology, Ubiquitous Computing Services and its application.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9783662454022"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "3662454025"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 1395,
+        "printType": "BOOK",
+        "categories": [
+          "Technology & Engineering"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=OG-hBQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=OG-hBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=OG-hBQAAQBAJ&pg=PA513&dq=Attack&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=OG-hBQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=OG-hBQAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 8323130,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 5826191,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=OG-hBQAAQBAJ&rdid=book-OG-hBQAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 8323130000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 5826191000000,
               "currencyCode": "VND"
             }
           }
@@ -393,14 +341,14 @@
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Bloodborne_9-sample-pdf.acsm?id=fweGDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Computer_Science_and_its_Applications-sample-pdf.acsm?id=OG-hBQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=fweGDwAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=OG-hBQAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eBloodborne\u003c/b\u003e COLLECTIONS &#39; WHETHER YOU&#39;VE PLAYED OR NOT , THIS IS A NIGHTMARE WORTH DREAMING ! - 109.COM \u003cb\u003eBloodborne\u003c/b\u003e | \u003cb\u003eBloodborne\u003c/b\u003e THE HEALING THIRST THE DEATH OF SLEEP KOT KOWALSKI SIMPSON KOT KOWALSKI SIMPSON \u003cb\u003eBloodborne\u003c/b\u003e : The Death of&nbsp;..."
+        "textSnippet": "... \u003cb\u003eAttack\u003c/b\u003e 2.1 Least demanding \u003cb\u003eattacks\u003c/b\u003e are the most serious threats to the hardware security of any device, because this type of \u003cb\u003eattack\u003c/b\u003e requires ... \u003cb\u003eattack\u003c/b\u003e chips. One \u003cb\u003eattack\u003c/b\u003e chip Quantifying Overt Hardware \u003cb\u003eAttacks\u003c/b\u003e: Using ART Schema 513."
       }
     }
   ]

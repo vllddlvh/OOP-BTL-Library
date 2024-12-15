@@ -45,7 +45,7 @@ public abstract class Document {
     // Tránh down lại file nhiều lần, và xác định định dạng ảnh. 
     protected boolean haveCover = true;
     protected boolean havePDF = true;
-    protected String coverFormat = null;
+    protected String coverFormat = "PNG";
     
     /**
      * Get document search by title. 

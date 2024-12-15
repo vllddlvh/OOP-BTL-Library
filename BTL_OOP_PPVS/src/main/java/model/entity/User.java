@@ -146,4 +146,7 @@ public abstract class User {
         this.lastName = lastName;
     }
     
+    public abstract String getContact();
+    
+    public abstract void setContact(String contact);
 }

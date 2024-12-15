@@ -10,6 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.entity.Member;
+import model.entity.Staff;
+import model.entity.User;
 
 /**
  *
@@ -18,14 +20,14 @@ import model.entity.Member;
 public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
     
     private boolean editable = false;
-    private Member currentUser;
+    private User currentUser;
 
     /**
      * Creates new form ThongTinCuaToiJPanel
      */
     public ThongTinCuaToiJPanel() {
         initComponents();
-        currentUser = (Member) LoginController.getAcc();
+        currentUser = LoginController.getAcc();
         
         initOnStart();
     }
@@ -181,36 +183,46 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         JTextFieldID.setText(currentUser.getID());
         jTextFieldFirstName.setText(currentUser.getFirstName());
         jTextFieldLastName.setText(currentUser.getLastName());
-        jTextFieldContact.setText(((Member) currentUser).getContact());
-        jTextFieldDateOfBirth.setText(((Member) currentUser).getDateOfBirth());
+        jTextFieldContact.setText(currentUser.getContact());
         JTextFieldID.setEditable(false);
         jTextFieldContact.setEditable(false);
         jTextFieldDateOfBirth.setEditable(false);
         jTextFieldFirstName.setEditable(false);
         jTextFieldLastName.setEditable(false);
+        
+        if (currentUser instanceof Member member) {
+            jTextFieldDateOfBirth.setText(member.getDateOfBirth());
+        } else if (currentUser instanceof Staff staff) {
+            jTextFieldDateOfBirth.setText(staff.getJobTitle());
+            jlbDateOfBirth.setText("Vị trí công việc:");
+        }
     } 
     
     private void buttonEditInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonEditInfoMouseClicked
         // TODO add your handling code here:
         if (editable) {
-            currentUser.setContact(jTextFieldContact.getText());
-            currentUser.setDateOfBirth(jTextFieldDateOfBirth.getText());
-            currentUser.setFirstName(jTextFieldFirstName.getText());
-            currentUser.setLastName(jTextFieldLastName.getText());
+            int result = JOptionPane.showOptionDialog(this,
+                                                       "Xác nhận các thay đổi?",
+                                                        "Xác nhận",
+                                                    JOptionPane.YES_NO_OPTION,
+                                                    JOptionPane.QUESTION_MESSAGE, 
+                                                         null,
+                                                             new String[]{"Cancel", "Save"}, null
+            );
             
-            try {
-                if (model.dao.MemberDAO.updateMember(currentUser)) {
-                    JOptionPane.showMessageDialog(this, "Sửa thông tin thành công");
-                } else {
-                    JOptionPane.showMessageDialog(this, "Sửa thông tin thất bại");
-                }
-                
-                initOnStart();
-                buttonChangePassword.setText("Đổi mật khẩu");  
-            } catch (SQLException ex) {
-                Logger.getLogger(ThongTinCuaToiJPanel.class.getName()).log(Level.SEVERE, null, ex);
-                JOptionPane.showMessageDialog(this, ex.getMessage());
+            if (result != 1) {
+                return;
             }
+            
+            if (currentUser instanceof Member member) {
+                updateInfoMember(member);
+            } else if (currentUser instanceof Staff staff) {
+                updateInfoStaff(staff);
+            }
+            
+            initOnStart();
+            buttonChangePassword.setText("Đổi mật khẩu");  
+            editable = !editable;
             
         } else {
             // Sang trạng thái chỉnh sửa
@@ -225,12 +237,51 @@ public class ThongTinCuaToiJPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_buttonEditInfoMouseClicked
 
+    private void updateInfoMember(Member currentUser) {
+        currentUser.setContact(jTextFieldContact.getText());
+        currentUser.setDateOfBirth(jTextFieldDateOfBirth.getText());
+        currentUser.setFirstName(jTextFieldFirstName.getText());
+        currentUser.setLastName(jTextFieldLastName.getText());
+            
+        try {
+            if (model.dao.MemberDAO.updateMember(currentUser)) {
+                JOptionPane.showMessageDialog(this, "Sửa thông tin thành công");
+            } else {
+                JOptionPane.showMessageDialog(this, "Sửa thông tin thất bại");
+            }
+                
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongTinCuaToiJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }
+    
+    private void updateInfoStaff(Staff currentUser) {
+        currentUser.setContact(jTextFieldContact.getText());
+        currentUser.setJobTitle(jTextFieldDateOfBirth.getText());
+        currentUser.setFirstName(jTextFieldFirstName.getText());
+        currentUser.setLastName(jTextFieldLastName.getText());
+            
+        try {
+            if (model.dao.StaffDAO.updateStaff(currentUser)) {
+                JOptionPane.showMessageDialog(this, "Sửa thông tin thành công");
+            } else {
+                JOptionPane.showMessageDialog(this, "Sửa thông tin thất bại");
+            }
+                
+        } catch (SQLException ex) {
+            Logger.getLogger(ThongTinCuaToiJPanel.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, ex.getMessage());
+        }
+    }
+    
     private void buttonChangePasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buttonChangePasswordMouseClicked
         // TODO add your handling code here:
         if (editable) {
             // Tức bây giờ đang là nút hủy thay đổi
             initOnStart();
             buttonChangePassword.setText("Đổi mật khẩu");
+            editable = !editable;
         } else {
             // Mở cửa sổ đổi mật khẩu
             DoiMatKhauJFrame changeP = new DoiMatKhauJFrame();

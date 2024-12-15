@@ -42,7 +42,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
      * 
      * @param document
      */
-    public ChiTietTaiLieu(Book document) {
+    public ChiTietTaiLieu(Book document, boolean isFromApi) {
         currentShowDocument = document;
         
         // kiểm tra xem người dùng hiên tại có mượn quyển này không
@@ -50,9 +50,14 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         
         initComponents();
         initDocumentCard();
+        
+        if (isFromApi && LoginController.getAcc() instanceof model.entity.Staff) {
+            initThemVaoThuVienButton();
+        }
     }   
     
     private void initDocumentCard() {
+        
         if (defaultCoverImage == null) {
             try {
                 defaultCoverImage = ImageIO.read(new File("src\\main\\java\\image\\default-null-book-cover.png"));
@@ -64,7 +69,7 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         // Setup frame mới (cửa sổ)
         this.setTitle("Chi Tiết Sách");
         {
-            this.setSize(720, 516);
+            this.setSize(720, 568);
             this.setLayout(new BorderLayout());
         }
         
@@ -142,13 +147,12 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
 
         
         // Thêm ảnh và nút vào imagePanel
-        JPanel buttonPanel = new JPanel();
+        buttonPanel = new JPanel();
         buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.Y_AXIS)); // Sử dụng BoxLayout để bố trí dọc
-        buttonPanel.add(Box.createVerticalStrut(2)); // Khoảng cách giữa 2 nút
         buttonPanel.add(Box.createVerticalGlue()); // Khoảng cách phía trên
         buttonPanel.add(jbuttonMuonTra);
+        buttonPanel.add(Box.createVerticalStrut(7)); // Khoảng cách giữa 2 nút
         buttonPanel.add(jbuttonDoc);
-        buttonPanel.add(Box.createVerticalGlue()); // Khoảng cách phía dưới
         
         imagePanel.add(imageLabel, BorderLayout.NORTH); // Ảnh nằm ở phía trên
         imagePanel.add(buttonPanel, BorderLayout.CENTER); // 2 button nằm dưới
@@ -191,6 +195,24 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
     }
 
+    private void initThemVaoThuVienButton() {
+        JButton jbuttonThemVaoThuVien = new JButton("Thêm vào thư viện");
+        jbuttonThemVaoThuVien.setForeground(Color.red);
+        jbuttonThemVaoThuVien.setAlignmentX(Component.CENTER_ALIGNMENT);
+        jbuttonThemVaoThuVien.setFont(new java.awt.Font("Segoe UI", java.awt.Font.BOLD, 14));
+        jbuttonThemVaoThuVien.setPreferredSize(new Dimension(150, 40)); 
+        jbuttonThemVaoThuVien.setFocusPainted(false);
+            // Gán sự kiện cho nút
+        jbuttonThemVaoThuVien.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonThemVaoThuVienClicked(evt);
+            }
+        });
+        buttonPanel.add(Box.createVerticalStrut(7)); // Khoảng cách giữa 2 nút
+        buttonPanel.add(jbuttonThemVaoThuVien);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -295,11 +317,22 @@ public class ChiTietTaiLieu extends javax.swing.JFrame {
             }
         }
     }
+    
+    private void jButtonThemVaoThuVienClicked(java.awt.event.MouseEvent evt) { 
+        if (evt.getClickCount() > 0) {
+            Book document = new Book(currentShowDocument); // make a clone;
+            document.setPDF((java.net.URL) null); // xóa link đọc thử đi
+            
+            new ThemTaiLieuFrame(document, true).setVisible(true);
+            this.dispose();
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables
     private JButton jbuttonMuonTra;
     private JButton jbuttonDoc;
+    private JPanel buttonPanel;
     private JPanel imagePanel;
     private JLabel imageLabel;
     private JPanel infoPanel;

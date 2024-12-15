@@ -279,11 +279,12 @@ public class Staff extends User {
     Getter/Setter.
     */
     
-    
+    @Override
     public String getContact() {
         return contact;
     }
 
+    @Override
     public void setContact(String contact) {
         this.contact = contact;
     }

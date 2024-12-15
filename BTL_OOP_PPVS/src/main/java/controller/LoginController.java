@@ -17,7 +17,7 @@ import view.GDMainNguoiDung;
 public class LoginController {
     
     private static User currentUser;
-    private static TreeSet<String> myUnreturnList = new TreeSet<>();
+    private final static TreeSet<String> myUnreturnList = new TreeSet<>();
     
     public static boolean login(String acc, String password) throws SQLException {
         User.LoginAlert result = User.login(acc, password);
@@ -40,9 +40,9 @@ public class LoginController {
         currentUser = acc;
         
         if (currentUser instanceof Staff) {
-            new GDMain().setVisible(true);
+            GDMain.getInstance().setVisible(true);
         } else {
-            new GDMainNguoiDung().setVisible(true);
+            GDMainNguoiDung.getInstance().setVisible(true);
         }
         
         List<model.entity.Request> unreturn = currentUser.getMyUnreturnDocument();

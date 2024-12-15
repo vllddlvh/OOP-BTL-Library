@@ -34,7 +34,7 @@ public class ChuyenManHinhController {
         
         root.removeAll();
         root.setLayout(new BorderLayout());
-        root.add(new TrangChuJPanel());
+        root.add(TrangChuJPanel.getInstance());
         root.validate();
         root.repaint();
     }
@@ -62,7 +62,7 @@ public class ChuyenManHinhController {
         public void mouseClicked(MouseEvent e) {
             switch(kind) {
                 case "TrangChu":
-                    node = new TrangChuJPanel();
+                    node = TrangChuJPanel.getInstance();
                     break;
                 case "BanDoc":
                     node = new BanDocJPanel();
@@ -89,7 +89,7 @@ public class ChuyenManHinhController {
                     node = new TimKiemCungAPI();
                     break;
                 default:
-                    node = new TrangChuJPanel();
+                    node = TrangChuJPanel.getInstance();
 
             }
             root.removeAll();

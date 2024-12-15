@@ -23,9 +23,10 @@ public class LoginJFrame extends javax.swing.JFrame {
      */
     public LoginJFrame() {
         initComponents();
-        // tự động đóng sau khi đăng nhập thành công
+        this.setLocationByPlatform(rootPaneCheckingEnabled);
         setDefaultCloseOperation(javax.swing.JFrame.DISPOSE_ON_CLOSE);
         // Khi bấm nút Đăng nhập thì buttonLogin ActionListener rồi
+        // tự động đóng sau khi đăng nhập thành công
     }
     
     
@@ -67,7 +68,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         jlbPassword.setText("Mật khẩu:");
 
         ButtonLogin.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        ButtonLogin.setText("OK");
+        ButtonLogin.setText("Đăng nhập");
         ButtonLogin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonLoginActionPerformed(evt);
@@ -88,6 +89,10 @@ public class LoginJFrame extends javax.swing.JFrame {
                     .addComponent(jlbLogoUet, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jlbLogin))
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(0, 62, Short.MAX_VALUE)
+                .addComponent(jlbMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(65, 65, 65))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -100,13 +105,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                             .addComponent(jpfPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
                             .addComponent(jtfUsername, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
+                        .addGap(134, 134, 134)
                         .addComponent(ButtonLogin)))
-                .addContainerGap(120, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(0, 59, Short.MAX_VALUE)
-                .addComponent(jlbMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -123,9 +124,9 @@ public class LoginJFrame extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jlbPassword)
                     .addComponent(jpfPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(ButtonLogin)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                .addComponent(ButtonLogin)
+                .addGap(18, 18, 18)
                 .addComponent(jlbMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -170,6 +171,7 @@ public class LoginJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_ButtonLoginActionPerformed
 
     private void mouseClickedActionPerformed(MouseEvent e) {
+        if (e.getClickCount() < 1) return;
         try {
             if (jtfUsername.getText().trim().length() == 0) {
                 jlbMessage.setText("Vui lòng nhập tên tài khoản");

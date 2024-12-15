@@ -215,7 +215,6 @@ public abstract class DocumentDAO {
         rs = finder.executeQuery();
         
         while(rs.next()) {
-            
             if (rs.getBoolean(1) == false) {
                 return false;
                 // nếu hàm trả về kết quả false, không thêm sách được.

@@ -231,7 +231,7 @@ public class UpdateTableTaiLieu extends UpdateTable<Book> {
                     
                     // Mở form chỉnh sửa tại đây (nếu có)
                     if (book != null) {
-                        new ThemTaiLieuFrame(book).setVisible(true);
+                        new ThemTaiLieuFrame(book, false).setVisible(true);
                     }
                 }
             }

@@ -15,6 +15,7 @@ public class DoiMatKhauJFrame extends javax.swing.JFrame {
      */
     public DoiMatKhauJFrame() {
         initComponents();
+        this.setAlwaysOnTop(true);
         this.setTitle("Đối mật khẩu");
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);

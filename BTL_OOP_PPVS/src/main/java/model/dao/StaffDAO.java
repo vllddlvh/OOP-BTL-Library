@@ -1,6 +1,7 @@
 package model.dao;
 
 import java.sql.CallableStatement;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import model.DatabaseConnector;
@@ -70,5 +71,24 @@ public class StaffDAO extends UserDAO {
         }
        
         return false;
+    }
+    
+    public static boolean updateStaff(Staff staff) throws SQLException {
+        // Câu lệnh SQL UPDATE để cập nhật thông tin
+        String sql = "UPDATE library_2nd_edition.staff SET firstName = ?, lastName = ?, contact = ?, jobTitle = ? WHERE ID = ?";
+        PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
+    
+        // Gán giá trị cho từng tham số
+        ps.setString(1, staff.getFirstName());
+        ps.setString(2, staff.getLastName());
+        ps.setString(3, staff.getContact());
+        ps.setString(4, staff.getJobTitle());
+        ps.setString(5, staff.getID()); // ID để xác định thành viên cần cập nhật
+
+        // Thực thi câu lệnh và kiểm tra xem có bao nhiêu dòng bị ảnh hưởng
+        int rowsUpdated = ps.executeUpdate();
+        ps.close();
+    
+        return rowsUpdated > 0; // Trả về true nếu cập nhật thành công
     }
 }

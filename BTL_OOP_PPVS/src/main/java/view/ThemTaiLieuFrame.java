@@ -5,6 +5,7 @@
 package view;
 
 import controller.UpdateTableTaiLieu;
+import java.awt.Dimension;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +18,7 @@ import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import model.dao.FileFormatException;
 import model.entity.Book;
 
@@ -44,12 +46,23 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
         
         isNewBook = true;
         initComponents();
+        
+        // Set phần tóm tắt tự xuống dòng và có thanh cuộn
+        jScrollPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        jScrollPane2.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        jTextAreaTomTat.setLineWrap(true);
+        jTextAreaTomTat.setWrapStyleWord(true);
+        jTextAreaTomTat.setPreferredSize(new Dimension(232, 84));
+        jTextAreaTomTat.setMaximumSize(new Dimension(232, 84));
+        jScrollPane2.setPreferredSize(new Dimension(232, 84));
+        jScrollPane2.setMaximumSize(new Dimension(232, 84));
+        
         this.setLocationRelativeTo(null);
         clearInputFields();
     }
     
-    public ThemTaiLieuFrame(Book document) {
-        isNewBook = false;
+    public ThemTaiLieuFrame(Book document , boolean isNewBook) {
+        this.isNewBook = isNewBook;
         initComponents();
         this.setLocationRelativeTo(null);
         jTextFieldBookID.setEditable(false);
@@ -180,9 +193,15 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        jScrollPane2.setMaximumSize(new java.awt.Dimension(234, 85));
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(232, 84));
+        jScrollPane2.setViewportView(null);
+
         jTextAreaTomTat.setColumns(20);
         jTextAreaTomTat.setRows(5);
-        jTextAreaTomTat.setMaximumSize(new java.awt.Dimension(232, 2147483647));
+        jTextAreaTomTat.setMaximumSize(new java.awt.Dimension(232, 84));
         jTextAreaTomTat.setMinimumSize(new java.awt.Dimension(232, 84));
         jScrollPane2.setViewportView(jTextAreaTomTat);
 
@@ -302,12 +321,13 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
-                        .addComponent(jlbSummary, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 157, Short.MAX_VALUE)
-                    .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(ButtonReset)))
+                        .addComponent(ButtonReset))
+                    .addGroup(jpnThemTaiLieuLayout.createSequentialGroup()
+                        .addGroup(jpnThemTaiLieuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlbSummary, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -405,32 +425,32 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
             emptyForm.setLanguage(language);
             
             // Gọi phương thức thêm Document vào cơ sở dữ liệu
-            boolean isSaved;
+            boolean isSaved = false;
             String msg;
             if (isNewBook) {
                 isSaved = UpdateTableTaiLieu.getInstance().addElement(emptyForm);
-                msg = "Thêm tài liệu mới thành công!";
+                if (isSaved) {
+                    msg = "Thêm tài liệu mới thành công!";
+                } else {
+                    msg = "Thêm tài liệu mới không thành công!\n Có thể tài liệu này đã có sẵn trong thư viện.";
+                }
             } else {
                 isSaved = UpdateTableTaiLieu.getInstance().updateElement(emptyForm);
-                msg = "Sửa tài liệu thành công!";
+                if (isSaved) {
+                    msg = "Sửa tài liệu thành công!";
+                } else {
+                    msg = "Sửa tài liệu không thành công!";
+                }
             }
-            
-            if (isSaved) {
-                // Hiển thị thông báo thành công
-                JOptionPane.showMessageDialog(this, 
+            JOptionPane.showMessageDialog(this, 
                                                     msg, 
                                                      "Thông báo", 
                                                  JOptionPane.INFORMATION_MESSAGE);
-
-                // Xóa các trường nhập liệu để chuẩn bị cho lần nhập tiếp theo
+            
+            if (isSaved) {
                 this.dispose();
-            } else {
-                // Hiển thị thông báo lỗi
-                JOptionPane.showMessageDialog(this, 
-                                                    "Thêm tài liệu thất bại! Vui lòng kiểm tra lại.", 
-                                                     "Thông báo", 
-                                                 JOptionPane.ERROR_MESSAGE);
             }
+            
         } catch (SQLException | IOException | FileFormatException | URISyntaxException ex) {
             // Xử lý ngoại lệ nếu có lỗi khi thao tác với cơ sở dữ liệu
             JOptionPane.showMessageDialog(this, "Đã xảy ra lỗi: " + ex.getMessage(), "Lỗi", JOptionPane.ERROR_MESSAGE);

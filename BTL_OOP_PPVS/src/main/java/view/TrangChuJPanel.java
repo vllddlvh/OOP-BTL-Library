@@ -30,8 +30,13 @@ import model.entity.Book;
 public class TrangChuJPanel extends javax.swing.JPanel {
     private UpdateTableTaiLieu ctrl;
     private List<Book> documents;
+    public static TrangChuJPanel instance = new TrangChuJPanel();
     
-    public TrangChuJPanel() {
+    public static TrangChuJPanel getInstance() {
+        return instance;
+    }
+    
+    private TrangChuJPanel() {
         initComponents();
         // Sử dụng GridLayout cho jPanelBook
         jPanelBook.setLayout(new GridLayout(0, 4, 10, 10)); // 4 cột, khoảng cách 10px giữa các phần tử
@@ -159,7 +164,7 @@ private JPanel createDocumentCard(Book document) throws IOException, SQLExceptio
     card.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e) {
-            new ChiTietTaiLieu(document).setVisible(true);
+            new ChiTietTaiLieu(document, false).setVisible(true);
         }
     });
 
