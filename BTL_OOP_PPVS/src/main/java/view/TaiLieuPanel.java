@@ -10,10 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author HP
- */
+
 public class TaiLieuPanel extends javax.swing.JPanel {
 
     /**
@@ -151,7 +148,7 @@ public class TaiLieuPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void JTextFieldTimKiemTaiLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemTaiLieuActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_JTextFieldTimKiemTaiLieuActionPerformed
 
     private void ButtonThemTaiLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ButtonThemTaiLieuActionPerformed
@@ -160,15 +157,13 @@ public class TaiLieuPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_ButtonThemTaiLieuActionPerformed
 
     private void JTextFieldTimKiemTaiLieuFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemTaiLieuFocusGained
-        // TODO add your handling code here:
         JTextFieldTimKiemTaiLieu.setText("");
-        JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); // Đặt phông là Segoe UI, kích thước 14
-        JTextFieldTimKiemTaiLieu.setForeground(java.awt.Color.BLACK); // Đặt màu chữ là đen
+        JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14)); 
+        JTextFieldTimKiemTaiLieu.setForeground(java.awt.Color.BLACK); 
     }//GEN-LAST:event_JTextFieldTimKiemTaiLieuFocusGained
 
     private void JTextFieldTimKiemTaiLieuFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_JTextFieldTimKiemTaiLieuFocusLost
-        // TODO add your handling code here:
-        if(JTextFieldTimKiemTaiLieu.getText().equals("")) {
+            if(JTextFieldTimKiemTaiLieu.getText().equals("")) {
             JTextFieldTimKiemTaiLieu.setText("Tìm kiếm thông tin thành viên");
             JTextFieldTimKiemTaiLieu.setFont(new java.awt.Font("Segoe UI", java.awt.Font.PLAIN, 14));
             JTextFieldTimKiemTaiLieu.setForeground(new Color(204,204,204));

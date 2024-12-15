@@ -24,7 +24,7 @@ import model.entity.Document;
 public abstract class DocumentDAO {
     
     /**
-     * Lấy thông tin từ Database của Document (có thể là Book hoặc Thesis).
+     * Lấy thông tin từ Database của Document
      * Thông tin được lấy dựa theo ID của tài liệu.
      * Nếu không có tài liệu với ID phù hợp, trả về null.
      * 
@@ -235,7 +235,6 @@ public abstract class DocumentDAO {
         while(rs.next()) {
             if (rs.getBoolean(1) == false) {
                 return false;
-                // nếu hàm trả về kết quả false, không thêm sách được.
             }
             
             if (newBook.getCover() != null) {

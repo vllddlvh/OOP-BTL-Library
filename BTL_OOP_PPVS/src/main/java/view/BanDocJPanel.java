@@ -5,10 +5,7 @@ import controller.ChuyenManHinhController;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- *
- * @author ADMIN
- */
+
 public class BanDocJPanel extends javax.swing.JPanel {
 
     /**

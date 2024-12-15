@@ -23,16 +23,11 @@ public class ChonFileAnhJFrame extends javax.swing.JFrame {
     private Book prototype;
     private JLabel whereToPutDemoImage;
 
-    /**
-     *
-     * @return
-     */
+
     public static File getFileImage() {
         return fileImage;
     }
-    /**
-     * Creates new form JFrameChonFileAnh
-     */
+
     public ChonFileAnhJFrame(Book prototype, JLabel whereToPutDemoImage) {
         initComponents();
         
