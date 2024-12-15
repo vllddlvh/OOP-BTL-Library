@@ -1,133 +1,49 @@
 {
   "kind": "books#volumes",
-  "totalItems": 982,
+  "totalItems": 756,
   "items": [
     {
       "kind": "books#volume",
-      "id": "B8aehjSIZkgC",
-      "etag": "kU1WH0RQyTk",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/B8aehjSIZkgC",
+      "id": "HqU2AQAAMAAJ",
+      "etag": "s94HIG/Q3hs",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/HqU2AQAAMAAJ",
       "volumeInfo": {
-        "title": "Attacking Soccer",
-        "subtitle": "Mastering the Modern Game",
-        "authors": [
-          "Peter Schreiner",
-          "Norbert Elgert"
-        ],
-        "publisher": "Meyer & Meyer Verlag",
-        "publishedDate": "2013",
-        "description": "Soccer fans around the world adore the offensive style of play based on fast passing combinations, spectacular dribblings, and the art of beautifully shot goals. The question regarding this style of game is how to coach your team to embrace fast attacking soccer. How do you shape your training to cover all the technical and tactical basics? Peter ......",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9781782550082"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "1782550089"
-          }
-        ],
-        "readingModes": {
-          "text": false,
-          "image": true
-        },
-        "pageCount": 170,
-        "printType": "BOOK",
-        "categories": [
-          "Sports & Recreation"
-        ],
-        "averageRating": 5,
-        "ratingsCount": 1,
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.1.1.0.preview.1",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=B8aehjSIZkgC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=B8aehjSIZkgC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=B8aehjSIZkgC&pg=PA15&dq=Attack&hl=&cd=1&source=gbs_api",
-        "infoLink": "http://books.google.com.vn/books?id=B8aehjSIZkgC&dq=Attack&hl=&source=gbs_api",
-        "canonicalVolumeLink": "https://books.google.com/books/about/Attacking_Soccer.html?hl=&id=B8aehjSIZkgC"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "NOT_FOR_SALE",
-        "isEbook": false
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": false
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Attacking_Soccer-sample-pdf.acsm?id=B8aehjSIZkgC&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=B8aehjSIZkgC&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eattack\u003c/b\u003e mentality always anticipate the possibility of a counter \u003cb\u003eattack\u003c/b\u003e and are prepared to quickly switch to \u003cb\u003eattack\u003c/b\u003e mode after gaining possession of the ball . All players keep constant track of the game and know the exact location of&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "tUAOSknl6WYC",
-      "etag": "cv6xmjIHe2k",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/tUAOSknl6WYC",
-      "volumeInfo": {
-        "title": "Military Dictionary",
-        "subtitle": "(advance Installment) Part. I. English-Portuguese. Part II. Portuguese-English",
-        "authors": [
-          "United States. War Department. Military Dictionary Project"
-        ],
-        "publishedDate": "1941",
+        "title": "Arapaho National Forest (N.F.), Roosevelt National Forest (N.F.), Lakewood Raw Water Pipeline",
+        "subtitle": "Environmental Impact Statement",
+        "publishedDate": "1998",
         "industryIdentifiers": [
           {
             "type": "OTHER",
-            "identifier": "WISC:89090038779"
+            "identifier": "NWU:35556031804131"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 396,
+        "pageCount": 420,
         "printType": "BOOK",
-        "categories": [
-          "English language"
-        ],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
-        "contentVersion": "1.4.5.0.full.1",
+        "contentVersion": "0.5.5.0.full.1",
         "panelizationSummary": {
           "containsEpubBubbles": false,
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=tUAOSknl6WYC&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=tUAOSknl6WYC&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=HqU2AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=HqU2AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=tUAOSknl6WYC&pg=PA14&dq=Attack&hl=&cd=2&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=tUAOSknl6WYC&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=tUAOSknl6WYC"
+        "previewLink": "http://books.google.com.vn/books?id=HqU2AQAAMAAJ&pg=RA4-PA56&dq=hi+lo&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=HqU2AQAAMAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=HqU2AQAAMAAJ"
       },
       "saleInfo": {
         "country": "VN",
         "saleability": "FREE",
         "isEbook": true,
-        "buyLink": "https://play.google.com/store/books/details?id=tUAOSknl6WYC&rdid=book-tUAOSknl6WYC&rdot=1&source=gbs_api"
+        "buyLink": "https://play.google.com/store/books/details?id=HqU2AQAAMAAJ&rdid=book-HqU2AQAAMAAJ&rdot=1&source=gbs_api"
       },
       "accessInfo": {
         "country": "VN",
@@ -137,155 +53,53 @@
         "textToSpeechPermission": "ALLOWED",
         "epub": {
           "isAvailable": false,
-          "downloadLink": "http://books.google.com.vn/books/download/Military_Dictionary.epub?id=tUAOSknl6WYC&hl=&output=epub&source=gbs_api"
+          "downloadLink": "http://books.google.com.vn/books/download/Arapaho_National_Forest_N_F_Roosevelt_Na.epub?id=HqU2AQAAMAAJ&hl=&output=epub&source=gbs_api"
         },
         "pdf": {
           "isAvailable": false
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=tUAOSknl6WYC&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=HqU2AQAAMAAJ&hl=&source=gbs_api",
         "accessViewStatus": "FULL_PUBLIC_DOMAIN",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eattack\u003c/b\u003e formations ataque . \u003cb\u003eattack\u003c/b\u003e from above \u003cb\u003eattack\u003c/b\u003e from below baixo . \u003cb\u003eattack\u003c/b\u003e from the air \u003cb\u003eattack\u003c/b\u003e from the rear retaguarda . \u003cb\u003eattack\u003c/b\u003e frontage formações de ataque de cima . ataque de boundaries in the \u003cb\u003eattack\u003c/b\u003e do ataque . ataque do ar&nbsp;..."
+        "textSnippet": "... Lo VHi VHi No VHi LO VHi VHi Lo \u003cb\u003eHi LO\u003c/b\u003e Hi Hi No \u003cb\u003eHi Lo\u003c/b\u003e Lo Lo No Lo Lo VHi VHi No Hi L No Lo Lo No No Н LO Hi \u003cb\u003eHi Lo\u003c/b\u003e Hi No VHi VHi LO VHi No Hi \u003cb\u003eHi Lo\u003c/b\u003e Hi Н No VHi VHi No VHi No VHi VHi No VHi LO VHi VHi No \u003cb\u003eHi LO\u003c/b\u003e Hi Hi No \u003cb\u003eHi Lo\u003c/b\u003e Hi Hi No&nbsp;..."
       }
     },
     {
       "kind": "books#volume",
-      "id": "X374DwAAQBAJ",
-      "etag": "O8VV/29GrcA",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/X374DwAAQBAJ",
+      "id": "pm5rCQAAQBAJ",
+      "etag": "fpCjNl0mKTk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/pm5rCQAAQBAJ",
       "volumeInfo": {
-        "title": "Computer Safety, Reliability, and Security",
-        "subtitle": "39th International Conference, SAFECOMP 2020, Lisbon, Portugal, September 16–18, 2020, Proceedings",
+        "title": "Machine Learning and Its Applications",
+        "subtitle": "Advanced Lectures",
         "authors": [
-          "António Casimiro",
-          "Frank Ortmeier",
-          "Friedemann Bitsch",
-          "Pedro Ferreira"
-        ],
-        "publisher": "Springer Nature",
-        "publishedDate": "2020-08-19",
-        "description": "This book constitutes the proceedings of the 39th International Conference on Computer Safety, Reliability and Security, SAFECOMP 2020, held in Lisbon, Portugal, in September 2020.* The 27 full and 2 short papers included in this volume were carefully reviewed and selected from 116 submissions. They were organized in topical sections named: safety cases and argumentation; formal verification and analysis; security modelling and methods; assurance of learning-enabled systems; practical experience and tools; threat analysis and risk mitigation; cyber-physical systems security; and fault injection and fault tolerance. *The conference was held virtually due to the COVID-19 pandemic. The chapter ‘Assurance Argument Elements for Off-the-Shelf, Complex Computational Hardware’ is available open access under an Open Government License 3.0 via link.springer.com.",
-        "industryIdentifiers": [
-          {
-            "type": "ISBN_13",
-            "identifier": "9783030545499"
-          },
-          {
-            "type": "ISBN_10",
-            "identifier": "3030545490"
-          }
-        ],
-        "readingModes": {
-          "text": true,
-          "image": true
-        },
-        "pageCount": 460,
-        "printType": "BOOK",
-        "categories": [
-          "Computers"
-        ],
-        "maturityRating": "NOT_MATURE",
-        "allowAnonLogging": false,
-        "contentVersion": "0.2.2.0.preview.3",
-        "panelizationSummary": {
-          "containsEpubBubbles": false,
-          "containsImageBubbles": false
-        },
-        "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=X374DwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=X374DwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-        },
-        "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=X374DwAAQBAJ&pg=PA345&dq=Attack&hl=&cd=3&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=X374DwAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=X374DwAAQBAJ"
-      },
-      "saleInfo": {
-        "country": "VN",
-        "saleability": "FOR_SALE",
-        "isEbook": true,
-        "listPrice": {
-          "amount": 2447705,
-          "currencyCode": "VND"
-        },
-        "retailPrice": {
-          "amount": 1713394,
-          "currencyCode": "VND"
-        },
-        "buyLink": "https://play.google.com/store/books/details?id=X374DwAAQBAJ&rdid=book-X374DwAAQBAJ&rdot=1&source=gbs_api",
-        "offers": [
-          {
-            "finskyOfferType": 1,
-            "listPrice": {
-              "amountInMicros": 2447705000000,
-              "currencyCode": "VND"
-            },
-            "retailPrice": {
-              "amountInMicros": 1713394000000,
-              "currencyCode": "VND"
-            }
-          }
-        ]
-      },
-      "accessInfo": {
-        "country": "VN",
-        "viewability": "PARTIAL",
-        "embeddable": true,
-        "publicDomain": false,
-        "textToSpeechPermission": "ALLOWED",
-        "epub": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Computer_Safety_Reliability_and_Security-sample-epub.acsm?id=X374DwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "pdf": {
-          "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Computer_Safety_Reliability_and_Security-sample-pdf.acsm?id=X374DwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
-        },
-        "webReaderLink": "http://play.google.com/books/reader?id=X374DwAAQBAJ&hl=&source=gbs_api",
-        "accessViewStatus": "SAMPLE",
-        "quoteSharingAllowed": false
-      },
-      "searchInfo": {
-        "textSnippet": "... \u003cb\u003eattack\u003c/b\u003e &quot; is to analyze the &quot; Trust Boundary &quot; , which specifies the area of protection from \u003cb\u003eattacks\u003c/b\u003e in the entire system architecture . The fourth criterion &quot; How does an \u003cb\u003eattack\u003c/b\u003e reach the target &quot; is to analyze the &quot; \u003cb\u003eAttack\u003c/b\u003e Path &quot; which&nbsp;..."
-      }
-    },
-    {
-      "kind": "books#volume",
-      "id": "OG-hBQAAQBAJ",
-      "etag": "JZhp7YBFfrk",
-      "selfLink": "https://www.googleapis.com/books/v1/volumes/OG-hBQAAQBAJ",
-      "volumeInfo": {
-        "title": "Computer Science and its Applications",
-        "subtitle": "Ubiquitous Information Technologies",
-        "authors": [
-          "James J. (Jong Hyuk) Park",
-          "Ivan Stojmenovic",
-          "Hwa Young Jeong",
-          "Gangman Yi"
+          "Georgios Paliouras",
+          "Vangelis Karkaletsis",
+          "Constantine D. Spyropoulos"
         ],
         "publisher": "Springer",
-        "publishedDate": "2014-11-29",
-        "description": "The 6th FTRA International Conference on Computer Science and its Applications (CSA-14) will be held in Guam, USA, Dec. 17 - 19, 2014. CSA-14 presents a comprehensive conference focused on the various aspects of advances in engineering systems in computer science, and applications, including ubiquitous computing, U-Health care system, Big Data, UI/UX for human-centric computing, Computing Service, Bioinformatics and Bio-Inspired Computing and will show recent advances on various aspects of computing technology, Ubiquitous Computing Services and its application.",
+        "publishedDate": "2003-06-29",
+        "description": "In recent years machine learning has made its way from artificial intelligence into areas of administration, commerce, and industry. Data mining is perhaps the most widely known demonstration of this migration, complemented by less publicized applications of machine learning like adaptive systems in industry, financial prediction, medical diagnosis and the construction of user profiles for Web browsers. This book presents the capabilities of machine learning methods and ideas on how these methods could be used to solve real-world problems. The first ten chapters assess the current state of the art of machine learning, from symbolic concept learning and conceptual clustering to case-based reasoning, neural networks, and genetic algorithms. The second part introduces the reader to innovative applications of ML techniques in fields such as data mining, knowledge discovery, human language technology, user modeling, data analysis, discovery science, agent technology, finance, etc.",
         "industryIdentifiers": [
           {
             "type": "ISBN_13",
-            "identifier": "9783662454022"
+            "identifier": "9783540446736"
           },
           {
             "type": "ISBN_10",
-            "identifier": "3662454025"
+            "identifier": "3540446737"
           }
         ],
         "readingModes": {
           "text": false,
           "image": true
         },
-        "pageCount": 1395,
+        "pageCount": 334,
         "printType": "BOOK",
         "categories": [
-          "Technology & Engineering"
+          "Computers"
         ],
         "maturityRating": "NOT_MATURE",
         "allowAnonLogging": false,
@@ -295,36 +109,36 @@
           "containsImageBubbles": false
         },
         "imageLinks": {
-          "smallThumbnail": "http://books.google.com/books/content?id=OG-hBQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
-          "thumbnail": "http://books.google.com/books/content?id=OG-hBQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+          "smallThumbnail": "http://books.google.com/books/content?id=pm5rCQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=pm5rCQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
         },
         "language": "en",
-        "previewLink": "http://books.google.com.vn/books?id=OG-hBQAAQBAJ&pg=PA513&dq=Attack&hl=&cd=4&source=gbs_api",
-        "infoLink": "https://play.google.com/store/books/details?id=OG-hBQAAQBAJ&source=gbs_api",
-        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=OG-hBQAAQBAJ"
+        "previewLink": "http://books.google.com.vn/books?id=pm5rCQAAQBAJ&pg=PA79&dq=hi+lo&hl=&cd=2&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=pm5rCQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=pm5rCQAAQBAJ"
       },
       "saleInfo": {
         "country": "VN",
         "saleability": "FOR_SALE",
         "isEbook": true,
         "listPrice": {
-          "amount": 8323130,
+          "amount": 1439714,
           "currencyCode": "VND"
         },
         "retailPrice": {
-          "amount": 5826191,
+          "amount": 1007800,
           "currencyCode": "VND"
         },
-        "buyLink": "https://play.google.com/store/books/details?id=OG-hBQAAQBAJ&rdid=book-OG-hBQAAQBAJ&rdot=1&source=gbs_api",
+        "buyLink": "https://play.google.com/store/books/details?id=pm5rCQAAQBAJ&rdid=book-pm5rCQAAQBAJ&rdot=1&source=gbs_api",
         "offers": [
           {
             "finskyOfferType": 1,
             "listPrice": {
-              "amountInMicros": 8323130000000,
+              "amountInMicros": 1439714000000,
               "currencyCode": "VND"
             },
             "retailPrice": {
-              "amountInMicros": 5826191000000,
+              "amountInMicros": 1007800000000,
               "currencyCode": "VND"
             }
           }
@@ -341,14 +155,181 @@
         },
         "pdf": {
           "isAvailable": true,
-          "acsTokenLink": "http://books.google.com.vn/books/download/Computer_Science_and_its_Applications-sample-pdf.acsm?id=OG-hBQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+          "acsTokenLink": "http://books.google.com.vn/books/download/Machine_Learning_and_Its_Applications-sample-pdf.acsm?id=pm5rCQAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
         },
-        "webReaderLink": "http://play.google.com/books/reader?id=OG-hBQAAQBAJ&hl=&source=gbs_api",
+        "webReaderLink": "http://play.google.com/books/reader?id=pm5rCQAAQBAJ&hl=&source=gbs_api",
         "accessViewStatus": "SAMPLE",
         "quoteSharingAllowed": false
       },
       "searchInfo": {
-        "textSnippet": "... \u003cb\u003eAttack\u003c/b\u003e 2.1 Least demanding \u003cb\u003eattacks\u003c/b\u003e are the most serious threats to the hardware security of any device, because this type of \u003cb\u003eattack\u003c/b\u003e requires ... \u003cb\u003eattack\u003c/b\u003e chips. One \u003cb\u003eattack\u003c/b\u003e chip Quantifying Overt Hardware \u003cb\u003eAttacks\u003c/b\u003e: Using ART Schema 513."
+        "textSnippet": "... lo lo lo lo lo \u003cb\u003ehi lo\u003c/b\u003e lo med lo lo lo med hi med lo \u003cb\u003ehi lo\u003c/b\u003e lo lo hi hi hi med med lo med med \u003cb\u003ehi lo\u003c/b\u003e med med hi hi hi \u003cb\u003ehi lo\u003c/b\u003e lo hi hi \u003cb\u003ehi lo\u003c/b\u003e hi values x1 = med , x2 = med , and x3 = low , we derive c = 1 and y which is indeed the same as&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "Roc2AQAAMAAJ",
+      "etag": "XItb3Nhc7yk",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/Roc2AQAAMAAJ",
+      "volumeInfo": {
+        "title": "White Mountain National Forest (N.F.), Waterville Unit Plan",
+        "subtitle": "Environmental Impact Statement",
+        "publishedDate": "1978",
+        "industryIdentifiers": [
+          {
+            "type": "OTHER",
+            "identifier": "NWU:35556030846547"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 62,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.6.7.0.full.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=Roc2AQAAMAAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=Roc2AQAAMAAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=Roc2AQAAMAAJ&pg=PA35&dq=hi+lo&hl=&cd=3&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=Roc2AQAAMAAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=Roc2AQAAMAAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FREE",
+        "isEbook": true,
+        "buyLink": "https://play.google.com/store/books/details?id=Roc2AQAAMAAJ&rdid=book-Roc2AQAAMAAJ&rdot=1&source=gbs_api"
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "ALL_PAGES",
+        "embeddable": true,
+        "publicDomain": true,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": false,
+          "downloadLink": "http://books.google.com.vn/books/download/White_Mountain_National_Forest_N_F_Water.epub?id=Roc2AQAAMAAJ&hl=&output=epub&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": false
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=Roc2AQAAMAAJ&hl=&source=gbs_api",
+        "accessViewStatus": "FULL_PUBLIC_DOMAIN",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "Environmental Impact Statement. ELT ROADS 1 \u003cb\u003eLO\u003c/b\u003e 2 \u003cb\u003eLO\u003c/b\u003e 2C \u003cb\u003eLO\u003c/b\u003e 3 \u003cb\u003eLO\u003c/b\u003e 105 \u003cb\u003eHI\u003c/b\u003e 405 \u003cb\u003eHI\u003c/b\u003e 6 MOD 6A \u003cb\u003eLO\u003c/b\u003e 8 \u003cb\u003eLO\u003c/b\u003e 11 \u003cb\u003eHI\u003c/b\u003e 14 \u003cb\u003eLO\u003c/b\u003e 15A \u003cb\u003eLO\u003c/b\u003e 115C \u003cb\u003eHI\u003c/b\u003e 415C \u003cb\u003eHI\u003c/b\u003e 15F MOD 2 \u003cb\u003eLO\u003c/b\u003e 2 \u003cb\u003eLO\u003c/b\u003e - 15 \u003cb\u003eLO LO\u003c/b\u003e. Π15. \u003cb\u003eLO\u003c/b\u003e CHARACTERISTICS AQUATIC Running Open Water Type Process Rate Typical&nbsp;..."
+      }
+    },
+    {
+      "kind": "books#volume",
+      "id": "wpneDwAAQBAJ",
+      "etag": "lDR60cITzO4",
+      "selfLink": "https://www.googleapis.com/books/v1/volumes/wpneDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Futuristic Trends in Networks and Computing Technologies",
+        "subtitle": "Second International Conference, FTNCT 2019, Chandigarh, India, November 22–23, 2019, Revised Selected Papers",
+        "authors": [
+          "Pradeep Kumar Singh",
+          "Sanjay Sood",
+          "Yugal Kumar",
+          "Marcin Paprzycki",
+          "Anton Pljonkin",
+          "Wei-Chiang Hong"
+        ],
+        "publisher": "Springer Nature",
+        "publishedDate": "2020-04-21",
+        "description": "This book constitutes the refereed proceedings of the Second International Conference on Futuristic Trends in Network and Communication Technologies, FTNCT 2019, held in Chandigarh, India, in November 2019. The 49 revised full papers and 6 short papers presented were carefully reviewed and selected from 226 submissions. The prime aim of the conference is to invite researchers from different domains of network and communication technologies to a single platform to showcase their research ideas. The selected papers are organized in topical sections on network and computing technologies; wireless networks and Internet of Things (IoT); futuristic computing technologies; communication technologies, security and privacy.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9789811544514"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "9811544514"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 717,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.1.1.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=wpneDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=wpneDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com.vn/books?id=wpneDwAAQBAJ&pg=PA11&dq=hi+lo&hl=&cd=4&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=wpneDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=wpneDwAAQBAJ"
+      },
+      "saleInfo": {
+        "country": "VN",
+        "saleability": "FOR_SALE",
+        "isEbook": true,
+        "listPrice": {
+          "amount": 1439714,
+          "currencyCode": "VND"
+        },
+        "retailPrice": {
+          "amount": 1007800,
+          "currencyCode": "VND"
+        },
+        "buyLink": "https://play.google.com/store/books/details?id=wpneDwAAQBAJ&rdid=book-wpneDwAAQBAJ&rdot=1&source=gbs_api",
+        "offers": [
+          {
+            "finskyOfferType": 1,
+            "listPrice": {
+              "amountInMicros": 1439714000000,
+              "currencyCode": "VND"
+            },
+            "retailPrice": {
+              "amountInMicros": 1007800000000,
+              "currencyCode": "VND"
+            }
+          }
+        ]
+      },
+      "accessInfo": {
+        "country": "VN",
+        "viewability": "PARTIAL",
+        "embeddable": true,
+        "publicDomain": false,
+        "textToSpeechPermission": "ALLOWED",
+        "epub": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Futuristic_Trends_in_Networks_and_Comput-sample-epub.acsm?id=wpneDwAAQBAJ&format=epub&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "pdf": {
+          "isAvailable": true,
+          "acsTokenLink": "http://books.google.com.vn/books/download/Futuristic_Trends_in_Networks_and_Comput-sample-pdf.acsm?id=wpneDwAAQBAJ&format=pdf&output=acs4_fulfillment_token&dl_type=sample&source=gbs_api"
+        },
+        "webReaderLink": "http://play.google.com/books/reader?id=wpneDwAAQBAJ&hl=&source=gbs_api",
+        "accessViewStatus": "SAMPLE",
+        "quoteSharingAllowed": false
+      },
+      "searchInfo": {
+        "textSnippet": "... Lo \u003cb\u003eHi Lo\u003c/b\u003e Lo LEACH DCHS 2002 Single hop Distributed Moderate Lo Hi \u003cb\u003eHi Lo\u003c/b\u003e LEACH B 2003 Multi-hop Distributed Moderate Lo Hi \u003cb\u003eHi Lo\u003c/b\u003e SLEACH 2005 Single hop Distributed Complex Lo Very Hi Hi Moderate TL-LEACH B 2006 Multi-hop Distributed&nbsp;..."
       }
     }
   ]
