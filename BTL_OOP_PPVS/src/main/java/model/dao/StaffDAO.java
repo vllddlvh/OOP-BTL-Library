@@ -14,12 +14,12 @@ import model.entity.Staff;
 public class StaffDAO extends UserDAO {
     
     /**
-     * take full information for a library Staff.
+     * Lấy thông tin của một Quản lý (Staff) dựa theo UserID của người đó.
+     * Nếu ID nhập bị sai bởi vì đó là Member, kết quả sẽ là null.
      * 
-     * @param ID = that staff ID.
+     * @param ID = UserID của người quản lý cần tìm
      * 
-     * @return an model.Staff object contain information.
-     * return null if there's no such userID
+     * @return một đối tượng Staff chứa thông tin của người Quản lý này.
      * 
      * @throws SQLException 
      */
@@ -44,12 +44,12 @@ public class StaffDAO extends UserDAO {
     }
     
     /**
-     * Add a new Staff to database.
+     * Thêm một staff vào trong database.
      * 
-     * @param newStaff = that new comer.
-     * @param reportTo = who adding this staff.
+     * @param newStaff = thông tin về staff mới này.
+     * @param reportTo = ID nhân viên phụ trách quản lý nhân viên mới.
      * 
-     * @return false if duplicate userID.
+     * @return false chỉ khi sai thông tin reportTo, hoặc trùng lặp ID newStaff.
      * 
      * @throws SQLException 
      */
@@ -73,6 +73,16 @@ public class StaffDAO extends UserDAO {
         return false;
     }
     
+    /**
+     * Chỉnh sửa thông tin nhân viên quản lý này.
+     * 
+     * @param staff = mẫu kết quả sau khi chỉnh sửa.
+     * 
+     * @return true nếu update thành công.
+     * Sai ID (ID không tồn tại) sẽ trả về false.
+     * 
+     * @throws SQLException với hầu hết các sai sót khác
+     */
     public static boolean updateStaff(Staff staff) throws SQLException {
         // Câu lệnh SQL UPDATE để cập nhật thông tin
         String sql = "UPDATE library_2nd_edition.staff SET firstName = ?, lastName = ?, contact = ?, jobTitle = ? WHERE ID = ?";

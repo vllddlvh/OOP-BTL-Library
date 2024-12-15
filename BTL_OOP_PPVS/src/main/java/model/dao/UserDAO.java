@@ -73,47 +73,6 @@ public class UserDAO {
     }
     
     /**
-     * Download a prototype pdf of first few page.
-     * WRITE A COPY of the file you want from DATABASE.
-     * 
-     * @param bookID = ID of the book whose the file.
-     * 
-     * @return the PATH where contain the file temporary.
-     * 
-     * @throws SQLException
-     * @throws IOException 
-     */
-    public static File getPrototypeBookPDF(String bookID) throws SQLException, IOException {
-        ResultSet rs;
-        CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loodDocumentPDF(?) }"); 
-        
-        loader.setString(1, bookID);
-        
-        rs = loader.executeQuery();
-        
-        while(rs.next()) {
-            var fis = rs.getBinaryStream("PDF");
-            if (fis == null) {
-                return null;
-            }
-            
-            // setup a place for the file to be download in
-            FileOutputStream fos = new FileOutputStream("src/OuterData/" + bookID + ".pdf", false);
-            
-            // write the file on the place
-            fos.write(fis.readAllBytes());
-            
-            fis.close();
-            fos.close();
-            
-            // return the path contain the file.
-            return new File("src/OuterData/" + bookID + ".pdf");
-        }
-        
-        return null;
-    }
-    
-    /**
      * Cho phép tự cài lại mật khẩu cho một user.
      * 
      * @param userID = ID user cần đổi mật khẩu.
@@ -121,9 +80,12 @@ public class UserDAO {
      * @param newPassword = mật khẩu mới
      * 
      * @return true/false
+     * 
+     * @throws java.sql.SQLException
      */
     public static boolean changePassword(String userID, String oldPassword, String newPassword) throws SQLException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call changePassword(?, ?, ?) }");
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call changePassword(?, ?, ?) }");
         
         finder.setString(1, userID);
         finder.setString(2, oldPassword);
@@ -148,7 +110,8 @@ public class UserDAO {
      * @throws SQLException 
      */
     public static void deleteUser(String ID) throws SQLException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call deleteUser(?, ?) }");
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call deleteUser(?, ?) }");
         if (controller.LoginController.getAcc() != null) {
             finder.setString(2, controller.LoginController.getAcc().getID());
         } else {
@@ -200,7 +163,8 @@ public class UserDAO {
      * @throws SQLException 
      */
     public static Member getMemberInfo(String ID) throws SQLException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call getMemberInfo(?) }");
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call getMemberInfo(?) }");
         
         finder.setString(1, ID);
         
@@ -227,7 +191,8 @@ public class UserDAO {
      * @throws SQLException 
      */
     public static boolean addNewMember (Member newMember) throws SQLException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call addMember(?, ?, ?, ?, ?) }");
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call addMember(?, ?, ?, ?, ?) }");
         
         finder.setString(1, newMember.getID());
         finder.setString(2, newMember.getFirstName());
@@ -255,7 +220,11 @@ public class UserDAO {
      */
     public static boolean updateMember(Member member) throws SQLException {
         // Câu lệnh SQL UPDATE để cập nhật thông tin
-        String sql = "UPDATE library_2nd_edition.member SET firstName = ?, lastName = ?, contact = ?, dateOfBirth = ? WHERE ID = ?";
+        String sql = """
+                        UPDATE library_2nd_edition.member 
+                        SET firstName = ?, lastName = ?, contact = ?, dateOfBirth = ? 
+                        WHERE ID = ? 
+                     """;
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
     
         // Gán giá trị cho từng tham số

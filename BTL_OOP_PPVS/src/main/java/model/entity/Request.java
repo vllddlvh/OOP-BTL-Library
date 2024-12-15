@@ -13,6 +13,11 @@ public class Request {
     private String user_fullName = null;
     private String document_title = null;
     
+    /**
+     * Clone thông tin của một phiếu yêu cầu (Request)
+     * 
+     * @param org = mẫu gốc.
+     */
     public Request(Request org) {
         this.requestID = org.requestID;
         this.userID = org.userID;
@@ -24,6 +29,16 @@ public class Request {
         this.document_title = org.document_title;
     }
     
+    /**
+     * Contructor đầy đủ để khởi tạo một phiếu yêu cầu mới
+     * 
+     * @param requestID
+     * @param userID
+     * @param documentID
+     * @param quantityBorrow
+     * @param borrowDate
+     * @param returnDate 
+     */
     public Request(String requestID, String userID, String documentID, int quantityBorrow, String borrowDate, String returnDate) { 
         this.requestID = requestID;
         this.userID = userID;
@@ -33,7 +48,25 @@ public class Request {
         this.returnDate = returnDate;
     }
     
-    public Request(String requestID, String userID, String user_fullName, String documentID, String document_title, int quantityBorrow, String borrowDate, String returnDate) { 
+    /**
+     * Contructor bổ sung để lấp khoảng trống.
+     * Bổ sung thêm user_fullName, document_title.
+     * Về cơ bản thì 2 thông tin thêm không phải lúc nào cũng cần thiết.
+     * 
+     * Thông tin ngày mượn/trả sẽ dược database tự set là ngày hiện tại nếu không có chỉnh sửa thêm.
+     * 
+     * @param requestID = mã phiếu yêu cầu.
+     * @param userID = ID người thực hiện (mượn/trả sách).
+     * @param user_fullName = tên dầy đủ của người mượn.
+     * @param documentID = ID sách được mượn.
+     * @param document_title = tiêu đề sách.
+     * @param quantityBorrow = số lượng mượn, mặc định cứ để là 1 nha.
+     * @param borrowDate = ngày mượn.
+     * @param returnDate = ngày trả
+     */
+    public Request(String requestID, String userID, String user_fullName, 
+                                     String documentID, String document_title, 
+                                     int quantityBorrow, String borrowDate, String returnDate) { 
         this.requestID = requestID;
         this.userID = userID;
         this.documentID = documentID;

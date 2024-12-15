@@ -39,13 +39,13 @@ public abstract class Document {
     protected String language = "Không rõ";
     
     protected Image cover = null;
+    protected String coverFormat = "jpg";
     protected URL PDF = null;
     
     // Chỉ sử dụng nội trong model. 
-    // Tránh down lại file nhiều lần, và xác định định dạng ảnh. 
+    // Tránh down lại file nhiều lần
     protected boolean haveCover = true;
     protected boolean havePDF = true;
-    protected String coverFormat = "jpg";
     
     /**
      * Get document search by title. 
@@ -67,11 +67,11 @@ public abstract class Document {
     }
     
     /**
-     * Get Document only if you know exactly its Thesis ID / Book ISBN.
+     * Tìm kiếm tài liệu dựa theo ID chính xác.
      * 
-     * @param documentID = Thesis ID / Book ISBN.
+     * @param documentID = Mã tài liệu.
      * 
-     * @return Document object.
+     * @return đối tượng <? extends Document> chứa thông tin cần tìm.
      * 
      * @throws SQLException 
      * @throws IOException
@@ -108,6 +108,11 @@ public abstract class Document {
         this.description = description;
     }
     
+    /**
+     * Lấy dãy liệt kê các thể loại của sách.
+     * 
+     * @return 1 dòng liên tiếp các thể loại của sách.
+     */
     public String getCategory() {
         StringBuilder result = new StringBuilder();
         for (String x : this.category) {
@@ -125,6 +130,11 @@ public abstract class Document {
         }
     }
     
+    /**
+     * Phân giải một String được getText về để chuyển đổi sang dãy các thể loại.
+     * 
+     * @param category = 1 dòng đầu vào.
+     */
     public void setCategory(String category) {
         this.category = new ArrayList<>();
         String[] arr = category.split("[,.]+");
@@ -133,6 +143,14 @@ public abstract class Document {
         }
     }
     
+    /**
+     * Phiên dịch category sang dạng mã hóa để nạp vào csdl.
+     * Không sử dụng bên ngoài model.
+     * 
+     * @return = số đếm sau mã hóa.
+     * 
+     * @throws IOException 
+     */
     public int getCategoryEncrypt() throws IOException {
         return CategoryType.encrypt(this.category);
     }
@@ -157,6 +175,15 @@ public abstract class Document {
         return cover;
     }
 
+    /**
+     * Chuyển đổi một file hình ảnh sang dạng BufferedImage để lưu trữ ảnh bìa cho sách.
+     * Đồng thời sẽ thay đổi resolution của ảnh để phù hợp với ứng dụng.
+     * 
+     * @param cover = ảnh bìa sách được nạp vào.
+     * 
+     * @throws FileFormatException
+     * @throws IOException 
+     */
     public void setCover(File cover) throws FileFormatException, IOException {
         if (cover == null) {
             this.cover = null;
@@ -186,6 +213,15 @@ public abstract class Document {
         haveCover = true;
     }
 
+    /**
+     * Lấy URL PDF chứa nội dung sách.
+     * Nếu chưa được xác nhận rõ liệu sách có file hay không, sẽ tiến hành thử tải sách về.
+     * 
+     * @return URL dẫn tới nguồn đọc.
+     * 
+     * @throws IOException
+     * @throws SQLException 
+     */
     public URL getPDF() throws IOException, SQLException {
         if (PDF == null && havePDF) {
             File file = FileHandle.getDocumentPDF(ID);
@@ -195,11 +231,20 @@ public abstract class Document {
         return PDF;
     }
 
+    /**
+     * Kiểm định file đầu vào, và chuyển đổi thành URL để nạp file lên csdl.
+     * 
+     * @param PDF = file nguồn.
+     * 
+     * @throws IOException
+     * @throws FileFormatException
+     * @throws SQLException 
+     */
     public void setPDF(File PDF) throws IOException, FileFormatException, SQLException {   
         FileHandle.checkFilePDF(PDF);
         
         if (cover == null || !haveCover) {
-            setCover(FileHandle.getFirstPage(ID, PDF), "png");
+            setCover(FileHandle.getFirstPage(PDF), "png");
             haveCover = false;
         }
         
@@ -212,6 +257,15 @@ public abstract class Document {
         havePDF = true;
     }
     
+    /**
+     * Đọc thử mẫu. Mẫu này vẫn đọc full. Nhưng sẽ tiến hành xóa file ngay sau khi mở file.
+     * 
+     * @return false nếu sách không có file pdf.
+     * 
+     * @throws IOException
+     * @throws SQLException
+     * @throws URISyntaxException 
+     */
     public boolean openSamplePDF() throws IOException, SQLException, URISyntaxException {
         if (PDF == null) {
             getPDF();
@@ -231,6 +285,15 @@ public abstract class Document {
         return true;
     }
     
+    /**
+     * Đọc đầy đủ sách. File được lưu trữ lâu dài.
+     * 
+     * @return false nếu sách không có file pdf.
+     * 
+     * @throws IOException
+     * @throws SQLException
+     * @throws URISyntaxException 
+     */
     public boolean openFullPDF() throws IOException, SQLException, URISyntaxException {
         if (PDF == null) {
             getPDF();
@@ -243,11 +306,20 @@ public abstract class Document {
         return true;
     }
     
+    /**
+     * Chứa toàn bộ dạng thức để chuyển đổi Category qua lại giữa dạng:
+     * ArrayList (sử dụng trong ứng dụng) và int (hashCode lưu trữ trong database)
+     */
     public static class CategoryType {
         private static ArrayList<String> decoder;
         private static HashMap<String, Integer> encrypter;
         private final static String PATH = "src\\main\\java\\image\\Document Category.txt";
         
+        /**
+         * Đọc file phiên dịch (PATH) và tạo HashTable giữa 2 dạng thức.
+         * 
+         * @throws IOException 
+         */
         private static void loadDecoder() throws IOException {
             decoder = new ArrayList<>();
             encrypter = new HashMap<>();
@@ -268,6 +340,15 @@ public abstract class Document {
             reader.close();
         }
         
+        /**
+         * Giải mã từ dạng số sang dạng List<String>
+         * 
+         * @param k = số cần phân giải.
+         * 
+         * @return dãy các thể loại.
+         * 
+         * @throws IOException 
+         */
         static ArrayList<String> decode(int k) throws IOException {
             if (decoder == null) {
                 loadDecoder();
@@ -285,6 +366,12 @@ public abstract class Document {
             return result;
         }
         
+        /**
+         * Thực hiện thêm mới thể loại cho sách.
+         * 
+         * @param newCategory
+         * @throws IOException 
+         */
         static void addNewCategory (List<String> newCategory) throws IOException {
             FileWriter output = new FileWriter(PATH, true);
             BufferedWriter writer = new BufferedWriter(output);
@@ -304,6 +391,16 @@ public abstract class Document {
             
         } 
         
+        /**
+         * Mã hóa list thể loại trờ về dạng số để lưu trên csdl.
+         * Các thể loại mới, chưa từng được đề cập sẽ tự đông trở thành phân loại mới.
+         * 
+         * @param category = list các thể loại của sách.
+         * 
+         * @return hashCode sau khi thực thi.
+         * 
+         * @throws IOException 
+         */
         static int encrypt(List<String> category) throws IOException {
             if (encrypter == null) {
                 loadDecoder();

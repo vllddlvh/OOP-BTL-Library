@@ -15,7 +15,6 @@ import java.net.URLDecoder;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
@@ -39,7 +38,6 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
     public ThemTaiLieuFrame() {
         try {
             emptyForm = new Book(""); // an empty Book
-            defaultImage = ImageIO.read(new File("src\\main\\java\\image\\default-null-book-cover.png"));
         } catch (SQLException | IOException ex) {
             Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -478,10 +476,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
 
     private void jButtonChonFileAnhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonChonFileAnhActionPerformed
         
-            // TODO add your handling code here:
-//        ChonFileAnhJFrame chonFile = new ChonFileAnhJFrame(prototype, demoImageLabel);
-//        chonFile.setVisible(true);
-
+            // TODO add your handling code here
         // Test với FileChooser mặc định cửa Windows
         try {
             File cover = ChonFileAnhJFrame.openWindowFileChooser();
@@ -506,6 +501,7 @@ public class ThemTaiLieuFrame extends javax.swing.JFrame {
             emptyForm.setPDF(pdf);
             
             jlbPdfPath.setText(pdf.getAbsolutePath());
+            displayImage(emptyForm.getCover());
             
         } catch (FileFormatException | IOException | SQLException ex) {
             Logger.getLogger(ThemTaiLieuFrame.class.getName()).log(Level.SEVERE, null, ex);

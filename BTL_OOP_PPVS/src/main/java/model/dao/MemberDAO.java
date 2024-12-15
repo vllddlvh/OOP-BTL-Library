@@ -16,6 +16,13 @@ import model.entity.Member;
  */
 public class MemberDAO {
     
+    /**
+     * Lấy thông tin toàn bộ Người Dùng Phổ Thông (Member).
+     * 
+     * @return List Member hiện có trong database.
+     * 
+     * @throws SQLException 
+     */
     public static ArrayList<Member> getAllMember() throws SQLException {
         String sql = "SELECT * FROM library_2nd_edition.member";
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
@@ -23,7 +30,6 @@ public class MemberDAO {
         
         ArrayList<Member> list = new ArrayList<>();
         while(rs.next()) {
-            
             Member member = new Member(rs.getString(1),
                                   rs.getString(2),
                                    rs.getString(3),
@@ -39,12 +45,12 @@ public class MemberDAO {
     }
     
     /**
-     * take full information for a reading member.
+     * Lấy thông tin Member lẻ, dựa theo UserID.
+     * Thường là để khi đăng nhập.
      * 
-     * @param ID = that member ID.
+     * @param ID = userID cần tìm.
      * 
-     * @return an model.Member object contain information.
-     * return null if there's no such userID
+     * @return null nếu không có userID này trong hệ thống.
      * 
      * @throws SQLException 
      */
@@ -67,16 +73,17 @@ public class MemberDAO {
     }
     
     /**
-     * Add a new Member to database.
+     * Thêm member mới. 
      * 
      * @param newMember = that new Member.
      * 
-     * @return false if duplicate userID.
+     * @return false nếu trùng lặp ID người dùng. Có thể trùng với Staff hoặc Member
      * 
      * @throws SQLException 
      */
     public static boolean addNewMember (Member newMember) throws SQLException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call addMember(?, ?, ?, ?, ?) }");
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call addMember(?, ?, ?, ?, ?) }");
         
         finder.setString(1, newMember.getID());
         finder.setString(2, newMember.getFirstName());
@@ -93,19 +100,25 @@ public class MemberDAO {
         return false;
     }
     
+    /**
+     * Update (chỉnh sửa) thông tin cho Member sẵn trong database.
+     * 
+     * @param member = mẫu kết quả sau chỉnh sửa.
+     * 
+     * @return false nếu sai ID người dùng. 
+     * 
+     * @throws SQLException 
+     */
     public static boolean updateMember(Member member) throws SQLException {
-        // Câu lệnh SQL UPDATE để cập nhật thông tin
         String sql = "UPDATE library_2nd_edition.member SET firstName = ?, lastName = ?, contact = ?, dateOfBirth = ? WHERE ID = ?";
         PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql);
     
-        // Gán giá trị cho từng tham số
         ps.setString(1, member.getFirstName());
         ps.setString(2, member.getLastName());
         ps.setString(3, member.getContact());
         ps.setString(4, member.getDateOfBirth());
-        ps.setString(5, member.getID()); // ID để xác định thành viên cần cập nhật
+        ps.setString(5, member.getID()); 
 
-        // Thực thi câu lệnh và kiểm tra xem có bao nhiêu dòng bị ảnh hưởng
         int rowsUpdated = ps.executeUpdate();
         ps.close();
     

@@ -33,12 +33,32 @@ import org.apache.tika.Tika;
 public class FileHandle {
     private final static Tika checking = new Tika(); // Để check định dạng của file.
     
+    /**
+     * Ném file pdf ra của sổ trình duyệt và mở.
+     * Chuyển qua dùng URL thay vì java.io.File, để đồng bộ với URL lấy từ API.
+     * 
+     * @param url = URL tới địa chỉ chứa bản đọc của sách.
+     * 
+     * @throws IOException
+     * @throws URISyntaxException 
+     */
     public static void openURL(URL url) throws IOException, URISyntaxException {
             Desktop.getDesktop().browse(url.toURI());
     }
     
+    /**
+     * Hàm convert (chuyển đổi) URL -> File.
+     * Đối với URL trỏ tới file local thôi nha. 
+     * Còn http URL thì bị gạt ra luôn, trả về null. URL đó hầu như không hỗ trợ tải về.
+     * Không rõ có cần dùng tới không.
+     * 
+     * @param url = đường dẫn tới file:/...
+     * 
+     * @return phiên bản File chuyển đổi của URL input
+     * 
+     * @throws URISyntaxException 
+     */
     public static File convertURL_File(URL url) throws URISyntaxException {
-        System.out.println(url.getProtocol());
         if (url.getProtocol().equals("file")) {
             try {
                 String decodedPath = URLDecoder.decode(url.toURI().getPath(), "UTF-8");
@@ -53,6 +73,15 @@ public class FileHandle {
         return null;
     }
     
+    /**
+     * Hàm convert (chuyển đổi) của File -> URL
+     * 
+     * @param file = địa chỉ file gốc.
+     * 
+     * @return dạng URL của file đó thôi.
+     * 
+     * @throws MalformedURLException 
+     */
     public static URL convertFile_URL(File file) throws MalformedURLException {
         if (file != null) {
             return file.toURI().toURL();
@@ -61,9 +90,12 @@ public class FileHandle {
     }
     
     /**
-     * Upload ảnh bìa cho tài liệu.
-     * Chấp nhận file <b>png</b> hoặc <b>jpeg</b>.
-     * Kích thước file không quá 64 KB
+     * Upload ảnh bìa cho tài liệu, tuy nhiên bị giới hạn kích thước 64KB.
+     * Như vậy đủ dùng cho ứng dụng, và cũng không phải chỉnh sửa csdl thêm nữa.
+     * 
+     * Chấp nhận hầu hết định dạng ảnh phổ thông (do Swing hỗ trợ).
+     * Bao gồm: png, jpg/jpeg. GIF thì không rõ, lỗi hiển thị.
+     * Định dạng mặc định là jpg, do Google API sử dụng chủ yếu định dạng này.
      * 
      * @param documentID = ID của tài liệu.
      * @param cover = File ảnh bìa.
@@ -103,12 +135,12 @@ public class FileHandle {
     }
     
     /**
-     * Tải bìa tài liệu về từ Database. 
-     * Trả về hình kiểu jpeg hoặc png. Lưu vào OuterData
+     * Tải ảnh bìa sách về từ database (nếu có).
+     * Vì sử dụng lớp Image để lưu ảnh, nên thông tin sẽ để luôn trong RAM mà không lưu thành file.
      * 
-     * @param documentID
+     * @param documentID = ID của tài liệu cần lấy ảnh.
      * 
-     * @return
+     * @return BufferredImage trá hình.
      * 
      * @throws IOException
      * @throws SQLException 
@@ -145,10 +177,12 @@ public class FileHandle {
     
     /**
      * Upload file pdf cho tài liệu.
-     * Đống thời sẽ lấy luôn trang đầu tiên làm Cover.
+     * Đống thời sẽ lấy luôn trang đầu tiên làm Cover (nếu chưa có).
+     * 
+     * Bổ sung: chỉ upload pdf thôi. Việc lọc trang đầu tiên đã xử lý từ trước, nên ở đây không làm lại nữa.
      * 
      * @param documentID = ID tài liệu.
-     * @param pdf = file cần upload.
+     * @param PDF = file cần upload.
      * @param firstPageBeingCover = chọn xem có lấy trang đầu là cover không.
      * 
      * @return true nếu upload thành công.
@@ -156,11 +190,11 @@ public class FileHandle {
      * @throws IOException
      * @throws SQLException 
      * @throws model.dao.FileFormatException 
+     * @throws java.net.URISyntaxException 
      */
-    public static boolean uploadDocumentPDF(String documentID, URL PDF, boolean firstPageBeingCover) throws IOException, 
-                                                                                                            SQLException, 
-                                                                                                            FileFormatException,
-                                                                                                            URISyntaxException {
+    public static boolean uploadDocumentPDF(String documentID, URL PDF, boolean firstPageBeingCover) 
+            throws IOException, SQLException, FileFormatException, URISyntaxException {
+        
         File pdf = convertURL_File(PDF);
         
         // Nếu đây là file tải sẵn về từ db (path là thư mục gốc), thì bỏ qua không upload
@@ -169,7 +203,7 @@ public class FileHandle {
         }
         
         if (firstPageBeingCover) {
-            uploadDocumentCover(documentID, getFirstPage(documentID, pdf), "PNG");
+            uploadDocumentCover(documentID, getFirstPage(pdf), "PNG");
         }
         
         CallableStatement loader = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call loadDocumentPDF(?, ?) }");   
@@ -186,7 +220,18 @@ public class FileHandle {
         return row > 0;
     }
     
-    public static Image getFirstPage(String documentID, File pdf) throws FileFormatException, IOException, SQLException {
+    /**
+     * Cắt trang đầu của tài liệu và lưu dưới dạng file png (lossless)
+     * 
+     * @param pdf = file pdf gốc.
+     * 
+     * @return Image là trang dầu của pdf.
+     * 
+     * @throws FileFormatException
+     * @throws IOException
+     * @throws SQLException 
+     */
+    public static Image getFirstPage(File pdf) throws FileFormatException, IOException, SQLException {
         PDDocument document = PDDocument.load(pdf);
         if (document.getNumberOfPages() > 0) {
             File cover = new File("src\\OuterData\\temp.bin");
@@ -253,11 +298,12 @@ public class FileHandle {
      * Mà ở dạng byte[] trong cache. Nên không cần lo về định dạng khi đọc.
      * Chỉ là cần cho khi viết lên database.
      * <p>
-     * Nếu không thì ném lỗi FileFormatEx
+     * Nếu không thì ném lỗi FileFormatException
+     * Vấn đề xảy ra là, nếu file bị thay đổi file tag, nhưng thực chất là một ảnh, hàm vẫn accept
      * 
      * @param image = file ảnh.
      * 
-     * @return imageFormat
+     * @return imageFormat (định dạng của file ảnh vừa bị detect.
      * 
      * @throws FileFormatException
      * @throws IOException 
@@ -279,6 +325,18 @@ public class FileHandle {
         return mimeType.split("/")[1];
     }
     
+    /**
+     * Check file có phải định dạng pdf thật hay không.
+     * Thường thì file corrupted hoặc bị đổi file tag thì bị detect ra.
+     * Hoặc kích thước file quá lớn, giới hạn của csdl là 16MB.
+     * 
+     * @param pdf = file pdf cần detect.
+     * 
+     * @return true/false thôi.
+     * 
+     * @throws FileFormatException
+     * @throws IOException 
+     */
     public static boolean checkFilePDF(File pdf) throws FileFormatException, IOException {
         if (!pdf.exists()) {
             throw new FileFormatException("File không tồn tại\n" + pdf.getAbsolutePath());
@@ -286,7 +344,7 @@ public class FileHandle {
         if (!pdf.canRead()) {
             throw new FileFormatException("Hiện không thể đọc file tại đường dẫn này\n" + pdf.getAbsolutePath());
         }
-        // check kích thước
+        // check kích thước (16MB)
         if (pdf.length() > 16777215) {
             throw new FileFormatException("File quá lớn. Hãy đảm bảo dung lượng dưới 16MB\n" + pdf.getAbsolutePath());
         }

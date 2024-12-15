@@ -10,8 +10,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 import model.DatabaseConnector;
 import model.entity.Book;
@@ -26,7 +24,9 @@ import model.entity.Document;
 public abstract class DocumentDAO {
     
     /**
-     * Get Document only if you know exactly its Thesis ID / Book ISBN.
+     * Lấy thông tin từ Database của Document (có thể là Book hoặc Thesis).
+     * Thông tin được lấy dựa theo ID của tài liệu.
+     * Nếu không có tài liệu với ID phù hợp, trả về null.
      * 
      * @param documentID = Thesis ID / Book ISBN.
      * 
@@ -66,7 +66,9 @@ public abstract class DocumentDAO {
     }
     
     /**
-     * Load more or less copies of a document already store in library.
+     * Thay đổi số lượng lưu trữ của một loại tài liệu.
+     * Tuy nhiên, hàm không check lại số lượng sách hiện có và số lượng sách này đã cho mượn.
+     * Người dùng phải tự cẩn thận.
      * 
      * @param documentID
      * @param quantityChange
@@ -81,7 +83,7 @@ public abstract class DocumentDAO {
     }
     
     /**
-     * Delete a document determine by its ID.
+     * Xóa một tài liệu khỏi database vĩnh viễn.
      * 
      * @param documentID = ID of the document want to be deleted.
      * 
@@ -98,26 +100,27 @@ public abstract class DocumentDAO {
     
     
     /**
-     * Lấy toàn bộ Book trên database.
+     * Lấy toàn bộ Book (Sách) trên database.
+     * Phía view sẽ filter và sort toàn bộ đống đó sau.
      * 
-     * @return = ? 
+     * @return = một List chưa toàn bộ Book 
      * 
      * @throws SQLException
      * @throws IOException 
      */
     public static ArrayList<Book> getAllBook() throws SQLException, IOException {
         String sql = """
-                     SELECT
-                     \t\tbooks.ISBN AS ISBN,
-                     \t\tdocuments.title AS title,
-                     \t\tdocuments.quantityLeft AS quantityAvailable,
-                     \t\tbooks.author AS author,
-                     \t\tbooks.publisher AS publisher,
-                     \t\tbooks.releaseYear AS releaseYear,
-                     \t\tdocuments.Description AS Description,
-                     \t\tdocuments.category AS category,
-                     \t\tdocuments.language AS language
-                     \tFROM books left join documents ON (books.isbn = documents.ID)""";
+                        SELECT
+                     \t\t   books.ISBN AS ISBN,
+                     \t\t   documents.title AS title,
+                     \t\t   documents.quantityLeft AS quantityAvailable,
+                     \t\t   books.author AS author,
+                     \t\t   books.publisher AS publisher,
+                     \t\t   books.releaseYear AS releaseYear,
+                     \t\t   documents.Description AS Description,
+                     \t\t   documents.category AS category,
+                     \t\t   documents.language AS language
+                     \t  FROM books left join documents ON (books.isbn = documents.ID)""";
         ResultSet rs;
         ArrayList<Book> list;
         try (PreparedStatement ps = DatabaseConnector.getConnection().prepareStatement(sql)) {
@@ -142,20 +145,28 @@ public abstract class DocumentDAO {
     }
     
     /**
-     * Search Book with given keyword types below.
+     * Hàm tìm kiếm gốc trên database, nhưng hiện không sử dụng.
+     * Chỉnh sửa hơi xa rồi, mình không còn lưu tài liệu sử dụng cái này như nào nữa
      * 
      * @param titleKeyword = searching by %title%.
      * @param authorKeyword = searching by %author%.
      * @param releaseYear = search by releaseYear. Sorry, not search on range of Years.
-     * @param category = on format of ENUM Book.BookCategory.
+     * @param category = on format of model.entity.Document.BookCategory nested class.
      * @param language = book's language.
      * 
      * @return List of books found.
+     * 
      * @throws SQLException 
      * @throws java.io.IOException 
      */
-    public static ArrayList<Book> searchBook(String titleKeyword, String authorKeyword, int releaseYear, int category, String language) throws SQLException, IOException {
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call searchBook(?, ?, ?, ?, ?) }");
+    public static ArrayList<Book> searchBook(String titleKeyword, 
+                                            String authorKeyword, 
+                                            int releaseYear, 
+                                            int category, 
+                                            String language) 
+                                                            throws SQLException, IOException {
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call searchBook(?, ?, ?, ?, ?) }");
         
         finder.setString(1, titleKeyword);
         finder.setString(2, authorKeyword);
@@ -187,19 +198,26 @@ public abstract class DocumentDAO {
     }
     
     /**
-     * Add a new Book to database. 
+     * Thêm sách vào cơ sở dữ liệu. 
+     * Sau khi thêm thông tin text, sẽ chuển qua upload cả file pdf và ảnh bìa, nếu có.
+     * Tùy vào mức độ hoàn thiện thông tin của quyển sách, có thể ném ra một số lỗi.
+     * Ví dụ: file pdf quá lớn trên 16MB, lỗi truy vấn (định dạng ngày tháng, giới hạn ký tự,...)
+     * Hơi khó nhưng giới hạn ký tự vẫn xảy ra với title size > 100.
      * 
-     * @param newBook = only Book object have been full construct accept.
+     * @param newBook = một Book với thông tin cơ bản được điền đầy đủ.
      * 
-     * @return false if duplicate documentID.
+     * @return false khi và chỉ khi trùng lặp ID sách.
      * 
      * @throws SQLException 
      * @throws IOException
+     * @throws model.dao.FileFormatException
+     * @throws java.net.URISyntaxException
      */
     public static boolean addBook(Book newBook) 
             throws SQLException, IOException, FileFormatException, URISyntaxException  {
         
-        CallableStatement finder = (CallableStatement) DatabaseConnector.getConnection().prepareCall("{ call addBook(?, ?, ?, ?, ?, ?, ?, ?, ?) }");
+        CallableStatement finder = (CallableStatement) 
+                DatabaseConnector.getConnection().prepareCall("{ call addBook(?, ?, ?, ?, ?, ?, ?, ?, ?) }");
         
         finder.setString(1, newBook.getID());
         finder.setString(2, newBook.getTitle());
@@ -225,7 +243,7 @@ public abstract class DocumentDAO {
             }
             if (newBook.getPDF() != null) {
                 if (newBook.getCover() == null) {
-                    Image tempCover = FileHandle.getFirstPage(newBook.getID(), FileHandle.convertURL_File(newBook.getPDF()));
+                    Image tempCover = FileHandle.getFirstPage(FileHandle.convertURL_File(newBook.getPDF()));
                     newBook.setCover(tempCover, "png");
                 }
                 FileHandle.uploadDocumentPDF(newBook.getID(), newBook.getPDF(), newBook.getCover() == null);
@@ -237,14 +255,17 @@ public abstract class DocumentDAO {
     }
     
     /**
-     * Chỉnh sửa thông tin cho một quyển sách.
+     * Chỉnh sửa thông tin cho một quyển sách. 
+     * Tiến hành chỉnh sửa cả file pdf và ảnh bìa sau đó, nếu có bị thay đổi.
      * 
-     * @param alter = kết quả cần đạt được sau chỉnh sửa.
+     * @param alter = mẫu kết quả cần đạt được sau chỉnh sửa.
      * 
      * @return true nếu sửa thành công.
      * 
      * @throws SQLException
      * @throws IOException 
+     * @throws model.dao.FileFormatException 
+     * @throws java.net.URISyntaxException 
      */
     public static boolean updateBook(Book alter) throws SQLException, IOException, FileFormatException, URISyntaxException {
         String sql1 = """
@@ -281,7 +302,7 @@ public abstract class DocumentDAO {
         }
         if (alter.getPDF() != null) {
             if (alter.getCover() == null) {
-                    Image tempCover = FileHandle.getFirstPage(alter.getID(), FileHandle.convertURL_File(alter.getPDF()));
+                    Image tempCover = FileHandle.getFirstPage(FileHandle.convertURL_File(alter.getPDF()));
                     alter.setCover(tempCover, "png");
                 }
             FileHandle.uploadDocumentPDF(alter.getID(), alter.getPDF(), alter.getCover() == null);

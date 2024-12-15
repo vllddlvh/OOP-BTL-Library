@@ -18,7 +18,7 @@ public class Book extends Document {
     protected int releaseYear;
     
     /**
-     * Constructor for model.DAO using only.
+     * Contructor dạng raw. Chỉ cho model.DAO sử dụng. Vì dạng category vẫn đang ở dạng mã hóa.
      * 
      * @param ISBN = new Book ID/ ISBN code.
      * @param title = its title.
@@ -27,11 +27,15 @@ public class Book extends Document {
      * @param publisher = publisher name.
      * @param releaseYear = release in what year (after 1900)
      * @param description = the book introduction.
-     * @param category = category ENCRYPT FORM.
+     * @param category = category ENCRYPTED FORM.
+     * @param language = language type
      * 
      * @throws IOException 
      */
-    public Book(String ISBN, String title, int availableCopies, String author, String publisher, int releaseYear, String description, int category, String language) throws IOException {
+    public Book(String ISBN, String title, int availableCopies, 
+            String author, String publisher, int releaseYear, 
+            String description, int category, String language) throws IOException {
+        
         this.ID = ISBN;
         this.title = title;
         this.availableCopies = availableCopies;
@@ -46,18 +50,22 @@ public class Book extends Document {
     }
     
     /**
-     * Constructor 
+     * Constructor dạng phổ thông. Có thể đa dụng ở package khác.
      * 
-     * @param ISBN
-     * @param title
-     * @param availableCopies
-     * @param author
-     * @param publisher
-     * @param releaseYear
-     * @param description
-     * @param category 
+     * @param ISBN = new Book ID/ ISBN code.
+     * @param title = its title.
+     * @param availableCopies = load copies amount.
+     * @param author = author name.
+     * @param publisher = publisher name.
+     * @param releaseYear = release in what year (after 1900)
+     * @param description = the book introduction.
+     * @param category = category AFTER DECODED FORM, as a list
+     * @param language = language type
      */
-    public Book(String ISBN, String title, int availableCopies, String author, String publisher, int releaseYear, String description, ArrayList<String> category, String language) {
+    public Book(String ISBN, String title, int availableCopies, 
+            String author, String publisher, int releaseYear, 
+            String description, ArrayList<String> category, String language) {
+        
         this.ID = ISBN;
         this.title = title;
         this.availableCopies = availableCopies;
@@ -72,17 +80,18 @@ public class Book extends Document {
     }
     
     /**
-     * Constructor 
+     * Constructor dạng thô. GetText trực tiếp từ view.
+     * Category sẽ cần cắt nhở sang dạng list để mã hóa sau này.
      * 
-     * @param ISBN
-     * @param title
-     * @param availableCopies
-     * @param author
-     * @param publisher
-     * @param releaseYear
-     * @param description
-     * @param category 
-     * @param language 
+     * @param ISBN = new Book ID/ ISBN code.
+     * @param title = its title.
+     * @param availableCopies = load copies amount.
+     * @param author = author name.
+     * @param publisher = publisher name.
+     * @param releaseYear = release in what year (after 1900)
+     * @param description = the book introduction.
+     * @param category = category AFTER DECODED FORM as a long String
+     * @param language = language type
      */
     public Book(String ISBN, String title, int availableCopies, String author, String publisher, int releaseYear, String description, String category, String language) {
         this.ID = ISBN;
@@ -102,6 +111,14 @@ public class Book extends Document {
         }
     }
     
+    /**
+     * Lấy thông tin về một quyển sách từ database thông qua ID tài liệu.
+     * 
+     * @param documentID = mã sách.
+     * 
+     * @throws SQLException
+     * @throws IOException 
+     */
     public Book(String documentID) throws SQLException, IOException {
         Document docu = getDocumentInfo(documentID);
         
@@ -120,6 +137,14 @@ public class Book extends Document {
         }
     }
     
+    /**
+     * Một clone cho sách hiện có. 
+     * Cần thiết trong sửa đổi/reset thông tin tài liệu.
+     * 
+     * Có vẻ là Prototype Pattern thô sơ.
+     * 
+     * @param org = mẫu gốc
+     */
     public Book(Book org) {
         this.ID = org.ID;
         this.title = org.title;
@@ -147,11 +172,15 @@ public class Book extends Document {
      * @param authorKeyword = searching by %author%.
      * @param releaseYear = search by releaseYear. Sorry, not search on range of Years.
      * @param category = on format of ENUM Book.BookCategory.
+     * @param language
      * 
      * @return List of books found.
+     * 
      * @throws SQLException 
+     * @throws java.io.IOException 
      */
-    public static ArrayList<Book> searchBook(String titleKeyword, String authorKeyword, int releaseYear, List<String> category, String language) throws SQLException, IOException {
+    public static ArrayList<Book> searchBook(String titleKeyword, String authorKeyword, int releaseYear, 
+                                                                    List<String> category, String language) throws SQLException, IOException {
         return DocumentDAO.searchBook(titleKeyword, authorKeyword, releaseYear, CategoryType.encrypt(category), language);
     }
     
@@ -178,11 +207,5 @@ public class Book extends Document {
     public void setReleaseYear(int releaseYear) {
         this.releaseYear = releaseYear;
     }
-
-    @Override
-    public String toString() {
-        return super.toString() + "Book{" + "author=" + author + ", publisher=" + publisher + ", releaseYear=" + releaseYear + '}';
-    }
-    
     
 }

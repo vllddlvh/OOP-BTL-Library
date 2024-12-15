@@ -16,10 +16,23 @@ public class DatabaseConnector {
     private final static String username = "root";
     private final static String password = "";
     
+    /**
+     * Tạo connection lần đầu.
+     * 
+     * @throws SQLException 
+     */
     public static void getInstance() throws SQLException {
         new DatabaseConnector();
     }
     
+    /**
+     * Lấy connection với cơ sở dữ liệu đã được tạo dựng sẵn.
+     * Xây dựng theo pattern Singleton nên sẽ chỉ duy trì 1 connection duy nhất.
+     * Không thể tạo thêm Connector. 
+     * 
+     * @return
+     * @throws SQLException 
+     */
     public static Connection getConnection() throws SQLException {
         if (connection == null) {
             getInstance();
@@ -27,6 +40,9 @@ public class DatabaseConnector {
         return connection;
     }
     
+    /**
+     * Đóng connection tới cơ sở dữ liệu sau khi đã hoàn thành xong các truy vấn.
+     */
     public static void closeConnection() {
         if (connection != null) {
             try {
@@ -34,50 +50,23 @@ public class DatabaseConnector {
             } catch (SQLException ex) {
                 Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
             }
+            System.out.println("Close Connection");
         }
-    }
-    
-    private static Connection createJDBCConnection() throws SQLException {
-        
-        try {
-            // Class.forName("com.mysql.jdbc.Driver");
-            return DriverManager.getConnection(url, username, password);
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(DatabaseConnector.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        return null;
-    }
-    
-    private DatabaseConnector() throws SQLException {
-        firstTODO();
     }
     
     /**
-     * There are some task we must do. 
-     * Make a JDBCconnection to the database as example.
+     * Contructor. Tạo ra connection. Lỗi sẽ thông báo lên terminal.
      * 
      * @throws SQLException 
      */
-    private static void firstTODO() throws SQLException{
-        connection = DatabaseConnector.createJDBCConnection();
+    private DatabaseConnector() throws SQLException {
+        connection = DriverManager.getConnection(url, username, password);
         if (connection != null ) {
             String[] lib = DatabaseConnector.url.split("/");
             System.out.print("\n\n\n\n\n\n\n\nConnecting Database Success\n");
             System.out.println(lib[3] + "\n\n");
         } else {
             System.out.print("\n\n\n\n\n\n\n\nConnecting Database FAILED\n");
-        }
-    }
-    
-    
-    /** Test if the connection can be make */
-    public static void main(String[] args) {
-        try {
-            firstTODO();
-        } catch (SQLException sqlex) {
-            sqlex.printStackTrace();
         }
     }
 }

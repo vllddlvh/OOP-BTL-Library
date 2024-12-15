@@ -27,6 +27,13 @@ public class Staff extends User {
     Contructor and get Own Information.
     */
     
+    /**
+     * Contructor rút gọn. Để test.
+     * 
+     * @param ID = ID quản lý mới.
+     * @param firstName = tên riêng.
+     * @param lastName = họ, tên đệm.
+     */
     public Staff(String ID, String firstName, String lastName) {
         this.ID = ID;
         this.firstName = firstName;
@@ -43,7 +50,7 @@ public class Staff extends User {
     }
     
     /**
-     * Load FULL INFORMATION to this Staff through ID.
+     * Lấy thông tin nhân viên quản lý (Staff) từ csdl thông qua UserID.
      * 
      * @param ID = ID người dùng
      * 
@@ -69,7 +76,7 @@ public class Staff extends User {
     
     
     /**
-     * take full information for a reading member.
+     * Lấy thông tin của Member khác thông qua ID của họ.
      * 
      * @param ID = that member ID.
      * 
@@ -83,7 +90,7 @@ public class Staff extends User {
     }
     
     /**
-     * take full information for a library Staff.
+     * Lấy thông tin của một nhân viên quản lý khác bất kỳ dựa theo ID.
      * 
      * @param ID = that staff ID.
      * 
@@ -98,8 +105,8 @@ public class Staff extends User {
     
     
     /**
-     * Take full information for a library User.
-     * Might be Staff or Member. All be call as User
+     * Lấy thông tin của một Staff/Member nói chung.
+     * Thực hiện xác định theo UserID.
      * 
      * @param ID = that staff ID.
      * 
@@ -117,25 +124,7 @@ public class Staff extends User {
     }
     
     /**
-     * Add a new Member to database.
-     * 
-     * @param ID = new User ID
-     * @param firstName = their first Name
-     * @param lastName = their last Name
-     * @param contact = their contact
-     * @param dateOfBirth = their date of birth
-     * 
-     * @return false only if being duplicate userID
-     * 
-     * @throws SQLException 
-     */
-    public boolean addNewMember (String ID, String firstName, String lastName, String contact, String dateOfBirth) throws SQLException  {
-        Member newOne = new Member(ID, firstName, lastName, contact, dateOfBirth);
-        return addNewMember(newOne);
-    }
-    
-    /**
-     * Add a new Member to database.
+     * Thêm thành viên mới vào csdl
      * 
      * @param newMember = that new Member.
      * 
@@ -148,25 +137,8 @@ public class Staff extends User {
     }
     
     /**
-     * Add a new Staff to database.
-     * 
-     * @param ID = their ID
-     * @param firstName = their first Name
-     * @param lastName = their last Name
-     * @param contact = their contact
-     * @param jobTitle = new staff job title (job position)
-     * 
-     * @return false only if being duplicate user ID.
-     * 
-     * @throws SQLException 
-     */
-    public boolean addNewStaff(String ID, String firstName, String lastName, String contact, String jobTitle) throws SQLException {
-        Staff newOne = new Staff(ID, firstName, lastName, contact, jobTitle, null);
-        return addNewStaff(newOne);
-    }
-    
-    /**
-     * Add a new Staff to database.
+     * Thêm nhân viên quản lý mới. 
+     * Người này sẽ mặc định reportTo (được quản lý bởi) nhân viên đã thêm họ vào.
      * 
      * @param newStaff = that new comer.
      * 
@@ -178,12 +150,20 @@ public class Staff extends User {
         return StaffDAO.addNewStaff(newStaff, this.ID);
     }
     
+    /**
+     * Xóa người dùng, bất kể Staff hay Member.
+     * Vì chưa có chức năng quản lý giữa các Staff, nên tạm thời bỏ qua ID người chịu trách nhiệm.
+     * 
+     * @param ID = ID người bị xóa.
+     * 
+     * @throws SQLException 
+     */
     public void deleteUser(String ID) throws SQLException {
         UserDAO.deleteUser(ID);
     }
     
     /**
-     * Add a new Book to database. 
+     * Thêm sách mới vào database.
      * 
      * @param newBook = only Book object have been full construct accept.
      * 
@@ -191,13 +171,16 @@ public class Staff extends User {
      * 
      * @throws SQLException 
      * @throws IOException
+     * @throws model.dao.FileFormatException
+     * @throws java.net.URISyntaxException
      */
-    public boolean addBook(Book newBook) throws SQLException, IOException, FileFormatException, URISyntaxException  {
+    public boolean addBook(Book newBook) 
+            throws SQLException, IOException, FileFormatException, URISyntaxException  {
         return DocumentDAO.addBook(newBook);
     }
     
     /**
-     * Add a new Document to database. 
+     * Thêm tài liệu nói chung vào database (Cụ thể là Book hoặc Thesis)
      * 
      * @param newDocument = only Book or Thesis object have been full construct accept.
      * 
@@ -205,8 +188,11 @@ public class Staff extends User {
      * 
      * @throws SQLException 
      * @throws IOException
+     * @throws model.dao.FileFormatException
+     * @throws java.net.URISyntaxException
      */
-    public boolean addDocument(Document newDocument) throws SQLException, IOException, FileFormatException, URISyntaxException {
+    public boolean addDocument(Document newDocument) 
+            throws SQLException, IOException, FileFormatException, URISyntaxException {
         if (newDocument instanceof Book) {
            return addBook((Book) newDocument);
         } 
@@ -214,10 +200,11 @@ public class Staff extends User {
     }
     
     /**
-     * Load more or less copies of a document already store in library.
+     * Chỉnh sửa lượng sách hiện có của thư viện.
      * 
-     * @param documentID
-     * @param quantityChange
+     * @param documentID = ID tài liệu cần chỉnh sửa.
+     * @param quantityChange = Lượng tài liệu được thêm vào (bớt đi thì nhập số âm).
+     * 
      * @throws SQLException 
      */
     public void loadMoreCopies(String documentID, int quantityChange) throws SQLException {

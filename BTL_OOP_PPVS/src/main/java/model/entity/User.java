@@ -59,7 +59,8 @@ public abstract class User {
     /**
      * Cài lại mật khẩu trong lần đầu đăng nhập.
      * 
-     * @param oldPassword = mật khẩu cũ
+     * Mật khẩu gốc mặc định là UserID
+     * 
      * @param newPassword = mật khẩu mới
      * 
      * @return true/false
@@ -69,8 +70,7 @@ public abstract class User {
     }
     
     /**
-     * This user make an act of borrow document. 
-     * The quantity borrow is just only 1 each time.
+     * Người dùng này thực hiện việc mượn tài liệu.
      * 
      * @param documentID = borrowed document ID
      * 
@@ -87,11 +87,11 @@ public abstract class User {
     }
     
     /**
-     * This user make an act of return their request.
+     * Thực hiên trả tài liệu
      * 
-     * @param requestID = 
+     * @param documentID = ID sách được thực hiện trả
      * 
-     * @return false in what case???
+     * @return false nếu không tìm được mã phiếu, do người dùng này không mượn quyển sách đó mà chưa trả.
      * 
      * @throws SQLException 
      */
@@ -100,7 +100,7 @@ public abstract class User {
     }
     
     /**
-     * Get a List<Request> being made by this user which not yet returned.
+     * Lấy thông tin phiếu yêu cầu chưa được trả của người dùng này.
      * 
      * @return list of request found.
      * 
@@ -111,7 +111,7 @@ public abstract class User {
     }
     
     /**
-     * Get all borrow history of this user. 
+     * Lấy thông tin phiếu yêu cầu được thực hiện bởi người dùng này từ trước tới nay.
      * 
      * @return list of request found.
      * 
